@@ -1,0 +1,137 @@
+
+Showing All Messages
+CreateBuildDirectory /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    builtin-create-build-directory /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    builtin-create-build-directory /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products
+
+MkDir /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.app (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    /bin/mkdir -p /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.app
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/DerivedSources/Entitlements-Simulated.plist (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/DerivedSources/Entitlements-Simulated.plist
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/DerivedSources/Entitlements.plist (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/DerivedSources/Entitlements.plist
+
+ProcessProductPackaging "" /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies.app.xcent (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    
+
+Entitlements:
+
+{
+    "com.apple.security.get-task-allow" = 1;
+}
+
+
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies.app.xcent
+
+ProcessProductPackaging "" /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies.app-Simulated.xcent (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    
+
+Entitlements:
+
+{
+    "application-identifier" = "5EAUJPVR66.com.example.Munchies";
+    "keychain-access-groups" =     (
+        "5EAUJPVR66.com.example.Munchies"
+    );
+}
+
+
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies.app-Simulated.xcent
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-project-headers.hmap (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-project-headers.hmap
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies.hmap (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies.hmap
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/all-product-headers.yaml (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/all-product-headers.yaml
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-all-target-headers.hmap (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-generated-files.hmap (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-generated-files.hmap
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-own-target-headers.hmap (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-all-non-framework-target-headers.hmap (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies-OutputFileMap.json (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies-OutputFileMap.json
+
+CompileSwiftSources normal x86_64 com.apple.xcode.tools.swift.compiler (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -incremental -module-name Munchies -Onone -enable-batch-mode -enforce-exclusivity=checked -DDEBUG -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk -target x86_64-apple-ios12.0-simulator -g -module-cache-path /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Index/DataStore -swift-version 4.2 -I /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator -F /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator -parse-as-library -c -j8 /Users/kamilwrobel/Desktop/Munchies/Munchies/Resources/AppDelegate.swift -output-file-map /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies-OutputFileMap.json -parseable-output -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies.swiftmodule -Xcc -I/Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-generated-files.hmap -Xcc -I/Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-own-target-headers.hmap -Xcc -I/Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-all-target-headers.hmap -Xcc -iquote -Xcc /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies-project-headers.hmap -Xcc -I/Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/DerivedSources/x86_64 -Xcc -I/Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/DerivedSources -Xcc -DDEBUG=1 -emit-objc-header -emit-objc-header-path /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies-Swift.h -Xcc -working-directory/Users/kamilwrobel/Desktop/Munchies
+
+Ditto /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.swiftmodule/x86_64.swiftdoc /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies.swiftdoc (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    /usr/bin/ditto -rsrc /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies.swiftdoc /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.swiftmodule/x86_64.swiftdoc
+
+Ditto /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.swiftmodule/x86_64.swiftmodule /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies.swiftmodule (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    /usr/bin/ditto -rsrc /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies.swiftmodule /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.swiftmodule/x86_64.swiftmodule
+
+Ditto /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/DerivedSources/Munchies-Swift.h /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies-Swift.h (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    /usr/bin/ditto -rsrc /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies-Swift.h /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/DerivedSources/Munchies-Swift.h
+
+WriteAuxiliaryFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies.LinkFileList (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    write-file /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies.LinkFileList
+
+Ld /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.app/Munchies normal x86_64 (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    export IPHONEOS_DEPLOYMENT_TARGET=12.0
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk -L/Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator -F/Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator -filelist /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies.LinkFileList -Xlinker -rpath -Xlinker @executable_path/Frameworks -mios-simulator-version-min=12.0 -dead_strip -Xlinker -object_path_lto -Xlinker /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies_lto.o -Xlinker -export_dynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -Xlinker -add_ast_path -Xlinker /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies.swiftmodule -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Munchies.app-Simulated.xcent -Xlinker -dependency_info -Xlinker /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Objects-normal/x86_64/Munchies_dependency_info.dat -o /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.app/Munchies
+
+CompileStoryboard /Users/kamilwrobel/Desktop/Munchies/Munchies/StoryBoards/Base.lproj/Main.storyboard (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..
+    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --module Munchies --output-partial-info-plist /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Base.lproj/Main-SBPartialInfo.plist --auto-activate-custom-fonts --target-device iphone --target-device ipad --minimum-deployment-target 12.0 --output-format human-readable-text --compilation-directory /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Base.lproj /Users/kamilwrobel/Desktop/Munchies/Munchies/StoryBoards/Base.lproj/Main.storyboard
+
+CompileStoryboard /Users/kamilwrobel/Desktop/Munchies/Munchies/StoryBoards/Base.lproj/LaunchScreen.storyboard (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..
+    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --module Munchies --output-partial-info-plist /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Base.lproj/LaunchScreen-SBPartialInfo.plist --auto-activate-custom-fonts --target-device iphone --target-device ipad --minimum-deployment-target 12.0 --output-format human-readable-text --compilation-directory /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Base.lproj /Users/kamilwrobel/Desktop/Munchies/Munchies/StoryBoards/Base.lproj/LaunchScreen.storyboard
+
+LinkStoryboards (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..
+    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --module Munchies --target-device iphone --target-device ipad --minimum-deployment-target 12.0 --output-format human-readable-text --link /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.app /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Base.lproj/LaunchScreen.storyboardc /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/Base.lproj/Main.storyboardc
+
+CopyPlistFile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.app/ApiKeys.plist /Users/kamilwrobel/Desktop/Munchies/Munchies/Resources/ApiKeys.plist (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    builtin-copyPlist --convert binary1 --outdir /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.app -- /Users/kamilwrobel/Desktop/Munchies/Munchies/Resources/ApiKeys.plist
+
+error: Build input file cannot be found: '/Users/kamilwrobel/Desktop/Munchies/Munchies/Resources/ApiKeys.plist'
+CompileAssetCatalog /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.app /Users/kamilwrobel/Desktop/Munchies/Munchies/Resources/Assets.xcassets (in target: Munchies)
+    cd /Users/kamilwrobel/Desktop/Munchies
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/assetcatalog_dependencies --output-partial-info-plist /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Intermediates.noindex/Munchies.build/Debug-iphonesimulator/Munchies.build/assetcatalog_generated_info.plist --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --filter-for-device-model iPhone10,6 --filter-for-device-os-version 12.0 --sticker-pack-identifier-prefix com.example.Munchies.sticker-pack. --target-device iphone --target-device ipad --minimum-deployment-target 12.0 --platform iphonesimulator --product-type com.apple.product-type.application --compile /Users/kamilwrobel/Library/Developer/Xcode/DerivedData/Munchies-cjiujuyxzcsjrxaibbwbrzyazqqt/Build/Products/Debug-iphonesimulator/Munchies.app /Users/kamilwrobel/Desktop/Munchies/Munchies/Resources/Assets.xcassets
+
+
+
+Activity Log Complete    10/10/18, 12:08 PM    1.1 seconds
