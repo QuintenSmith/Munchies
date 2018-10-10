@@ -331,8 +331,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = Munchies/Info.plist;
+=======
+				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
+>>>>>>> 27dc67a888cdf6fdb9f80edd85e07a9f26444c51
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,8 +354,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = Munchies/Info.plist;
+=======
+				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
+>>>>>>> 27dc67a888cdf6fdb9f80edd85e07a9f26444c51
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
