@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--FilterVC-->
+        <!--Brand-->
         <scene sceneID="wed-Rd-sJJ">
             <objects>
                 <viewController id="C13-LU-czv" customClass="FilterVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
@@ -258,20 +258,24 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="val-1o-e4e">
-                                <rect key="frame" x="18" y="516" width="339" height="30"/>
+                                <rect key="frame" x="18" y="579" width="339" height="24"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMJ-uv-RFA">
-                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="24"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1l7-b3-V5T">
-                                        <rect key="frame" x="169.5" y="0.0" width="169.5" height="30"/>
+                                        <rect key="frame" x="169.5" y="0.0" width="169.5" height="24"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Pg4-WF-dji"/>
+                                    <constraint firstAttribute="width" constant="171" id="jsP-gX-pij"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -280,21 +284,27 @@
                             <constraint firstItem="kZo-bg-o4j" firstAttribute="top" secondItem="ljX-5j-YVn" secondAttribute="top" id="8uz-Fw-41p"/>
                             <constraint firstItem="yrT-OI-XNx" firstAttribute="leading" secondItem="Wht-kd-3bg" secondAttribute="leading" id="C1d-vM-blp"/>
                             <constraint firstItem="ljX-5j-YVn" firstAttribute="trailing" secondItem="BBO-IE-4l7" secondAttribute="trailing" id="CVa-1T-kH4"/>
-                            <constraint firstItem="ljX-5j-YVn" firstAttribute="trailing" secondItem="val-1o-e4e" secondAttribute="trailing" constant="18" id="Dup-2e-Msj"/>
                             <constraint firstItem="kZo-bg-o4j" firstAttribute="leading" secondItem="ljX-5j-YVn" secondAttribute="leading" id="FoO-qX-C5x"/>
+                            <constraint firstItem="val-1o-e4e" firstAttribute="leading" secondItem="ljX-5j-YVn" secondAttribute="leading" constant="18" id="Gtc-O6-HcU"/>
                             <constraint firstItem="12S-c3-Fts" firstAttribute="top" secondItem="yrT-OI-XNx" secondAttribute="bottom" id="N8B-52-ujD"/>
                             <constraint firstItem="BBO-IE-4l7" firstAttribute="top" secondItem="12S-c3-Fts" secondAttribute="bottom" id="OfJ-Ps-YXy"/>
-                            <constraint firstItem="val-1o-e4e" firstAttribute="leading" secondItem="ljX-5j-YVn" secondAttribute="leading" constant="18" id="PEG-9m-BBZ"/>
                             <constraint firstItem="BBO-IE-4l7" firstAttribute="leading" secondItem="Wht-kd-3bg" secondAttribute="leading" id="R4A-Xu-7a4"/>
                             <constraint firstItem="ljX-5j-YVn" firstAttribute="trailing" secondItem="kZo-bg-o4j" secondAttribute="trailing" id="XBZ-uR-eNt"/>
                             <constraint firstItem="ljX-5j-YVn" firstAttribute="trailing" secondItem="yrT-OI-XNx" secondAttribute="trailing" id="dg4-qX-844"/>
                             <constraint firstItem="yrT-OI-XNx" firstAttribute="top" secondItem="kZo-bg-o4j" secondAttribute="bottom" id="lgd-oi-p6U"/>
-                            <constraint firstItem="val-1o-e4e" firstAttribute="top" secondItem="BBO-IE-4l7" secondAttribute="bottom" constant="252" id="xRQ-j3-SAW"/>
+                            <constraint firstItem="ljX-5j-YVn" firstAttribute="bottom" secondItem="val-1o-e4e" secondAttribute="bottom" constant="64" id="p0V-m6-mEh"/>
+                            <constraint firstItem="ljX-5j-YVn" firstAttribute="trailing" secondItem="val-1o-e4e" secondAttribute="trailing" constant="18" id="syM-sT-SDj"/>
                             <constraint firstItem="12S-c3-Fts" firstAttribute="leading" secondItem="ljX-5j-YVn" secondAttribute="leading" id="ywQ-Zm-hC5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ljX-5j-YVn"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FNx-zs-XdS"/>
+                    <navigationItem key="navigationItem" title="Brand" id="TdV-O6-J4P">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="pWx-Ih-URa">
+                            <connections>
+                                <action selector="backBtnTapped:" destination="C13-LU-czv" id="2Ox-Ub-8sM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="difficultyBtnStackView" destination="ebb-VG-ll6" id="vs2-z5-IGI"/>
                         <outlet property="tableView" destination="HCs-yK-LcQ" id="P9H-e5-vrG"/>

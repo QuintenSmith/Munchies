@@ -21,9 +21,15 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
+<<<<<<< HEAD
 	<string>Filter</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Search</string>
+	<string>Inventory</string>
+=======
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+>>>>>>> 23924003ff4406458199c8393a04c8a50b38e186
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
