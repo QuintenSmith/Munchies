@@ -26,13 +26,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aut-rU-HPq">
-                                <rect key="frame" x="18.5" y="322" width="338" height="47"/>
+                                <rect key="frame" x="18.5" y="322" width="338" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="0Yy-7c-l9h">
-                                <rect key="frame" x="18.5" y="377" width="338" height="20.5"/>
+                                <rect key="frame" x="18.5" y="359" width="338" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1 hr 30 min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TH-5F-VOK">
                                         <rect key="frame" x="0.0" y="0.0" width="116" height="20.5"/>
@@ -49,7 +49,7 @@
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRo-4c-jNy">
-                                <rect key="frame" x="0.0" y="377" width="375" height="290"/>
+                                <rect key="frame" x="0.0" y="359" width="375" height="308"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z5o-aF-dyQ">
                                         <rect key="frame" x="20" y="20" width="335" height="53"/>
@@ -159,7 +159,6 @@
                                     <constraint firstItem="1Wh-QM-hZm" firstAttribute="trailing" secondItem="eNX-Ui-lYk" secondAttribute="trailing" id="69g-wY-jp1"/>
                                     <constraint firstItem="z5o-aF-dyQ" firstAttribute="leading" secondItem="HRo-4c-jNy" secondAttribute="leading" constant="20" id="Ck6-dw-Ek6"/>
                                     <constraint firstItem="z5o-aF-dyQ" firstAttribute="top" secondItem="HRo-4c-jNy" secondAttribute="top" constant="20" id="GvC-Ht-T4r"/>
-                                    <constraint firstAttribute="height" constant="290" id="JJf-nz-bji"/>
                                     <constraint firstItem="z5o-aF-dyQ" firstAttribute="centerX" secondItem="HRo-4c-jNy" secondAttribute="centerX" id="Rfx-LK-ntg"/>
                                     <constraint firstItem="1Wh-QM-hZm" firstAttribute="top" secondItem="z5o-aF-dyQ" secondAttribute="bottom" id="Rv4-C2-YFt"/>
                                     <constraint firstItem="z5o-aF-dyQ" firstAttribute="trailing" secondItem="1Wh-QM-hZm" secondAttribute="trailing" id="Z39-J6-FPI"/>
@@ -188,7 +187,11 @@
                         <viewLayoutGuide key="safeArea" id="Pbl-1m-RPQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="BRAND" id="FFZ-hl-lOf">
-                        <barButtonItem key="leftBarButtonItem" title="←" id="esM-fg-zJg"/>
+                        <barButtonItem key="leftBarButtonItem" title="←" id="esM-fg-zJg">
+                            <connections>
+                                <action selector="backBtnTapped:" destination="Viv-09-zDG" id="npb-F9-H9j"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DwC-cz-qdK"/>
                     </navigationItem>
                     <connections>

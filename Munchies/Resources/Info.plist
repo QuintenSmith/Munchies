@@ -23,7 +23,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>Filter</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Inventory</string>
+	<string>Search</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

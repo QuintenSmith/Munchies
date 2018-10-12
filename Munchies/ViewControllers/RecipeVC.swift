@@ -46,5 +46,12 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         instructionsTextView.isHidden = !instructionsTextView.isHidden
     }
     
+    @IBAction func backBtnTapped(_ sender: Any) {
+        self.dismiss(animated: true) {
+            
+        }
+    }
+    
+    
     
 }

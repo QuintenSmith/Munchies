@@ -103,6 +103,12 @@ class FilterVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    @IBAction func backBtnTapped(_ sender: Any) {
+        dismiss(animated: true) {
+            
+        }
+    }
+    
     @IBAction func timeBtnTapped(_ sender: UIButton) {
         
     }
