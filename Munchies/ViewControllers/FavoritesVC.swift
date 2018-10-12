@@ -75,16 +75,24 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //TODO: - need to feed in the data for collection views based on which button was pressed
     
     @IBAction func wishListButtonPressed(_ sender: Any) {
+        
     }
     
     
     @IBAction func favoritesButtonPressed(_ sender: Any) {
+        
     }
     
     
     @IBAction func sharedItemsButtonPressed(_ sender: Any) {
+   
     }
     
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        let image = UIImage(named: "pasta5")
+        let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(shareSheet, animated: true, completion: nil)
+    }
     
     
     

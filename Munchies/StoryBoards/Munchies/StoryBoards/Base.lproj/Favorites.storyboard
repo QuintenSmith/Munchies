@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="olY-0o-uLo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LDm-QN-9oR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PDx-rT-CWa">
-                                <rect key="frame" x="18" y="64" width="339" height="102"/>
+                                <rect key="frame" x="18" y="20" width="339" height="102"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2q1-LZ-QZk">
                                         <rect key="frame" x="0.0" y="0.0" width="102.5" height="102"/>
@@ -47,7 +47,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cim-MF-KiD">
-                                <rect key="frame" x="0.0" y="176" width="375" height="491"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jbf-i6-Q2O">
                                     <size key="itemSize" width="181" height="187"/>
@@ -114,7 +114,11 @@
                         <viewLayoutGuide key="safeArea" id="6Ue-mN-jCQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="kwg-b0-VSp">
-                        <barButtonItem key="rightBarButtonItem" title="⏃share" id="68p-61-yih"/>
+                        <barButtonItem key="rightBarButtonItem" title="⏃share" id="68p-61-yih">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="LDm-QN-9oR" id="MJv-3n-7FZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="favoritesCollectionView" destination="cim-MF-KiD" id="Sqj-Aj-AJY"/>
@@ -123,25 +127,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ll-7M-S1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-135.19999999999999" y="-1250.824587706147"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="39B-od-kMK">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="olY-0o-uLo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="9sx-qa-miZ"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="msw-AB-xID">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="LDm-QN-9oR" kind="relationship" relationship="rootViewController" id="WrL-LZ-cin"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XZb-Mc-vzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1074.4000000000001" y="-1250.824587706147"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PkL-l1-EkK">
