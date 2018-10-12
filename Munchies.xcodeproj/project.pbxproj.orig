@@ -19,6 +19,11 @@
 		1CA911C8216BCFC500716C0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA911C6216BCFC500716C0E /* Main.storyboard */; };
 		1CA911CA216BCFC600716C0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CA911C9216BCFC600716C0E /* Assets.xcassets */; };
 		1CA911CD216BCFC600716C0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA911CB216BCFC600716C0E /* LaunchScreen.storyboard */; };
+		1CD408012170F99100408716 /* GroceriesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD408002170F99100408716 /* GroceriesList.storyboard */; };
+		1CD408032170FEBB00408716 /* GrocerieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD408022170FEBB00408716 /* GrocerieListVC.swift */; };
+		1CD40805217108D800408716 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD40804217108D800408716 /* Camera.storyboard */; };
+		1CD40807217109BE00408716 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD40806217109BE00408716 /* CameraVC.swift */; };
+		1CD4080921710FCD00408716 /* Pantry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD4080821710FCD00408716 /* Pantry.storyboard */; };
 		1CE10DEE216E6FD40090A827 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DED216E6FD40090A827 /* ApiKeys.plist */; };
 		1CE10DF8216E8DD10090A827 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DF7216E8DD10090A827 /* SignUp.storyboard */; };
 		1CE10DFA216E95C10090A827 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DF9216E95C10090A827 /* LogIn.storyboard */; };
@@ -38,6 +43,7 @@
 		3B8D5C3F216E9499007F4C45 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D5C3E216E9499007F4C45 /* ProfileViewController.swift */; };
 		3BC803812170280400D3AA54 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC803802170280400D3AA54 /* JournalEntry.swift */; };
 		3BC803842170292300D3AA54 /* DateExternsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC803832170292300D3AA54 /* DateExternsion.swift */; };
+		3BC8038D217102A500D3AA54 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC8038C217102A400D3AA54 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +61,11 @@
 		1CA911C9216BCFC600716C0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CA911CC216BCFC600716C0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CA911CE216BCFC600716C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CD408002170F99100408716 /* GroceriesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroceriesList.storyboard; sourceTree = "<group>"; };
+		1CD408022170FEBB00408716 /* GrocerieListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrocerieListVC.swift; sourceTree = "<group>"; };
+		1CD40804217108D800408716 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
+		1CD40806217109BE00408716 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		1CD4080821710FCD00408716 /* Pantry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pantry.storyboard; sourceTree = "<group>"; };
 		1CE10DED216E6FD40090A827 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		1CE10DF7216E8DD10090A827 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		1CE10DF9216E95C10090A827 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
@@ -74,6 +85,7 @@
 		3B8D5C3E216E9499007F4C45 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		3BC803802170280400D3AA54 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalEntry.swift; path = Munchies/ViewControllers/JournalEntry.swift; sourceTree = SOURCE_ROOT; };
 		3BC803832170292300D3AA54 /* DateExternsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExternsion.swift; sourceTree = "<group>"; };
+		3BC8038C217102A400D3AA54 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,12 +141,12 @@
 				1CE10DFD216EADDB0090A827 /* Search.storyboard */,
 				1CE10DFF216EB7080090A827 /* Filter.storyboard */,
 				3B770A49216FC3A900FD7B7B /* Favorites.storyboard */,
-<<<<<<< HEAD
 				3B770A58216FEE1A00FD7B7B /* Journal.storyboard */,
-=======
 				1C047A34216FBEDA005683AE /* Recipe.storyboard */,
 				1C047A3A216FEBB2005683AE /* ComparePantry.storyboard */,
->>>>>>> 22a344d0e7bb1c19a9c0e8b6d9fd9e26db6a6447
+				1CD408002170F99100408716 /* GroceriesList.storyboard */,
+				1CD40804217108D800408716 /* Camera.storyboard */,
+				1CD4080821710FCD00408716 /* Pantry.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -156,16 +168,19 @@
 				3B8D5C3E216E9499007F4C45 /* ProfileViewController.swift */,
 				1CE10E01216EC98B0090A827 /* FilterVC.swift */,
 				3B770A4C216FCC4900FD7B7B /* FavoritesVC.swift */,
-<<<<<<< HEAD
 				3B770A5B216FF1C700FD7B7B /* JournalCreateViewEditVC.swift */,
 				3B770A5D216FFD0000FD7B7B /* JournalCollectionVC.swift */,
-=======
 				1C047A36216FC723005683AE /* RecipeVC.swift */,
 				1C047A38216FCEC4005683AE /* RecipeIngredientTableVC.swift */,
 				1C047A3C216FF0C3005683AE /* ComparePantryVC.swift */,
 				1C047A3E216FF272005683AE /* ComparePantryTableVC.swift */,
 				1C047A4221702D18005683AE /* SearchVC.swift */,
->>>>>>> 22a344d0e7bb1c19a9c0e8b6d9fd9e26db6a6447
+<<<<<<< HEAD
+				3BC8038C217102A400D3AA54 /* MainTabBarController.swift */,
+=======
+				1CD408022170FEBB00408716 /* GrocerieListVC.swift */,
+				1CD40806217109BE00408716 /* CameraVC.swift */,
+>>>>>>> 2a8f82e6723e13bb26eac20a5b1081677b1801c0
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -190,11 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				3B770A4E216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift */,
-<<<<<<< HEAD
 				3B770A5F216FFE9900FD7B7B /* JournalCollectionViewCell.swift */,
-=======
 				1C047A4421702EA9005683AE /* SearchCollectionViewCell.swift */,
->>>>>>> 22a344d0e7bb1c19a9c0e8b6d9fd9e26db6a6447
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,15 +278,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B8D5C3B216E9205007F4C45 /* Profile.storyboard in Resources */,
+				1CD40805217108D800408716 /* Camera.storyboard in Resources */,
 				1CA911CD216BCFC600716C0E /* LaunchScreen.storyboard in Resources */,
 				1CE10E00216EB7080090A827 /* Filter.storyboard in Resources */,
 				1CE10DEE216E6FD40090A827 /* ApiKeys.plist in Resources */,
 				1CA911CA216BCFC600716C0E /* Assets.xcassets in Resources */,
+				1CD408012170F99100408716 /* GroceriesList.storyboard in Resources */,
 				1CE10DFE216EADDB0090A827 /* Search.storyboard in Resources */,
 				1C047A35216FBEDA005683AE /* Recipe.storyboard in Resources */,
 				1CA911C8216BCFC500716C0E /* Main.storyboard in Resources */,
 				3B770A4B216FC3A900FD7B7B /* Favorites.storyboard in Resources */,
 				3B770A5A216FEE1A00FD7B7B /* Journal.storyboard in Resources */,
+				1CD4080921710FCD00408716 /* Pantry.storyboard in Resources */,
 				1CE10DFA216E95C10090A827 /* LogIn.storyboard in Resources */,
 				1CE10DF8216E8DD10090A827 /* SignUp.storyboard in Resources */,
 				3B8D5C3D216E9257007F4C45 /* Inventory.storyboard in Resources */,
@@ -290,7 +305,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B770A4D216FCC4900FD7B7B /* FavoritesVC.swift in Sources */,
+				1CD40807217109BE00408716 /* CameraVC.swift in Sources */,
 				1C047A4321702D18005683AE /* SearchVC.swift in Sources */,
+				3BC8038D217102A500D3AA54 /* MainTabBarController.swift in Sources */,
 				1C047A4521702EA9005683AE /* SearchCollectionViewCell.swift in Sources */,
 				1C047A3D216FF0C3005683AE /* ComparePantryVC.swift in Sources */,
 				1C047A39216FCEC4005683AE /* RecipeIngredientTableVC.swift in Sources */,
@@ -301,13 +318,11 @@
 				3B770A51216FE41F00FD7B7B /* Recipe.swift in Sources */,
 				3B770A5E216FFD0000FD7B7B /* JournalCollectionVC.swift in Sources */,
 				3B770A4F216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift in Sources */,
-<<<<<<< HEAD
 				3B770A5C216FF1C700FD7B7B /* JournalCreateViewEditVC.swift in Sources */,
 				3BC803842170292300D3AA54 /* DateExternsion.swift in Sources */,
-=======
 				1C047A37216FC723005683AE /* RecipeVC.swift in Sources */,
->>>>>>> 22a344d0e7bb1c19a9c0e8b6d9fd9e26db6a6447
 				1CA911C3216BCFC500716C0E /* AppDelegate.swift in Sources */,
+				1CD408032170FEBB00408716 /* GrocerieListVC.swift in Sources */,
 				3B770A60216FFE9900FD7B7B /* JournalCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,7 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -497,7 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
