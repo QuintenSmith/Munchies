@@ -30,4 +30,11 @@ class ComparePantryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         cell.textLabel?.text = pantry
         return cell 
     }
+    
+    @IBAction func backBtnTapped(_ sender: Any) {
+        self.dismiss(animated: true) {
+            
+        }
+    }
+    
 }

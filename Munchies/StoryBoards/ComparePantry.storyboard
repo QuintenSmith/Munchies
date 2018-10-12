@@ -88,7 +88,11 @@
                         <viewLayoutGuide key="safeArea" id="f46-aO-UYh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Brand" id="AvY-so-62K">
-                        <barButtonItem key="leftBarButtonItem" title="←" id="fAt-7H-qhb"/>
+                        <barButtonItem key="leftBarButtonItem" title="←" id="fAt-7H-qhb">
+                            <connections>
+                                <action selector="backBtnTapped:" destination="pDa-bK-X5Q" id="zjZ-cn-PKe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ogu-Cm-4Kb"/>
                     </navigationItem>
                     <connections>

@@ -12,22 +12,21 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     
     //MARK: - Outlets
-    @IBOutlet weak var favloritesCollectionView: UICollectionView!
+    @IBOutlet weak var favoritesCollectionView: UICollectionView!
     
     
     //MARK: - Properties
     var recipies: [Recipe] = {
        
-        
-        let recipe1 = Recipe(picture: UIImage(named: "images")!, recipeTitle: "Lasagna", rating: 3)
-        let recipe2 = Recipe(picture: UIImage(named: "images")!, recipeTitle: "Pasta", rating: 5)
-        let recipe3 = Recipe(picture: UIImage(named: "images")!, recipeTitle: "Pasta", rating: 4)
-        let recipe4 = Recipe(picture: UIImage(named: "images")!, recipeTitle: "Pasta", rating: 3)
-        let recipe5 = Recipe(picture: UIImage(named: "images")!, recipeTitle: "Pasta", rating: 4)
-        let recipe6 = Recipe(picture: UIImage(named: "images")!, recipeTitle: "Pasta", rating: 1)
-        let recipe7 = Recipe(picture: UIImage(named: "images")!, recipeTitle: "Pasta", rating: 4)
-        let recipe8 = Recipe(picture: UIImage(named: "images")!, recipeTitle: "Pasta", rating: 2)
-         var someMockRecipe : [Recipe] = [recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7, recipe8]
+        let recipe1 = Recipe(picture: UIImage(named: "burger0")!, recipeTitle: "Burger", rating: 3)
+        let recipe2 = Recipe(picture: UIImage(named: "pasta6")!, recipeTitle: "Pasta", rating: 5)
+        let recipe3 = Recipe(picture: UIImage(named: "pizza1")!, recipeTitle: "Pizza", rating: 4)
+        let recipe4 = Recipe(picture: UIImage(named: "salad2")!, recipeTitle: "Salad", rating: 3)
+        let recipe5 = Recipe(picture: UIImage(named: "sandwich1")!, recipeTitle: "Sandwich", rating: 4)
+        let recipe6 = Recipe(picture: UIImage(named: "burger2")!, recipeTitle: "Burger", rating: 1)
+        let recipe7 = Recipe(picture: UIImage(named: "pizza3")!, recipeTitle: "Pizza", rating: 4)
+        let recipe8 = Recipe(picture: UIImage(named: "salad6")!, recipeTitle: "Salad", rating: 2)
+        var someMockRecipe : [Recipe] = [recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7, recipe8]
         
         return someMockRecipe
     }()
@@ -38,8 +37,8 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        favloritesCollectionView.delegate = self
-        favloritesCollectionView.dataSource = self
+        favoritesCollectionView.delegate = self
+        favoritesCollectionView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
