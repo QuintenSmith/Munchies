@@ -16,6 +16,7 @@ class Recipe {
     let rating: Int
     var isWished: Bool
     var isFavorite: Bool
+
     
     init(picture: UIImage, recipeTitle: String, rating: Int, isWished: Bool = false, isFavorite: Bool = false){
         self.picture = picture

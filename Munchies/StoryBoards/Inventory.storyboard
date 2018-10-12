@@ -95,11 +95,11 @@
             </objects>
             <point key="canvasLocation" x="551.20000000000005" y="-863.1184407796103"/>
         </scene>
-        <!--Item 1-->
+        <!--Inventory-->
         <scene sceneID="s68-Kr-m6u">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cWI-et-aYt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="6rl-zI-pup"/>
+                    <tabBarItem key="tabBarItem" title="Inventory" id="6rl-zI-pup"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QhH-ZL-hg3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
