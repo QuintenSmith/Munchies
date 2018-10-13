@@ -39,6 +39,7 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         favoritesCollectionView.delegate = self
         favoritesCollectionView.dataSource = self
+        
 
         // Do any additional setup after loading the view.
     }

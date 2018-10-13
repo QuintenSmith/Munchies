@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Brand-->
+        <!--Search-->
         <scene sceneID="dkK-3O-oj7">
             <objects>
-                <viewController id="pV5-FQ-kP4" customClass="SearchVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchStoryboardID" title="Search" id="pV5-FQ-kP4" customClass="SearchVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ixn-za-LrX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,11 +126,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vTc-Mg-gjW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Brand" id="gnl-f5-X26">
-                        <barButtonItem key="leftBarButtonItem" title="←" id="vpk-Tn-LEf"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Brand" id="gnl-f5-X26"/>
                     <connections>
-                        <outlet property="searchCollectionView" destination="mqI-dg-Gej" id="R40-rC-LJ2"/>
+                        <outlet property="searchCollectionView" destination="mqI-dg-Gej" id="zgW-0Q-tIp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lc-1l-rtv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Brand-->
+        <!--Groceries-->
         <scene sceneID="hhC-EU-p5b">
             <objects>
-                <viewController id="AuA-ec-4zT" customClass="GrocerieListVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="groceriesListStoryBoardID" title="Groceries" id="AuA-ec-4zT" customClass="GrocerieListVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qCu-jx-emE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SZl-fR-90K">
-                                <rect key="frame" x="18.5" y="122" width="338" height="414"/>
+                                <rect key="frame" x="18.5" y="122" width="338" height="448"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="94a-Pv-4ot" style="IBUITableViewCellStyleDefault" id="WF7-z0-OH0">
@@ -63,7 +63,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="QCD-v4-Ew4">
-                                <rect key="frame" x="18.5" y="553" width="338" height="50"/>
+                                <rect key="frame" x="18.5" y="587" width="338" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-gO-dHL">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
@@ -93,7 +93,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Qh9-CW-7Tc" firstAttribute="trailing" secondItem="SZl-fR-90K" secondAttribute="trailing" constant="18.5" id="1iy-WB-cHs"/>
-                            <constraint firstItem="Qh9-CW-7Tc" firstAttribute="bottom" secondItem="QCD-v4-Ew4" secondAttribute="bottom" constant="64" id="6gb-Bj-gEz"/>
+                            <constraint firstItem="Qh9-CW-7Tc" firstAttribute="bottom" secondItem="QCD-v4-Ew4" secondAttribute="bottom" constant="30" id="6gb-Bj-gEz"/>
                             <constraint firstItem="fIi-Fi-C8W" firstAttribute="leading" secondItem="Qh9-CW-7Tc" secondAttribute="leading" constant="18.5" id="Dbz-Df-jPg"/>
                             <constraint firstItem="Qh9-CW-7Tc" firstAttribute="trailing" secondItem="fIi-Fi-C8W" secondAttribute="trailing" constant="18.5" id="QaT-1c-Zai"/>
                             <constraint firstItem="SZl-fR-90K" firstAttribute="top" secondItem="fIi-Fi-C8W" secondAttribute="bottom" constant="16" id="VwW-h8-RdR"/>
@@ -106,11 +106,6 @@
                         <viewLayoutGuide key="safeArea" id="Qh9-CW-7Tc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Brand" id="0Ci-MO-7Vr">
-                        <barButtonItem key="leftBarButtonItem" title="←" id="P0l-2B-son">
-                            <connections>
-                                <action selector="backBtnTapped:" destination="AuA-ec-4zT" id="gxk-M3-E9e"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="OTV-6R-VC1">
                             <connections>
                                 <action selector="deleteBtnTapped:" destination="AuA-ec-4zT" id="MCR-K6-GBr"/>
