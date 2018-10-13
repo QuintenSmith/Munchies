@@ -30,8 +30,10 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.searchCollectionView.delegate = self
-        self.searchCollectionView.dataSource = self 
+        self.searchCollectionView.dataSource = self
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

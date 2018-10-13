@@ -24,6 +24,7 @@
 		1CD40805217108D800408716 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD40804217108D800408716 /* Camera.storyboard */; };
 		1CD40807217109BE00408716 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD40806217109BE00408716 /* CameraVC.swift */; };
 		1CD4080921710FCD00408716 /* Pantry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD4080821710FCD00408716 /* Pantry.storyboard */; };
+		1CD4080B217129D200408716 /* PantryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD4080A217129D200408716 /* PantryVC.swift */; };
 		1CE10DEE216E6FD40090A827 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DED216E6FD40090A827 /* ApiKeys.plist */; };
 		1CE10DF8216E8DD10090A827 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DF7216E8DD10090A827 /* SignUp.storyboard */; };
 		1CE10DFA216E95C10090A827 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DF9216E95C10090A827 /* LogIn.storyboard */; };
@@ -66,6 +67,7 @@
 		1CD40804217108D800408716 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		1CD40806217109BE00408716 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		1CD4080821710FCD00408716 /* Pantry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pantry.storyboard; sourceTree = "<group>"; };
+		1CD4080A217129D200408716 /* PantryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryVC.swift; sourceTree = "<group>"; };
 		1CE10DED216E6FD40090A827 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		1CE10DF7216E8DD10090A827 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		1CE10DF9216E95C10090A827 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				3BC8038C217102A400D3AA54 /* MainTabBarController.swift */,
 				1CD408022170FEBB00408716 /* GrocerieListVC.swift */,
 				1CD40806217109BE00408716 /* CameraVC.swift */,
+				1CD4080A217129D200408716 /* PantryVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				3B770A4D216FCC4900FD7B7B /* FavoritesVC.swift in Sources */,
 				1CD40807217109BE00408716 /* CameraVC.swift in Sources */,
 				1C047A4321702D18005683AE /* SearchVC.swift in Sources */,
+				1CD4080B217129D200408716 /* PantryVC.swift in Sources */,
 				3BC8038D217102A500D3AA54 /* MainTabBarController.swift in Sources */,
 				1C047A4521702EA9005683AE /* SearchCollectionViewCell.swift in Sources */,
 				1C047A3D216FF0C3005683AE /* ComparePantryVC.swift in Sources */,
@@ -491,7 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5EAUJPVR66;
+				DEVELOPMENT_TEAM = 7AU78NCJUV;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,7 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5EAUJPVR66;
+				DEVELOPMENT_TEAM = 7AU78NCJUV;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

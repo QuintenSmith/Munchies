@@ -187,9 +187,9 @@
                         <viewLayoutGuide key="safeArea" id="Pbl-1m-RPQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="BRAND" id="FFZ-hl-lOf">
-                        <barButtonItem key="leftBarButtonItem" title="←" id="esM-fg-zJg">
+                        <barButtonItem key="leftBarButtonItem" title="←" id="Rrp-0S-gZT">
                             <connections>
-                                <action selector="backBtnTapped:" destination="Viv-09-zDG" id="npb-F9-H9j"/>
+                                <action selector="backBtnTapped:" destination="Viv-09-zDG" id="4f7-U7-aE4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DwC-cz-qdK"/>
@@ -212,7 +212,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="335" height="160"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eDh-i3-3np">
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eDh-i3-3np">
                             <rect key="frame" x="0.0" y="72" width="335" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
