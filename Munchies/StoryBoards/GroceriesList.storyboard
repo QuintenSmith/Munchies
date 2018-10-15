@@ -106,6 +106,7 @@
                         <viewLayoutGuide key="safeArea" id="Qh9-CW-7Tc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Brand" id="0Ci-MO-7Vr">
+                        <barButtonItem key="leftBarButtonItem" id="baE-xc-sDI"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="OTV-6R-VC1">
                             <connections>
                                 <action selector="deleteBtnTapped:" destination="AuA-ec-4zT" id="MCR-K6-GBr"/>
@@ -113,6 +114,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="menuBtn" destination="baE-xc-sDI" id="eRF-W0-JpM"/>
                         <outlet property="tableView" destination="SZl-fR-90K" id="z6n-Oh-bNA"/>
                     </connections>
                 </viewController>

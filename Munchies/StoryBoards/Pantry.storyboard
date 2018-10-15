@@ -96,9 +96,11 @@
                         <viewLayoutGuide key="safeArea" id="FCl-Qm-E7h"/>
                     </view>
                     <navigationItem key="navigationItem" title="Brand" id="MmZ-LO-Xw5">
+                        <barButtonItem key="leftBarButtonItem" id="9Ev-9e-OZG"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ksd-Zo-rxG"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="menuBtn" destination="9Ev-9e-OZG" id="suZ-gl-PON"/>
                         <outlet property="tableView" destination="q6c-Ep-iGN" id="0G5-cM-Ttg"/>
                     </connections>
                 </viewController>
