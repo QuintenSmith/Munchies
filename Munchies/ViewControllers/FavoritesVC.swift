@@ -14,6 +14,7 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Outlets
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
     
+    @IBOutlet weak var menuBtn: UIBarButtonItem!
     
     //MARK: - Properties
     var recipies: [Recipe] = {
@@ -40,8 +41,19 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         favoritesCollectionView.delegate = self
         favoritesCollectionView.dataSource = self
         
-
-        // Do any additional setup after loading the view.
+        sideMenu()
+    }
+    
+    func sideMenu() {
+        if revealViewController() != nil {
+            
+            menuBtn.target = revealViewController()
+            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 275
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            view.layoutIfNeeded()
+        }
     }
     
 

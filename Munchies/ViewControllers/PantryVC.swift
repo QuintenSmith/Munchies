@@ -12,6 +12,9 @@ class PantryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var menuBtn: UIBarButtonItem!
+    
+    
     let pantry = ["Apples", "Bananas", "Grapes", "Sauce", "Bread", "Seasoning"]
     
     
@@ -19,6 +22,20 @@ class PantryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        sideMenu()
+    }
+    
+    func sideMenu() {
+        if revealViewController() != nil {
+
+            menuBtn.target = revealViewController()
+            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 275
+
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            view.layoutIfNeeded()
+
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,5 +50,5 @@ class PantryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     
-    
+
 }

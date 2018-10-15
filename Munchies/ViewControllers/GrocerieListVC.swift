@@ -12,6 +12,8 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var menuBtn: UIBarButtonItem!
+    
     var groceryDictionary = [String: [String]]()
     var grocerySectionTitles = [String]()
     var groceryItems = [String]()
@@ -20,6 +22,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        sideMenu()
         
         groceryItems = ["Apple", "Oranges", "Strawberries", "Water Melon","Grape", "Juice", "Banana", "Tomato"]
         
@@ -36,6 +39,18 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         grocerySectionTitles = [String](groceryDictionary.keys)
         grocerySectionTitles = grocerySectionTitles.sorted(by: { $0 < $1 })
         
+    }
+    
+    func sideMenu() {
+        if revealViewController() != nil {
+            
+            menuBtn.target = revealViewController()
+            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 275
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            view.layoutIfNeeded()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

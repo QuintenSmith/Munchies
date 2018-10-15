@@ -13,6 +13,9 @@ private let reuseIdentifier = "journalCell"
 class JournalCollectionVC: UICollectionViewController {
     
     
+    @IBOutlet weak var menuBtn: UIBarButtonItem!
+    
+    
     //MARK: - Properties
     var recipies: [Recipe] = {
         
@@ -32,15 +35,21 @@ class JournalCollectionVC: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
- 
-        // Do any additional setup after loading the view.
+    sideMenu()
+        
     }
 
-    
+    func sideMenu() {
+        if revealViewController() != nil {
+            
+            menuBtn.target = revealViewController()
+            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 275
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            view.layoutIfNeeded()
+        }
+    }
     
     
     

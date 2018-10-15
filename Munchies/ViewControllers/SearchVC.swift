@@ -10,6 +10,7 @@ import UIKit
 
 class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var menuBtn: UIBarButtonItem!
     
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
@@ -34,6 +35,19 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         self.searchCollectionView.delegate = self
         self.searchCollectionView.dataSource = self
         
+        sideMenu()
+    }
+    
+    func sideMenu() {
+        if revealViewController() != nil {
+            
+            menuBtn.target = revealViewController()
+            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 275
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            view.layoutIfNeeded()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
