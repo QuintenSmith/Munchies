@@ -33,6 +33,7 @@
 		1CE10DFE216EADDB0090A827 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DFD216EADDB0090A827 /* Search.storyboard */; };
 		1CE10E00216EB7080090A827 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DFF216EB7080090A827 /* Filter.storyboard */; };
 		1CE10E02216EC98B0090A827 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE10E01216EC98B0090A827 /* FilterVC.swift */; };
+		3B6E04DB2176915A005F1A5A /* IngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E04DA2176915A005F1A5A /* IngredientsData.swift */; };
 		3B770A4B216FC3A900FD7B7B /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B770A49216FC3A900FD7B7B /* Favorites.storyboard */; };
 		3B770A4D216FCC4900FD7B7B /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B770A4C216FCC4900FD7B7B /* FavoritesVC.swift */; };
 		3B770A4F216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B770A4E216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift */; };
@@ -79,6 +80,7 @@
 		1CE10DFD216EADDB0090A827 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		1CE10DFF216EB7080090A827 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		1CE10E01216EC98B0090A827 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
+		3B6E04DA2176915A005F1A5A /* IngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IngredientsData.swift; path = Munchies/Extensions/IngredientsData.swift; sourceTree = SOURCE_ROOT; };
 		3B770A4A216FC3A900FD7B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Munchies/StoryBoards/Base.lproj/Favorites.storyboard; sourceTree = "<group>"; };
 		3B770A4C216FCC4900FD7B7B /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		3B770A4E216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesCollectionViewCell.swift; path = Munchies/ViewControllers/FavoritesCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -204,6 +206,7 @@
 			children = (
 				3B770A50216FE41F00FD7B7B /* Recipe.swift */,
 				3BC803802170280400D3AA54 /* JournalEntry.swift */,
+				3B6E04DA2176915A005F1A5A /* IngredientsData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				3BC803812170280400D3AA54 /* JournalEntry.swift in Sources */,
 				3B8D5C3F216E9499007F4C45 /* ProfileViewController.swift in Sources */,
 				3B770A51216FE41F00FD7B7B /* Recipe.swift in Sources */,
+				3B6E04DB2176915A005F1A5A /* IngredientsData.swift in Sources */,
 				3B770A5E216FFD0000FD7B7B /* JournalCollectionVC.swift in Sources */,
 				3B770A4F216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift in Sources */,
 				3B770A5C216FF1C700FD7B7B /* JournalCreateViewEditVC.swift in Sources */,
@@ -497,7 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -518,7 +522,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
