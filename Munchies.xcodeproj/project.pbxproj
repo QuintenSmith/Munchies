@@ -34,6 +34,7 @@
 		1CE10E00216EB7080090A827 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DFF216EB7080090A827 /* Filter.storyboard */; };
 		1CE10E02216EC98B0090A827 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE10E01216EC98B0090A827 /* FilterVC.swift */; };
 		3B6E04DB2176915A005F1A5A /* IngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E04DA2176915A005F1A5A /* IngredientsData.swift */; };
+		3B6E04DF2176A0C9005F1A5A /* ImageClassificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E04DE2176A0C9005F1A5A /* ImageClassificationController.swift */; };
 		3B770A4B216FC3A900FD7B7B /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B770A49216FC3A900FD7B7B /* Favorites.storyboard */; };
 		3B770A4D216FCC4900FD7B7B /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B770A4C216FCC4900FD7B7B /* FavoritesVC.swift */; };
 		3B770A4F216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B770A4E216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift */; };
@@ -81,6 +82,7 @@
 		1CE10DFF216EB7080090A827 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		1CE10E01216EC98B0090A827 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		3B6E04DA2176915A005F1A5A /* IngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IngredientsData.swift; path = Munchies/Extensions/IngredientsData.swift; sourceTree = SOURCE_ROOT; };
+		3B6E04DE2176A0C9005F1A5A /* ImageClassificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageClassificationController.swift; path = Munchies/Extensions/ImageClassificationController.swift; sourceTree = SOURCE_ROOT; };
 		3B770A4A216FC3A900FD7B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Munchies/StoryBoards/Base.lproj/Favorites.storyboard; sourceTree = "<group>"; };
 		3B770A4C216FCC4900FD7B7B /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		3B770A4E216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesCollectionViewCell.swift; path = Munchies/ViewControllers/FavoritesCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -197,6 +199,7 @@
 		1CE10DF4216E74270090A827 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3B6E04DE2176A0C9005F1A5A /* ImageClassificationController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				3BC803842170292300D3AA54 /* DateExternsion.swift in Sources */,
 				1C047A37216FC723005683AE /* RecipeVC.swift in Sources */,
 				1CA911C3216BCFC500716C0E /* AppDelegate.swift in Sources */,
+				3B6E04DF2176A0C9005F1A5A /* ImageClassificationController.swift in Sources */,
 				1C7E745E2172ED3D003462AD /* SWRevealViewController.m in Sources */,
 				1CD408032170FEBB00408716 /* GrocerieListVC.swift in Sources */,
 				3B770A60216FFE9900FD7B7B /* JournalCollectionViewCell.swift in Sources */,

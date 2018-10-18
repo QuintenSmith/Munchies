@@ -51,6 +51,10 @@ class CameraVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         
         //TODO: - Run the clasification
         
+        // Create JPG image data from UIImage with complresion of 0.8
+        let imageData = image.jpegData(compressionQuality: 0.8)
+        
+        
         presentClasificationAlert()
     }
     
