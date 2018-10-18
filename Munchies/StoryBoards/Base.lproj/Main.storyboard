@@ -406,7 +406,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Munchies" id="QSp-jB-bwp">
                         <barButtonItem key="leftBarButtonItem" id="Sv3-qh-YHC"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="0yN-xG-Cp2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="0yN-xG-Cp2">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="G8e-cy-WYv" id="XHE-Mr-fe0"/>
+                                <segue destination="joQ-o3-df8" kind="show" identifier="cameraSegue" id="xNZ-Bb-kD8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
@@ -416,6 +421,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gr7-HK-WDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="322.93853073463271"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="wOi-XT-lk8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Camera" id="joQ-o3-df8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sb5-WR-Bfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1497" y="-403"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="8lz-l4-d0L">

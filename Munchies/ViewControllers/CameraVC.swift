@@ -58,9 +58,34 @@ class CameraVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         presentClasificationAlert()
     }
     
+//    //cameraSegue
+ //   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        let segue = UIStoryboardSegue(identifier: "cameraSegue", source: sideMenuVC(), destination: sideMenuVC())
+//        if segue.identifier == "cameraSegue" {
+//       unwind(for: segue , towards: sideMenuVC())
+//        }
+       // dismiss(animated: true, completion: nil)
+      //  self.navigationController?.dismiss(animated: true, completion: nil)
+    //self.dismiss(animated: true)
+      //  goBack()
+        //backBtnTapped(picker)
+//    }
+//
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        #warning ("need to dismis the curent view Controller when user presses cancel on camera")
+//
+//
+//    }
+
+
+    
     
     //MARK: - Actions
     @IBAction func backBtnTapped(_ sender: Any) {
+        goBack()
+    }
+    
+    func goBack(){
         self.dismiss(animated: true) {
         }
     }
@@ -82,7 +107,7 @@ class CameraVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
             self.curentClasificationText = updatedText
             //FIXME: keep in mind user may not need to update the clasification -
             //TODO: need to add updated clasification to the list
-            Ingredients.ingredients.append(self.curentClasificationText)
+         //   Ingredients.ingredients.append(self.curentClasificationText)
             self.presentUpdateSuccessFullAlert()
         }
         alert.addAction(cancelAction)
@@ -99,12 +124,24 @@ class CameraVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         }
         let goToSearchAction = UIAlertAction(title: "Go To Search", style: .default) { (_) in
             //TODO: go to search VC
+            
+            //causes singabrt
+//            guard let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchFilter") else {return}
+//            //destinationVC = SearchFilterVC()
+//            self.present(destinationVC, animated: true, completion: nil)
+//            
+//            
+            
+            
         }
         alert.addAction(goToSearchAction)
         alert.addAction(uploadMoreAction)
         
         present(alert, animated: true)
     }
+    
+    
+
     
     
 }

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search FilterVC-->
         <scene sceneID="Aco-pK-Qod">
             <objects>
-                <viewController id="6hY-PJ-Q0W" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchFilter" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6hY-PJ-Q0W" customClass="SearchFilterVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yM1-iY-UfI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,32 +76,47 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N53-PP-QyX">
                                         <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
                                         <color key="backgroundColor" red="0.98271197080612183" green="0.98345524072647095" blue="0.98282712697982788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="1/2 hr"/>
+                                        <state key="normal" title="15 min"/>
+                                        <connections>
+                                            <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="fqL-iG-niZ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkR-Lu-qgW">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkR-Lu-qgW">
                                         <rect key="frame" x="95.5" y="0.0" width="80" height="30"/>
                                         <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="1 hr"/>
+                                        <state key="normal" title="30 min"/>
+                                        <connections>
+                                            <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="ChV-Ab-qGY"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6R-TC-9Ad">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6R-TC-9Ad">
                                         <rect key="frame" x="191.5" y="0.0" width="79.5" height="30"/>
                                         <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="1 1/2 hr"/>
+                                        <state key="normal" title="1 hr"/>
+                                        <connections>
+                                            <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="kDa-54-aTN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGJ-42-OE1">
                                 <rect key="frame" x="52" y="495" width="176" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPe-to-ia9">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPe-to-ia9">
                                         <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
                                         <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="2 hr"/>
+                                        <state key="normal" title="1.5 hr"/>
+                                        <connections>
+                                            <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="el6-oR-QWX"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No9-DW-brl">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No9-DW-brl">
                                         <rect key="frame" x="96.5" y="0.0" width="79.5" height="30"/>
                                         <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="2 hr +"/>
+                                        <connections>
+                                            <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="GkA-52-lMB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -122,8 +137,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="1 Portion"/>
+                                        <connections>
+                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="UNh-7R-8NY"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oo-R9-ckS">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oo-R9-ckS">
                                         <rect key="frame" x="95.5" y="0.0" width="80" height="30"/>
                                         <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -131,8 +149,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="2 Portions"/>
+                                        <connections>
+                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="J0x-3V-AuT"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2O-mT-MgP">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2O-mT-MgP">
                                         <rect key="frame" x="191.5" y="0.0" width="79.5" height="30"/>
                                         <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -140,13 +161,16 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="4 Portions"/>
+                                        <connections>
+                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="h0D-y1-uOl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PY0-B4-9T5">
                                 <rect key="frame" x="52" y="656" width="271" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nl-8q-Tdf">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nl-8q-Tdf">
                                         <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
                                         <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -154,8 +178,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="6 Portions"/>
+                                        <connections>
+                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="6Mq-oO-OpG"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqY-lg-NaK">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqY-lg-NaK">
                                         <rect key="frame" x="95.5" y="0.0" width="80" height="30"/>
                                         <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -163,8 +190,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="8 Portions"/>
+                                        <connections>
+                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="BsB-4W-KE6"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3B5-Jo-Ylg">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3B5-Jo-Ylg">
                                         <rect key="frame" x="191.5" y="0.0" width="79.5" height="30"/>
                                         <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -172,6 +202,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="10 Portions"/>
+                                        <connections>
+                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="we6-Nj-KF2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -184,6 +217,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <state key="normal" title="Find"/>
+                                <connections>
+                                    <action selector="findButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="p3x-1D-AXz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16762575507164001" green="0.16778519749641418" blue="0.16765043139457703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -227,6 +263,9 @@
                         <viewLayoutGuide key="safeArea" id="J6R-lg-gl6"/>
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
+                    <connections>
+                        <outlet property="ingredientTableView" destination="jhO-EB-NYM" id="WgS-Ic-c3S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5C-hZ-PQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

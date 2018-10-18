@@ -28,5 +28,14 @@ class sideMenuVC: UIViewController {
             view.layoutIfNeeded()
         }
     }
-
+    
+    
+    //MARK: - Camera Action
+    
+    @IBAction func cameraButtonPressed(_ sender: Any) {
+        
+        
+        
+    }
+    
 }
