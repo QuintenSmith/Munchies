@@ -8,14 +8,14 @@
 
 import UIKit
 
-class FavoritesCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
+class JournalCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var numberOfItems: Int
-    var recepies: [Recipe]
+    var recipes: [Recipe]
     
-    init(numberOfItems: Int, recepies: [Recipe]){
+    init(numberOfItems: Int, recipes: [Recipe]){
         self.numberOfItems = numberOfItems
-        self.recepies = recepies
+        self.recipes = recipes
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -23,9 +23,9 @@ class FavoritesCollectionViewDataSource: NSObject, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoritesCell", for: indexPath) as? FavoritesCollectionViewCell
-        let recepie = recepies[indexPath.row]
-        cell?.cellData = recepie
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JournalCell", for: indexPath) as? JournalDashboardCollectionViewCell
+        let recipe = recipes[indexPath.row]
+        cell?.recipe = recipe
         return cell ?? UICollectionViewCell()
     }
 }

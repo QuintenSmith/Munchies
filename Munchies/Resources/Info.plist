@@ -17,9 +17,11 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>187</string>
+	<string>398</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Your Camera will be used for recognizing your products, and Food Journal Entries</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Filter</string>
 	<key>UIMainStoryboardFile</key>
@@ -39,7 +41,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Your Camera will be used for recognizing your products, and Food Journal Entries</string>
 </dict>
 </plist>

@@ -78,7 +78,7 @@ class CameraVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
             self.curentClasificationText = updatedText
             //FIXME: keep in mind user may not need to update the clasification -
             //TODO: need to add updated clasification to the list
-            Ingredients.ingredients.append(self.curentClasificationText)
+            //Ingredients.ingredients.append(self.curentClasificationText)
             self.presentUpdateSuccessFullAlert()
         }
         alert.addAction(cancelAction)

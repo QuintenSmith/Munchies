@@ -14,14 +14,20 @@
 		1C047A3F216FF272005683AE /* ComparePantryTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C047A3E216FF272005683AE /* ComparePantryTableVC.swift */; };
 		1C047A4321702D18005683AE /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C047A4221702D18005683AE /* SearchVC.swift */; };
 		1C047A4521702EA9005683AE /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C047A4421702EA9005683AE /* SearchCollectionViewCell.swift */; };
+		1C0BEC5B2179258A004F5485 /* GroceriesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0BEC5A2179258A004F5485 /* GroceriesListTableViewCell.swift */; };
+		1C0BEC5D217925B6004F5485 /* GroceriesListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0BEC5C217925B6004F5485 /* GroceriesListTableViewDataSource.swift */; };
+		1C0BEC632179288A004F5485 /* GroceriesListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0BEC622179288A004F5485 /* GroceriesListTableVC.swift */; };
+		1C0BEC6721793BE7004F5485 /* JournalDashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0BEC6621793BE7004F5485 /* JournalDashboardCollectionViewCell.swift */; };
+		1C0BEC6921793D02004F5485 /* JournalDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0BEC6821793D02004F5485 /* JournalDashboardVC.swift */; };
 		1C32EA662177C9FE005226D9 /* Journal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C32EA652177C9FE005226D9 /* Journal.storyboard */; };
 		1C32EA682177CB8D005226D9 /* JournalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA672177CB8D005226D9 /* JournalVC.swift */; };
 		1C32EA6A2177CDBC005226D9 /* CreateJournalEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C32EA692177CDBC005226D9 /* CreateJournalEntry.storyboard */; };
 		1C32EA6C2177D0B8005226D9 /* JournalEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C32EA6B2177D0B8005226D9 /* JournalEntry.storyboard */; };
 		1C32EA6E2177D54D005226D9 /* CreateJournalEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA6D2177D54D005226D9 /* CreateJournalEntryVC.swift */; };
 		1C32EA702177D603005226D9 /* JournalEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA6F2177D603005226D9 /* JournalEntryVC.swift */; };
-		1C32EA722177F800005226D9 /* FavoritesCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA712177F800005226D9 /* FavoritesCollectionViewDataSource.swift */; };
-		1C32EA742177F9D5005226D9 /* YouCanChangeThisLaterVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA732177F9D5005226D9 /* YouCanChangeThisLaterVCViewController.swift */; };
+		1C32EA722177F800005226D9 /* JournalCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA712177F800005226D9 /* JournalCollectionViewDataSource.swift */; };
+		1C32EA7621780FCF005226D9 /* FavoritesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA7521780FCF005226D9 /* FavoritesTableViewDataSource.swift */; };
+		1C32EA78217812E2005226D9 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA77217812E2005226D9 /* FavoritesTableViewCell.swift */; };
 		1C43FBC42176B76900ACDAA0 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C43FBC32176B76900ACDAA0 /* Profile.storyboard */; };
 		1C43FBC62176B93D00ACDAA0 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C43FBC52176B93D00ACDAA0 /* Preferences.storyboard */; };
 		1C43FBC82176C25A00ACDAA0 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43FBC72176C25A00ACDAA0 /* PreferencesVC.swift */; };
@@ -59,14 +65,20 @@
 		1C047A3E216FF272005683AE /* ComparePantryTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparePantryTableVC.swift; sourceTree = "<group>"; };
 		1C047A4221702D18005683AE /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		1C047A4421702EA9005683AE /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		1C0BEC5A2179258A004F5485 /* GroceriesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesListTableViewCell.swift; sourceTree = "<group>"; };
+		1C0BEC5C217925B6004F5485 /* GroceriesListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesListTableViewDataSource.swift; sourceTree = "<group>"; };
+		1C0BEC622179288A004F5485 /* GroceriesListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesListTableVC.swift; sourceTree = "<group>"; };
+		1C0BEC6621793BE7004F5485 /* JournalDashboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDashboardCollectionViewCell.swift; sourceTree = "<group>"; };
+		1C0BEC6821793D02004F5485 /* JournalDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDashboardVC.swift; sourceTree = "<group>"; };
 		1C32EA652177C9FE005226D9 /* Journal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journal.storyboard; sourceTree = "<group>"; };
 		1C32EA672177CB8D005226D9 /* JournalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalVC.swift; sourceTree = "<group>"; };
 		1C32EA692177CDBC005226D9 /* CreateJournalEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateJournalEntry.storyboard; sourceTree = "<group>"; };
 		1C32EA6B2177D0B8005226D9 /* JournalEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JournalEntry.storyboard; sourceTree = "<group>"; };
 		1C32EA6D2177D54D005226D9 /* CreateJournalEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJournalEntryVC.swift; sourceTree = "<group>"; };
 		1C32EA6F2177D603005226D9 /* JournalEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryVC.swift; sourceTree = "<group>"; };
-		1C32EA712177F800005226D9 /* FavoritesCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewDataSource.swift; sourceTree = "<group>"; };
-		1C32EA732177F9D5005226D9 /* YouCanChangeThisLaterVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouCanChangeThisLaterVCViewController.swift; sourceTree = "<group>"; };
+		1C32EA712177F800005226D9 /* JournalCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		1C32EA7521780FCF005226D9 /* FavoritesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewDataSource.swift; sourceTree = "<group>"; };
+		1C32EA77217812E2005226D9 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		1C43FBC32176B76900ACDAA0 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1C43FBC52176B93D00ACDAA0 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		1C43FBC72176C25A00ACDAA0 /* PreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
@@ -203,8 +215,11 @@
 				1C32EA672177CB8D005226D9 /* JournalVC.swift */,
 				1C32EA6D2177D54D005226D9 /* CreateJournalEntryVC.swift */,
 				1C32EA6F2177D603005226D9 /* JournalEntryVC.swift */,
-				1C32EA712177F800005226D9 /* FavoritesCollectionViewDataSource.swift */,
-				1C32EA732177F9D5005226D9 /* YouCanChangeThisLaterVCViewController.swift */,
+				1C32EA712177F800005226D9 /* JournalCollectionViewDataSource.swift */,
+				1C32EA7521780FCF005226D9 /* FavoritesTableViewDataSource.swift */,
+				1C0BEC5C217925B6004F5485 /* GroceriesListTableViewDataSource.swift */,
+				1C0BEC622179288A004F5485 /* GroceriesListTableVC.swift */,
+				1C0BEC6821793D02004F5485 /* JournalDashboardVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -221,7 +236,6 @@
 			children = (
 				3B770A50216FE41F00FD7B7B /* Recipe.swift */,
 				3BC803802170280400D3AA54 /* JournalEntry.swift */,
-				3B6E04DA2176915A005F1A5A /* IngredientsData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,6 +246,9 @@
 				3B770A4E216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift */,
 				3B770A5F216FFE9900FD7B7B /* JournalCollectionViewCell.swift */,
 				1C047A4421702EA9005683AE /* SearchCollectionViewCell.swift */,
+				1C32EA77217812E2005226D9 /* FavoritesTableViewCell.swift */,
+				1C0BEC5A2179258A004F5485 /* GroceriesListTableViewCell.swift */,
+				1C0BEC6621793BE7004F5485 /* JournalDashboardCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,17 +383,23 @@
 				1C791C892177A9E100A1AFF0 /* SearchFilterVC.swift in Sources */,
 				1C32EA682177CB8D005226D9 /* JournalVC.swift in Sources */,
 				1C047A4321702D18005683AE /* SearchVC.swift in Sources */,
+				1C0BEC632179288A004F5485 /* GroceriesListTableVC.swift in Sources */,
+				1C32EA78217812E2005226D9 /* FavoritesTableViewCell.swift in Sources */,
+				1C32EA7621780FCF005226D9 /* FavoritesTableViewDataSource.swift in Sources */,
+				1C0BEC5B2179258A004F5485 /* GroceriesListTableViewCell.swift in Sources */,
 				1C047A4521702EA9005683AE /* SearchCollectionViewCell.swift in Sources */,
 				1C047A3D216FF0C3005683AE /* ComparePantryVC.swift in Sources */,
+				1C0BEC6721793BE7004F5485 /* JournalDashboardCollectionViewCell.swift in Sources */,
+				1C0BEC5D217925B6004F5485 /* GroceriesListTableViewDataSource.swift in Sources */,
 				1C047A3F216FF272005683AE /* ComparePantryTableVC.swift in Sources */,
 				3BC803812170280400D3AA54 /* JournalEntry.swift in Sources */,
 				3B770A51216FE41F00FD7B7B /* Recipe.swift in Sources */,
 				3B770A4F216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift in Sources */,
+				1C0BEC6921793D02004F5485 /* JournalDashboardVC.swift in Sources */,
 				3BC803842170292300D3AA54 /* DateExternsion.swift in Sources */,
 				1C047A37216FC723005683AE /* RecipeVC.swift in Sources */,
 				1CA911C3216BCFC500716C0E /* AppDelegate.swift in Sources */,
-				1C32EA722177F800005226D9 /* FavoritesCollectionViewDataSource.swift in Sources */,
-				1C32EA742177F9D5005226D9 /* YouCanChangeThisLaterVCViewController.swift in Sources */,
+				1C32EA722177F800005226D9 /* JournalCollectionViewDataSource.swift in Sources */,
 				1C7E745E2172ED3D003462AD /* SWRevealViewController.m in Sources */,
 				1C32EA702177D603005226D9 /* JournalEntryVC.swift in Sources */,
 				1CD408032170FEBB00408716 /* GrocerieListVC.swift in Sources */,
@@ -537,7 +560,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5EAUJPVR66;
+				DEVELOPMENT_TEAM = 7AU78NCJUV;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -560,7 +583,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5EAUJPVR66;
+				DEVELOPMENT_TEAM = 7AU78NCJUV;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
