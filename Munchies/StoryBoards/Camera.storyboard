@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="653"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gID-jG-TQM" firstAttribute="bottom" secondItem="KOC-kV-zgT" secondAttribute="bottom" constant="-50" id="Pef-WU-zef"/>
                             <constraint firstItem="gID-jG-TQM" firstAttribute="trailing" secondItem="KOC-kV-zgT" secondAttribute="trailing" id="SLb-2h-Gkt"/>
@@ -36,11 +36,7 @@
                                 <action selector="backBtnTapped:" destination="go2-HM-Pop" id="wyK-r9-XLv"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="temp. button" id="BQH-i5-Vp6">
-                            <connections>
-                                <segue destination="EMs-Df-izu" kind="show" id="d0R-BR-zFl"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="temp. button" id="BQH-i5-Vp6"/>
                     </navigationItem>
                     <connections>
                         <outlet property="imageToBeClassified" destination="KOC-kV-zgT" id="gRx-A7-LWd"/>
@@ -49,14 +45,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="267-VR-sxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080.8" y="-94.002998500749626"/>
-        </scene>
-        <!--SearchFilter-->
-        <scene sceneID="kCG-jA-ypV">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SearchFilter" id="EMs-Df-izu" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I05-t8-av6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1918" y="-361"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="76S-n9-bSw">

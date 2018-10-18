@@ -23,12 +23,17 @@ class RecipeFetchController {
     var recipiesWithDetail: [DetailedRecipe] = []
     //filtered locally on the device - time it takes to cook, portions
     var filteredRecipies: [DetailedRecipe] = []
+    //random joke
+    var randomJoke : String = "Remember: You can eat your way out of almost any problem."
     
     //MARK: - Base URLs
     //url for fetching recipies
     private let baseURLString = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex"
     //url for fetching detiled recipies
     private let baseURLStringFroDetiledRecipe = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/informationBulk"
+    //url for random food joke
+    private let baseURLStringForRandomJoke = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random"
+
     
     
     //MARK: - Fetch recipies by ingredients
@@ -58,7 +63,7 @@ class RecipeFetchController {
         //Add Header Files
         var request = URLRequest(url: url)
     //#error ("need to remove this before uploading to github")
-        request.addValue("", forHTTPHeaderField: "X-Mashape-Key")
+        request.addValue(getApiKey(named: "X-Mashape-Key"), forHTTPHeaderField: "X-Mashape-Key")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         print("🐷🐷🐷 \(url)")
         
@@ -106,7 +111,7 @@ class RecipeFetchController {
         components?.queryItems = [idQueries]
         
         guard let url = components?.url else {
-            print("error putting url together with components")
+            print("❌ error putting url together with components")
             completion([])
             return
         }
@@ -116,12 +121,12 @@ class RecipeFetchController {
         var request = URLRequest(url: url)
         
         
-        request.addValue("", forHTTPHeaderField: "X-Mashape-Key")
+        request.addValue(getApiKey(named: "X-Mashape-Key"), forHTTPHeaderField: "X-Mashape-Key")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
-                print("Error during URL Session")
+                print("❌ Error during URL Session \(error.localizedDescription)")
                 completion([])
                 return
             }
@@ -184,7 +189,57 @@ class RecipeFetchController {
     
     
     //MARK: - Fetch random foor fact
-    func
+    func fetchRandomJoke(completion: @escaping(Bool) -> Void) {
+        guard let baseURL = URL(string: baseURLStringForRandomJoke) else {
+            fatalError("bad base url for detailed Recipe")
+        }
+        var request = URLRequest(url: baseURL)
+        
+        request.addValue(getApiKey(named: "X-Mashape-Key"), forHTTPHeaderField: "X-Mashape-Key")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+    
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("❌ Error during URL Session \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            
+            if let response = response {
+                print("❌ Server Response: \(response)")
+            }
+            
+            guard let data = data else {
+                print("❌Error: No Data returned from url session on random joke")
+                completion(false)
+                return
+            }
+            
+            do{
+                let randomFoodJoke = try JSONDecoder().decode(RandomJoke.self, from: data)
+                self.randomJoke = randomFoodJoke.text
+                completion(true)
+            }catch {
+                print("❌ There was an error on \(#function): \(error) \(error.localizedDescription)")
+                completion(false)
+            }
+            
+        }.resume()
+        
+    }
+    
+    
+    //MARK: - Getting the ApiKey
+    
+    func getApiKey(named keyname: String) -> String {
+        guard let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist") else {
+            fatalError("❌ No File Path to API KEY")}
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: keyname) as? String else {
+            print("❌ Cannot cast the value of API key to String")
+            return ""}
+        return value
+    }
     
     
 }

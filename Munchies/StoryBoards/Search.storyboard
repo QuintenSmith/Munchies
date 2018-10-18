@@ -91,7 +91,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vTc-Mg-gjW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Results" id="MMz-Me-Yuf">
+                    <navigationItem key="navigationItem" title="Search Results" id="MMz-Me-Yuf">
                         <leftBarButtonItems>
                             <barButtonItem title="Back" id="RaI-MS-uVh"/>
                             <barButtonItem id="Dbz-Ci-qbZ"/>

@@ -35,6 +35,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd0-Ud-KZj">
                                         <rect key="frame" x="243" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="cameraButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="Ssk-DO-siZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -221,16 +224,22 @@
                                     <action selector="findButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="p3x-1D-AXz"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9m7-JP-TJU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.16762575507164001" green="0.16778519749641418" blue="0.16765043139457703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yQo-zl-Myu" firstAttribute="centerX" secondItem="yM1-iY-UfI" secondAttribute="centerX" id="5CV-O2-5tg"/>
                             <constraint firstItem="QZT-GT-gTQ" firstAttribute="top" secondItem="2BI-vq-Fdd" secondAttribute="bottom" constant="16" id="5TP-X1-dfi"/>
+                            <constraint firstItem="9m7-JP-TJU" firstAttribute="leading" secondItem="J6R-lg-gl6" secondAttribute="leading" id="5qB-3U-mze"/>
                             <constraint firstItem="dGJ-42-OE1" firstAttribute="top" secondItem="QZT-GT-gTQ" secondAttribute="bottom" constant="16" id="9xJ-Dh-lc6"/>
+                            <constraint firstItem="9m7-JP-TJU" firstAttribute="trailing" secondItem="J6R-lg-gl6" secondAttribute="trailing" id="Axn-1s-AVk"/>
                             <constraint firstItem="fhM-ad-OgY" firstAttribute="leading" secondItem="J6R-lg-gl6" secondAttribute="leading" constant="71" id="Cvp-re-OuC"/>
                             <constraint firstItem="fhM-ad-OgY" firstAttribute="top" secondItem="J6R-lg-gl6" secondAttribute="top" constant="32" id="Em3-SS-BX6"/>
                             <constraint firstItem="hAA-Bm-IGx" firstAttribute="leading" secondItem="J6R-lg-gl6" secondAttribute="leading" constant="52" id="GZr-F9-7ME"/>
                             <constraint firstItem="dGJ-42-OE1" firstAttribute="leading" secondItem="J6R-lg-gl6" secondAttribute="leading" constant="52" id="JD3-8K-Y4z"/>
+                            <constraint firstItem="9m7-JP-TJU" firstAttribute="top" secondItem="yM1-iY-UfI" secondAttribute="top" id="MPW-et-O78"/>
                             <constraint firstItem="hAA-Bm-IGx" firstAttribute="top" secondItem="yQo-zl-Myu" secondAttribute="bottom" constant="16" id="OTR-IY-MdW"/>
                             <constraint firstItem="J6R-lg-gl6" firstAttribute="trailing" secondItem="2BI-vq-Fdd" secondAttribute="trailing" constant="118" id="PmD-5t-HhO"/>
                             <constraint firstItem="chY-fQ-Q5d" firstAttribute="top" secondItem="PY0-B4-9T5" secondAttribute="bottom" constant="26" id="Qtw-SU-IPD"/>
@@ -255,6 +264,7 @@
                             <constraint firstItem="jhO-EB-NYM" firstAttribute="top" secondItem="zYT-o5-yir" secondAttribute="bottom" constant="6" id="pzG-d2-BKS"/>
                             <constraint firstItem="PY0-B4-9T5" firstAttribute="leading" secondItem="J6R-lg-gl6" secondAttribute="leading" constant="52" id="s0U-uj-kyZ"/>
                             <constraint firstItem="J6R-lg-gl6" firstAttribute="trailing" secondItem="zYT-o5-yir" secondAttribute="trailing" constant="51" id="swa-84-KLN"/>
+                            <constraint firstItem="J6R-lg-gl6" firstAttribute="bottom" secondItem="9m7-JP-TJU" secondAttribute="bottom" id="vPU-TH-o8x"/>
                             <constraint firstItem="J6R-lg-gl6" firstAttribute="trailing" secondItem="dGJ-42-OE1" secondAttribute="trailing" constant="147" id="vRB-Rp-dEr"/>
                             <constraint firstItem="yQo-zl-Myu" firstAttribute="leading" secondItem="J6R-lg-gl6" secondAttribute="leading" constant="114.5" id="vsf-BN-FbZ"/>
                             <constraint firstItem="zYT-o5-yir" firstAttribute="centerX" secondItem="yM1-iY-UfI" secondAttribute="centerX" id="xkw-ib-lLb"/>
@@ -264,12 +274,22 @@
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="imageToBeClasified" destination="9m7-JP-TJU" id="I8v-DH-F3i"/>
                         <outlet property="ingredientTableView" destination="jhO-EB-NYM" id="WgS-Ic-c3S"/>
+                        <segue destination="6g8-SA-vJG" kind="show" id="SNp-Xd-bEt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5C-hZ-PQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160.80000000000001" y="7.6461769115442282"/>
+            <point key="canvasLocation" x="160.80000000000001" y="7.1964017991004505"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="Kik-YU-AkW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="6g8-SA-vJG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9h-Xy-zpH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="91"/>
         </scene>
     </scenes>
 </document>
