@@ -17,6 +17,10 @@ class RecipeFetchController {
     
     
     //MARK: - Properties
+    //temporary ingrediens - delete wne app is ready
+    #warning ("change the input value when calling fetch function in searchfilterVC")
+    var temporatyIngredients = "Chicken, butter, ketchup"
+    
     //initial fetch
     var recipes: [fetchedRecipe] = []
     //second fetch with more details
@@ -240,6 +244,10 @@ class RecipeFetchController {
             return ""}
         return value
     }
+    
+    
+ 
+
     
     
 }

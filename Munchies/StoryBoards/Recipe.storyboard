@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gRo-bI-RTc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Viv-09-zDG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,13 +12,13 @@
         <!--BRAND-->
         <scene sceneID="O25-7T-AsI">
             <objects>
-                <viewController id="Viv-09-zDG" customClass="RecipeVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recipeDetailView" id="Viv-09-zDG" customClass="RecipeVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SnV-QG-sce">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza6" translatesAutoresizingMaskIntoConstraints="NO" id="4RD-Kd-mMv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="242"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="242"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="Mme-LO-BTl"/>
@@ -26,27 +26,33 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aut-rU-HPq">
-                                <rect key="frame" x="18.5" y="322" width="338" height="29"/>
+                                <rect key="frame" x="18.5" y="278" width="338" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ler-k7-CTv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="0Yy-7c-l9h">
-                                <rect key="frame" x="22" y="359" width="274" height="20.5"/>
+                                <rect key="frame" x="22" y="336" width="274" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1 hr 30 min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TH-5F-VOK">
-                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7j2-m8-Kbs">
-                                        <rect key="frame" x="234.5" y="0.0" width="39.5" height="20.5"/>
+                                        <rect key="frame" x="234.5" y="0.0" width="39.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dom-lr-vD6"/>
+                                </constraints>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PIz-n6-5qF">
                                 <rect key="frame" x="0.0" y="433" width="375" height="567"/>
@@ -95,7 +101,7 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INGREDIENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5k-tx-22Z">
-                                <rect key="frame" x="18" y="396" width="151" height="29"/>
+                                <rect key="frame" x="18" y="382.5" width="151" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -132,30 +138,16 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="recipeImageView" destination="4RD-Kd-mMv" id="LYW-w3-msK"/>
+                        <outlet property="recipeLikesLabel" destination="7j2-m8-Kbs" id="0dX-73-B1x"/>
+                        <outlet property="recipeTimeToPrepareLabel" destination="6TH-5F-VOK" id="kB7-G2-K6T"/>
+                        <outlet property="reicpeTitleLabel" destination="aut-rU-HPq" id="0eK-1V-gtX"/>
                         <outlet property="tableView" destination="I9w-Jb-CRW" id="Bgd-70-do0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9b-FL-gpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1084" y="178.11094452773614"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="9gM-jZ-iT2">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gRo-bI-RTc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yrI-ob-LQh">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Viv-09-zDG" kind="relationship" relationship="rootViewController" id="Ods-O7-5jx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="efT-6A-rjL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="144.80000000000001" y="178.56071964017991"/>
         </scene>
     </scenes>
     <resources>

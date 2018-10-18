@@ -15,7 +15,13 @@ class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var starsLbl: UILabel!
     @IBOutlet weak var recipeTitleLbl: UILabel!
     
-    var cellData: Recipe? {
+    var cellData: DetailedRecipe? {
+        didSet{
+            updateViews()
+        }
+    }
+    
+    var thumbnail : UIImage? {
         didSet{
             updateViews()
         }
@@ -23,23 +29,24 @@ class SearchCollectionViewCell: UICollectionViewCell {
     
     func updateViews() {
         guard let recipe = cellData else {return}
-        recipeImage.image = recipe.picture
-        recipeTitleLbl.text = recipe.recipeTitle
+        recipeImage.image = thumbnail
+        recipeTitleLbl.text = recipe.title
+        recipeTitleLbl.text = "Ready in: \(recipe.readyInMinutes)"
         
-        switch recipe.rating {
-        case 1:
-            starsLbl.text = "⭑"
-        case 2:
-            starsLbl.text = "⭑⭑"
-        case 3:
-            starsLbl.text = "⭑⭑⭑"
-        case 4:
-            starsLbl.text = "⭑⭑⭑⭑"
-        case 5:
-            starsLbl.text = "⭑⭑⭑⭑⭑"
-        default:
-            starsLbl.text = ""
-        }
+//        switch recipe.rating{
+//        case 1:
+//            starsLbl.text = "⭑"
+//        case 2:
+//            starsLbl.text = "⭑⭑"
+//        case 3:
+//            starsLbl.text = "⭑⭑⭑"
+//        case 4:
+//            starsLbl.text = "⭑⭑⭑⭑"
+//        case 5:
+//            starsLbl.text = "⭑⭑⭑⭑⭑"
+//        default:
+//            starsLbl.text = ""
+//        }
     }
     
     

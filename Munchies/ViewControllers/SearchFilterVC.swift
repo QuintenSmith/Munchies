@@ -99,7 +99,8 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
 //        }
         
         //run fetch functions
-        RecipeFetchController.shared.searchRecipiesBy(ingredients: convertIngredientArrayToString()) { (recipes) in
+        #warning ("replace the ingredients with this: convertIngredientArrayToString()")
+        RecipeFetchController.shared.searchRecipiesBy(ingredients: RecipeFetchController.shared.temporatyIngredients ) { (recipes) in
             print("✅Finished fetching recipies")
             guard let recipes = recipes else {return}
             RecipeFetchController.shared.recipes = recipes
@@ -115,16 +116,29 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
                 print("✅Finished fetching detailed recipies")
                 DispatchQueue.main.async {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.present(SearchVC(), animated: true, completion: nil)
+                    self.updateTableViewAfterTimeFilter()
+                    print("🚬🚬 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipies.count)")
+                    
+                    let storyboard = UIStoryboard(name: "Search", bundle: nil)
+                    let searchVC = storyboard.instantiateViewController(withIdentifier: "searchStoryboardID")
+                    let navigationController = UINavigationController(rootViewController: searchVC)
+                    self.present(navigationController, animated: true, completion: nil)
                 }
             })
         }
     }
-    
+
     
     //MARK: - Helper Method to convert array into string
     func convertIngredientArrayToString() -> String{
        return ingredientListFromCamera.joined(separator: ", ")
+    }
+    
+    
+    //MARK: - helper function to filter by time it takes to cook diner
+    func updateTableViewAfterTimeFilter(){
+        RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: curentTagButtonTime)
+        print("🔥🔥")
     }
     
     
@@ -148,8 +162,6 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         
         // Create JPG image data from UIImage with complresion of 0.8
         let imageData = image.jpegData(compressionQuality: 0.8)
-        
-        
         presentClasificationAlert()
     }
     
@@ -206,15 +218,15 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         present(alert, animated: true)
     }
     
-    //MARK: = Actions
     
+    //MARK: = Actions
     @IBAction func cameraButtonTapped(_ sender: Any) {
-        
         if  UIImagePickerController.isSourceTypeAvailable(.camera) {
             presentCamera(sourceType: .camera)
         }
-        
     }
+    
+    
     
 
 }
