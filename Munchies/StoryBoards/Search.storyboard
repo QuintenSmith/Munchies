@@ -72,13 +72,12 @@
                                             <outlet property="recipeImage" destination="Wd5-3k-iMb" id="DjA-JW-vOE"/>
                                             <outlet property="recipeTitleLbl" destination="rJf-sk-OGR" id="fi5-Rk-u1e"/>
                                             <outlet property="starsLbl" destination="PXR-cu-2x7" id="kln-ZF-yRk"/>
-                                            <segue destination="YFd-UQ-ona" kind="show" id="8Ag-UA-JX8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="pV5-FQ-kP4" id="NaI-gp-aBN"/>
-                                    <outlet property="delegate" destination="pV5-FQ-kP4" id="iUl-c8-xnt"/>
+                                    <outlet property="dataSource" destination="pV5-FQ-kP4" id="DgG-lP-QMl"/>
+                                    <outlet property="delegate" destination="pV5-FQ-kP4" id="GdT-jY-Td8"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -91,7 +90,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vTc-Mg-gjW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Results" id="MMz-Me-Yuf">
+                    <navigationItem key="navigationItem" title="Search Results" id="MMz-Me-Yuf">
                         <leftBarButtonItems>
                             <barButtonItem title="Back" id="RaI-MS-uVh"/>
                             <barButtonItem id="Dbz-Ci-qbZ"/>
@@ -100,7 +99,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuBtn" destination="Dbz-Ci-qbZ" id="JsE-2o-oXi"/>
-                        <outlet property="searchCollectionView" destination="mqI-dg-Gej" id="zgW-0Q-tIp"/>
+                        <outlet property="searchResultColectionView" destination="mqI-dg-Gej" id="LoP-as-S9L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lc-1l-rtv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,54 +10,75 @@ import UIKit
 
 class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    //MARK: - Outlets
     @IBOutlet weak var menuBtn: UIBarButtonItem!
+    @IBOutlet var searchResultColectionView: UICollectionView!
     
-    @IBOutlet weak var searchCollectionView: UICollectionView!
     
-    var recipies: [Recipe] = {
-        
-        let recipe1 = Recipe(picture: UIImage(named: "burger0")!, recipeTitle: "Burger", rating: 3)
-        let recipe2 = Recipe(picture: UIImage(named: "pasta6")!, recipeTitle: "Pasta", rating: 5)
-        let recipe3 = Recipe(picture: UIImage(named: "pizza1")!, recipeTitle: "Pizza", rating: 4)
-        let recipe4 = Recipe(picture: UIImage(named: "salad2")!, recipeTitle: "Salad", rating: 3)
-        let recipe5 = Recipe(picture: UIImage(named: "sandwich1")!, recipeTitle: "Sandwich", rating: 4)
-        let recipe6 = Recipe(picture: UIImage(named: "burger2")!, recipeTitle: "Burger", rating: 1)
-        let recipe7 = Recipe(picture: UIImage(named: "pizza3")!, recipeTitle: "Pizza", rating: 4)
-        let recipe8 = Recipe(picture: UIImage(named: "salad6")!, recipeTitle: "Salad", rating: 2)
-        var someMockRecipe : [Recipe] = [recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7, recipe8]
-        
-        return someMockRecipe
-    }()
-    
+    //MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.searchCollectionView.delegate = self
-        self.searchCollectionView.dataSource = self
-        
+        self.searchResultColectionView.delegate = self
+        self.searchResultColectionView.dataSource = self
+        searchResultColectionView.reloadData()
         sideMenu()
     }
     
+    
+    //MARK: - Side Menu Method
     func sideMenu() {
         if revealViewController() != nil {
-            
             menuBtn.target = revealViewController()
             menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
             revealViewController().rearViewRevealWidth = 275
-            
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             view.layoutIfNeeded()
         }
     }
     
+    
+    //MARK: - CollectionView Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipies.count
+        return RecipeFetchController.shared.filteredRecipies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as? SearchCollectionViewCell else {return UICollectionViewCell()}
-        let recipe = recipies[indexPath.row]
-        cell.cellData = recipe
+        let recipe = RecipeFetchController.shared.filteredRecipies[indexPath.row]
+        RecipeFetchController.shared.fetchImage(at: recipe.image) { (image) in
+            DispatchQueue.main.async {
+                cell.cellData = recipe
+                cell.thumbnail = image
+
+            }
+        }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let recipe = RecipeFetchController.shared.filteredRecipies[indexPath.row]
+        let detailViewController = UIStoryboard.init(name: "Recipe", bundle: nil).instantiateViewController(withIdentifier: "recipeDetailView") as! RecipeVC
+        
+        let cell = searchResultColectionView.cellForItem(at: indexPath) as! SearchCollectionViewCell
+        
+        
+        let image = cell.recipeImage.image
+        detailViewController.recipeImage = image
+        detailViewController.recipe = recipe
+        
+        navigationController?.pushViewController(detailViewController, animated: true)
+        
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toRecipeDetailSegue" {
+//
+//            guard let destinationVC = segue.destination as? RecipeVC else { print("❌") ; return}
+//          //  let recipe =
+//            //need to add computed propertyy to the model so i can pass the whole recipe insted of recipe and image
+//            guard let indexPath = searchResultColectionView.indexPathsForSelectedItems?.first else {
+//                return
+//            }
+//        }
+//    }
 }

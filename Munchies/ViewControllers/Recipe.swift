@@ -26,9 +26,33 @@ class Recipe {
         self.isFavorite = isFavorite
     }
     
-    
-    
-    
-    
+}
+
+
+//MARK: = Recipe model for fetching
+
+struct JSONDictionary: Decodable {
+    let results: [fetchedRecipe]
+}
+
+struct fetchedRecipe: Decodable {
+    let id: Int
+    let title: String
+    let likes: Int
+    let image: String
+}
+
+
+struct DetailedRecipe: Decodable {
+    let id: Int
+    let title: String
+    let readyInMinutes: Int
+    let image: String
+    //let dishTypes: [String]
+    //let cuisines: [String] //not sure
+    let instructions : String
+    // let analyzedInstructions : []
+    let servings: Int?
+    let preparationMinutes: Int?
     
 }

@@ -52,6 +52,10 @@ class sideMenuVC: UIViewController, UITableViewDelegate {
         }
     }
     
+<<<<<<< HEAD
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+=======
     
     //MARK: - Camera Action
     
@@ -59,11 +63,7 @@ class sideMenuVC: UIViewController, UITableViewDelegate {
         
         
         
-    }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+>>>>>>> cea41cb00c2d58da6fb6208f49968c91df8727d2
     }
     
 }
