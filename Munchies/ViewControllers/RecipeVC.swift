@@ -10,41 +10,28 @@ import UIKit
 
 class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var cookwareTableView: UITableView!
-    @IBOutlet weak var ingredientContentView: UIView!
-    @IBOutlet weak var instructionsTextView: UITextView!
+    @IBOutlet weak var tableView: UITableView!
     
-    let cookware = ["Banana", "Banana", "Banana", "Banana", "Banana"]
+    let ingredients = ["Banana", "Banana", "Banana", "Banana", "Banana"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.cookwareTableView.delegate = self
-        self.cookwareTableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cookware.count
+        return ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CookwareCell", for: indexPath)
-        let cookware = self.cookware[indexPath.row]
-        cell.textLabel?.text = cookware
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath)
+        let ingredients = self.ingredients[indexPath.row]
+        cell.textLabel?.text = ingredients
         return cell 
     }
     
     
-    @IBAction func cookwareBtnTapped(_ sender: Any) {
-        cookwareTableView.isHidden = !cookwareTableView.isHidden
-    }
-    
-    @IBAction func ingredientBtnTapped(_ sender: Any) {
-           self.ingredientContentView.isHidden = !self.ingredientContentView.isHidden
-    }
-    
-    @IBAction func instructionsBtnTapped(_ sender: Any) {
-        instructionsTextView.isHidden = !instructionsTextView.isHidden
-    }
     
     @IBAction func backBtnTapped(_ sender: Any) {
         self.dismiss(animated: true) {

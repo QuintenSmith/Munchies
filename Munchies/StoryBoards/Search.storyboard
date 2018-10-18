@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mqI-dg-Gej">
-                                <rect key="frame" x="18.5" y="209" width="338" height="458"/>
+                                <rect key="frame" x="18.5" y="88" width="338" height="579"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hMl-Cu-E3F">
                                     <size key="itemSize" width="161" height="159"/>
@@ -81,62 +81,31 @@
                                     <outlet property="delegate" destination="pV5-FQ-kP4" id="iUl-c8-xnt"/>
                                 </connections>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="VNe-uB-SWK">
-                                <rect key="frame" x="18.5" y="160" width="338" height="27"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-Ut-tHg">
-                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="27"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <state key="normal" title="Search by filters only">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Put-iT-8it">
-                                        <rect key="frame" x="174.5" y="0.0" width="163.5" height="27"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Set filters">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="aXz-Vd-GYq" kind="show" id="lwJ-IB-M2k"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <searchBar contentMode="redraw" barStyle="blackTranslucent" text="" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="pXI-7B-JWN">
-                                <rect key="frame" x="20" y="88" width="335" height="56"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pXI-7B-JWN" firstAttribute="leading" secondItem="vTc-Mg-gjW" secondAttribute="leading" constant="20" id="2sd-cK-2rA"/>
-                            <constraint firstItem="VNe-uB-SWK" firstAttribute="top" secondItem="pXI-7B-JWN" secondAttribute="bottom" constant="16" id="DsH-rO-8lJ"/>
-                            <constraint firstItem="vTc-Mg-gjW" firstAttribute="trailing" secondItem="VNe-uB-SWK" secondAttribute="trailing" constant="18.5" id="Gbj-r8-RJp"/>
                             <constraint firstItem="mqI-dg-Gej" firstAttribute="leading" secondItem="vTc-Mg-gjW" secondAttribute="leading" constant="18.5" id="MhG-Ye-Q4R"/>
                             <constraint firstItem="mqI-dg-Gej" firstAttribute="bottom" secondItem="vTc-Mg-gjW" secondAttribute="bottom" id="eot-nY-FhQ"/>
-                            <constraint firstItem="vTc-Mg-gjW" firstAttribute="trailing" secondItem="pXI-7B-JWN" secondAttribute="trailing" constant="20" id="jnc-eB-MlX"/>
-                            <constraint firstItem="VNe-uB-SWK" firstAttribute="leading" secondItem="vTc-Mg-gjW" secondAttribute="leading" constant="18.5" id="vHN-Bt-TJo"/>
+                            <constraint firstItem="mqI-dg-Gej" firstAttribute="top" secondItem="vTc-Mg-gjW" secondAttribute="top" constant="24" id="tHP-if-QlP"/>
                             <constraint firstAttribute="trailing" secondItem="mqI-dg-Gej" secondAttribute="trailing" constant="18.5" id="y28-qM-uqE"/>
-                            <constraint firstItem="mqI-dg-Gej" firstAttribute="top" secondItem="VNe-uB-SWK" secondAttribute="bottom" constant="22" id="yhM-Uc-TMh"/>
-                            <constraint firstItem="pXI-7B-JWN" firstAttribute="top" secondItem="vTc-Mg-gjW" secondAttribute="top" constant="24" id="zxx-ES-8eM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vTc-Mg-gjW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Brand" id="gnl-f5-X26">
-                        <barButtonItem key="leftBarButtonItem" id="bTH-MK-fce"/>
+                    <navigationItem key="navigationItem" title="Results" id="MMz-Me-Yuf">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Back" id="RaI-MS-uVh"/>
+                            <barButtonItem id="Dbz-Ci-qbZ"/>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="Hby-sb-f30"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="menuBtn" destination="bTH-MK-fce" id="ftP-1Y-CUc"/>
+                        <outlet property="menuBtn" destination="Dbz-Ci-qbZ" id="JsE-2o-oXi"/>
                         <outlet property="searchCollectionView" destination="mqI-dg-Gej" id="zgW-0Q-tIp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lc-1l-rtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1768.8" y="-40.029985007496258"/>
+            <point key="canvasLocation" x="2242" y="-34"/>
         </scene>
         <!--Recipe-->
         <scene sceneID="c7J-mj-BeN">
@@ -144,15 +113,7 @@
                 <viewControllerPlaceholder storyboardName="Recipe" id="YFd-UQ-ona" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLB-lz-ETn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3796" y="-89.055472263868069"/>
-        </scene>
-        <!--Filter-->
-        <scene sceneID="CmV-tF-a2m">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Filter" id="aXz-Vd-GYq" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6UD-2X-xoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3828.8000000000002" y="-2.6986506746626691"/>
+            <point key="canvasLocation" x="2887" y="-40"/>
         </scene>
         <!--Search-->
         <scene sceneID="4gN-lN-cyC">
@@ -166,7 +127,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="pV5-FQ-kP4" kind="relationship" relationship="rootViewController" id="xdS-GV-Hkj"/>
+                        <segue destination="pV5-FQ-kP4" kind="relationship" relationship="rootViewController" id="Bk6-Lr-or5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKv-f0-Q7M" userLabel="First Responder" sceneMemberID="firstResponder"/>

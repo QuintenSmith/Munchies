@@ -1,22 +1,22 @@
 //
-//  sideMenuVC.swift
+//  ProfileVC.swift
 //  Munchies
 //
-//  Created by Quinten Smith on 10/13/18.
+//  Created by Quinten Smith on 10/16/18.
 //  Copyright © 2018 Quinten Smith. All rights reserved.
 //
 
 import UIKit
 
-class sideMenuVC: UIViewController {
-    
+class ProfileVC: UIViewController {
+
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sideMenu()
+      sideMenu()
     }
-
+    
     func sideMenu() {
         if revealViewController() != nil {
             
