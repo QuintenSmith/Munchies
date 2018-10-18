@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Camera-->
+        <!--Picture to be classified-->
         <scene sceneID="A3e-WW-kCg">
             <objects>
                 <viewController id="go2-HM-Pop" customClass="CameraVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,73 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAa-3c-Cft">
-                                <rect key="frame" x="0.0" y="64" width="375" height="505"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="A6C-F4-eAM">
-                                        <rect key="frame" x="16" y="467" width="343" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMz-Tv-2KA">
-                                                <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Produce"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-XN-UjP">
-                                                <rect key="frame" x="86" y="0.0" width="85.5" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Dairy">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkk-Dm-quS">
-                                                <rect key="frame" x="171.5" y="0.0" width="86" height="30"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Meat"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpe-HN-Zj6">
-                                                <rect key="frame" x="257.5" y="0.0" width="85.5" height="30"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Other"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="A6C-F4-eAM" secondAttribute="bottom" constant="8" id="0Na-bg-7jU"/>
-                                    <constraint firstAttribute="trailing" secondItem="A6C-F4-eAM" secondAttribute="trailing" constant="16" id="6ml-Kz-lfS"/>
-                                    <constraint firstItem="A6C-F4-eAM" firstAttribute="leading" secondItem="pAa-3c-Cft" secondAttribute="leading" constant="16" id="dfA-GV-6QD"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXj-e1-Wyv">
-                                <rect key="frame" x="156.5" y="587" width="62" height="62"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="ADk-ua-iDw"/>
-                                    <constraint firstAttribute="width" constant="62" id="b2q-16-liE"/>
-                                </constraints>
-                                <state key="normal" title="Camera"/>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KOC-kV-zgT">
+                                <rect key="frame" x="0.0" y="64" width="375" height="653"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AXj-e1-Wyv" firstAttribute="top" secondItem="pAa-3c-Cft" secondAttribute="bottom" constant="18" id="9az-xp-cla"/>
-                            <constraint firstItem="gID-jG-TQM" firstAttribute="trailing" secondItem="pAa-3c-Cft" secondAttribute="trailing" id="MfN-RX-vj3"/>
-                            <constraint firstItem="gID-jG-TQM" firstAttribute="bottom" secondItem="AXj-e1-Wyv" secondAttribute="bottom" constant="18" id="WIh-1f-Rdg"/>
-                            <constraint firstItem="gID-jG-TQM" firstAttribute="trailing" secondItem="AXj-e1-Wyv" secondAttribute="trailing" constant="156.5" id="Xxe-rr-JKD"/>
-                            <constraint firstItem="pAa-3c-Cft" firstAttribute="leading" secondItem="gID-jG-TQM" secondAttribute="leading" id="cTX-kv-Tf0"/>
-                            <constraint firstItem="pAa-3c-Cft" firstAttribute="top" secondItem="gID-jG-TQM" secondAttribute="top" id="cmS-x7-SsY"/>
-                            <constraint firstItem="AXj-e1-Wyv" firstAttribute="leading" secondItem="gID-jG-TQM" secondAttribute="leading" constant="156.5" id="o03-VW-MJk"/>
+                            <constraint firstItem="gID-jG-TQM" firstAttribute="bottom" secondItem="KOC-kV-zgT" secondAttribute="bottom" constant="-50" id="Pef-WU-zef"/>
+                            <constraint firstItem="gID-jG-TQM" firstAttribute="trailing" secondItem="KOC-kV-zgT" secondAttribute="trailing" id="SLb-2h-Gkt"/>
+                            <constraint firstItem="KOC-kV-zgT" firstAttribute="leading" secondItem="gID-jG-TQM" secondAttribute="leading" id="VXM-oA-qyO"/>
+                            <constraint firstItem="KOC-kV-zgT" firstAttribute="top" secondItem="gID-jG-TQM" secondAttribute="top" id="p3Z-vf-WB5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gID-jG-TQM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Camera" id="AeG-hd-lkq">
+                    <navigationItem key="navigationItem" title="Picture to be classified" id="AeG-hd-lkq">
                         <barButtonItem key="leftBarButtonItem" title="←" id="OU8-EK-e9r">
                             <connections>
                                 <action selector="backBtnTapped:" destination="go2-HM-Pop" id="wyK-r9-XLv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageToBeClassified" destination="KOC-kV-zgT" id="gRx-A7-LWd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="267-VR-sxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
