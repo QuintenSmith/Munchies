@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>398</string>
+	<string>493</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
@@ -25,7 +25,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>Filter</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>SearchFilter</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

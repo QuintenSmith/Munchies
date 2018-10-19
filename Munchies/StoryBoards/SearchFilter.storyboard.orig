@@ -319,6 +319,10 @@
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="imageToBeClasified" destination="9m7-JP-TJU" id="I8v-DH-F3i"/>
+<<<<<<< HEAD
+=======
+                        <outlet property="tableView" destination="B2c-mB-pVM" id="VFx-He-PMu"/>
+>>>>>>> quinten
                         <segue destination="6g8-SA-vJG" kind="show" id="SNp-Xd-bEt"/>
                     </connections>
                 </viewController>
