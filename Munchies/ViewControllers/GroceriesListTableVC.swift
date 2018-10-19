@@ -31,6 +31,7 @@ class GroceriesListTableVC: UITableViewController {
         
         grocerySectionTitles = [String](groceryDictionary.keys)
         grocerySectionTitles = grocerySectionTitles.sorted(by: { $0 < $1 })
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -49,7 +50,7 @@ class GroceriesListTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroceriesLIstCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroceriesListCell", for: indexPath)
         let itemKey = grocerySectionTitles[indexPath.section]
         if let groceryValues = groceryDictionary[itemKey] {
             cell.textLabel?.text = groceryValues[indexPath.row]

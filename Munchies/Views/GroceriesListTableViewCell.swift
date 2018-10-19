@@ -21,6 +21,5 @@ class GroceriesListTableViewCell: UITableViewCell {
     func updateViews() {
         guard let recipe = recipe else {return}
         nameLabel.text = recipe.recipeTitle
-        
     }
 }
