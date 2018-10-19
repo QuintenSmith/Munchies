@@ -42,6 +42,26 @@ struct fetchedRecipe: Decodable {
     let image: String
 }
 
+struct Steps: Decodable {
+    let number: Int
+    let step: String
+}
+
+struct Instructions: Decodable {
+    let name: String
+    let steps : [Steps]
+}
+
+struct extendedIngredients: Decodable {
+    let image: String
+    let name: String
+    let amount: Double
+    let unit: String
+    let unitShort: String?
+    let unitLong:  String?
+    let originalString: String
+    
+}
 
 struct DetailedRecipe: Decodable {
     let id: Int
@@ -50,9 +70,19 @@ struct DetailedRecipe: Decodable {
     let image: String
     //let dishTypes: [String]
     //let cuisines: [String] //not sure
-    let instructions : String
-    // let analyzedInstructions : []
+   // let instructions : String
+    let analyzedInstructions : [Instructions]
     let servings: Int?
     let preparationMinutes: Int?
-    
+    let extendedIngredients: [extendedIngredients]?
 }
+
+struct RecipeForDetailView {
+    var recipe: DetailedRecipe
+    var picture: UIImage?
+}
+
+
+
+
+
