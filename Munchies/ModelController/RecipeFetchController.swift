@@ -17,9 +17,16 @@ class RecipeFetchController {
     
     
     //MARK: - Properties
+    
+    //properties for query items from profilePage
+    var diets: String = ""
+    var intolerance: String = ""
+    
+    
+    
     //temporary ingrediens - delete wne app is ready
     #warning ("change the input value when calling fetch function in searchfilterVC")
-    var temporatyIngredients = "Chicken, butter, ketchup"
+    var temporatyIngredients = "Salad, choicken, onions"
     
     //initial fetch
     var recipes: [fetchedRecipe] = []
@@ -27,6 +34,9 @@ class RecipeFetchController {
     var recipiesWithDetail: [DetailedRecipe] = []
     //filtered locally on the device - time it takes to cook, portions
     var filteredRecipies: [DetailedRecipe] = []
+    // container to store a recipy to be displayed in the detail view
+    var recipeForDetailView : RecipeForDetailView?
+    
     //random joke
     var randomJoke : String = "Remember: You can eat your way out of almost any problem."
     
@@ -37,52 +47,68 @@ class RecipeFetchController {
     private let baseURLStringFroDetiledRecipe = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/informationBulk"
     //url for random food joke
     private let baseURLStringForRandomJoke = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random"
-
+    
     
     
     //MARK: - Fetch recipies by ingredients
     func searchRecipiesBy(ingredients: String, completion: @escaping ([fetchedRecipe]?) -> Void) {
         
         guard let baseUrl = URL(string: baseURLString) else {
-            fatalError("Bad URL")
+            fatalError("❌ Bad base URL for first recipe search")
         }
         
         var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
         
-        //Query Items:
-        //FIXME: the queries needs to came in from user profile
-    #warning ("the queries needs to came in from user profile")
-        let cuisine = URLQueryItem(name: "cuisine", value: "american")
-        let intolerance = URLQueryItem(name: "intolerances", value: "peanut, shellfish, soy")
-        let instructionsRequired = URLQueryItem(name: "instructionsRequired", value: "true")
+        var querryComponents: [URLQueryItem] = []
+        
+        //MARK: - Query Items:
+        
+        if intolerance != "" {
+            let intoleranceQuery = URLQueryItem(name: "intolerances", value: intolerance)
+            querryComponents.append(intoleranceQuery)
+            print("👻👻👻 \(intoleranceQuery)")
+        }
+        if diets != "" {
+            let dietQuery = URLQueryItem(name: "diet", value: diets)
+            querryComponents.append(dietQuery)
+        }
+        
+        let ingredientAmoutQuery = URLQueryItem(name: "number", value: "30")
+        querryComponents.append(ingredientAmoutQuery)
+        
+        let instructionQuery = URLQueryItem(name: "instructionsRequired", value: "true")
+        querryComponents.append(instructionQuery)
+        
         let ingredientQuery = URLQueryItem(name: "includeIngredients", value: ingredients)
-        let typeQuery = URLQueryItem(name: "type", value: "side dish")
-        let dietQuery = URLQueryItem(name: "diet", value: "vegan")
+        querryComponents.append(ingredientQuery)
+        
+        //to add this we need to add button on the "SearchFilterVC" and set those values there
+        //let typeQuery = URLQueryItem(name: "type", value: "side dish")
+        //let cuisine = URLQueryItem(name: "cuisine", value: "american")
         
         //Add Queries to components
-        components?.queryItems = [cuisine, intolerance, instructionsRequired, ingredientQuery]
+        components?.queryItems = querryComponents
         
         guard let url = components?.url else {completion(nil); return}
         
         //Add Header Files
         var request = URLRequest(url: url)
-    //#error ("need to remove this before uploading to github")
         request.addValue(getApiKey(named: "X-Mashape-Key"), forHTTPHeaderField: "X-Mashape-Key")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        print("🐷🐷🐷 \(url)")
+        print("🐷🐷🐷 Original URL: \n \(url)")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
-                print("There was an error fetching from datatask: \(error) \(error.localizedDescription)")
+                print("❌ There was an error fetching from datatask: \(error) \(error.localizedDescription)")
                 completion([]); return
             }
             
             if let response = response {
-                print("Server Response: \(response)")
+                print("➡️ Server Response: \(response)")
             }
             
             guard let data = data else {
-                print("No data returned")
+                print("❌ No data returned")
                 completion([]); return
             }
             
@@ -91,7 +117,7 @@ class RecipeFetchController {
                 let recipes = jsonDictionary.results.compactMap({$0})
                 completion(recipes)
             } catch let error {
-                print("There was an error decoding from jsonDictionary: \(error) \(error.localizedDescription)")
+                print("❌ There was an error decoding from jsonDictionary: \(error) \(error.localizedDescription)")
                 completion([]); return
             }
             }.resume()
@@ -100,16 +126,14 @@ class RecipeFetchController {
     
     //MARK: - Fetch detiled Recipies
     func fetchDetailedRecipies(ids: [Int], completion: @escaping ([DetailedRecipe]?)-> Void) {
-        
         guard let baseURL = URL(string: baseURLStringFroDetiledRecipe) else {
-            fatalError("bad base url for detailed Recipe")
+            fatalError("❌ bad base url for detailed Recipe")
         }
         
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         //converts int array to string, and joins them together
         let idsAsString = ids.compactMap({String($0)}).joined(separator: ",")
-        
         let idQueries = URLQueryItem(name: "ids", value: idsAsString)
         
         components?.queryItems = [idQueries]
@@ -119,11 +143,8 @@ class RecipeFetchController {
             completion([])
             return
         }
-        
-        print("☢️🖖\(url)")
-        
+        print("☢️🖖 detail URL: \n \(url)")
         var request = URLRequest(url: url)
-        
         
         request.addValue(getApiKey(named: "X-Mashape-Key"), forHTTPHeaderField: "X-Mashape-Key")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -134,17 +155,14 @@ class RecipeFetchController {
                 completion([])
                 return
             }
-            
             if let response = response {
-                print("Server Response: \(response)")
+                print("➡️ Server Response: \(response)")
             }
-            
             guard let data = data else {
-                print("❌Error: No Data returned from url session on detail recipie")
+                print("❌ Error: No Data returned from url session on detail recipie")
                 completion([])
                 return
             }
-            
             //decode Data
             do{
                 let detailedRecipies = try JSONDecoder().decode([DetailedRecipe].self, from: data)
@@ -152,11 +170,9 @@ class RecipeFetchController {
                 self.recipiesWithDetail = detailedRecipiesMaped
                 completion(detailedRecipiesMaped)
             }catch {
-                print("There was an error on \(#function): \(error) \(error.localizedDescription)")
+                print("❌ There was an error on \(#function): \(error) \(error.localizedDescription)")
                 completion([])
             }
-            
-            
             }.resume()
     }
     
@@ -166,59 +182,52 @@ class RecipeFetchController {
         guard let url = URL(string: URLString) else {completion(nil); return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                print("There was an error fetching Images from datasource \(#function) \(error) \(error.localizedDescription)")
+                print("❌ There was an error fetching Images from datasource \(#function) \(error) \(error.localizedDescription)")
                 completion(nil)
                 return }
             
             if let response = response {
-                print("Server Response: \(response)")
+                print("➡️ Server Response: \(response)")
             }
-            
             guard let data = data, let image = UIImage(data: data) else {completion(nil); return}
             completion(image)
             }.resume()
-        
     }
     
-    
-    //Filter Recipies by time it take to make them
-    func filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: [DetailedRecipe], timeItShouldTake: Int) {
+    //MARK: - Filter Recipies by time it take to make them
+    func filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: [DetailedRecipe], timeItShouldTake: Int, servingAmount: Int) {
         for recipe in recipiesWithDetail {
-            if recipe.readyInMinutes <= timeItShouldTake {
+            if recipe.readyInMinutes <= timeItShouldTake && recipe.servings == servingAmount{
                 filteredRecipies.append(recipe)
             }
         }
         
     }
     
-    
-    //MARK: - Fetch random foor fact
+    //MARK: - Fetch random food fact
     func fetchRandomJoke(completion: @escaping(Bool) -> Void) {
         guard let baseURL = URL(string: baseURLStringForRandomJoke) else {
-            fatalError("bad base url for detailed Recipe")
+            fatalError("❌ bad base url for detailed Recipe")
         }
         var request = URLRequest(url: baseURL)
         
         request.addValue(getApiKey(named: "X-Mashape-Key"), forHTTPHeaderField: "X-Mashape-Key")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-    
+        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print("❌ Error during URL Session \(error.localizedDescription)")
                 completion(false)
                 return
             }
-            
             if let response = response {
-                print("❌ Server Response: \(response)")
+                print("➡️ Server Response: \(response)")
             }
-            
             guard let data = data else {
-                print("❌Error: No Data returned from url session on random joke")
+                print("❌ Error: No Data returned from url session on random joke")
                 completion(false)
                 return
             }
-            
             do{
                 let randomFoodJoke = try JSONDecoder().decode(RandomJoke.self, from: data)
                 self.randomJoke = randomFoodJoke.text
@@ -227,14 +236,11 @@ class RecipeFetchController {
                 print("❌ There was an error on \(#function): \(error) \(error.localizedDescription)")
                 completion(false)
             }
-            
-        }.resume()
-        
+            }.resume()
     }
     
     
     //MARK: - Getting the ApiKey
-    
     func getApiKey(named keyname: String) -> String {
         guard let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist") else {
             fatalError("❌ No File Path to API KEY")}
@@ -244,10 +250,5 @@ class RecipeFetchController {
             return ""}
         return value
     }
-    
-    
- 
-
-    
     
 }

@@ -47,9 +47,10 @@
 		1CE10DF8216E8DD10090A827 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DF7216E8DD10090A827 /* SignUp.storyboard */; };
 		1CE10DFA216E95C10090A827 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DF9216E95C10090A827 /* LogIn.storyboard */; };
 		1CE10DFE216EADDB0090A827 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DFD216EADDB0090A827 /* Search.storyboard */; };
+		3B086D41217A4EAD000A353D /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D40217A4EAD000A353D /* InstructionsVC.swift */; };
+		3B086D43217A8B54000A353D /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */; };
 		3B691D6F2178091000F72828 /* RecipeFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B691D6E2178091000F72828 /* RecipeFetchController.swift */; };
 		3B691D71217836AC00F72828 /* RandomFoodJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B691D70217836AC00F72828 /* RandomFoodJoke.swift */; };
-		3B6E04DF2176A0C9005F1A5A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		3B770A4B216FC3A900FD7B7B /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B770A49216FC3A900FD7B7B /* Favorites.storyboard */; };
 		3B770A4D216FCC4900FD7B7B /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B770A4C216FCC4900FD7B7B /* FavoritesVC.swift */; };
 		3B770A4F216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B770A4E216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift */; };
@@ -104,6 +105,8 @@
 		1CE10DF7216E8DD10090A827 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		1CE10DF9216E95C10090A827 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		1CE10DFD216EADDB0090A827 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		3B086D40217A4EAD000A353D /* InstructionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
+		3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		3B691D6E2178091000F72828 /* RecipeFetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchController.swift; sourceTree = "<group>"; };
 		3B691D70217836AC00F72828 /* RandomFoodJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomFoodJoke.swift; path = Munchies/ModelController/RandomFoodJoke.swift; sourceTree = SOURCE_ROOT; };
 		3B770A4A216FC3A900FD7B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Munchies/StoryBoards/Base.lproj/Favorites.storyboard; sourceTree = "<group>"; };
@@ -201,10 +204,9 @@
 		1CE10DF3216E74190090A827 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3B086D3F217A388F000A353D /* Seach Recipies Flow */,
 				3B770A4C216FCC4900FD7B7B /* FavoritesVC.swift */,
-				1C047A36216FC723005683AE /* RecipeVC.swift */,
 				1C047A3C216FF0C3005683AE /* ComparePantryVC.swift */,
-				1C047A4221702D18005683AE /* SearchVC.swift */,
 				1C047A3E216FF272005683AE /* ComparePantryTableVC.swift */,
 				1CD408022170FEBB00408716 /* GrocerieListVC.swift */,
 				1C7E745C2172ED3D003462AD /* SWRevealViewController.h */,
@@ -213,7 +215,6 @@
 				1C7E745F2172EFFD003462AD /* sideMenuVC.swift */,
 				1C43FBC72176C25A00ACDAA0 /* PreferencesVC.swift */,
 				1C43FBC92176CBF700ACDAA0 /* ProfileVC.swift */,
-				1C791C882177A9E100A1AFF0 /* SearchFilterVC.swift */,
 				1C32EA672177CB8D005226D9 /* JournalVC.swift */,
 				1C32EA6D2177D54D005226D9 /* CreateJournalEntryVC.swift */,
 				1C32EA6F2177D603005226D9 /* JournalEntryVC.swift */,
@@ -245,8 +246,20 @@
 				1C32EA77217812E2005226D9 /* FavoritesTableViewCell.swift */,
 				1C0BEC5A2179258A004F5485 /* GroceriesListTableViewCell.swift */,
 				1C0BEC6621793BE7004F5485 /* JournalDashboardCollectionViewCell.swift */,
+				3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3B086D3F217A388F000A353D /* Seach Recipies Flow */ = {
+			isa = PBXGroup;
+			children = (
+				1C791C882177A9E100A1AFF0 /* SearchFilterVC.swift */,
+				1C047A4221702D18005683AE /* SearchVC.swift */,
+				1C047A36216FC723005683AE /* RecipeVC.swift */,
+				3B086D40217A4EAD000A353D /* InstructionsVC.swift */,
+			);
+			path = "Seach Recipies Flow";
 			sourceTree = "<group>";
 		};
 		3B691D6D217808F800F72828 /* ModelController */ = {
@@ -407,8 +420,10 @@
 				1C7E745E2172ED3D003462AD /* SWRevealViewController.m in Sources */,
 				3B691D6F2178091000F72828 /* RecipeFetchController.swift in Sources */,
 				1C32EA702177D603005226D9 /* JournalEntryVC.swift in Sources */,
+				3B086D41217A4EAD000A353D /* InstructionsVC.swift in Sources */,
 				1CD408032170FEBB00408716 /* GrocerieListVC.swift in Sources */,
 				3B770A60216FFE9900FD7B7B /* JournalCollectionViewCell.swift in Sources */,
+				3B086D43217A8B54000A353D /* IngredientTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +580,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -588,7 +603,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

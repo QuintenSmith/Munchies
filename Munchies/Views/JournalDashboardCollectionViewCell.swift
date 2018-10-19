@@ -26,7 +26,4 @@ class JournalDashboardCollectionViewCell: UICollectionViewCell {
         nameLabel.text = recipe.recipeTitle
         timeLabel.text = "\(recipe.rating)"
     }
-    
-    
-    
 }

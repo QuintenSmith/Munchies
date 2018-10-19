@@ -90,18 +90,21 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         //display random food joke
+//        print("🤩fetching joke")
 //        RecipeFetchController.shared.fetchRandomJoke { (success) in
 //            if success {
 //                let alert = UIAlertController(title: "Loading Results", message: RecipeFetchController.shared.randomJoke, preferredStyle: .alert)
 //                alert.addAction(UIAlertAction(title: "Haha", style: .cancel, handler: nil))
+//                print("😂presenting joke")
 //                self.present(alert, animated: true)
 //            }
 //        }
         
+        print("🤩fetching recipes")
         //run fetch functions
         #warning ("replace the ingredients with this: convertIngredientArrayToString()")
         RecipeFetchController.shared.searchRecipiesBy(ingredients: RecipeFetchController.shared.temporatyIngredients ) { (recipes) in
-            print("✅Finished fetching recipies")
+            print("✅ Finished fetching recipies")
             guard let recipes = recipes else {return}
             RecipeFetchController.shared.recipes = recipes
             
@@ -110,14 +113,16 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
                 arrayOfRecipeIds.append(recipe.id)
             }
             
+            print("🤩 fetching detailed recipies")
             RecipeFetchController.shared.fetchDetailedRecipies(ids: arrayOfRecipeIds, completion: { (detailedRecipies) in
                 guard let detailedRecipies = detailedRecipies else {return}
                 RecipeFetchController.shared.recipiesWithDetail = detailedRecipies
-                print("✅Finished fetching detailed recipies")
+                print("✅ Finished fetching detailed recipies")
+                
                 DispatchQueue.main.async {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self.updateTableViewAfterTimeFilter()
-                    print("🚬🚬 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipies.count)")
+                    print("😋😋 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipies.count)")
                     
                     let storyboard = UIStoryboard(name: "Search", bundle: nil)
                     let searchVC = storyboard.instantiateViewController(withIdentifier: "searchStoryboardID")
@@ -137,8 +142,8 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     
     //MARK: - helper function to filter by time it takes to cook diner
     func updateTableViewAfterTimeFilter(){
-        RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: curentTagButtonTime)
-        print("🔥🔥")
+        RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: curentTagButtonTime, servingAmount: portionSize)
+        print("🔥🔥 Portion size: \(portionSize), time: \(curentTagButtonTime)")
     }
     
     
@@ -190,7 +195,6 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         alert.addAction(cancelAction)
         alert.addAction(saveAction)
-        
         present(alert, animated: true)
     }
     
@@ -214,7 +218,6 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         alert.addAction(goToSearchAction)
         alert.addAction(uploadMoreAction)
-        
         present(alert, animated: true)
     }
     
