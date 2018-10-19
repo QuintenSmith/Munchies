@@ -8,19 +8,23 @@
 
 import UIKit
 
-class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var count: Int = 0
+    
     
     //MARK: - Properties
     var curentTagButtonTime: Int = 60
     var portionSize: Int = 2
-    var curentClasificationText: String = ""
+    var currentClassificationText: String = ""
     
     //This is temporary ingredient list - its gone have to be moved to model controller for proper MVC
     var ingredientListFromCamera = [String]()
     
     
     //MARK: - Outlets
-    @IBOutlet weak var ingredientTableView: UITableView!
     
     @IBOutlet weak var imageToBeClasified: UIImageView!
     
@@ -28,14 +32,34 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     //MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageToBeClasified.isHidden = true
-        
+        //imageToBeClasified.isHidden = true
         //pops the camera on initial load
         if  UIImagePickerController.isSourceTypeAvailable(.camera) {
             presentCamera(sourceType: .camera)
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as? SearchFilterIngredientTableViewCell
+        cell?.ingredientCell.text = "O  Ingredient \(indexPath.row+1)"
+        
+        return cell ?? UITableViewCell()
+        
+        //        var cell: UITableViewCell
+//        if let c = tableView.dequeueReusableCell(withIdentifier: "regular") {
+//            cell = c
+//        } else {
+//            let c = UITableViewCell(style: .default, reuseIdentifier: "regular")
+//            cell = c
+//        }
+//        cell.textLabel?.text = "New cell \(indexPath.row+1)"
+//        return cell
     }
     
 
@@ -166,6 +190,11 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     
+    @IBAction func addBtnTapped(_ sender: Any) {
+        count = count + 1
+        tableView.reloadData()
+        tableView.scrollToRow(at: IndexPath(row: count-1, section: 0), at: .bottom, animated: true)
+    }
     
     //MARK: - Clasification Alert
     func presentClasificationAlert(){
@@ -182,7 +211,7 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
             //TODO: Use current clasification and add it to the list
             
             guard let updatedText = alert.textFields?.first?.text else {return}
-            self.curentClasificationText = updatedText
+            self.currentClassificationText = updatedText
             //FIXME: keep in mind user may not need to update the clasification -
             //TODO: need to add updated clasification to the list
             //   Ingredients.ingredients.append(self.curentClasificationText)
@@ -225,8 +254,5 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
             presentCamera(sourceType: .camera)
         }
     }
-    
-    
-    
-
 }
+
