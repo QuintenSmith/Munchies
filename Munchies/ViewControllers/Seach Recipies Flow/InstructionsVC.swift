@@ -11,24 +11,24 @@ import UIKit
 class InstructionsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+    //MARK: - Outlets
     @IBOutlet weak var instructionsTableView: UITableView!
     
+    
+    //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print(instructionsTableView)
-        
         instructionsTableView.dataSource = self
         instructionsTableView.delegate = self
-
     }
 
+    
+    //MARK: - TableView Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let stepsCount = RecipeFetchController.shared.recipeForDetailView?.recipe.analyzedInstructions.first?.steps.count else {return 0}
         return stepsCount
@@ -42,15 +42,5 @@ class InstructionsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

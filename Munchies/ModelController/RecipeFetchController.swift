@@ -11,6 +11,7 @@ import Foundation
 
 class RecipeFetchController {
     
+    
     //MARK: - Singelton
     static let shared = RecipeFetchController()
     private init () {}

@@ -34,7 +34,7 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     
     
-
+    //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,20 +44,19 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         sideMenu()
     }
     
+    //MARK: - Side Menu Method
     func sideMenu() {
         if revealViewController() != nil {
-            
             menuBtn.target = revealViewController()
             menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
             revealViewController().rearViewRevealWidth = 275
-            
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             view.layoutIfNeeded()
         }
     }
     
+    
     //MARK: - Colection View Data Source
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        return recipies.count
     }

@@ -13,7 +13,7 @@ extension Date {
     func dateAsString() -> String{
         let formater = DateFormatter()
         formater.dateStyle = .medium
-        formater.timeStyle = .short
+        formater.timeStyle = .none
         return formater.string(from: self)
     }
 }

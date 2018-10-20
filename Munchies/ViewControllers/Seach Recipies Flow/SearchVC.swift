@@ -57,30 +57,16 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let recipe = RecipeFetchController.shared.filteredRecipies[indexPath.row]
-//        let detailViewController = UIStoryboard.init(name: "Recipe", bundle: nil).instantiateViewController(withIdentifier: "recipeDetailView") as! RecipeVC
-//
        let cell = searchResultColectionView.cellForItem(at: indexPath) as! SearchCollectionViewCell
-//
-//
         let image = cell.recipeImage.image
         
         
         RecipeFetchController.shared.recipeForDetailView = RecipeForDetailView.init(recipe: recipe, picture: image)
-//        detailViewController.recipeImage = image
-//        detailViewController.recipe = recipe
-//
-//        let storyboard = UIStoryboard(name: "Search", bundle: nil)
-//        let searchVC = storyboard.instantiateViewController(withIdentifier: "searchStoryboardID")
-//        let navigationController = UINavigationController(rootViewController: searchVC)
-//        self.present(navigationController, animated: true, completion: nil)
-        
         let storyboard = UIStoryboard(name: "Recipe", bundle: nil)
         let recipeVC = storyboard.instantiateViewController(withIdentifier: "recipeDetailView")
         let navigationController = UINavigationController(rootViewController: recipeVC)
         self.present(navigationController, animated: true, completion: nil)
-        
-  //      navigationController?.pushViewController(detailViewController, animated: true)
-        
+ 
     }
     
     //MARK: - Actions

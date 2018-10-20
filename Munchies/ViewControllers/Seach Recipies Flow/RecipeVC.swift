@@ -49,13 +49,12 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    
-    
     //MARK: - Actions
     @IBAction func backBtnTapped(_ sender: Any) {
         self.dismiss(animated: true) {
         }
     }
+    
     
     //MARK: - Helper method
     func updateViews() {
@@ -68,7 +67,6 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("❕ returned from unwraping Recipe Preparation in minutes on RecipeVC")
             return  }
         recipeTimeToPrepareLabel.text = "\(readyinMinutes) minutes."
-        
     }
     
     
