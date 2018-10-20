@@ -53,15 +53,8 @@ class sideMenuVC: UIViewController, UITableViewDelegate {
     }
     
     
-    //MARK: - Camera Action
     
-    @IBAction func cameraButtonPressed(_ sender: Any) {
-        
-        
-        
-    }
-    
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
     }

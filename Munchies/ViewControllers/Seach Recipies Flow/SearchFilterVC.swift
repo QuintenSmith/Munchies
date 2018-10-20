@@ -10,23 +10,19 @@ import UIKit
 
 class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
-    
-    var count: Int = 0
+    @IBOutlet weak var imageToBeClasified: UIImageView!
     
     
     //MARK: - Properties
+    var count: Int = 0
     var curentTagButtonTime: Int = 60
     var portionSize: Int = 2
     var currentClassificationText: String = ""
     
     //This is temporary ingredient list - its gone have to be moved to model controller for proper MVC
     var ingredientListFromCamera = [String]()
-    
-    
-    //MARK: - Outlets
-    
-    @IBOutlet weak var imageToBeClasified: UIImageView!
     
     
     //MARK: - LifeCycle Method
@@ -37,10 +33,9 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         if  UIImagePickerController.isSourceTypeAvailable(.camera) {
             presentCamera(sourceType: .camera)
         }
-
-        // Do any additional setup after loading the view.
     }
     
+    //MARK: - Table View Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return count
     }
@@ -48,25 +43,12 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as? SearchFilterIngredientTableViewCell
         cell?.ingredientCell.text = "O  Ingredient \(indexPath.row+1)"
-        
         return cell ?? UITableViewCell()
-        
-        //        var cell: UITableViewCell
-//        if let c = tableView.dequeueReusableCell(withIdentifier: "regular") {
-//            cell = c
-//        } else {
-//            let c = UITableViewCell(style: .default, reuseIdentifier: "regular")
-//            cell = c
-//        }
-//        cell.textLabel?.text = "New cell \(indexPath.row+1)"
-//        return cell
     }
     
-
+    
     //MARK: - Actions
     @IBAction func timeButtonTapped(_ sender: UIButton) {
-        
-
         switch sender.tag {
         case 0:
             curentTagButtonTime = 15
@@ -114,18 +96,21 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         //display random food joke
-//        RecipeFetchController.shared.fetchRandomJoke { (success) in
-//            if success {
-//                let alert = UIAlertController(title: "Loading Results", message: RecipeFetchController.shared.randomJoke, preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "Haha", style: .cancel, handler: nil))
-//                self.present(alert, animated: true)
-//            }
-//        }
+        //        print("🤩fetching joke")
+        //        RecipeFetchController.shared.fetchRandomJoke { (success) in
+        //            if success {
+        //                let alert = UIAlertController(title: "Loading Results", message: RecipeFetchController.shared.randomJoke, preferredStyle: .alert)
+        //                alert.addAction(UIAlertAction(title: "Haha", style: .cancel, handler: nil))
+        //                print("😂presenting joke")
+        //                self.present(alert, animated: true)
+        //            }
+        //        }
         
+        print("🤩fetching recipes")
         //run fetch functions
         #warning ("replace the ingredients with this: convertIngredientArrayToString()")
         RecipeFetchController.shared.searchRecipiesBy(ingredients: RecipeFetchController.shared.temporatyIngredients ) { (recipes) in
-            print("✅Finished fetching recipies")
+            print("✅ Finished fetching recipies")
             guard let recipes = recipes else {return}
             RecipeFetchController.shared.recipes = recipes
             
@@ -134,14 +119,16 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
                 arrayOfRecipeIds.append(recipe.id)
             }
             
+            print("🤩 fetching detailed recipies")
             RecipeFetchController.shared.fetchDetailedRecipies(ids: arrayOfRecipeIds, completion: { (detailedRecipies) in
                 guard let detailedRecipies = detailedRecipies else {return}
                 RecipeFetchController.shared.recipiesWithDetail = detailedRecipies
-                print("✅Finished fetching detailed recipies")
+                print("✅ Finished fetching detailed recipies")
+                
                 DispatchQueue.main.async {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self.updateTableViewAfterTimeFilter()
-                    print("🚬🚬 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipies.count)")
+                    print("😋😋 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipies.count)")
                     
                     let storyboard = UIStoryboard(name: "Search", bundle: nil)
                     let searchVC = storyboard.instantiateViewController(withIdentifier: "searchStoryboardID")
@@ -151,18 +138,18 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
             })
         }
     }
-
+    
     
     //MARK: - Helper Method to convert array into string
     func convertIngredientArrayToString() -> String{
-       return ingredientListFromCamera.joined(separator: ", ")
+        return ingredientListFromCamera.joined(separator: ", ")
     }
     
     
     //MARK: - helper function to filter by time it takes to cook diner
     func updateTableViewAfterTimeFilter(){
-        RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: curentTagButtonTime)
-        print("🔥🔥")
+        RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: curentTagButtonTime, servingAmount: portionSize)
+        print("🔥🔥 Portion size: \(portionSize), time: \(curentTagButtonTime)")
     }
     
     
@@ -219,7 +206,6 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         alert.addAction(cancelAction)
         alert.addAction(saveAction)
-        
         present(alert, animated: true)
     }
     
@@ -243,7 +229,6 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         alert.addAction(goToSearchAction)
         alert.addAction(uploadMoreAction)
-        
         present(alert, animated: true)
     }
     

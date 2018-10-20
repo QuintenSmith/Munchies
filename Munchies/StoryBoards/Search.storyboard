@@ -92,10 +92,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search Results" id="MMz-Me-Yuf">
                         <leftBarButtonItems>
-                            <barButtonItem title="Back" id="RaI-MS-uVh"/>
+                            <barButtonItem title="Back" id="RaI-MS-uVh">
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="pV5-FQ-kP4" id="57A-7f-G8I"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem id="Dbz-Ci-qbZ"/>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="Hby-sb-f30"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuBtn" destination="Dbz-Ci-qbZ" id="JsE-2o-oXi"/>

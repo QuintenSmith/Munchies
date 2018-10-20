@@ -57,28 +57,24 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let recipe = RecipeFetchController.shared.filteredRecipies[indexPath.row]
-        let detailViewController = UIStoryboard.init(name: "Recipe", bundle: nil).instantiateViewController(withIdentifier: "recipeDetailView") as! RecipeVC
-        
-        let cell = searchResultColectionView.cellForItem(at: indexPath) as! SearchCollectionViewCell
-        
-        
+       let cell = searchResultColectionView.cellForItem(at: indexPath) as! SearchCollectionViewCell
         let image = cell.recipeImage.image
-        detailViewController.recipeImage = image
-        detailViewController.recipe = recipe
         
-        navigationController?.pushViewController(detailViewController, animated: true)
         
+        RecipeFetchController.shared.recipeForDetailView = RecipeForDetailView.init(recipe: recipe, picture: image)
+        let storyboard = UIStoryboard(name: "Recipe", bundle: nil)
+        let recipeVC = storyboard.instantiateViewController(withIdentifier: "recipeDetailView")
+        let navigationController = UINavigationController(rootViewController: recipeVC)
+        self.present(navigationController, animated: true, completion: nil)
+ 
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toRecipeDetailSegue" {
-//
-//            guard let destinationVC = segue.destination as? RecipeVC else { print("❌") ; return}
-//          //  let recipe =
-//            //need to add computed propertyy to the model so i can pass the whole recipe insted of recipe and image
-//            guard let indexPath = searchResultColectionView.indexPathsForSelectedItems?.first else {
-//                return
-//            }
-//        }
-//    }
+    //MARK: - Actions
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    
+    
 }

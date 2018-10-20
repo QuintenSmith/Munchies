@@ -12,12 +12,11 @@ class JournalCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Outlets
     @IBOutlet weak var pictureView: UIImageView!
-    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var dishNameLabel: UILabel!
-    
+    @IBOutlet weak var dateLabel: UILabel!
     
     //MARK: - Properties
-    var cellData: Recipe? {
+    var cellData: JournalEntry? {
         didSet{
             updateViews()
         }
@@ -29,24 +28,9 @@ class JournalCollectionViewCell: UICollectionViewCell {
     func updateViews(){
         guard let recipe = cellData else {return}
         pictureView.image = recipe.picture
-        dishNameLabel.text = recipe.recipeTitle
+        dishNameLabel.text = recipe.title
+        dateLabel.text = recipe.date.dateAsString()
         
-        
-        
-        switch recipe.rating {
-        case 1:
-            ratingLabel.text = "⭑"
-        case 2:
-            ratingLabel.text = "⭑⭑"
-        case 3:
-            ratingLabel.text = "⭑⭑⭑"
-        case 4:
-            ratingLabel.text = "⭑⭑⭑⭑"
-        case 5:
-            ratingLabel.text = "⭑⭑⭑⭑⭑"
-        default:
-            ratingLabel.text = ""
-        }
     }
     
     
