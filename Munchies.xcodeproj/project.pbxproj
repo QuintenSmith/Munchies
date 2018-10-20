@@ -180,20 +180,14 @@
 			children = (
 				1CA911CB216BCFC600716C0E /* LaunchScreen.storyboard */,
 				1CA911C6216BCFC500716C0E /* Main.storyboard */,
-				1CE10DF9216E95C10090A827 /* LogIn.storyboard */,
-				1CE10DF7216E8DD10090A827 /* SignUp.storyboard */,
-				1CE10DFD216EADDB0090A827 /* Search.storyboard */,
 				3B770A49216FC3A900FD7B7B /* Favorites.storyboard */,
-				1C047A34216FBEDA005683AE /* Recipe.storyboard */,
+				3B3A2049217AEA03008F586F /* RecipeSearch storyboards */,
 				1C047A3A216FEBB2005683AE /* ComparePantry.storyboard */,
 				1CD408002170F99100408716 /* GroceriesList.storyboard */,
 				1CD40804217108D800408716 /* Camera.storyboard */,
-				1C43FBC32176B76900ACDAA0 /* Profile.storyboard */,
-				1C43FBC52176B93D00ACDAA0 /* Preferences.storyboard */,
-				1C43FBCB2176CF4700ACDAA0 /* SearchFilter.storyboard */,
-				1C32EA652177C9FE005226D9 /* Journal.storyboard */,
-				1C32EA692177CDBC005226D9 /* CreateJournalEntry.storyboard */,
-				1C32EA6B2177D0B8005226D9 /* JournalEntry.storyboard */,
+				3B3A204A217AEA3A008F586F /* Profile storyboard */,
+				3B3A204B217AEA83008F586F /* SignUp storyboards */,
+				3B3A2048217AE9B4008F586F /* Journal storyboards */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -279,6 +273,44 @@
 				1C32EA6D2177D54D005226D9 /* CreateJournalEntryVC.swift */,
 			);
 			path = JournalControllers;
+			sourceTree = "<group>";
+		};
+		3B3A2048217AE9B4008F586F /* Journal storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1C32EA652177C9FE005226D9 /* Journal.storyboard */,
+				1C32EA6B2177D0B8005226D9 /* JournalEntry.storyboard */,
+				1C32EA692177CDBC005226D9 /* CreateJournalEntry.storyboard */,
+			);
+			path = "Journal storyboards";
+			sourceTree = "<group>";
+		};
+		3B3A2049217AEA03008F586F /* RecipeSearch storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1C43FBCB2176CF4700ACDAA0 /* SearchFilter.storyboard */,
+				1CE10DFD216EADDB0090A827 /* Search.storyboard */,
+				1C047A34216FBEDA005683AE /* Recipe.storyboard */,
+			);
+			path = "RecipeSearch storyboards";
+			sourceTree = "<group>";
+		};
+		3B3A204A217AEA3A008F586F /* Profile storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1C43FBC32176B76900ACDAA0 /* Profile.storyboard */,
+			);
+			path = "Profile storyboard";
+			sourceTree = "<group>";
+		};
+		3B3A204B217AEA83008F586F /* SignUp storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1CE10DF7216E8DD10090A827 /* SignUp.storyboard */,
+				1CE10DF9216E95C10090A827 /* LogIn.storyboard */,
+				1C43FBC52176B93D00ACDAA0 /* Preferences.storyboard */,
+			);
+			path = "SignUp storyboards";
 			sourceTree = "<group>";
 		};
 		3B691D6D217808F800F72828 /* ModelController */ = {
