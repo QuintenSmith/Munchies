@@ -34,7 +34,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="161" height="165"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pasta0" highlightedImage="burger1" translatesAutoresizingMaskIntoConstraints="NO" id="Wh1-22-Ukb">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pasta0" highlightedImage="burger1" translatesAutoresizingMaskIntoConstraints="NO" id="Wh1-22-Ukb" customClass="RoundedShadowImageView" customModule="Munchies" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="104"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="104" id="AmP-7k-KA0"/>

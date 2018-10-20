@@ -15,7 +15,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var shareBtn: RoundedShapeButton!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
-    var groceryItems = ["Apple", "Oranges", "Strawberries", "Water Melon","Grape", "Juice", "Banana", "Tomato"]
+    //var groceryItems = ["Apple", "Oranges", "Strawberries", "Water Melon","Grape", "Juice", "Banana", "Tomato"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             menuBtn.target = revealViewController()
             menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rearViewRevealWidth = 275
+            revealViewController().rearViewRevealWidth = 325
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             view.layoutIfNeeded()
@@ -39,13 +39,13 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return groceryItems.count
+       return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? GroceriesListCell
-        let groceryItems = self.groceryItems[indexPath.row]
-        cell?.ingredientLbl.text = groceryItems
+    //    let groceryItems = self.groceryItems[indexPath.row]
+   //     cell?.ingredientLbl.text = groceryItems
         return cell ?? UITableViewCell()
     }
     

@@ -35,7 +35,7 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         if revealViewController() != nil {
             menuBtn.target = revealViewController()
             menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rearViewRevealWidth = 275
+            revealViewController().rearViewRevealWidth = 325
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             view.layoutIfNeeded()
         }

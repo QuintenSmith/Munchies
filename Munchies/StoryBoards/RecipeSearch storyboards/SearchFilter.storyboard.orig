@@ -353,8 +353,11 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
+<<<<<<< HEAD
+=======
                         <outlet property="imageToBeClasified" destination="9m7-JP-TJU" id="I8v-DH-F3i"/>
                         <outlet property="menuBtn" destination="IWk-ZE-6Hi" id="S98-sB-Q3W"/>
+>>>>>>> 1f39a456f37f9a1c54334021d891d75c9f2de398
                         <segue destination="6g8-SA-vJG" kind="show" id="SNp-Xd-bEt"/>
                     </connections>
                 </viewController>
