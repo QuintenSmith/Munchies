@@ -20,6 +20,8 @@
 		1C0BEC6921793D02004F5485 /* JournalDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0BEC6821793D02004F5485 /* JournalDashboardVC.swift */; };
 		1C3084A7217A792C00DF51C0 /* searchFilterSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3084A6217A792C00DF51C0 /* searchFilterSizedTableView.swift */; };
 		1C3084A9217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3084A8217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift */; };
+		1C3084AB217ADC3E00DF51C0 /* GroceriesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3084AA217ADC3E00DF51C0 /* GroceriesListCell.swift */; };
+		1C3084AD217AE1F900DF51C0 /* RoundedShapeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3084AC217AE1F900DF51C0 /* RoundedShapeButton.swift */; };
 		1C32EA662177C9FE005226D9 /* Journal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C32EA652177C9FE005226D9 /* Journal.storyboard */; };
 		1C32EA682177CB8D005226D9 /* JournalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA672177CB8D005226D9 /* JournalVC.swift */; };
 		1C32EA6A2177CDBC005226D9 /* CreateJournalEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C32EA692177CDBC005226D9 /* CreateJournalEntry.storyboard */; };
@@ -73,6 +75,8 @@
 		1C0BEC6821793D02004F5485 /* JournalDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDashboardVC.swift; sourceTree = "<group>"; };
 		1C3084A6217A792C00DF51C0 /* searchFilterSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchFilterSizedTableView.swift; sourceTree = "<group>"; };
 		1C3084A8217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterIngredientTableViewCell.swift; sourceTree = "<group>"; };
+		1C3084AA217ADC3E00DF51C0 /* GroceriesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesListCell.swift; sourceTree = "<group>"; };
+		1C3084AC217AE1F900DF51C0 /* RoundedShapeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShapeButton.swift; sourceTree = "<group>"; };
 		1C32EA652177C9FE005226D9 /* Journal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journal.storyboard; sourceTree = "<group>"; };
 		1C32EA672177CB8D005226D9 /* JournalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalVC.swift; sourceTree = "<group>"; };
 		1C32EA692177CDBC005226D9 /* CreateJournalEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateJournalEntry.storyboard; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 				1C0BEC6621793BE7004F5485 /* JournalDashboardCollectionViewCell.swift */,
 				1C3084A6217A792C00DF51C0 /* searchFilterSizedTableView.swift */,
 				1C3084A8217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift */,
+				1C3084AA217ADC3E00DF51C0 /* GroceriesListCell.swift */,
+				1C3084AC217AE1F900DF51C0 /* RoundedShapeButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 				1C7E74602172EFFD003462AD /* sideMenuVC.swift in Sources */,
 				1C3084A9217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift in Sources */,
 				1C32EA6E2177D54D005226D9 /* CreateJournalEntryVC.swift in Sources */,
+				1C3084AB217ADC3E00DF51C0 /* GroceriesListCell.swift in Sources */,
 				3B770A4D216FCC4900FD7B7B /* FavoritesVC.swift in Sources */,
 				1C791C892177A9E100A1AFF0 /* SearchFilterVC.swift in Sources */,
 				1C32EA682177CB8D005226D9 /* JournalVC.swift in Sources */,
@@ -402,6 +409,7 @@
 				3B770A51216FE41F00FD7B7B /* Recipe.swift in Sources */,
 				3B770A4F216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift in Sources */,
 				1C0BEC6921793D02004F5485 /* JournalDashboardVC.swift in Sources */,
+				1C3084AD217AE1F900DF51C0 /* RoundedShapeButton.swift in Sources */,
 				3BC803842170292300D3AA54 /* DateExternsion.swift in Sources */,
 				1C047A37216FC723005683AE /* RecipeVC.swift in Sources */,
 				3B691D71217836AC00F72828 /* RandomFoodJoke.swift in Sources */,
