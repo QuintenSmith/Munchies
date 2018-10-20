@@ -318,7 +318,6 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
-                        <outlet property="imageToBeClasified" destination="9m7-JP-TJU" id="I8v-DH-F3i"/>
                         <segue destination="6g8-SA-vJG" kind="show" id="SNp-Xd-bEt"/>
                     </connections>
                 </viewController>
