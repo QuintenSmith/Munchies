@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="636"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffE-XT-Pcc">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="636"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="637"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INGREDIENTS ON-HAND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K3-fW-dcb">
                                                 <rect key="frame" x="71" y="26" width="233" height="24"/>
@@ -96,28 +96,37 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IHF-I0-hDq">
-                                                <rect key="frame" x="52" y="266.5" width="271" height="30"/>
+                                                <rect key="frame" x="52" y="266.5" width="271" height="28"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb6-J5-6Jt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="15 min"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb6-J5-6Jt" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="28"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" title="1/2 hr">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="Grm-Vj-3XT"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8N-r2-okm">
-                                                        <rect key="frame" x="95.5" y="0.0" width="80" height="30"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="30 min"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8N-r2-okm" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="95.5" y="0.0" width="80" height="28"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" title="1 hr">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="EUf-WW-uhl"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-51-96b">
-                                                        <rect key="frame" x="191.5" y="0.0" width="79.5" height="30"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="1 hr"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-51-96b" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="191.5" y="0.0" width="79.5" height="28"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" title="1 1/2 hr">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="6Cq-LQ-qdy"/>
                                                         </connections>
@@ -125,20 +134,24 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2g-2n-wmc">
-                                                <rect key="frame" x="52" y="312.5" width="271" height="30"/>
+                                                <rect key="frame" x="52" y="310.5" width="271" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNc-AX-yDS">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNc-AX-yDS" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="79" height="30"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="1.5 hr"/>
+                                                        <color key="backgroundColor" red="0.98431372549019602" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.49698004201680668" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="2 hr">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="YrH-4m-4Qv"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-1d-IT3">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-1d-IT3" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="96" y="0.0" width="79" height="30"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="2 hr +"/>
+                                                        <color key="backgroundColor" red="0.98431372549019602" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.49698004201680668" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="2 hr +">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="dKM-BN-e2F"/>
                                                         </connections>
@@ -153,46 +166,52 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PORTION SIZES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQi-5J-z3C">
-                                                <rect key="frame" x="114.5" y="394.5" width="146" height="24"/>
+                                                <rect key="frame" x="114.5" y="392.5" width="146" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yF8-Jf-44g">
-                                                <rect key="frame" x="52" y="434.5" width="271" height="30"/>
+                                                <rect key="frame" x="52" y="432.5" width="271" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wo-MX-aMW">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wo-MX-aMW" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="xC8-4b-QAI"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                        <state key="normal" title="1 Portion"/>
+                                                        <state key="normal" title="1 Portion">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="MdF-nQ-c05"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaX-5t-fuW">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaX-5t-fuW" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="95.5" y="0.0" width="80" height="30"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="DVU-J9-3A7"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                        <state key="normal" title="2 Portions"/>
+                                                        <state key="normal" title="2 Portions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="6BE-lB-GAO"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LP-9a-hZJ">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LP-9a-hZJ" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="191.5" y="0.0" width="79.5" height="30"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Oe2-1J-zBU"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                        <state key="normal" title="4 Portions"/>
+                                                        <state key="normal" title="4 Portions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="hvf-HB-F6k"/>
                                                         </connections>
@@ -200,39 +219,54 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cEC-W2-Zcq">
-                                                <rect key="frame" x="52" y="480.5" width="271" height="27"/>
+                                                <rect key="frame" x="52" y="478.5" width="271" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pac-ez-2dw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="27"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pac-ez-2dw" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.4973575367647059" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Y6J-XJ-59L"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                        <state key="normal" title="6 Portions"/>
+                                                        <state key="normal" title="6 Portions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="ZKm-Ti-0jC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQH-Du-tej">
-                                                        <rect key="frame" x="95.5" y="0.0" width="80" height="27"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQH-Du-tej" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="95.5" y="0.0" width="80" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.4973575367647059" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="5mT-iF-pb0"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                        <state key="normal" title="8 Portions"/>
+                                                        <state key="normal" title="8 Portions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="QFo-t4-rR6"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8K-eX-3ng">
-                                                        <rect key="frame" x="191.5" y="0.0" width="79.5" height="27"/>
-                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8K-eX-3ng" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="191.5" y="0.0" width="79.5" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.4973575367647059" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Yul-pO-eIu"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                        <state key="normal" title="10 Portions"/>
+                                                        <state key="normal" title="10 Portions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="UCc-wa-NSo"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxB-hF-sPZ">
-                                                <rect key="frame" x="136" y="531.5" width="103" height="35"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxB-hF-sPZ" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                <rect key="frame" x="136" y="532.5" width="103" height="35"/>
                                                 <color key="backgroundColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="ERv-Ak-gbR"/>
@@ -309,6 +343,7 @@
                         <viewLayoutGuide key="safeArea" id="J6R-lg-gl6"/>
                     </view>
                     <navigationItem key="navigationItem" title="SEARCH" id="97G-k3-NZF">
+                        <barButtonItem key="leftBarButtonItem" id="IWk-ZE-6Hi"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="header-1" id="wJE-Is-6AK">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -319,6 +354,7 @@
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="imageToBeClasified" destination="9m7-JP-TJU" id="I8v-DH-F3i"/>
+                        <outlet property="menuBtn" destination="IWk-ZE-6Hi" id="S98-sB-Q3W"/>
                         <segue destination="6g8-SA-vJG" kind="show" id="SNp-Xd-bEt"/>
                     </connections>
                 </viewController>

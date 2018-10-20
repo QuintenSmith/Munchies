@@ -13,7 +13,7 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageToBeClasified: UIImageView!
-    
+    @IBOutlet weak var menuBtn: UIBarButtonItem!
     
     //MARK: - Properties
     var count: Int = 0
@@ -32,6 +32,19 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         //pops the camera on initial load
         if  UIImagePickerController.isSourceTypeAvailable(.camera) {
             presentCamera(sourceType: .camera)
+        }
+        sideMenu()
+    }
+    
+    func sideMenu() {
+        if revealViewController() != nil {
+            
+            menuBtn.target = revealViewController()
+            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 325
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            view.layoutIfNeeded()
         }
     }
     

@@ -22,6 +22,7 @@
 		1C3084A9217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3084A8217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift */; };
 		1C3084AB217ADC3E00DF51C0 /* GroceriesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3084AA217ADC3E00DF51C0 /* GroceriesListCell.swift */; };
 		1C3084AD217AE1F900DF51C0 /* RoundedShapeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3084AC217AE1F900DF51C0 /* RoundedShapeButton.swift */; };
+		1C3084AF217AE97D00DF51C0 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3084AE217AE97D00DF51C0 /* RoundedImageView.swift */; };
 		1C32EA662177C9FE005226D9 /* Journal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C32EA652177C9FE005226D9 /* Journal.storyboard */; };
 		1C32EA682177CB8D005226D9 /* JournalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA672177CB8D005226D9 /* JournalVC.swift */; };
 		1C32EA6A2177CDBC005226D9 /* CreateJournalEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C32EA692177CDBC005226D9 /* CreateJournalEntry.storyboard */; };
@@ -39,6 +40,7 @@
 		1C791C892177A9E100A1AFF0 /* SearchFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C791C882177A9E100A1AFF0 /* SearchFilterVC.swift */; };
 		1C7E745E2172ED3D003462AD /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E745D2172ED3D003462AD /* SWRevealViewController.m */; };
 		1C7E74602172EFFD003462AD /* sideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E745F2172EFFD003462AD /* sideMenuVC.swift */; };
+		1C9E9D11217B95D2003E13AB /* bottomBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9E9D10217B95D2003E13AB /* bottomBorderView.swift */; };
 		1CA911C3216BCFC500716C0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA911C2216BCFC500716C0E /* AppDelegate.swift */; };
 		1CA911C8216BCFC500716C0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA911C6216BCFC500716C0E /* Main.storyboard */; };
 		1CA911CA216BCFC600716C0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CA911C9216BCFC600716C0E /* Assets.xcassets */; };
@@ -80,6 +82,7 @@
 		1C3084A8217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterIngredientTableViewCell.swift; sourceTree = "<group>"; };
 		1C3084AA217ADC3E00DF51C0 /* GroceriesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesListCell.swift; sourceTree = "<group>"; };
 		1C3084AC217AE1F900DF51C0 /* RoundedShapeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShapeButton.swift; sourceTree = "<group>"; };
+		1C3084AE217AE97D00DF51C0 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		1C32EA652177C9FE005226D9 /* Journal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journal.storyboard; sourceTree = "<group>"; };
 		1C32EA672177CB8D005226D9 /* JournalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalVC.swift; sourceTree = "<group>"; };
 		1C32EA692177CDBC005226D9 /* CreateJournalEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateJournalEntry.storyboard; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		1C7E745C2172ED3D003462AD /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1C7E745D2172ED3D003462AD /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		1C7E745F2172EFFD003462AD /* sideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuVC.swift; sourceTree = "<group>"; };
+		1C9E9D10217B95D2003E13AB /* bottomBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomBorderView.swift; sourceTree = "<group>"; };
 		1CA911BF216BCFC500716C0E /* Munchies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Munchies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA911C2216BCFC500716C0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CA911C7216BCFC500716C0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 				1C3084A8217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift */,
 				1C3084AA217ADC3E00DF51C0 /* GroceriesListCell.swift */,
 				1C3084AC217AE1F900DF51C0 /* RoundedShapeButton.swift */,
+				1C3084AE217AE97D00DF51C0 /* RoundedImageView.swift */,
+				1C9E9D10217B95D2003E13AB /* bottomBorderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,11 +426,13 @@
 				1C3084AB217ADC3E00DF51C0 /* GroceriesListCell.swift in Sources */,
 				3B770A4D216FCC4900FD7B7B /* FavoritesVC.swift in Sources */,
 				1C791C892177A9E100A1AFF0 /* SearchFilterVC.swift in Sources */,
+				1C9E9D11217B95D2003E13AB /* bottomBorderView.swift in Sources */,
 				1C32EA682177CB8D005226D9 /* JournalVC.swift in Sources */,
 				1C047A4321702D18005683AE /* SearchVC.swift in Sources */,
 				1C0BEC632179288A004F5485 /* GroceriesListTableVC.swift in Sources */,
 				1C32EA78217812E2005226D9 /* FavoritesTableViewCell.swift in Sources */,
 				1C32EA7621780FCF005226D9 /* FavoritesTableViewDataSource.swift in Sources */,
+				1C3084AF217AE97D00DF51C0 /* RoundedImageView.swift in Sources */,
 				1C0BEC5B2179258A004F5485 /* GroceriesListTableViewCell.swift in Sources */,
 				1C047A4521702EA9005683AE /* SearchCollectionViewCell.swift in Sources */,
 				1C047A3D216FF0C3005683AE /* ComparePantryVC.swift in Sources */,
@@ -604,7 +612,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5EAUJPVR66;
+				DEVELOPMENT_TEAM = 7AU78NCJUV;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -627,7 +635,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5EAUJPVR66;
+				DEVELOPMENT_TEAM = 7AU78NCJUV;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

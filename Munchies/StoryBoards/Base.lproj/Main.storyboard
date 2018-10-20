@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="-2086" y="773"/>
         </scene>
-        <!--Search-->
+        <!--SearchFilter-->
         <scene sceneID="XTz-4a-eKd">
             <objects>
-                <viewControllerPlaceholder storyboardName="Search" id="gvL-Mr-ygt" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SearchFilter" id="gvL-Mr-ygt" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJz-1H-uVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1916" y="774"/>
@@ -110,7 +110,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburgermenu-1" translatesAutoresizingMaskIntoConstraints="NO" id="RoU-cP-B2J">
-                                                    <rect key="frame" x="24" y="16" width="35" height="33"/>
+                                                    <rect key="frame" x="24" y="16" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="dIj-I8-ewY"/>
                                                         <constraint firstAttribute="width" constant="35" id="hCD-vP-bYh"/>
@@ -140,12 +140,12 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CzQ-lL-L2g">
                                         <rect key="frame" x="0.0" y="204" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CzQ-lL-L2g" id="ou5-UI-Zvg">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CzQ-lL-L2g" id="ou5-UI-Zvg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburgermenu" translatesAutoresizingMaskIntoConstraints="NO" id="sO2-4P-9FQ">
-                                                    <rect key="frame" x="24" y="16" width="35" height="30"/>
+                                                    <rect key="frame" x="24" y="16" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="7Az-Ff-dfu"/>
                                                         <constraint firstAttribute="height" constant="35" id="ZJa-1b-ZGq"/>
@@ -220,7 +220,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburger-3" translatesAutoresizingMaskIntoConstraints="NO" id="mTS-ys-pRh">
-                                                    <rect key="frame" x="24" y="16.5" width="35" height="35.5"/>
+                                                    <rect key="frame" x="24" y="16.5" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="X3m-MT-MYZ"/>
                                                         <constraint firstAttribute="height" constant="35" id="fHv-H2-oL9"/>
@@ -255,7 +255,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburger-1" translatesAutoresizingMaskIntoConstraints="NO" id="4FS-ZB-Egq">
-                                                    <rect key="frame" x="24" y="16.5" width="35" height="35.5"/>
+                                                    <rect key="frame" x="24" y="16.5" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="9yW-cS-Upn"/>
                                                         <constraint firstAttribute="height" constant="35" id="zJ0-dO-n38"/>
@@ -290,7 +290,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="AMe-u2-dsM">
-                                                    <rect key="frame" x="24" y="16.5" width="35" height="35.5"/>
+                                                    <rect key="frame" x="24" y="16.5" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="iMr-Dh-nTD"/>
                                                         <constraint firstAttribute="width" constant="35" id="nYW-jO-3ZT"/>
@@ -397,7 +397,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="129.5"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pasta2" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1sp-pv-fC4">
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pasta2" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1sp-pv-fC4" customClass="RoundedShadowImageView" customModule="Munchies" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="136"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 </imageView>
@@ -406,7 +406,7 @@
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y2z-vM-P87">
-                                                                                            <rect key="frame" x="8" y="4.0000000000000018" width="48" height="27"/>
+                                                                                            <rect key="frame" x="8" y="4" width="48" height="27"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mix Plate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEJ-bT-KXV">
