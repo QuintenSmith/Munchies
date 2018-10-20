@@ -34,7 +34,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="162" height="178"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Lr-6E-Ssl">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Lr-6E-Ssl">
                                                     <rect key="frame" x="0.0" y="0.0" width="162" height="104"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="104" id="A10-gZ-C7p"/>
@@ -42,13 +42,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N74-Av-Gn4">
-                                                    <rect key="frame" x="8" y="119" width="144" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="8" y="119" width="144" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/27/2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYB-VM-CTE">
-                                                    <rect key="frame" x="8" y="144" width="74" height="10"/>
+                                                    <rect key="frame" x="8" y="146.5" width="73" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -56,22 +56,20 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="hYB-VM-CTE" secondAttribute="trailing" constant="72" id="7UM-nt-2Sb"/>
                                             <constraint firstItem="8Lr-6E-Ssl" firstAttribute="leading" secondItem="b67-i2-qBn" secondAttribute="leading" id="7uy-db-xpM"/>
                                             <constraint firstItem="hYB-VM-CTE" firstAttribute="leading" secondItem="b67-i2-qBn" secondAttribute="leadingMargin" id="DMk-Pc-BCe"/>
                                             <constraint firstItem="8Lr-6E-Ssl" firstAttribute="top" secondItem="b67-i2-qBn" secondAttribute="top" id="YSd-v6-fug"/>
                                             <constraint firstItem="N74-Av-Gn4" firstAttribute="top" secondItem="8Lr-6E-Ssl" secondAttribute="bottom" constant="15" id="YcA-bI-gOz"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="hYB-VM-CTE" secondAttribute="bottom" constant="16" id="ZOf-iA-2RK"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="N74-Av-Gn4" secondAttribute="trailing" constant="2" id="eFc-ZO-OgV"/>
                                             <constraint firstAttribute="trailing" secondItem="8Lr-6E-Ssl" secondAttribute="trailing" id="hw3-zO-fRm"/>
                                             <constraint firstItem="N74-Av-Gn4" firstAttribute="leading" secondItem="b67-i2-qBn" secondAttribute="leadingMargin" id="kO7-o9-0dj"/>
                                             <constraint firstItem="hYB-VM-CTE" firstAttribute="top" secondItem="N74-Av-Gn4" secondAttribute="bottom" constant="8" id="rxV-qX-pz5"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="dateLabel" destination="hYB-VM-CTE" id="Yep-k4-hS7"/>
                                             <outlet property="dishNameLabel" destination="N74-Av-Gn4" id="PCP-A3-ggv"/>
                                             <outlet property="pictureView" destination="8Lr-6E-Ssl" id="zbP-yH-ZS7"/>
-                                            <outlet property="ratingLabel" destination="hYB-VM-CTE" id="Lxb-3U-GIf"/>
-                                            <segue destination="hBz-sh-g80" kind="show" id="RfZ-av-L6K"/>
+                                            <segue destination="hBz-sh-g80" kind="show" identifier="ToDetailView" id="iEu-9e-BHd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

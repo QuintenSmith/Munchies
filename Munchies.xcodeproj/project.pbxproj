@@ -25,7 +25,7 @@
 		1C32EA6A2177CDBC005226D9 /* CreateJournalEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C32EA692177CDBC005226D9 /* CreateJournalEntry.storyboard */; };
 		1C32EA6C2177D0B8005226D9 /* JournalEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C32EA6B2177D0B8005226D9 /* JournalEntry.storyboard */; };
 		1C32EA6E2177D54D005226D9 /* CreateJournalEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA6D2177D54D005226D9 /* CreateJournalEntryVC.swift */; };
-		1C32EA702177D603005226D9 /* JournalEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA6F2177D603005226D9 /* JournalEntryVC.swift */; };
+		1C32EA702177D603005226D9 /* JournalEntryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA6F2177D603005226D9 /* JournalEntryDetailVC.swift */; };
 		1C32EA722177F800005226D9 /* JournalCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA712177F800005226D9 /* JournalCollectionViewDataSource.swift */; };
 		1C32EA7621780FCF005226D9 /* FavoritesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA7521780FCF005226D9 /* FavoritesTableViewDataSource.swift */; };
 		1C32EA78217812E2005226D9 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32EA77217812E2005226D9 /* FavoritesTableViewCell.swift */; };
@@ -50,6 +50,7 @@
 		1CE10DFE216EADDB0090A827 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE10DFD216EADDB0090A827 /* Search.storyboard */; };
 		3B086D41217A4EAD000A353D /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D40217A4EAD000A353D /* InstructionsVC.swift */; };
 		3B086D43217A8B54000A353D /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */; };
+		3B3A2046217AA77E008F586F /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A2045217AA77E008F586F /* JournalController.swift */; };
 		3B691D6F2178091000F72828 /* RecipeFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B691D6E2178091000F72828 /* RecipeFetchController.swift */; };
 		3B691D71217836AC00F72828 /* RandomFoodJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B691D70217836AC00F72828 /* RandomFoodJoke.swift */; };
 		3B770A4B216FC3A900FD7B7B /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B770A49216FC3A900FD7B7B /* Favorites.storyboard */; };
@@ -80,7 +81,7 @@
 		1C32EA692177CDBC005226D9 /* CreateJournalEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateJournalEntry.storyboard; sourceTree = "<group>"; };
 		1C32EA6B2177D0B8005226D9 /* JournalEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JournalEntry.storyboard; sourceTree = "<group>"; };
 		1C32EA6D2177D54D005226D9 /* CreateJournalEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJournalEntryVC.swift; sourceTree = "<group>"; };
-		1C32EA6F2177D603005226D9 /* JournalEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryVC.swift; sourceTree = "<group>"; };
+		1C32EA6F2177D603005226D9 /* JournalEntryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryDetailVC.swift; sourceTree = "<group>"; };
 		1C32EA712177F800005226D9 /* JournalCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		1C32EA7521780FCF005226D9 /* FavoritesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewDataSource.swift; sourceTree = "<group>"; };
 		1C32EA77217812E2005226D9 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		1CE10DFD216EADDB0090A827 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		3B086D40217A4EAD000A353D /* InstructionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
 		3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		3B3A2045217AA77E008F586F /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
 		3B691D6E2178091000F72828 /* RecipeFetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchController.swift; sourceTree = "<group>"; };
 		3B691D70217836AC00F72828 /* RandomFoodJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomFoodJoke.swift; path = Munchies/ModelController/RandomFoodJoke.swift; sourceTree = SOURCE_ROOT; };
 		3B770A4A216FC3A900FD7B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Munchies/StoryBoards/Base.lproj/Favorites.storyboard; sourceTree = "<group>"; };
@@ -217,13 +219,11 @@
 				1C7E745F2172EFFD003462AD /* sideMenuVC.swift */,
 				1C43FBC72176C25A00ACDAA0 /* PreferencesVC.swift */,
 				1C43FBC92176CBF700ACDAA0 /* ProfileVC.swift */,
-				1C32EA672177CB8D005226D9 /* JournalVC.swift */,
-				1C32EA6D2177D54D005226D9 /* CreateJournalEntryVC.swift */,
-				1C32EA6F2177D603005226D9 /* JournalEntryVC.swift */,
+				3B3A2047217AB39D008F586F /* JournalControllers */,
 				1C32EA712177F800005226D9 /* JournalCollectionViewDataSource.swift */,
+				1C0BEC6821793D02004F5485 /* JournalDashboardVC.swift */,
 				1C32EA7521780FCF005226D9 /* FavoritesTableViewDataSource.swift */,
 				1C0BEC622179288A004F5485 /* GroceriesListTableVC.swift */,
-				1C0BEC6821793D02004F5485 /* JournalDashboardVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -265,10 +265,21 @@
 			path = "Seach Recipies Flow";
 			sourceTree = "<group>";
 		};
+		3B3A2047217AB39D008F586F /* JournalControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C32EA672177CB8D005226D9 /* JournalVC.swift */,
+				1C32EA6F2177D603005226D9 /* JournalEntryDetailVC.swift */,
+				1C32EA6D2177D54D005226D9 /* CreateJournalEntryVC.swift */,
+			);
+			path = JournalControllers;
+			sourceTree = "<group>";
+		};
 		3B691D6D217808F800F72828 /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
 				3B691D6E2178091000F72828 /* RecipeFetchController.swift */,
+				3B3A2045217AA77E008F586F /* JournalController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -397,6 +408,7 @@
 				1C43FBCA2176CBF700ACDAA0 /* ProfileVC.swift in Sources */,
 				1C43FBC82176C25A00ACDAA0 /* PreferencesVC.swift in Sources */,
 				1C7E74602172EFFD003462AD /* sideMenuVC.swift in Sources */,
+				3B3A2046217AA77E008F586F /* JournalController.swift in Sources */,
 				1C3084A9217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift in Sources */,
 				1C32EA6E2177D54D005226D9 /* CreateJournalEntryVC.swift in Sources */,
 				3B770A4D216FCC4900FD7B7B /* FavoritesVC.swift in Sources */,
@@ -423,7 +435,7 @@
 				1C32EA722177F800005226D9 /* JournalCollectionViewDataSource.swift in Sources */,
 				1C7E745E2172ED3D003462AD /* SWRevealViewController.m in Sources */,
 				3B691D6F2178091000F72828 /* RecipeFetchController.swift in Sources */,
-				1C32EA702177D603005226D9 /* JournalEntryVC.swift in Sources */,
+				1C32EA702177D603005226D9 /* JournalEntryDetailVC.swift in Sources */,
 				3B086D41217A4EAD000A353D /* InstructionsVC.swift in Sources */,
 				1CD408032170FEBB00408716 /* GrocerieListVC.swift in Sources */,
 				3B770A60216FFE9900FD7B7B /* JournalCollectionViewCell.swift in Sources */,
