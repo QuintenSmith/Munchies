@@ -69,9 +69,9 @@
                                             <constraint firstItem="Wd5-3k-iMb" firstAttribute="top" secondItem="k6P-7x-waf" secondAttribute="top" id="nZh-0e-Cdl"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="readyInLabel" destination="rJf-sk-OGR" id="kG2-mD-mpG"/>
                                             <outlet property="recipeImage" destination="Wd5-3k-iMb" id="DjA-JW-vOE"/>
-                                            <outlet property="recipeTitleLbl" destination="rJf-sk-OGR" id="fi5-Rk-u1e"/>
-                                            <outlet property="starsLbl" destination="PXR-cu-2x7" id="kln-ZF-yRk"/>
+                                            <outlet property="titleLabel" destination="PXR-cu-2x7" id="DXq-7g-eWQ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -24,11 +24,6 @@ class RecipeFetchController {
     var intolerance: String = ""
     
     
-    
-    //temporary ingrediens - delete wne app is ready
-    #warning ("change the input value when calling fetch function in searchfilterVC")
-    var temporatyIngredients = "Salad, choicken, onions"
-    
     //initial fetch
     var recipes: [fetchedRecipe] = []
     //second fetch with more details
