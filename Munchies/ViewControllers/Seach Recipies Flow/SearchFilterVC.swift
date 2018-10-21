@@ -7,25 +7,21 @@
 //
 
 import UIKit
-import CloudSight
 
-class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource, CloudSightQueryDelegate {
+
+class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView!
-    //not connected
-    @IBOutlet weak var imageToBeClasified: UIImageView!
-    @IBOutlet weak var viewToShowClasification: UIView!
-    
-    
+ 
+    @IBOutlet weak var tableView: searchFilterSizedTableView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
+    
     
     //MARK: - Properties
     var count: Int = 0
     var curentTagButtonTime: Int = 60
     var portionSize: Int = 2
-    var currentClassificationText: String = ""
-    var cloudSightQuery : CloudSightQuery!
+
     //This is temporary ingredient list - its gone have to be moved to model controller for proper MVC
     var ingredientListFromCamera = [String]()
     
@@ -33,18 +29,20 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     //MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
-        //imageToBeClasified.isHidden = true
-        //pops the camera on initial load
-        if  UIImagePickerController.isSourceTypeAvailable(.camera) {
-            presentCamera(sourceType: .camera)
-        }
-        
-        //MARK: - Gets Api Key and assigns it.
-        CloudSightConnection.sharedInstance().consumerKey = RecipeFetchController.shared.getApiKey(named: "cloudSightKey")
-        CloudSightConnection.sharedInstance().consumerSecret = RecipeFetchController.shared.getApiKey(named: "cloudSightSecret")
+        tableView.delegate = self
         sideMenu()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if ImageClasificationController.shared.clasifications.count >= 1 {
+            
+        tableView.reloadData()
+        tableView.scrollToRow(at: IndexPath(row: ImageClasificationController.shared.clasifications.count - 1 , section: 0), at: .bottom, animated: true)
+        }
+    }
+    
+    //MARK: - Side Menu Method
     func sideMenu() {
         if revealViewController() != nil {
             
@@ -60,12 +58,12 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     
     //MARK: - Table View Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return count
+        return ImageClasificationController.shared.clasifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as? SearchFilterIngredientTableViewCell
-        cell?.ingredientCell.text = "O  Ingredient \(indexPath.row+1)"
+        cell?.ingredientCell.text = "\(ImageClasificationController.shared.clasifications[indexPath.row])"//"O  Ingredient \(indexPath.row+1)"
         return cell ?? UITableViewCell()
     }
     
@@ -130,9 +128,9 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         //        }
         
         print("🤩fetching recipes")
+        
         //run fetch functions
-        #warning ("replace the ingredients with this: convertIngredientArrayToString()")
-        RecipeFetchController.shared.searchRecipiesBy(ingredients: RecipeFetchController.shared.temporatyIngredients ) { (recipes) in
+        RecipeFetchController.shared.searchRecipiesBy(ingredients: ImageClasificationController.shared.clasificationsAsString()) { (recipes) in
             print("✅ Finished fetching recipies")
             guard let recipes = recipes else {return}
             RecipeFetchController.shared.recipes = recipes
@@ -189,100 +187,22 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
-        imageToBeClasified.image = image
-        imageToBeClasified.isHidden = false
         
-        // Create JPG image data from UIImage with complresion of 0.8
-        let imageData = image.jpegData(compressionQuality: 0.8)
+        ImageClasificationController.shared.curentImageAndClasification = image
         
-        //MARK: - CloudSight Clasificsation
-        cloudSightQuery = CloudSightQuery(image: imageData, atLocation: CGPoint.zero, withDelegate: self, atPlacemark: nil, withDeviceId: "device-id")
-        
-        cloudSightQuery.start()
+        let storyboard = UIStoryboard(name: "ImageClasification", bundle: nil)
+        let recipeVC = storyboard.instantiateViewController(withIdentifier: "ImageClasification")
+        //let navigationController = UINavigationController(rootViewController: recipeVC)
+        self.present(recipeVC, animated: true, completion: nil)
+    }
+    
+    
 
-        //TODO: - Replace this with view
-      //  presentClasificationAlert()
-    }
-    
-    func cloudSightQueryDidFinishUploading(_ query: CloudSightQuery!) {
-        print("🔆 cloudSightQueryDidFinishUploading")
-        
-    }
-    
-    func cloudSightQueryDidFinishIdentifying(_ query: CloudSightQuery!) {
-        print("🔆 cloudSightQueryDidFinishIdentifying")
-        DispatchQueue.main.async {
-            
-            #warning ("replace this with view")
-            let alert = UIAlertController(title: "Clasification", message: "\(query.name()!)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: true)
-        }
-    }
-    
-    func cloudSightQueryDidFail(_ query: CloudSightQuery!, withError error: Error!) {
-        print("CloudSight Failure: \(error.localizedDescription)")
-        let alert = UIAlertController(title: "Clasification Unsucesfull", message: "Pleast try again", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alert, animated: true)
-    }
-
-    
-    
-    //MARK: - Clasification Alert
-//    func presentClasificationAlert(){
-//        let alert = UIAlertController(title: "(Clasification) XX% Sure", message: "If your image is not what we believe it is, we appologize, please update it below.", preferredStyle: .alert)
-//        alert.addTextField { (updateTextField) in
-//            updateTextField.placeholder = "enter whats in the image"
-//        }
-//        let cancelAction = UIAlertAction(title: "Canacel", style: .cancel) { (_) in
-//            self.imageToBeClasified.isHidden = true
-//        }
-//        let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
-//
-//            //Ingredients.ingredients.append(self.curentClasificationText)
-//            //TODO: Use current clasification and add it to the list
-//
-//            guard let updatedText = alert.textFields?.first?.text else {return}
-//            self.currentClassificationText = updatedText
-//            //FIXME: keep in mind user may not need to update the clasification -
-//            //TODO: need to add updated clasification to the list
-//            //   Ingredients.ingredients.append(self.curentClasificationText)
-//            self.presentUpdateSuccessFullAlert()
-//        }
-//        alert.addAction(cancelAction)
-//        alert.addAction(saveAction)
-//        present(alert, animated: true)
-//    }
-    
-    
-//    func presentUpdateSuccessFullAlert() {
-//        let alert = UIAlertController(title: "Ingrediten On Hand Updated", message: "What would you like to do next?", preferredStyle: .alert)
-//        let uploadMoreAction = UIAlertAction(title: "Upload More", style: .default) { (_) in
-//            self.presentCamera(sourceType: .camera)
-//        }
-//        let goToSearchAction = UIAlertAction(title: "Go To Search", style: .default) { (_) in
-//            //TODO: go to search VC
-//
-//            //causes singabrt
-//            //            guard let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchFilter") else {return}
-//            //            //destinationVC = SearchFilterVC()
-//            //            self.present(destinationVC, animated: true, completion: nil)
-//            //
-//            //
-//            self.imageToBeClasified.isHidden = true
-//
-//        }
-//        alert.addAction(goToSearchAction)
-//        alert.addAction(uploadMoreAction)
-//        present(alert, animated: true)
-//    }
-//
     //MARK: - Actions
-    @IBAction func addBtnTapped(_ sender: Any) {
-        count = count + 1
+ 
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        ImageClasificationController.shared.clasifications.removeAll()
         tableView.reloadData()
-        tableView.scrollToRow(at: IndexPath(row: count-1, section: 0), at: .bottom, animated: true)
     }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {

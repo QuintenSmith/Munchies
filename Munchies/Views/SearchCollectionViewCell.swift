@@ -11,10 +11,13 @@ import UIKit
 class SearchCollectionViewCell: UICollectionViewCell {
     
     
+    //MARK: - Outlets
     @IBOutlet weak var recipeImage: UIImageView!
-    @IBOutlet weak var starsLbl: UILabel!
-    @IBOutlet weak var recipeTitleLbl: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var readyInLabel: UILabel!
     
+    
+    //MARK: - Properties
     var cellData: DetailedRecipe? {
         didSet{
             updateViews()
@@ -27,26 +30,12 @@ class SearchCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    //MARK: - Helper Method to update Views
     func updateViews() {
         guard let recipe = cellData else {return}
         recipeImage.image = thumbnail
-        recipeTitleLbl.text = recipe.title
-        recipeTitleLbl.text = "Ready in: \(recipe.readyInMinutes)"
-        
-//        switch recipe.rating{
-//        case 1:
-//            starsLbl.text = "⭑"
-//        case 2:
-//            starsLbl.text = "⭑⭑"
-//        case 3:
-//            starsLbl.text = "⭑⭑⭑"
-//        case 4:
-//            starsLbl.text = "⭑⭑⭑⭑"
-//        case 5:
-//            starsLbl.text = "⭑⭑⭑⭑⭑"
-//        default:
-//            starsLbl.text = ""
-//        }
+        titleLabel.text = recipe.title
+        readyInLabel.text = "Ready in: \(recipe.readyInMinutes) min."
     }
     
     

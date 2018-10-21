@@ -62,6 +62,9 @@
 		3B770A4F216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B770A4E216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift */; };
 		3B770A51216FE41F00FD7B7B /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B770A50216FE41F00FD7B7B /* Recipe.swift */; };
 		3B770A60216FFE9900FD7B7B /* JournalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B770A5F216FFE9900FD7B7B /* JournalCollectionViewCell.swift */; };
+		3BAD2B3A217BC1C100D28A53 /* ImageClasificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD2B39217BC1C100D28A53 /* ImageClasificationVC.swift */; };
+		3BAD2B3C217BC74400D28A53 /* ImageClasification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BAD2B3B217BC74400D28A53 /* ImageClasification.storyboard */; };
+		3BAD2B3E217BC95E00D28A53 /* ImageClasificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD2B3D217BC95E00D28A53 /* ImageClasificationController.swift */; };
 		3BC803812170280400D3AA54 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC803802170280400D3AA54 /* JournalEntry.swift */; };
 		3BC803842170292300D3AA54 /* DateExternsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC803832170292300D3AA54 /* DateExternsion.swift */; };
 		63A0DB6C39ACB7CAA8022AE5 /* Pods_Munchies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77BB16CC9D8E22710B6DF83 /* Pods_Munchies.framework */; };
@@ -127,6 +130,9 @@
 		3B770A4E216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesCollectionViewCell.swift; path = Munchies/ViewControllers/FavoritesCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3B770A50216FE41F00FD7B7B /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = Munchies/ViewControllers/Recipe.swift; sourceTree = SOURCE_ROOT; };
 		3B770A5F216FFE9900FD7B7B /* JournalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalCollectionViewCell.swift; path = Munchies/ViewControllers/JournalCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		3BAD2B39217BC1C100D28A53 /* ImageClasificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClasificationVC.swift; sourceTree = "<group>"; };
+		3BAD2B3B217BC74400D28A53 /* ImageClasification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageClasification.storyboard; sourceTree = "<group>"; };
+		3BAD2B3D217BC95E00D28A53 /* ImageClasificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClasificationController.swift; sourceTree = "<group>"; };
 		3BC803802170280400D3AA54 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalEntry.swift; path = Munchies/ViewControllers/JournalEntry.swift; sourceTree = SOURCE_ROOT; };
 		3BC803832170292300D3AA54 /* DateExternsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExternsion.swift; sourceTree = "<group>"; };
 		4E773FB588C06C9E4195E527 /* Pods-Munchies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Munchies/Pods-Munchies.release.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +280,7 @@
 				1C047A4221702D18005683AE /* SearchVC.swift */,
 				1C047A36216FC723005683AE /* RecipeVC.swift */,
 				3B086D40217A4EAD000A353D /* InstructionsVC.swift */,
+				3BAD2B39217BC1C100D28A53 /* ImageClasificationVC.swift */,
 			);
 			path = "Seach Recipies Flow";
 			sourceTree = "<group>";
@@ -302,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				1C43FBCB2176CF4700ACDAA0 /* SearchFilter.storyboard */,
+				3BAD2B3B217BC74400D28A53 /* ImageClasification.storyboard */,
 				1CE10DFD216EADDB0090A827 /* Search.storyboard */,
 				1C047A34216FBEDA005683AE /* Recipe.storyboard */,
 			);
@@ -331,6 +339,7 @@
 			children = (
 				3B691D6E2178091000F72828 /* RecipeFetchController.swift */,
 				3B3A2045217AA77E008F586F /* JournalController.swift */,
+				3BAD2B3D217BC95E00D28A53 /* ImageClasificationController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -433,6 +442,7 @@
 				3B770A4B216FC3A900FD7B7B /* Favorites.storyboard in Resources */,
 				1C43FBCC2176CF4700ACDAA0 /* SearchFilter.storyboard in Resources */,
 				1CE10DFA216E95C10090A827 /* LogIn.storyboard in Resources */,
+				3BAD2B3C217BC74400D28A53 /* ImageClasification.storyboard in Resources */,
 				1CE10DF8216E8DD10090A827 /* SignUp.storyboard in Resources */,
 				1C43FBC42176B76900ACDAA0 /* Profile.storyboard in Resources */,
 				1C32EA6A2177CDBC005226D9 /* CreateJournalEntry.storyboard in Resources */,
@@ -541,7 +551,9 @@
 				3B770A51216FE41F00FD7B7B /* Recipe.swift in Sources */,
 				3B770A4F216FCD0E00FD7B7B /* FavoritesCollectionViewCell.swift in Sources */,
 				1C0BEC6921793D02004F5485 /* JournalDashboardVC.swift in Sources */,
+				3BAD2B3A217BC1C100D28A53 /* ImageClasificationVC.swift in Sources */,
 				1C3084AD217AE1F900DF51C0 /* RoundedShapeButton.swift in Sources */,
+				3BAD2B3E217BC95E00D28A53 /* ImageClasificationController.swift in Sources */,
 				3BC803842170292300D3AA54 /* DateExternsion.swift in Sources */,
 				1C047A37216FC723005683AE /* RecipeVC.swift in Sources */,
 				3B691D71217836AC00F72828 /* RandomFoodJoke.swift in Sources */,
@@ -711,7 +723,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,7 +747,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
