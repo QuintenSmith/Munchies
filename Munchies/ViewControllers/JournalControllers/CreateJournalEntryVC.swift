@@ -14,11 +14,13 @@ class CreateJournalEntryVC: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var entryImageView: UIImageView!
     @IBOutlet weak var enterTitleTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var cameraButton: UIButton!
     
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -60,9 +62,8 @@ class CreateJournalEntryVC: UIViewController, UIImagePickerControllerDelegate, U
         }
         photoSourcePicker.addAction(takePhotoAction)
         photoSourcePicker.addAction(choosePhotoAction)
-        photoSourcePicker.addAction(UIAlertAction(title: "Canacel", style: .cancel, handler: nil))
+        photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(photoSourcePicker, animated: true, completion: nil)
-        
     }
     
     func presentPhotoPicker(sourceType: UIImagePickerController.SourceType){
@@ -76,6 +77,7 @@ class CreateJournalEntryVC: UIViewController, UIImagePickerControllerDelegate, U
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
         entryImageView.image = image
+        self.cameraButton.isHidden = true
     }
     
 }

@@ -18,7 +18,7 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     //MARK: - Properties
     var recipies: [Recipe] = {
-       
+
         let recipe1 = Recipe(picture: UIImage(named: "burger0")!, recipeTitle: "Burger", rating: 3)
         let recipe2 = Recipe(picture: UIImage(named: "pasta6")!, recipeTitle: "Pasta", rating: 5)
         let recipe3 = Recipe(picture: UIImage(named: "pizza1")!, recipeTitle: "Pizza", rating: 4)
@@ -28,7 +28,7 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         let recipe7 = Recipe(picture: UIImage(named: "pizza3")!, recipeTitle: "Pizza", rating: 4)
         let recipe8 = Recipe(picture: UIImage(named: "salad6")!, recipeTitle: "Salad", rating: 2)
         var someMockRecipe : [Recipe] = [recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7, recipe8]
-        
+
         return someMockRecipe
     }()
     
@@ -40,6 +40,12 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         favoritesCollectionView.delegate = self
         favoritesCollectionView.dataSource = self
+        
+        if recipies.count >= 1 {
+          self.favoritesCollectionView.isHidden = false
+        } else {
+          self.favoritesCollectionView.isHidden = true
+        }
         
         sideMenu()
     }

@@ -32,10 +32,14 @@ class sideMenuVC: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenu()
-        let datasource = FavoritesTableViewDataSource(numberOfItems: 3, recipes: recipes)
+        let datasource = FavoritesTableViewDataSource(numberOfItems: 0, recipes: recipes)
         tableView.dataSource = datasource
         NSLog("po %@", datasource)
-
+        
+        if datasource.numberOfItems >= 1 {
+            self.tableView.isHidden = false
+        }
+        
         tableView.reloadData()
     }
     

@@ -10,13 +10,18 @@ import UIKit
 
 class GroceriesListTableVC: UITableViewController {
     
-    var groceryItems = ["Apples", "Banana", "Eggplant", "Fennel", "Fettucine", "Sausage", "Spaghetti", "Tomato Sauce"]
+    @IBOutlet var backgroundImg: UIView!
+    
+    var groceryItems: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
-        
+        tableView.backgroundView = backgroundImg
+        if groceryItems.count >= 1 {
+            self.tableView.backgroundView?.isHidden = true
+        } else {
+            self.tableView.backgroundView?.isHidden = false
+        }
         tableView.reloadData()
     }
 

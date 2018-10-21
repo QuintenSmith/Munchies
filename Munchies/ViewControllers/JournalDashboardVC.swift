@@ -11,6 +11,7 @@ import UIKit
 class JournalDashboardVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var backgroundImg: UIView!
     
     var recipes: [Recipe] = {
 
@@ -29,9 +30,15 @@ class JournalDashboardVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let datasource = JournalCollectionViewDataSource(numberOfItems: 6, recipes: recipes)
+        self.collectionView.backgroundView = backgroundImg
+        let datasource = JournalCollectionViewDataSource(numberOfItems: 0, recipes: recipes)
         collectionView.dataSource = datasource
         NSLog("po %@", datasource)
+        if datasource.numberOfItems >= 1 {
+            self.collectionView.backgroundView?.isHidden = true
+        } else {
+            self.collectionView.backgroundView?.isHidden = false 
+        }
         
         collectionView.reloadData()
         

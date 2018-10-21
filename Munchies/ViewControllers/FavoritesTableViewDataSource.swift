@@ -18,7 +18,6 @@ class FavoritesTableViewDataSource: NSObject, UITableViewDataSource, UITableView
     init(numberOfItems: Int, recipes: [Recipe]) {
         self.numberOfItems = numberOfItems
         self.recipes = recipes
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

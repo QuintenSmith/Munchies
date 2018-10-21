@@ -347,7 +347,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="header-1" id="wJE-Is-6AK">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="addBtnTapped:" destination="6hY-PJ-Q0W" id="eyL-kY-lao"/>
+                                <action selector="addBtnTapped:" destination="6hY-PJ-Q0W" id="e1C-sU-Nsx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -355,6 +355,7 @@
                     <connections>
                         <outlet property="imageToBeClasified" destination="9m7-JP-TJU" id="I8v-DH-F3i"/>
                         <outlet property="menuBtn" destination="IWk-ZE-6Hi" id="S98-sB-Q3W"/>
+                        <outlet property="tableView" destination="B2c-mB-pVM" id="Hsj-D2-wYJ"/>
                         <segue destination="6g8-SA-vJG" kind="show" id="SNp-Xd-bEt"/>
                     </connections>
                 </viewController>
