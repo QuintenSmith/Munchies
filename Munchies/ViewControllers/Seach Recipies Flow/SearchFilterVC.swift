@@ -16,11 +16,30 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var tableView: searchFilterSizedTableView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
+    //MARK: - Time To Cook Buttons Outlets
+    @IBOutlet weak var thirdyMinuteButton: RoundedShapeButton!
+    @IBOutlet weak var oneHourButton: RoundedShapeButton!
+    @IBOutlet weak var hourAndAHalfButton: RoundedShapeButton!
+    @IBOutlet weak var twoHourButton: RoundedShapeButton!
+    @IBOutlet weak var twoHourPlusButton: RoundedShapeButton!
+    
+    //MARK: - Portion Size Buttons Outlets
+    @IBOutlet weak var portionOneButton: RoundedShapeButton!
+    @IBOutlet weak var portionTwoButton: RoundedShapeButton!
+    @IBOutlet weak var portionFourButton: RoundedShapeButton!
+    @IBOutlet weak var portionSixButton: RoundedShapeButton!
+    @IBOutlet weak var portionEightButton: RoundedShapeButton!
+    @IBOutlet weak var portionTenButton: RoundedShapeButton!
+    
     
     //MARK: - Properties
+    var timeToCookButtons = [UIButton]()
+    var portionButtons = [UIButton]()
     var count: Int = 0
     var curentTagButtonTime: Int = 60
     var portionSize: Int = 2
+    let buttonUnselectedColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.4)
+    let buttonSelectedColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 1.0)
 
     //This is temporary ingredient list - its gone have to be moved to model controller for proper MVC
     var ingredientListFromCamera = [String]()
@@ -31,6 +50,9 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewDidLoad()
         tableView.delegate = self
         sideMenu()
+        timeToCookButtons = [thirdyMinuteButton, oneHourButton, hourAndAHalfButton, twoHourButton, twoHourPlusButton]
+        portionButtons = [portionOneButton, portionTwoButton, portionFourButton, portionSixButton, portionEightButton, portionTenButton]
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,47 +89,61 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         return cell ?? UITableViewCell()
     }
     
-    
-    //MARK: - Actions
+//    //MARK: - Actions
     @IBAction func timeButtonTapped(_ sender: UIButton) {
+
+        timeToCookButtons.forEach{
+         $0.backgroundColor = buttonUnselectedColor
+        }
+        
         switch sender.tag {
         case 0:
             curentTagButtonTime = 15
-            print(curentTagButtonTime)
+            thirdyMinuteButton.backgroundColor = buttonSelectedColor
         case 1:
             curentTagButtonTime = 30
-            print(curentTagButtonTime)
+            oneHourButton.backgroundColor = buttonSelectedColor
         case 2:
             curentTagButtonTime = 60
-            print(curentTagButtonTime)
+            hourAndAHalfButton.backgroundColor = buttonSelectedColor
         case 3:
             curentTagButtonTime = 90
-            print(curentTagButtonTime)
+            twoHourButton.backgroundColor = buttonSelectedColor
         case 4:
             curentTagButtonTime = 400
-            print(curentTagButtonTime)
+            twoHourPlusButton.backgroundColor = buttonSelectedColor
         default:
             curentTagButtonTime = 60
-            print(curentTagButtonTime)
-            
         }
     }
     
+
+    
     
     @IBAction func portionButtonTapped(_ sender: UIButton) {
+        portionButtons.forEach{
+             $0.backgroundColor = buttonUnselectedColor
+        }
+        
         switch sender.tag {
         case 0:
             portionSize = 1
+            portionOneButton.backgroundColor = buttonSelectedColor
         case 1:
             portionSize = 2
+            portionTwoButton.backgroundColor = buttonSelectedColor
         case 2:
             portionSize = 4
+            portionFourButton.backgroundColor = buttonSelectedColor
         case 3:
             portionSize = 6
+            portionSixButton.backgroundColor = buttonSelectedColor
         case 4:
             portionSize = 8
+            portionEightButton.backgroundColor = buttonSelectedColor
         case 5:
             portionSize = 10
+            portionTenButton.backgroundColor = buttonSelectedColor
         default:
             portionSize = 2
         }
@@ -203,6 +239,8 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func resetButtonPressed(_ sender: Any) {
         ImageClasificationController.shared.clasifications.removeAll()
         tableView.reloadData()
+      
+        
     }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
@@ -210,5 +248,9 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
             presentCamera(sourceType: .camera)
         }
     }
+    
+    
+    
+    
 }
 
