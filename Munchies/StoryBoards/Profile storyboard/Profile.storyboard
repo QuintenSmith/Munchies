@@ -53,7 +53,7 @@
                                                         </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +86,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="bkK-gX-4NK"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Ketogenic">
+                                                        <state key="normal" title="Vegan">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -100,7 +100,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="BB1-jf-8N2"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Primal">
+                                                        <state key="normal" title="Paleo">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -114,7 +114,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="VeN-nx-pGu"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Vegetarian">
+                                                        <state key="normal" title="Primal">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -133,7 +133,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="dgM-vA-i5b"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Paleo">
+                                                        <state key="normal" title="Vegetarian">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -147,7 +147,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="s6k-dW-mHF"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Vegan">
+                                                        <state key="normal" title="Pescetarian">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -161,7 +161,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="ScV-1A-7V1"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Whole 30">
+                                                        <state key="normal" title="Lacto Vegetarian">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -171,17 +171,17 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTOLERANCES/ALLERGIES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSV-JY-7vF">
-                                                <rect key="frame" x="0.0" y="404.5" width="375" height="50.5"/>
+                                                <rect key="frame" x="0.0" y="404.5" width="375" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="0zr-ps-RV0">
-                                                <rect key="frame" x="18" y="471" width="339" height="30"/>
+                                                <rect key="frame" x="18" y="442" width="339" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhc-c2-Ih7" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="104.5" height="30"/>
-                                                        <color key="backgroundColor" white="1" alpha="0.49525669642857145" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="prw-1d-0Pw"/>
                                                         </constraints>
@@ -195,7 +195,7 @@
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-c8-bYX" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="117.5" y="0.0" width="104" height="30"/>
-                                                        <color key="backgroundColor" white="1" alpha="0.49525669642857145" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="xWO-z0-bNP"/>
                                                         </constraints>
@@ -209,7 +209,7 @@
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PL5-Kv-hNF" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="234.5" y="0.0" width="104.5" height="30"/>
-                                                        <color key="backgroundColor" white="1" alpha="0.49525669642857145" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Xmq-OA-Ba3"/>
                                                         </constraints>
@@ -224,7 +224,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="K26-vE-Mha">
-                                                <rect key="frame" x="18" y="517" width="339" height="30"/>
+                                                <rect key="frame" x="18" y="488" width="339" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="She-XZ-WGk" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="104.5" height="30"/>
@@ -271,7 +271,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="fE1-Us-T6c">
-                                                <rect key="frame" x="18" y="563" width="339" height="30"/>
+                                                <rect key="frame" x="18" y="534" width="339" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuP-GX-zb2" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="104.5" height="30"/>
@@ -317,59 +317,15 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="bnp-Gn-02T">
-                                                <rect key="frame" x="18" y="609" width="339" height="30"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyM-Us-gS0" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="30"/>
-                                                        <color key="backgroundColor" white="1" alpha="0.50370929621848737" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="lg3-VZ-cwc"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Grain Free">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="lHv-rr-WWp"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfx-nI-cAa" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="117.5" y="0.0" width="104" height="30"/>
-                                                        <color key="backgroundColor" white="1" alpha="0.50370929621848737" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="mv1-1d-rT0"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Shellfish Free">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="7Kz-nz-vMX"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xa0-bw-6XB" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="234.5" y="0.0" width="104.5" height="30"/>
-                                                        <color key="backgroundColor" white="1" alpha="0.50370929621848737" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="UmT-kW-f9f"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Wheat Free">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="g2X-6f-neX"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buG-v3-8Q2">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="765"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="mGB-5h-gaj" firstAttribute="top" secondItem="Qp0-R0-3jk" secondAttribute="top" id="2Du-cO-eeP"/>
                                             <constraint firstItem="mGB-5h-gaj" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" id="4hf-fc-W9R"/>
-                                            <constraint firstItem="bnp-Gn-02T" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="18" id="90e-1V-LXf"/>
                                             <constraint firstItem="EGb-14-BMM" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="18" id="9UR-ao-Eqr"/>
                                             <constraint firstItem="K26-vE-Mha" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="18" id="BqM-2x-U9x"/>
                                             <constraint firstItem="QSV-JY-7vF" firstAttribute="top" secondItem="EGb-14-BMM" secondAttribute="bottom" constant="32" id="Cp1-qW-Fqq"/>
@@ -377,6 +333,7 @@
                                             <constraint firstItem="h5Q-uf-KBP" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="18" id="GDs-q9-JIv"/>
                                             <constraint firstItem="K26-vE-Mha" firstAttribute="top" secondItem="0zr-ps-RV0" secondAttribute="bottom" constant="16" id="GQk-52-2aU"/>
                                             <constraint firstItem="eoi-8D-lWn" firstAttribute="top" secondItem="hSh-FM-WxZ" secondAttribute="bottom" constant="35" id="I82-fR-R2R"/>
+                                            <constraint firstAttribute="bottom" secondItem="buG-v3-8Q2" secondAttribute="bottom" id="Jgt-Pd-env"/>
                                             <constraint firstAttribute="trailing" secondItem="6bU-09-0nT" secondAttribute="trailing" constant="150" id="PRJ-he-2ah"/>
                                             <constraint firstItem="hSh-FM-WxZ" firstAttribute="centerX" secondItem="Qp0-R0-3jk" secondAttribute="centerX" id="Q8l-ID-BH6"/>
                                             <constraint firstAttribute="trailing" secondItem="eoi-8D-lWn" secondAttribute="trailing" constant="30" id="QWS-lx-e9t"/>
@@ -386,19 +343,19 @@
                                             <constraint firstItem="eoi-8D-lWn" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="31" id="Urr-uL-DnM"/>
                                             <constraint firstItem="h5Q-uf-KBP" firstAttribute="top" secondItem="6bU-09-0nT" secondAttribute="bottom" constant="16" id="VGL-TH-tDR"/>
                                             <constraint firstAttribute="trailing" secondItem="hSh-FM-WxZ" secondAttribute="trailing" constant="127" id="VTx-hw-Xk9"/>
+                                            <constraint firstItem="buG-v3-8Q2" firstAttribute="top" secondItem="Qp0-R0-3jk" secondAttribute="top" id="ZOP-6f-8eW"/>
                                             <constraint firstAttribute="trailing" secondItem="QSV-JY-7vF" secondAttribute="trailing" id="afq-YK-fPf"/>
                                             <constraint firstItem="0zr-ps-RV0" firstAttribute="top" secondItem="QSV-JY-7vF" secondAttribute="bottom" constant="16" id="ajK-AL-Phd"/>
                                             <constraint firstAttribute="trailing" secondItem="fE1-Us-T6c" secondAttribute="trailing" constant="18" id="bvm-su-fj9"/>
                                             <constraint firstItem="6bU-09-0nT" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="150" id="ePi-1x-DQI"/>
-                                            <constraint firstAttribute="trailing" secondItem="bnp-Gn-02T" secondAttribute="trailing" constant="18" id="eTF-gi-qdC"/>
-                                            <constraint firstItem="bnp-Gn-02T" firstAttribute="top" secondItem="fE1-Us-T6c" secondAttribute="bottom" constant="16" id="fmd-kk-yU0"/>
                                             <constraint firstItem="0zr-ps-RV0" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="18" id="g93-Q8-LG3"/>
                                             <constraint firstAttribute="trailing" secondItem="K26-vE-Mha" secondAttribute="trailing" constant="18" id="i6l-pN-IkS"/>
                                             <constraint firstAttribute="trailing" secondItem="0zr-ps-RV0" secondAttribute="trailing" constant="18" id="kKE-NN-gxb"/>
-                                            <constraint firstItem="bnp-Gn-02T" firstAttribute="top" secondItem="mGB-5h-gaj" secondAttribute="bottom" constant="-156" id="lcr-DW-Vez"/>
+                                            <constraint firstItem="buG-v3-8Q2" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" id="lEp-JU-u0J"/>
                                             <constraint firstAttribute="bottom" secondItem="mGB-5h-gaj" secondAttribute="bottom" id="n5B-mK-0q3"/>
                                             <constraint firstAttribute="trailing" secondItem="h5Q-uf-KBP" secondAttribute="trailing" constant="18" id="o6H-CN-xWS"/>
                                             <constraint firstItem="EGb-14-BMM" firstAttribute="top" secondItem="h5Q-uf-KBP" secondAttribute="bottom" constant="16" id="pX1-MB-EqF"/>
+                                            <constraint firstAttribute="trailing" secondItem="buG-v3-8Q2" secondAttribute="trailing" id="pcf-59-rib"/>
                                             <constraint firstItem="hSh-FM-WxZ" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="127" id="qNz-lw-jUQ"/>
                                             <constraint firstItem="fE1-Us-T6c" firstAttribute="top" secondItem="K26-vE-Mha" secondAttribute="bottom" constant="16" id="s4f-6y-04v"/>
                                             <constraint firstItem="QSV-JY-7vF" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" id="t51-HJ-g16"/>
@@ -426,7 +383,14 @@
                         <viewLayoutGuide key="safeArea" id="x8e-NO-sLv"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="mUB-fj-qBF">
-                        <barButtonItem key="leftBarButtonItem" id="NER-91-Dlh"/>
+                        <leftBarButtonItems>
+                            <barButtonItem id="NER-91-Dlh"/>
+                            <barButtonItem title="Clear all Settings" image="header-1" id="7ew-tA-1kO">
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="VNO-vf-3le" id="v5b-xH-iF5"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" image="header-2" id="iU1-TA-p7I">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="VNO-vf-3le" id="yhr-aw-0ZD"/>
@@ -435,7 +399,25 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="clearButtonOutlet" destination="7ew-tA-1kO" id="2ox-ob-ZMi"/>
+                        <outlet property="diaryFreeOutlet" destination="Zhc-c2-Ih7" id="MTF-ZA-NCq"/>
+                        <outlet property="editView" destination="buG-v3-8Q2" id="tm9-6n-CCx"/>
+                        <outlet property="eggFreeOutlet" destination="She-XZ-WGk" id="FYV-Cr-vgn"/>
+                        <outlet property="glutenFreeOutlet" destination="KuP-GX-zb2" id="rc6-M3-ZmS"/>
+                        <outlet property="lactoVegetarianDietOutlet" destination="fgO-Vs-MAM" id="rUV-cT-B3G"/>
                         <outlet property="menuBtn" destination="NER-91-Dlh" id="pH3-5K-wIw"/>
+                        <outlet property="nameTextField" destination="4Ln-Hq-9dL" id="98O-L2-pmj"/>
+                        <outlet property="paleoDietOutlet" destination="Knb-FN-N1V" id="klj-WB-ccP"/>
+                        <outlet property="peanutFreeOutlet" destination="Fal-c8-bYX" id="5Vx-rc-b81"/>
+                        <outlet property="pescetarianDietOutlet" destination="0xf-ym-x3f" id="zPL-8N-Iex"/>
+                        <outlet property="primalDietOutlet" destination="nsx-29-cFS" id="Rvt-ub-nY2"/>
+                        <outlet property="seafoodFreeOutlet" destination="mkC-nT-1pU" id="Dug-Tg-ay4"/>
+                        <outlet property="seasameFreeOutlet" destination="xHB-GD-IiE" id="XEc-Yp-gnd"/>
+                        <outlet property="shellfishFreeOutlet" destination="ahX-vD-oxU" id="GbT-hs-Vfh"/>
+                        <outlet property="soyFreeOutlet" destination="PL5-Kv-hNF" id="v8K-zs-qOA"/>
+                        <outlet property="sulfiteFreeOutlet" destination="O6H-z9-ce7" id="5St-kG-Vy7"/>
+                        <outlet property="vagetarianDietOutlet" destination="I40-F7-wlf" id="Ytz-d5-TFD"/>
+                        <outlet property="veganDietButton" destination="0c8-df-gSM" id="XSn-cl-HJO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DK2-S6-fMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -469,6 +451,7 @@
     <resources>
         <image name="edit Profile" width="121" height="124"/>
         <image name="hamburgermenu" width="28" height="30"/>
+        <image name="header-1" width="20" height="20"/>
         <image name="header-2" width="20" height="18"/>
         <image name="profile&amp;editpreferencespages" width="375" height="765"/>
     </resources>
