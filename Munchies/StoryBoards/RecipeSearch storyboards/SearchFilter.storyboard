@@ -344,11 +344,8 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="header-1" id="wJE-Is-6AK">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-<<<<<<< HEAD
                                 <action selector="addBtnTapped:" destination="6hY-PJ-Q0W" id="e1C-sU-Nsx"/>
-=======
                                 <action selector="resetButtonPressed:" destination="6hY-PJ-Q0W" id="g0R-e2-qxb"/>
->>>>>>> 69732fb2f335a556956e8b495426d64dcfba5211
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -357,9 +354,7 @@
                         <outlet property="hourAndAHalfButton" destination="dPp-51-96b" id="lDb-7h-BJP"/>
                         <outlet property="imageToBeClasified" destination="9m7-JP-TJU" id="I8v-DH-F3i"/>
                         <outlet property="menuBtn" destination="IWk-ZE-6Hi" id="S98-sB-Q3W"/>
-<<<<<<< HEAD
                         <outlet property="tableView" destination="B2c-mB-pVM" id="Hsj-D2-wYJ"/>
-=======
                         <outlet property="oneHourButton" destination="B8N-r2-okm" id="HKR-24-h15"/>
                         <outlet property="portionEightButton" destination="GQH-Du-tej" id="n9M-F7-sTg"/>
                         <outlet property="portionFourButton" destination="8LP-9a-hZJ" id="vxD-3W-H1g"/>
@@ -371,7 +366,6 @@
                         <outlet property="thirdyMinuteButton" destination="Vb6-J5-6Jt" id="Irk-5E-dGv"/>
                         <outlet property="twoHourButton" destination="kNc-AX-yDS" id="hRo-nL-0RY"/>
                         <outlet property="twoHourPlusButton" destination="Z1b-1d-IT3" id="QIv-9r-1BX"/>
->>>>>>> 69732fb2f335a556956e8b495426d64dcfba5211
                         <segue destination="6g8-SA-vJG" kind="show" id="SNp-Xd-bEt"/>
                     </connections>
                 </viewController>

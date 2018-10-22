@@ -26,6 +26,16 @@ class InstructionsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         instructionsTableView.dataSource = self
         instructionsTableView.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let firstItem = RecipeFetchController.shared.recipeForDetailView?.recipe.analyzedInstructions.first?.steps.count {
+        if firstItem >= 1 {
+            instructionsTableView.reloadData()
+            instructionsTableView.scrollToRow(at: IndexPath(row: firstItem - 1 , section: 0), at: .bottom, animated: true)
+        }
+    }
+    }
 
     
     //MARK: - TableView Data Source
@@ -37,7 +47,7 @@ class InstructionsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "instructionsCell", for: indexPath)
         if let step = RecipeFetchController.shared.recipeForDetailView?.recipe.analyzedInstructions.first?.steps[indexPath.row].step {
-        cell.textLabel?.text = "\(indexPath.row + 1). \(step))"
+        cell.textLabel?.text = "\(indexPath.row + 1). \(step)"
         }
         return cell
     }

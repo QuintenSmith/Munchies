@@ -19,7 +19,7 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
     let recipe = RecipeFetchController.shared.recipeForDetailView
-    
+    var count: Int = 0
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -28,6 +28,17 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.ingredientTableView.dataSource = self
         loadViewIfNeeded()
         updateViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let ingredientCount = RecipeFetchController.shared.recipeForDetailView?.recipe.extendedIngredients?.count {
+        if ingredientCount >= 1 {
+
+            ingredientTableView.reloadData()
+            ingredientTableView.scrollToRow(at: IndexPath(row: ingredientCount - 1 , section: 0), at: .bottom, animated: true)
+            }
+        }
     }
     
     

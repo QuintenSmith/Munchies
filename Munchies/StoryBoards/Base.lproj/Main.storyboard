@@ -555,7 +555,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1633149683" green="0.29437282679999999" blue="0.3995600641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7wW-ga-pst" firstAttribute="trailing" secondItem="SJr-0i-w4G" secondAttribute="trailing" id="Or5-bW-ezg"/>
                             <constraint firstItem="SJr-0i-w4G" firstAttribute="bottom" secondItem="7wW-ga-pst" secondAttribute="bottom" id="czA-vq-5v7"/>
@@ -569,7 +569,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="camera" id="0yN-xG-Cp2">
                             <connections>
                                 <action selector="cameraButtonPressed:" destination="G8e-cy-WYv" id="XHE-Mr-fe0"/>
-                                <segue destination="joQ-o3-df8" kind="show" identifier="cameraSegue" id="xNZ-Bb-kD8"/>
+                                <segue destination="joQ-o3-df8" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Xar-dY-T6o"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
