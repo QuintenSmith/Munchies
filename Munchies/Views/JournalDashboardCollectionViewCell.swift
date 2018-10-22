@@ -14,16 +14,16 @@ class JournalDashboardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-    var recipe: Recipe? {
+    var entry: JournalEntry? {
         didSet {
             updateViews()
         }
     }
     
     func updateViews() {
-        guard  let recipe = recipe else {return}
-        imageView.image = recipe.picture
-        nameLabel.text = recipe.recipeTitle
-        timeLabel.text = "\(recipe.rating)"
+        guard  let entry = entry else {return}
+        imageView.image = entry.picture
+        nameLabel.text = entry.title
+        timeLabel.text = entry.date.dateAsString()
     }
 }

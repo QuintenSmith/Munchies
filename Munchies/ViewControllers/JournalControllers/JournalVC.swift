@@ -28,7 +28,6 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         super.viewWillAppear(animated)
         if JournalController.shared.journalEntries.count == 1 {
             self.collectionView.isHidden = false
-            
         }
         
         collectionView.reloadData()
@@ -55,8 +54,8 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JournalCell", for: indexPath) as? JournalCollectionViewCell else {return UICollectionViewCell()}
-        let recipe = JournalController.shared.journalEntries[indexPath.row]
-        cell.cellData = recipe
+        let journalEntry = JournalController.shared.journalEntries[indexPath.row]
+        cell.entry = journalEntry
         return cell
     }
     

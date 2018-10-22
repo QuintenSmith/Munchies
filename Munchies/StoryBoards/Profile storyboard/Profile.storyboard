@@ -417,7 +417,7 @@
                         <outlet property="soyFreeOutlet" destination="PL5-Kv-hNF" id="v8K-zs-qOA"/>
                         <outlet property="sulfiteFreeOutlet" destination="O6H-z9-ce7" id="5St-kG-Vy7"/>
                         <outlet property="vagetarianDietOutlet" destination="I40-F7-wlf" id="Ytz-d5-TFD"/>
-                        <outlet property="veganDietButton" destination="0c8-df-gSM" id="XSn-cl-HJO"/>
+                        <outlet property="veganDietOutlet" destination="0c8-df-gSM" id="XSn-cl-HJO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DK2-S6-fMM" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -20,7 +20,7 @@ class RecipeFetchController {
     //MARK: - Properties
     
     //properties for query items from profilePage
-    var diets: String = ""
+    var diet: String = ""
    // var intolerance: String = ""
     var intolerances = Set<String>()
     
@@ -65,8 +65,8 @@ class RecipeFetchController {
             querryComponents.append(intoleranceQuery)
             print("👻👻👻 \(intoleranceQuery)")
         }
-        if diets != "" {
-            let dietQuery = URLQueryItem(name: "diet", value: diets)
+        if diet != "" {
+            let dietQuery = URLQueryItem(name: "diet", value: diet)
             querryComponents.append(dietQuery)
         }
         
