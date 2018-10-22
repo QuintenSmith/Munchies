@@ -12,12 +12,12 @@ class GroceriesListTableVC: UITableViewController {
     
     @IBOutlet var backgroundImg: UIView!
     
-    var groceryItems: [String] = []
+    //var groceryItems: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = backgroundImg
-        if groceryItems.count >= 1 {
+        if GroceryListController.shared.groceries.count >= 1 {
             self.tableView.backgroundView?.isHidden = true
         } else {
             self.tableView.backgroundView?.isHidden = false
@@ -28,13 +28,13 @@ class GroceriesListTableVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groceryItems.count
+        return GroceryListController.shared.groceries.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroceriesListCell", for: indexPath)
-        let groceryItems = self.groceryItems[indexPath.row]
-        cell.textLabel?.text = groceryItems
+        let groceryItems = GroceryListController.shared.groceries[indexPath.row]
+        cell.textLabel?.text = groceryItems.name
         return cell
     }
 }

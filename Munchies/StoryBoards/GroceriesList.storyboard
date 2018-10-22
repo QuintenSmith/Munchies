@@ -33,12 +33,15 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="303" height="26"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JG-2U-2kQ">
                                                 <rect key="frame" x="311" y="0.0" width="16" height="26"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" image="recipe"/>
+                                                <connections>
+                                                    <action selector="addNewGroceryItemButtonPressed:" destination="AuA-ec-4zT" eventType="touchUpInside" id="2K6-0D-3N6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -56,7 +59,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="WF7-z0-OH0" customClass="GroceriesListCell" customModule="Munchies" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groceryCell" id="WF7-z0-OH0" customClass="GroceriesListCell" customModule="Munchies" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="339" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WF7-z0-OH0" id="bps-3F-phD">
@@ -71,7 +74,7 @@
                                                     </constraints>
                                                     <state key="normal" image="shoppinglist-1"/>
                                                     <connections>
-                                                        <action selector="deleteBtnTapped:" destination="WF7-z0-OH0" eventType="touchUpInside" id="E2n-6i-up0"/>
+                                                        <action selector="checkMArkButtonTapped:" destination="WF7-z0-OH0" eventType="touchUpInside" id="E2n-6i-up0"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Ingredient)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4V-wy-f5O">
@@ -95,7 +98,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="deleteBtn" destination="FPc-vo-u9r" id="dc8-cM-Jen"/>
+                                            <outlet property="checkMarkButton" destination="FPc-vo-u9r" id="dc8-cM-Jen"/>
                                             <outlet property="ingredientLbl" destination="C4V-wy-f5O" id="srt-Nv-bCe"/>
                                         </connections>
                                     </tableViewCell>
@@ -158,6 +161,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelBtn" destination="cCl-gO-dHL" id="SWx-C1-pFi"/>
+                        <outlet property="createNewGroceryItemTextField" destination="v8E-uo-q6w" id="xM5-vy-D0S"/>
                         <outlet property="menuBtn" destination="baE-xc-sDI" id="eRF-W0-JpM"/>
                         <outlet property="shareBtn" destination="cWv-9C-R0E" id="FCT-d3-Z3d"/>
                         <outlet property="tableView" destination="SZl-fR-90K" id="z6n-Oh-bNA"/>

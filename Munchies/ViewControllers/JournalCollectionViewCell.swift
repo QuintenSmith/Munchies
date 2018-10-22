@@ -16,7 +16,7 @@ class JournalCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     //MARK: - Properties
-    var cellData: JournalEntry? {
+    var entry: JournalEntry? {
         didSet{
             updateViews()
         }
@@ -26,10 +26,10 @@ class JournalCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Helper Methods
     func updateViews(){
-        guard let recipe = cellData else {return}
-        pictureView.image = recipe.picture
-        dishNameLabel.text = recipe.title
-        dateLabel.text = recipe.date.dateAsString()
+        guard let journalEntry = entry else {return}
+        pictureView.image = journalEntry.picture
+        dishNameLabel.text = journalEntry.title
+        dateLabel.text = journalEntry.date.dateAsString()
         
     }
     
