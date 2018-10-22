@@ -12,9 +12,11 @@ import UIKit
 class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Outlets
- 
     @IBOutlet weak var tableView: searchFilterSizedTableView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     
     //MARK: - Time To Cook Buttons Outlets
     @IBOutlet weak var thirdyMinuteButton: RoundedShapeButton!
@@ -22,6 +24,7 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var hourAndAHalfButton: RoundedShapeButton!
     @IBOutlet weak var twoHourButton: RoundedShapeButton!
     @IBOutlet weak var twoHourPlusButton: RoundedShapeButton!
+    
     
     //MARK: - Portion Size Buttons Outlets
     @IBOutlet weak var portionOneButton: RoundedShapeButton!
@@ -38,21 +41,19 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     var count: Int = 0
     var curentTagButtonTime: Int = 60
     var portionSize: Int = 2
-    let buttonUnselectedColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.4)
-    let buttonSelectedColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 1.0)
 
-    //This is temporary ingredient list - its gone have to be moved to model controller for proper MVC
-    var ingredientListFromCamera = [String]()
-    
     
     //MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
+        blurView.isHidden = true
+        #warning ("its not cutting the corners radius")
+        blurView.layer.cornerRadius = 30
+        
         tableView.delegate = self
         sideMenu()
         timeToCookButtons = [thirdyMinuteButton, oneHourButton, hourAndAHalfButton, twoHourButton, twoHourPlusButton]
         portionButtons = [portionOneButton, portionTwoButton, portionFourButton, portionSixButton, portionEightButton, portionTenButton]
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +64,7 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         tableView.scrollToRow(at: IndexPath(row: ImageClasificationController.shared.clasifications.count - 1 , section: 0), at: .bottom, animated: true)
         }
     }
+    
     
     //MARK: - Side Menu Method
     func sideMenu() {
@@ -89,67 +91,71 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         return cell ?? UITableViewCell()
     }
     
-//    //MARK: - Actions
+    
+    //MARK: - Actions
     @IBAction func timeButtonTapped(_ sender: UIButton) {
 
         timeToCookButtons.forEach{
-         $0.backgroundColor = buttonUnselectedColor
+         $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }
         
         switch sender.tag {
         case 0:
             curentTagButtonTime = 15
-            thirdyMinuteButton.backgroundColor = buttonSelectedColor
+            thirdyMinuteButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 1:
             curentTagButtonTime = 30
-            oneHourButton.backgroundColor = buttonSelectedColor
+            oneHourButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 2:
             curentTagButtonTime = 60
-            hourAndAHalfButton.backgroundColor = buttonSelectedColor
+            hourAndAHalfButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 3:
             curentTagButtonTime = 90
-            twoHourButton.backgroundColor = buttonSelectedColor
+            twoHourButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 4:
             curentTagButtonTime = 400
-            twoHourPlusButton.backgroundColor = buttonSelectedColor
+            twoHourPlusButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         default:
             curentTagButtonTime = 60
         }
     }
-    
 
-    
-    
     @IBAction func portionButtonTapped(_ sender: UIButton) {
         portionButtons.forEach{
-             $0.backgroundColor = buttonUnselectedColor
+             $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }
         
         switch sender.tag {
         case 0:
             portionSize = 1
-            portionOneButton.backgroundColor = buttonSelectedColor
+            portionOneButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 1:
             portionSize = 2
-            portionTwoButton.backgroundColor = buttonSelectedColor
+            portionTwoButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 2:
             portionSize = 4
-            portionFourButton.backgroundColor = buttonSelectedColor
+            portionFourButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 3:
             portionSize = 6
-            portionSixButton.backgroundColor = buttonSelectedColor
+            portionSixButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 4:
             portionSize = 8
-            portionEightButton.backgroundColor = buttonSelectedColor
+            portionEightButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 5:
             portionSize = 10
-            portionTenButton.backgroundColor = buttonSelectedColor
+            portionTenButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         default:
             portionSize = 2
         }
     }
     
     @IBAction func findButtonTapped(_ sender: Any) {
+        UIView.animate(withDuration: 1.0, animations: {
+            self.blurView.isHidden = false
+           
+            self.loadingIndicator.startAnimating()
+        })
+         self.blurView.layer.cornerRadius = 50
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         //display random food joke
@@ -186,7 +192,8 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self.updateTableViewAfterTimeFilter()
                     print("😋😋 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipies.count)")
-                    
+                    self.blurView.isHidden = true
+                    self.loadingIndicator.stopAnimating()
                     let storyboard = UIStoryboard(name: "Search", bundle: nil)
                     let searchVC = storyboard.instantiateViewController(withIdentifier: "searchStoryboardID")
                     let navigationController = UINavigationController(rootViewController: searchVC)
@@ -197,10 +204,22 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     
-    //MARK: - Helper Method to convert array into string
-    func convertIngredientArrayToString() -> String{
-        return ingredientListFromCamera.joined(separator: ", ")
+    
+    //MARK: - Actions
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        ImageClasificationController.shared.clasifications.removeAll()
+        tableView.reloadData()
+      
+        
     }
+    
+    @IBAction func cameraButtonTapped(_ sender: Any) {
+        if  UIImagePickerController.isSourceTypeAvailable(.camera) {
+            presentCamera(sourceType: .camera)
+        }
+    }
+    
+
     
     
     //MARK: - helper function to filter by time it takes to cook diner
@@ -231,26 +250,6 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         //let navigationController = UINavigationController(rootViewController: recipeVC)
         self.present(recipeVC, animated: true, completion: nil)
     }
-    
-    
-
-    //MARK: - Actions
- 
-    @IBAction func resetButtonPressed(_ sender: Any) {
-        ImageClasificationController.shared.clasifications.removeAll()
-        tableView.reloadData()
-      
-        
-    }
-    
-    @IBAction func cameraButtonTapped(_ sender: Any) {
-        if  UIImagePickerController.isSourceTypeAvailable(.camera) {
-            presentCamera(sourceType: .camera)
-        }
-    }
-    
-    
-    
     
 }
 

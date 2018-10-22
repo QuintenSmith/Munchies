@@ -276,6 +276,35 @@
                                                     <action selector="findButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="21d-Wc-esg"/>
                                                 </connections>
                                             </button>
+                                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfh-cj-OEY">
+                                                <rect key="frame" x="87.5" y="219.5" width="200" height="200"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qdk-hC-ARF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XLV-5Y-bZT">
+                                                            <rect key="frame" x="90" y="70" width="20" height="20"/>
+                                                        </activityIndicatorView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Recipes..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZX-bw-xpp">
+                                                            <rect key="frame" x="30" y="100" width="140" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="bZX-bw-xpp" firstAttribute="centerX" secondItem="qdk-hC-ARF" secondAttribute="centerX" id="2xT-9u-V0X"/>
+                                                        <constraint firstItem="bZX-bw-xpp" firstAttribute="top" secondItem="XLV-5Y-bZT" secondAttribute="bottom" constant="10" id="C71-U4-IFb"/>
+                                                        <constraint firstItem="XLV-5Y-bZT" firstAttribute="centerY" secondItem="qdk-hC-ARF" secondAttribute="centerY" constant="-20" id="aZP-qL-yNe"/>
+                                                        <constraint firstItem="XLV-5Y-bZT" firstAttribute="centerX" secondItem="qdk-hC-ARF" secondAttribute="centerX" id="lsx-1a-Luj"/>
+                                                    </constraints>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="RZP-1B-FAR"/>
+                                                    <constraint firstAttribute="width" constant="200" id="yHH-Tr-E1G"/>
+                                                </constraints>
+                                                <blurEffect style="light"/>
+                                            </visualEffectView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.1633149683" green="0.29437282679999999" blue="0.3995600641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -312,9 +341,11 @@
                                             <constraint firstItem="jQi-5J-z3C" firstAttribute="centerX" secondItem="ffE-XT-Pcc" secondAttribute="centerX" id="oQG-27-cyo"/>
                                             <constraint firstAttribute="trailing" secondItem="jQi-5J-z3C" secondAttribute="trailing" constant="114.5" id="oW1-RX-BHH"/>
                                             <constraint firstAttribute="trailing" secondItem="PVY-pa-mhJ" secondAttribute="trailing" constant="67.5" id="p7X-zi-XyG"/>
+                                            <constraint firstItem="bfh-cj-OEY" firstAttribute="centerY" secondItem="ffE-XT-Pcc" secondAttribute="centerY" id="pe0-g7-HUz"/>
                                             <constraint firstItem="0K3-fW-dcb" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="71" id="rSt-BK-wSX"/>
                                             <constraint firstItem="jQi-5J-z3C" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="114.5" id="shN-zf-Jc5"/>
                                             <constraint firstItem="yF8-Jf-44g" firstAttribute="top" secondItem="jQi-5J-z3C" secondAttribute="bottom" constant="16" id="ugb-yE-eeR"/>
+                                            <constraint firstItem="bfh-cj-OEY" firstAttribute="centerX" secondItem="ffE-XT-Pcc" secondAttribute="centerX" id="uz7-Kt-mld"/>
                                             <constraint firstAttribute="trailing" secondItem="f2g-2n-wmc" secondAttribute="trailing" constant="52" id="wvu-kx-Yub"/>
                                             <constraint firstItem="cEC-W2-Zcq" firstAttribute="top" secondItem="yF8-Jf-44g" secondAttribute="bottom" constant="16" id="yWv-J0-PlW"/>
                                         </constraints>
@@ -344,22 +375,17 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="header-1" id="wJE-Is-6AK">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-<<<<<<< HEAD
-                                <action selector="addBtnTapped:" destination="6hY-PJ-Q0W" id="e1C-sU-Nsx"/>
-=======
                                 <action selector="resetButtonPressed:" destination="6hY-PJ-Q0W" id="g0R-e2-qxb"/>
->>>>>>> 69732fb2f335a556956e8b495426d64dcfba5211
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
+                        <outlet property="blurView" destination="bfh-cj-OEY" id="bVT-sU-muz"/>
                         <outlet property="hourAndAHalfButton" destination="dPp-51-96b" id="lDb-7h-BJP"/>
                         <outlet property="imageToBeClasified" destination="9m7-JP-TJU" id="I8v-DH-F3i"/>
+                        <outlet property="loadingIndicator" destination="XLV-5Y-bZT" id="50q-fl-taW"/>
                         <outlet property="menuBtn" destination="IWk-ZE-6Hi" id="S98-sB-Q3W"/>
-<<<<<<< HEAD
-                        <outlet property="tableView" destination="B2c-mB-pVM" id="Hsj-D2-wYJ"/>
-=======
                         <outlet property="oneHourButton" destination="B8N-r2-okm" id="HKR-24-h15"/>
                         <outlet property="portionEightButton" destination="GQH-Du-tej" id="n9M-F7-sTg"/>
                         <outlet property="portionFourButton" destination="8LP-9a-hZJ" id="vxD-3W-H1g"/>
@@ -371,7 +397,6 @@
                         <outlet property="thirdyMinuteButton" destination="Vb6-J5-6Jt" id="Irk-5E-dGv"/>
                         <outlet property="twoHourButton" destination="kNc-AX-yDS" id="hRo-nL-0RY"/>
                         <outlet property="twoHourPlusButton" destination="Z1b-1d-IT3" id="QIv-9r-1BX"/>
->>>>>>> 69732fb2f335a556956e8b495426d64dcfba5211
                         <segue destination="6g8-SA-vJG" kind="show" id="SNp-Xd-bEt"/>
                     </connections>
                 </viewController>

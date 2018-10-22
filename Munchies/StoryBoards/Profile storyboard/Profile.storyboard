@@ -53,7 +53,7 @@
                                                         </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +86,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="bkK-gX-4NK"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Ketogenic">
+                                                        <state key="normal" title="Vegan">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -100,7 +100,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="BB1-jf-8N2"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Primal">
+                                                        <state key="normal" title="Paleo">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -114,7 +114,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="VeN-nx-pGu"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Vegetarian">
+                                                        <state key="normal" title="Primal">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -133,7 +133,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="dgM-vA-i5b"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Paleo">
+                                                        <state key="normal" title="Vegetarian">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -147,7 +147,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="s6k-dW-mHF"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Vegan">
+                                                        <state key="normal" title="Pescetarian">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -161,7 +161,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="ScV-1A-7V1"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
-                                                        <state key="normal" title="Whole 30">
+                                                        <state key="normal" title="Lacto Vegetarian">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -435,7 +435,14 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="lactoVegetarianDietOutlet" destination="fgO-Vs-MAM" id="rUV-cT-B3G"/>
                         <outlet property="menuBtn" destination="NER-91-Dlh" id="pH3-5K-wIw"/>
+                        <outlet property="nameTextField" destination="4Ln-Hq-9dL" id="98O-L2-pmj"/>
+                        <outlet property="paleoDietOutlet" destination="Knb-FN-N1V" id="klj-WB-ccP"/>
+                        <outlet property="pescetarianDietOutlet" destination="0xf-ym-x3f" id="zPL-8N-Iex"/>
+                        <outlet property="primalDietOutlet" destination="nsx-29-cFS" id="Rvt-ub-nY2"/>
+                        <outlet property="vagetarianDietOutlet" destination="I40-F7-wlf" id="Ytz-d5-TFD"/>
+                        <outlet property="veganDietButton" destination="0c8-df-gSM" id="XSn-cl-HJO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DK2-S6-fMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
