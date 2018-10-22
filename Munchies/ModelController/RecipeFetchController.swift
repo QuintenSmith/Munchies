@@ -22,6 +22,7 @@ class RecipeFetchController {
     //properties for query items from profilePage
     var diets: String = ""
     var intolerance: String = ""
+    var intolerances = Set<String>()
     
     
     //initial fetch

@@ -15,7 +15,7 @@ class AppStylingController {
     
     //MARK: - Personal Settings Buttons Color
     //search filetr button colors
-    let buttonUnselectedColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.4)
+    let buttonUnselectedColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.5)
     let buttonSelectedColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 1.0)
     
     
