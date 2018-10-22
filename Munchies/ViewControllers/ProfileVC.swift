@@ -18,7 +18,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var clearButtonOutlet: UIBarButtonItem!
     
     //MARK: - Diets Button Outlets
-    @IBOutlet weak var veganDietButton: RoundedShapeButton!
+    @IBOutlet weak var veganDietOutlet: RoundedShapeButton!
     @IBOutlet weak var paleoDietOutlet: RoundedShapeButton!
     @IBOutlet weak var primalDietOutlet: RoundedShapeButton!
     @IBOutlet weak var vagetarianDietOutlet: RoundedShapeButton!
@@ -53,20 +53,27 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     var buttonStates = [Bool]()
     var intoleranceSelected: String = ""
     var dietButtonTagNumber : Int = 7
-    var isTapped: Bool = true
+    var saveButtonState = true
     
     
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         clearButtonOutlet.isEnabled = false
-        dietButtons = [veganDietButton, paleoDietOutlet, primalDietOutlet, vagetarianDietOutlet, pescetarianDietOutlet, lactoVegetarianDietOutlet]
+        
+        dietButtons = [veganDietOutlet, paleoDietOutlet, primalDietOutlet, vagetarianDietOutlet, pescetarianDietOutlet, lactoVegetarianDietOutlet]
+        
         intoleranceButtons = [diaryFreeOutlet, peanutFreeOutlet, soyFreeOutlet, eggFreeOutlet, seafoodFreeOutlet, sulfiteFreeOutlet, glutenFreeOutlet, seasameFreeOutlet, shellfishFreeOutlet]
+        
         buttonStates = [diaryFreeButton, peanutFreeButton, soyFreeButton, eggFreeButton, seafoodFreeButton, sulfiteFreeButton, glutenFreeButton, seasameFreeButton, shellfishFreeButton]
+        
         sideMenu()
+        
         nameTextField.delegate = self
         
+        setupButtonsBasedOnPreviousSettings()
     }
     
     
@@ -81,10 +88,6 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        nameTextField.resignFirstResponder()
-        return true
-    }
     
     
     //MARK: - Actions
@@ -96,49 +99,32 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         
         switch sender.tag {
         case 0:
-            RecipeFetchController.shared.diets = "vegan"
-            veganDietButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            RecipeFetchController.shared.diet = "vegan"
+            veganDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 1:
-            RecipeFetchController.shared.diets = "paleo"
+            RecipeFetchController.shared.diet = "paleo"
             paleoDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 2:
-            RecipeFetchController.shared.diets = "primal"
+            RecipeFetchController.shared.diet = "primal"
             primalDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 3:
-            RecipeFetchController.shared.diets = "vegetarian"
+            RecipeFetchController.shared.diet = "vegetarian"
             vagetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 4:
-            RecipeFetchController.shared.diets = "pescetarian"
+            RecipeFetchController.shared.diet = "pescetarian"
             pescetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 5:
-            RecipeFetchController.shared.diets = "lacto vegetarian"
+            RecipeFetchController.shared.diet = "lacto vegetarian"
             lactoVegetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         default:
-            RecipeFetchController.shared.diets = ""
+            RecipeFetchController.shared.diet = ""
             
         }
-        print(RecipeFetchController.shared.diets)
-    }
-    
-    func adjustSettingsAndFlip(button: UIButton, intolerance: String, buttonState: Bool){
-        if buttonState == false {
-            RecipeFetchController.shared.intolerances.insert(intolerance)
-            button.backgroundColor = AppStylingController.shared.buttonSelectedColor
-           // buttonState = true
-        } else if buttonState == true {
-            RecipeFetchController.shared.intolerances.remove(intolerance)
-            button.backgroundColor = AppStylingController.shared.buttonUnselectedColor
-            //buttonState = false
-        }
+        print(RecipeFetchController.shared.diet)
     }
     
     
     @IBAction func intolerancesAndAlergiesButtonPressed(_ sender: UIButton) {
-        //  isTapped = true
-        
-        #warning ("the idea is good but i think the colors are not matching therefore itsn not working")
-        
-        
         switch sender.tag {
         case 0:
            // RecipeFetchController.shared.intolerance = "dairy"
@@ -183,11 +169,9 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         print("🔔🔔\(RecipeFetchController.shared.intolerances)")
         
     }
-    var saveButtonState = true
+    
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        //save the settings - move the selected items to querry items for fetching
-       // saveButtonState = true
         if saveButtonState == true {
             editView.isHidden = true
             clearButtonOutlet.isEnabled = true
@@ -199,14 +183,11 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         }
         
         
-        //save changes - pretymuch just the name
+        //save changes - prety much just the name
         // the diets and intolerances save on their own i think
         
-        
-        
-        
-        
     }
+    
     //clear all settings
     @IBAction func clearButtonPressed(_ sender: Any) {
         
@@ -215,7 +196,8 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }
         //remove diets from query items
-        RecipeFetchController.shared.diets = ""
+        RecipeFetchController.shared.diet = ""
+        
         //change intolerance buttons to unselected state
         diaryFreeButton = false
         peanutFreeButton = false
@@ -229,11 +211,91 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         
         intoleranceButtons.forEach{$0.backgroundColor = AppStylingController.shared.buttonUnselectedColor}
         
-        //remove intolerances form (array) and therefore from query items
+        //remove intolerances form (set) and therefore from query items
         RecipeFetchController.shared.intolerances.removeAll()
         
     }
     
+    
+    //MARK: - Helper Methods
+    
+    //Sets up the buttons based on users save settings on viewDidLoad
+    func setupButtonsBasedOnPreviousSettings(){
+        switch RecipeFetchController.shared.diet {
+        case "vegan":
+            veganDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+        case "paleo":
+            paleoDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+        case "primal":
+            primalDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+        case "vegetarian":
+           vagetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+        case "pescetarian":
+            pescetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+        case "lacto vegetarian":
+            lactoVegetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+        default :
+            break
+        }
+        
+        print(RecipeFetchController.shared.intolerances)
+        
+        if RecipeFetchController.shared.intolerances.contains("dairy"){
+            diaryFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            diaryFreeButton = true
+        }
+        if RecipeFetchController.shared.intolerances.contains("peanut"){
+            peanutFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            peanutFreeButton = true
+        }
+        if RecipeFetchController.shared.intolerances.contains("soy"){
+            soyFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            soyFreeButton = true
+        }
+        if RecipeFetchController.shared.intolerances.contains("egg"){
+            eggFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            eggFreeButton = true
+        }
+        if RecipeFetchController.shared.intolerances.contains("seafood"){
+            seafoodFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            seafoodFreeButton = true
+        }
+        if RecipeFetchController.shared.intolerances.contains("sulfite"){
+            sulfiteFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            sulfiteFreeButton = true
+        }
+        if RecipeFetchController.shared.intolerances.contains("gluten"){
+            glutenFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            glutenFreeButton = true
+        }
+        if RecipeFetchController.shared.intolerances.contains("sesame"){
+            seasameFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            seasameFreeButton = true
+        }
+        if RecipeFetchController.shared.intolerances.contains("shellfish"){
+            shellfishFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            shellfishFreeButton = true
+        }
+   
+    }
+    
+    
+    //Flips the state of the button - and adjust coresponding settings
+    func adjustSettingsAndFlip(button: UIButton, intolerance: String, buttonState: Bool){
+        if buttonState == false {
+            RecipeFetchController.shared.intolerances.insert(intolerance)
+            button.backgroundColor = AppStylingController.shared.buttonSelectedColor
+        } else if buttonState == true {
+            RecipeFetchController.shared.intolerances.remove(intolerance)
+            button.backgroundColor = AppStylingController.shared.buttonUnselectedColor
+        }
+    }
+    
+    //Return Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        return true
+    }
     
     
 }
