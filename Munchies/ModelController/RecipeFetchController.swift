@@ -21,7 +21,7 @@ class RecipeFetchController {
     
     //properties for query items from profilePage
     var diets: String = ""
-    var intolerance: String = ""
+   // var intolerance: String = ""
     var intolerances = Set<String>()
     
     
@@ -60,8 +60,8 @@ class RecipeFetchController {
         
         //MARK: - Query Items:
         
-        if intolerance != "" {
-            let intoleranceQuery = URLQueryItem(name: "intolerances", value: intolerance)
+        if !intolerances.isEmpty {
+            let intoleranceQuery = URLQueryItem(name: "intolerances", value: intolerancesAsString())
             querryComponents.append(intoleranceQuery)
             print("👻👻👻 \(intoleranceQuery)")
         }
@@ -246,6 +246,11 @@ class RecipeFetchController {
             print("❌ Cannot cast the value of API key to String")
             return ""}
         return value
+    }
+    
+    //MARK: - Turns Intolerances Set to Stirng
+    func intolerancesAsString() -> String{
+        return intolerances.joined(separator: ", ")
     }
     
 }
