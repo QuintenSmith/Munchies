@@ -70,7 +70,7 @@ class RecipeFetchController {
             querryComponents.append(dietQuery)
         }
         
-        let ingredientAmoutQuery = URLQueryItem(name: "number", value: "30")
+        let ingredientAmoutQuery = URLQueryItem(name: "number", value: "\(60)")
         querryComponents.append(ingredientAmoutQuery)
         
         let instructionQuery = URLQueryItem(name: "instructionsRequired", value: "true")

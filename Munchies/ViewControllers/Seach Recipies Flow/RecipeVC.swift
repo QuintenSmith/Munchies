@@ -28,6 +28,14 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.ingredientTableView.dataSource = self
         loadViewIfNeeded()
         updateViews()
+        UINavigationBar.appearance().barTintColor = UIColor(red: 235/255, green: 111/255, blue: 100/255, alpha: 1)
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white 
+        let titleLabel = UILabel()
+        titleLabel.text = "Recipe"
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont(name: "Recipe", size: 12)
+        self.navigationItem.titleView = titleLabel
     }
     
     override func viewWillAppear(_ animated: Bool) {

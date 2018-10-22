@@ -31,7 +31,7 @@ class JournalDashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.backgroundView = backgroundImg
-        let datasource = JournalCollectionViewDataSource(numberOfItems: 0, recipes: recipes)
+        let datasource = JournalCollectionViewDataSource(numberOfItems: 6, recipes: recipes)
         collectionView.dataSource = datasource
         NSLog("po %@", datasource)
         if datasource.numberOfItems >= 1 {

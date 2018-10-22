@@ -243,11 +243,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="339" height="445"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="339" placeholderIntrinsicHeight="116" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ny-ze-V6s" customClass="searchFilterSizedTableView" customModule="Munchies" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="339" placeholderIntrinsicHeight="116" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ny-ze-V6s" customClass="searchFilterSizedTableView" customModule="Munchies" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="339" height="445"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="instructionsCell" textLabel="ipp-ZY-1Er" style="IBUITableViewCellStyleDefault" id="qC8-Eu-TTg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="instructionsCell" textLabel="ipp-ZY-1Er" style="IBUITableViewCellStyleDefault" id="qC8-Eu-TTg">
                                         <rect key="frame" x="0.0" y="28" width="339" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qC8-Eu-TTg" id="7lD-he-IOQ">
@@ -278,6 +278,7 @@
                             <constraint firstAttribute="bottom" secondItem="7ny-ze-V6s" secondAttribute="bottom" id="u3V-YL-fgV"/>
                             <constraint firstItem="7ny-ze-V6s" firstAttribute="top" secondItem="ihR-62-OT5" secondAttribute="top" id="x9A-YE-YFd"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="jxc-Ik-JeV"/>
                     </view>
                     <connections>
                         <outlet property="instructionsTableView" destination="7ny-ze-V6s" id="9Fm-Xv-oPk"/>

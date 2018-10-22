@@ -276,7 +276,7 @@
                                                     <action selector="findButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="21d-Wc-esg"/>
                                                 </connections>
                                             </button>
-                                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfh-cj-OEY">
+                                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfh-cj-OEY" customClass="RoundedCornersVisualEffectView" customModule="Munchies" customModuleProvider="target">
                                                 <rect key="frame" x="87.5" y="219.5" width="200" height="200"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qdk-hC-ARF">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -375,7 +375,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="header-1" id="wJE-Is-6AK">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="addBtnTapped:" destination="6hY-PJ-Q0W" id="e1C-sU-Nsx"/>
                                 <action selector="resetButtonPressed:" destination="6hY-PJ-Q0W" id="g0R-e2-qxb"/>
                             </connections>
                         </barButtonItem>
@@ -387,7 +386,6 @@
                         <outlet property="imageToBeClasified" destination="9m7-JP-TJU" id="I8v-DH-F3i"/>
                         <outlet property="loadingIndicator" destination="XLV-5Y-bZT" id="50q-fl-taW"/>
                         <outlet property="menuBtn" destination="IWk-ZE-6Hi" id="S98-sB-Q3W"/>
-                        <outlet property="tableView" destination="B2c-mB-pVM" id="Hsj-D2-wYJ"/>
                         <outlet property="oneHourButton" destination="B8N-r2-okm" id="HKR-24-h15"/>
                         <outlet property="portionEightButton" destination="GQH-Du-tej" id="n9M-F7-sTg"/>
                         <outlet property="portionFourButton" destination="8LP-9a-hZJ" id="vxD-3W-H1g"/>

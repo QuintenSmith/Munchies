@@ -18,8 +18,4 @@ class AppStylingController {
     let buttonUnselectedColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.5)
     let buttonSelectedColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 1.0)
     
-    
-    
-    
-    
 }

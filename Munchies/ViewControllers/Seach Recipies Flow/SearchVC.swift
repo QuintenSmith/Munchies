@@ -22,6 +22,13 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         self.searchResultColectionView.dataSource = self
         searchResultColectionView.reloadData()
         sideMenu()
+        UINavigationBar.appearance().barTintColor = UIColor(red: 235/255, green: 111/255, blue: 100/255, alpha: 1)
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white 
+        let titleLabel = UILabel()
+        titleLabel.text = "Results"
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont(name: "Results", size: 12)
+        self.navigationItem.titleView = titleLabel
     }
     
     
