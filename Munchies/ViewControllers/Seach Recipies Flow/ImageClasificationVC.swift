@@ -8,7 +8,6 @@
 
 import UIKit
 import CloudSight
-//import UserNotifications
 
 class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFieldDelegate {
     
@@ -25,14 +24,11 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
-    
-    
-    
     //MARK: - Property
     var cloudSightQuery : CloudSightQuery!
     var keyboardHeight: CGFloat = 0
     var currentClassificationText: String = ""
-
+    
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -40,8 +36,6 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
         clasificationCorectionTextField.delegate = self
         clasificationCorectionTextField.isHidden = true
         blurView.isHidden = true
-        
-        #warning ("Not cutting the corners")
         blurView.layer.cornerRadius = 50
         ClasificationViewHeightConstraint.constant = 0
         
@@ -60,11 +54,12 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
-          NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillHideNotification, object: nil)
- 
-
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    
+    
+    //MARK: - Keyboard Logic to move the view up.
     deinit {
         //Stop lostening for keyboard events
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -72,38 +67,24 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
-
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    //MARK: - Keyboard Logic to move the view up.
     @objc func keyboardWillChange(notification: Notification){
         print("Keyboard will show: \(notification.name.rawValue)")
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-        let keyboardRectangle = keyboardFrame.cgRectValue
-        keyboardHeight = keyboardRectangle.height
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            keyboardHeight = keyboardRectangle.height
         }
         if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
-              view.frame.origin.y = -keyboardHeight
+            view.frame.origin.y = -keyboardHeight
         } else {
-              view.frame.origin.y = 0
+            view.frame.origin.y = 0
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text,
             text != "" {
-        currentClassificationText = text
-           ImageClasificationController.shared.clasifications.append(currentClassificationText)
+            currentClassificationText = text
+            ImageClasificationController.shared.clasifications.append(currentClassificationText)
             self.dismiss(animated: true, completion: nil)
         }
         
@@ -132,35 +113,31 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
     }
     
     
-    func clasifyImage(image: UIImage){
-        let imageData = image.jpegData(compressionQuality: 0.8)
-        cloudSightQuery = CloudSightQuery(image: imageData, atLocation: CGPoint.zero, withDelegate: self, atPlacemark: nil, withDeviceId: "device-id")
-        cloudSightQuery.start()
-        #warning ("present loading clasification indicator")
-        
-        
-    }
     
     //MARK: - Helper Methods
     func updateViews() {
         guard let imageToBeClasified = ImageClasificationController.shared.curentImageAndClasification else {return}
         imageToBeClasifiedView.image = imageToBeClasified
-        blurView.isHidden = false
-       // self.blurView.layer.cornerRadius = 50
         activityIndicator.startAnimating()
-        #warning ("uncoment this line to run image clasification")
-        clasifyImage(image: imageToBeClasified)
-        
+        #warning ("uncoment this two lines to run image clasification")
+       // blurView.isHidden = false
+        //clasifyImage(image: imageToBeClasified)
+    }
+    
+    func clasifyImage(image: UIImage){
+        let imageData = image.jpegData(compressionQuality: 0.8)
+        cloudSightQuery = CloudSightQuery(image: imageData, atLocation: CGPoint.zero, withDelegate: self, atPlacemark: nil, withDeviceId: "device-id")
+        cloudSightQuery.start()
     }
     
     //MARK: - Cloud Sight Delegate Methods
     func cloudSightQueryDidFinishUploading(_ query: CloudSightQuery!) {
-        print("🔆 cloudSightQueryDidFinishUploading")
+        print("🔆 cloudSight Query Did Finish Uploading")
         
     }
     
     func cloudSightQueryDidFinishIdentifying(_ query: CloudSightQuery!) {
-        print("🔆 cloudSightQueryDidFinishIdentifying")
+        print("🔆 cloud Sight Query Did Finish Identifying")
         DispatchQueue.main.async {
             self.blurView.isHidden = true
             guard let clasificationText = query.name() else {return}
@@ -169,22 +146,15 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
             UIView.animate(withDuration: 1.0, animations: {
                 self.ClasificationViewHeightConstraint.constant = 100
             })
-            
-
         }
     }
     
-
+    
     func cloudSightQueryDidFail(_ query: CloudSightQuery!, withError error: Error!) {
         print("CloudSight Failure: \(error.localizedDescription)")
         let alert = UIAlertController(title: "Clasification Unsucesfull", message: "Pleast try again", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true)
     }
-    
-    
-    
-    
-    
     
 }

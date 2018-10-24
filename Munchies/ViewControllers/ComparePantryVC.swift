@@ -9,17 +9,22 @@
 import UIKit
 
 class ComparePantryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    #warning("Do We need this controller")
     
     let pantry = ["Apples", "Banana", "Eggplant", "Fennel", "Fettucine", "Sausage", "Spaghetti", "Tomatoe Sauce"]
     
+    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    
+    //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
     
+    //MARK: - TableView Delegate Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pantry.count
     }
@@ -31,10 +36,10 @@ class ComparePantryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         return cell 
     }
     
+    
+    //MARK: - Actions
     @IBAction func backBtnTapped(_ sender: Any) {
         self.dismiss(animated: true) {
-            
         }
     }
-    
 }

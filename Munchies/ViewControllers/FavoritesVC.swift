@@ -16,46 +16,24 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
     
-    
-    //MARK: - Properties
-//    var recipies: [Recipe] = {
-//
-//        let recipe1 = Recipe(picture: UIImage(named: "burger0")!, recipeTitle: "Burger", rating: 3)
-//        let recipe2 = Recipe(picture: UIImage(named: "pasta6")!, recipeTitle: "Pasta", rating: 5)
-//        let recipe3 = Recipe(picture: UIImage(named: "pizza1")!, recipeTitle: "Pizza", rating: 4)
-//        let recipe4 = Recipe(picture: UIImage(named: "salad2")!, recipeTitle: "Salad", rating: 3)
-//        let recipe5 = Recipe(picture: UIImage(named: "sandwich1")!, recipeTitle: "Sandwich", rating: 4)
-//        let recipe6 = Recipe(picture: UIImage(named: "burger2")!, recipeTitle: "Burger", rating: 1)
-//        let recipe7 = Recipe(picture: UIImage(named: "pizza3")!, recipeTitle: "Pizza", rating: 4)
-//        let recipe8 = Recipe(picture: UIImage(named: "salad6")!, recipeTitle: "Salad", rating: 2)
-//        var someMockRecipe : [Recipe] = [recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7, recipe8]
-//
-//        return someMockRecipe
-//    }()
-    
-    
-    
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         favoritesCollectionView.delegate = self
         favoritesCollectionView.dataSource = self
-        
         if RecipeFetchController.shared.favoriteRecipies.count >= 1 {
           self.favoritesCollectionView.isHidden = false
         } else {
           self.favoritesCollectionView.isHidden = true
         }
-        
         sideMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         favoritesCollectionView.reloadData()
     }
+    
     
     //MARK: - Side Menu Method
     func sideMenu() {
@@ -91,19 +69,11 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         recipeVC.recipeToDispaly = recipe
         let navigationController = UINavigationController(rootViewController: recipeVC)
         self.present(navigationController, animated: true, completion: nil)
-        
     }
     
     
-    
-    
-    
-    
-    
     //MARK: - Actions
-    
     //TODO: - need to feed in the data for collection views based on which button was pressed
-    
     @IBAction func wishListButtonPressed(_ sender: Any) {
         
     }
@@ -123,8 +93,4 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         present(shareSheet, animated: true, completion: nil)
     }
-    
-    
-    
-    
 }

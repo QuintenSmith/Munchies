@@ -9,6 +9,9 @@
 import UIKit
 
 class ComparePantryTableVC: UITableViewController {
+    #warning ("Do we need this VC")
+    
+    
     
     let ingredients = ["Oregano", "Thyme", "Eggplant", "Fennel", "Olive Oil", "Spaghetti", "Tomatoe Sauce"]
 

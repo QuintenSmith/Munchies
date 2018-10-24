@@ -10,9 +10,6 @@ import UIKit
 
 class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, GroceriesListCellDelegate {
     
- 
-  
-    
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +17,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var shareBtn: RoundedShapeButton!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     @IBOutlet weak var createNewGroceryItemTextField: UITextField!
+    
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -45,7 +43,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: - Table View Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return GroceryListController.shared.groceries.count
+        return GroceryListController.shared.groceries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,6 +53,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell?.delegate = self
         return cell ?? UITableViewCell()
     }
+    
     
     //MARK: - Actions
     @IBAction func backBtnTapped(_ sender: Any) {
@@ -72,7 +71,6 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.reloadData()
     }
     
-    
     @IBAction func addNewGroceryItemButtonPressed(_ sender: Any) {
         guard let groceryName = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else { return }
         let grocery = GroceryItem(name: groceryName)
@@ -80,6 +78,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         createNewGroceryItemTextField.text = ""
         self.tableView.reloadData()
     }
+    
     
     //MARK: - Custom Protocol Conformance
     func updateGroceryItem(cell: GroceriesListCell) {
@@ -100,7 +99,4 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.reloadData()
         return true
     }
-    
-    
-
 }
