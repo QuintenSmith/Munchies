@@ -74,6 +74,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         nameTextField.delegate = self
         
         setupButtonsBasedOnPreviousSettings()
+        
     }
     
     

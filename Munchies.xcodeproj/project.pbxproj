@@ -24,7 +24,6 @@
 		1C2BBFB2217E6B07001145D1 /* RoundedCornersVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2BBFB1217E6B07001145D1 /* RoundedCornersVisualEffectView.swift */; };
 		1C2BBFB4217E6C49001145D1 /* LaunchScreenCopy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C2BBFB3217E6C49001145D1 /* LaunchScreenCopy.storyboard */; };
 		1C2BBFB6217E8636001145D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2BBFB5217E8636001145D1 /* User.swift */; };
-		1C2BBFB8217E87C1001145D1 /* Intolerances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2BBFB7217E87C1001145D1 /* Intolerances.swift */; };
 		1C2BBFBA217E87D3001145D1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2BBFB9217E87D3001145D1 /* Item.swift */; };
 		1C2BBFBE217E9EC1001145D1 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2BBFBD217E9EC1001145D1 /* UserController.swift */; };
 		1C2BBFC0217EB4C5001145D1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2BBFBF217EB4C5001145D1 /* Entry.swift */; };
@@ -64,6 +63,7 @@
 		1CFC28F2217FDAF9003303ED /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFC28F1217FDAF9003303ED /* CreateProfile.storyboard */; };
 		1CFC28F4217FDC5A003303ED /* CreateNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC28F3217FDC5A003303ED /* CreateNameVC.swift */; };
 		1CFC28F9217FFA33003303ED /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CFC28F8217FFA33003303ED /* CloudKit.framework */; };
+		1CFC28FB21801577003303ED /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC28FA21801577003303ED /* ItemController.swift */; };
 		3B086D41217A4EAD000A353D /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D40217A4EAD000A353D /* InstructionsVC.swift */; };
 		3B086D43217A8B54000A353D /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */; };
 		3B3A2046217AA77E008F586F /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A2045217AA77E008F586F /* JournalController.swift */; };
@@ -103,7 +103,6 @@
 		1C2BBFB1217E6B07001145D1 /* RoundedCornersVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersVisualEffectView.swift; sourceTree = "<group>"; };
 		1C2BBFB3217E6C49001145D1 /* LaunchScreenCopy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenCopy.storyboard; sourceTree = "<group>"; };
 		1C2BBFB5217E8636001145D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Munchies/StoryBoards/User.swift; sourceTree = SOURCE_ROOT; };
-		1C2BBFB7217E87C1001145D1 /* Intolerances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Intolerances.swift; path = Munchies/StoryBoards/Intolerances.swift; sourceTree = SOURCE_ROOT; };
 		1C2BBFB9217E87D3001145D1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Munchies/StoryBoards/Item.swift; sourceTree = SOURCE_ROOT; };
 		1C2BBFBD217E9EC1001145D1 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		1C2BBFBF217EB4C5001145D1 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Munchies/ModelController/Entry.swift; sourceTree = SOURCE_ROOT; };
@@ -148,6 +147,7 @@
 		1CFC28F3217FDC5A003303ED /* CreateNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNameVC.swift; sourceTree = "<group>"; };
 		1CFC28F7217FF906003303ED /* Munchies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Munchies.entitlements; sourceTree = "<group>"; };
 		1CFC28F8217FFA33003303ED /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		1CFC28FA21801577003303ED /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		3B086D40217A4EAD000A353D /* InstructionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
 		3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		3B3A2045217AA77E008F586F /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
@@ -286,7 +286,6 @@
 				3BC803802170280400D3AA54 /* JournalEntry.swift */,
 				3BAD2B47217E4EA200D28A53 /* GroceryItem.swift */,
 				1C2BBFB5217E8636001145D1 /* User.swift */,
-				1C2BBFB7217E87C1001145D1 /* Intolerances.swift */,
 				1C2BBFB9217E87D3001145D1 /* Item.swift */,
 				1C2BBFBF217EB4C5001145D1 /* Entry.swift */,
 				1C95497A217F994E00E91F74 /* RecipeID.swift */,
@@ -384,6 +383,7 @@
 				3BAD2B41217D496B00D28A53 /* AppStylingController.swift */,
 				3BAD2B45217E4E5D00D28A53 /* GroceryListController.swift */,
 				1C2BBFBD217E9EC1001145D1 /* UserController.swift */,
+				1CFC28FA21801577003303ED /* ItemController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -636,6 +636,7 @@
 				1CA911C3216BCFC500716C0E /* AppDelegate.swift in Sources */,
 				1C2BBFAC217E6086001145D1 /* CustomCellRoundedImages.swift in Sources */,
 				1C32EA722177F800005226D9 /* JournalCollectionViewDataSource.swift in Sources */,
+				1CFC28FB21801577003303ED /* ItemController.swift in Sources */,
 				1C2BBFC0217EB4C5001145D1 /* Entry.swift in Sources */,
 				1C2BBFBE217E9EC1001145D1 /* UserController.swift in Sources */,
 				1C7E745E2172ED3D003462AD /* SWRevealViewController.m in Sources */,
@@ -643,7 +644,6 @@
 				1C2BBFB6217E8636001145D1 /* User.swift in Sources */,
 				3B691D6F2178091000F72828 /* RecipeFetchController.swift in Sources */,
 				1C2BBFB2217E6B07001145D1 /* RoundedCornersVisualEffectView.swift in Sources */,
-				1C2BBFB8217E87C1001145D1 /* Intolerances.swift in Sources */,
 				1C32EA702177D603005226D9 /* JournalEntryDetailVC.swift in Sources */,
 				1CFC28F4217FDC5A003303ED /* CreateNameVC.swift in Sources */,
 				3B086D41217A4EAD000A353D /* InstructionsVC.swift in Sources */,

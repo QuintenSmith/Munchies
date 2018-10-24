@@ -11,8 +11,7 @@ import UIKit
 class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, GroceriesListCellDelegate {
     
  
-  
-    
+    var user: User?
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -28,6 +27,16 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.dataSource = self
         createNewGroceryItemTextField.delegate = self
         sideMenu()
+        updateViews()
+    }
+    
+    func updateViews() {
+        guard let user = user else {return}
+        UserController.shared.updateUser(user: user, name: user.name, diet: user.diet, intolerances: Set<String>(), shoppingList: user.shoppingList, favorites: user.favorites, journalEntries: user.journalEntries) { (success) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     
@@ -77,8 +86,8 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let groceryName = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else { return }
         let grocery = GroceryItem(name: groceryName)
         GroceryListController.shared.addNew(grocery: grocery)
-        createNewGroceryItemTextField.text = ""
-        self.tableView.reloadData()
+            self.tableView.reloadData()
+            createNewGroceryItemTextField.text = ""
     }
     
     //MARK: - Custom Protocol Conformance
@@ -98,6 +107,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         GroceryListController.shared.addNew(grocery: grocery)
         createNewGroceryItemTextField.text = ""
         self.tableView.reloadData()
+        updateViews()
         return true
     }
     

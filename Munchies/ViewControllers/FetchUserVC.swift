@@ -23,8 +23,10 @@ class FetchUserVC: UIViewController {
                    self.present(createUserViewController, animated: true)
                 }
             } else {
-                let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sideMenuVC")
-                self.present(mainViewController, animated: true)
+                DispatchQueue.main.async {
+                    let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Quinten")
+                    self.present(mainViewController, animated: true)
+                }
             }
         }
     }

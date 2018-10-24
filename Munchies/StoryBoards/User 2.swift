@@ -13,15 +13,15 @@ class User {
     
     var name: String
     var diet: String?
-    var intolerances: Set<String>?
-    var shoppingList: [GroceryItem]?
-    var favorites: [RecipeID]?
+    var intolerances: [Intolerance]?
+    var shoppingList: [Item]?
+    var favorites: [DetailedRecipe]?
     var journalEntries: [Entry]?
     
     var cloudKitRecordID = CKRecord.ID(recordName: UUID().uuidString) 
     let appleUserReference: CKRecord.Reference
     
-    init(name: String, diet: String?, intolerances: Set<String>?, shoppingList: [GroceryItem]?, favorites: [RecipeID]?, journalEntries: [Entry]?, appleUserReference: CKRecord.Reference) {
+    init(name: String, diet: String?, intolerances: [Intolerance]?, shoppingList: [Item]?, favorites: [DetailedRecipe]?, journalEntries: [Entry]?, appleUserReference: CKRecord.Reference) {
         self.name = name
         self.diet = diet
         self.intolerances = intolerances
@@ -36,17 +36,9 @@ class User {
               let diet = ckRecord[Constants.dietKey] as? String,
               let appleUserReference = ckRecord[Constants.appleUserReferenceKey] as? CKRecord.Reference else {return nil}
         
-        var intolerances: Set<String>?
-        if let intoleranceStringsArray = ckRecord[Constants.intolerancesKey] as? [String]{
-            let intolerancesArray = intoleranceStringsArray.compactMap{ String( $0 )}
-            intolerances = Set(intolerancesArray)
-        }
-        
         self.name = name
         self.diet = diet
-        
-        
-        self.intolerances = intolerances
+        self.intolerances = []
         self.shoppingList = []
         self.favorites = []
         self.journalEntries = []
@@ -61,14 +53,7 @@ class User {
         self.init(recordType: Constants.UserRecordType, recordID: recordID)
         self.setValue(user.name, forKey: Constants.nameKey)
         self.setValue(user.diet, forKey: Constants.dietKey)
-        
-        var intoleranceStrings: [String] = []
-        for intolerance in user.intolerances!{
-            let singleIntoleranceString = intolerance
-            intoleranceStrings.append(singleIntoleranceString)
-        }
-        
-        self.setValue(intoleranceStrings, forKey: Constants.intolerancesKey)
+        self.setValue(user.intolerances, forKey: Constants.intolerancesKey)
         self.setValue(user.shoppingList, forKey: Constants.shoppingListKey)
         self.setValue(user.favorites, forKey: Constants.favoritesKey)
         self.setValue(user.journalEntries, forKey: Constants.journalEntriesKey)
@@ -84,6 +69,6 @@ class User {
         static let shoppingListKey = "shoppingList"
         static let favoritesKey = "favorites"
         static let journalEntriesKey = "journalEntries"
-        static let appleUserReferenceKey = "appleUserReference"
+        static let appleUserReferenceKey = "AppleUserReference"
     }
 
