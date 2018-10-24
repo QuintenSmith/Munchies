@@ -59,7 +59,6 @@
 		1CFC28F0217FD9F9003303ED /* FetchUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC28EF217FD9F9003303ED /* FetchUserVC.swift */; };
 		1CFC28F2217FDAF9003303ED /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFC28F1217FDAF9003303ED /* CreateProfile.storyboard */; };
 		1CFC28F4217FDC5A003303ED /* CreateNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC28F3217FDC5A003303ED /* CreateNameVC.swift */; };
-		1CFC28F9217FFA33003303ED /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CFC28F8217FFA33003303ED /* CloudKit.framework */; };
 		1CFC28FB21801577003303ED /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC28FA21801577003303ED /* ItemController.swift */; };
 		3B086D41217A4EAD000A353D /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D40217A4EAD000A353D /* InstructionsVC.swift */; };
 		3B086D43217A8B54000A353D /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */; };
@@ -141,7 +140,6 @@
 		1CFC28F1217FDAF9003303ED /* CreateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
 		1CFC28F3217FDC5A003303ED /* CreateNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNameVC.swift; sourceTree = "<group>"; };
 		1CFC28F7217FF906003303ED /* Munchies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Munchies.entitlements; sourceTree = "<group>"; };
-		1CFC28F8217FFA33003303ED /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1CFC28FA21801577003303ED /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		3B086D40217A4EAD000A353D /* InstructionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
 		3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
@@ -894,13 +892,13 @@
 				CODE_SIGN_ENTITLEMENTS = Munchies/Munchies.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5EAUJPVR66;
+				DEVELOPMENT_TEAM = 7AU78NCJUV;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xwrobelekx.munchies;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QuintenSmith.Munchies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Munchies/ViewControllers/Munchies-Bridging-Header.h";
@@ -919,13 +917,13 @@
 				CODE_SIGN_ENTITLEMENTS = Munchies/Munchies.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5EAUJPVR66;
+				DEVELOPMENT_TEAM = 7AU78NCJUV;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xwrobelekx.munchies;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QuintenSmith.Munchies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Munchies/ViewControllers/Munchies-Bridging-Header.h";

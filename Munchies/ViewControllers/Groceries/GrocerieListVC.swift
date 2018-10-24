@@ -89,6 +89,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         GroceryListController.shared.addNew(grocery: grocery)
             self.tableView.reloadData()
             createNewGroceryItemTextField.text = ""
+        updateViews()
     }
     
     
@@ -108,8 +109,8 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         let grocery = GroceryItem(name: groceryName)
         GroceryListController.shared.addNew(grocery: grocery)
         createNewGroceryItemTextField.text = ""
-        self.tableView.reloadData()
         updateViews()
+        self.tableView.reloadData()
         return true
     }
 }
