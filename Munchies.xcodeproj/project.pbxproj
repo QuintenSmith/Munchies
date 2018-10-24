@@ -63,10 +63,10 @@
 		1CFC28F0217FD9F9003303ED /* FetchUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC28EF217FD9F9003303ED /* FetchUserVC.swift */; };
 		1CFC28F2217FDAF9003303ED /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFC28F1217FDAF9003303ED /* CreateProfile.storyboard */; };
 		1CFC28F4217FDC5A003303ED /* CreateNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC28F3217FDC5A003303ED /* CreateNameVC.swift */; };
-		1CFC28F9217FFA33003303ED /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CFC28F8217FFA33003303ED /* CloudKit.framework */; };
 		3B086D41217A4EAD000A353D /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D40217A4EAD000A353D /* InstructionsVC.swift */; };
 		3B086D43217A8B54000A353D /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */; };
 		3B3A2046217AA77E008F586F /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A2045217AA77E008F586F /* JournalController.swift */; };
+		3B414594218007E800407971 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B414593218007E800407971 /* CloudKit.framework */; };
 		3B691D6F2178091000F72828 /* RecipeFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B691D6E2178091000F72828 /* RecipeFetchController.swift */; };
 		3B691D71217836AC00F72828 /* RandomFoodJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B691D70217836AC00F72828 /* RandomFoodJoke.swift */; };
 		3B770A4B216FC3A900FD7B7B /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B770A49216FC3A900FD7B7B /* Favorites.storyboard */; };
@@ -147,10 +147,10 @@
 		1CFC28F1217FDAF9003303ED /* CreateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
 		1CFC28F3217FDC5A003303ED /* CreateNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNameVC.swift; sourceTree = "<group>"; };
 		1CFC28F7217FF906003303ED /* Munchies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Munchies.entitlements; sourceTree = "<group>"; };
-		1CFC28F8217FFA33003303ED /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3B086D40217A4EAD000A353D /* InstructionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
 		3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		3B3A2045217AA77E008F586F /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
+		3B414593218007E800407971 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3B691D6E2178091000F72828 /* RecipeFetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchController.swift; sourceTree = "<group>"; };
 		3B691D70217836AC00F72828 /* RandomFoodJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomFoodJoke.swift; path = Munchies/ModelController/RandomFoodJoke.swift; sourceTree = SOURCE_ROOT; };
 		3B770A4A216FC3A900FD7B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Munchies/StoryBoards/Base.lproj/Favorites.storyboard; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A0DB6C39ACB7CAA8022AE5 /* Pods_Munchies.framework in Frameworks */,
-				1CFC28F9217FFA33003303ED /* CloudKit.framework in Frameworks */,
+				3B414594218007E800407971 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +187,7 @@
 		1C440CE321743FD2006491FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1CFC28F8217FFA33003303ED /* CloudKit.framework */,
+				3B414593218007E800407971 /* CloudKit.framework */,
 				E77BB16CC9D8E22710B6DF83 /* Pods_Munchies.framework */,
 			);
 			name = Frameworks;
@@ -808,13 +808,13 @@
 				CODE_SIGN_ENTITLEMENTS = Munchies/Munchies.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.QuintenSmith.Munchies;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xwrobelekx.munchies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Munchies/ViewControllers/Munchies-Bridging-Header.h";
@@ -833,13 +833,13 @@
 				CODE_SIGN_ENTITLEMENTS = Munchies/Munchies.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AU78NCJUV;
+				DEVELOPMENT_TEAM = 5EAUJPVR66;
 				INFOPLIST_FILE = "$(SRCROOT)/Munchies/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.QuintenSmith.Munchies;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xwrobelekx.munchies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Munchies/ViewControllers/Munchies-Bridging-Header.h";

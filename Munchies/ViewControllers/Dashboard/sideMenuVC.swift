@@ -29,6 +29,9 @@ class sideMenuVC: UIViewController, UITableViewDelegate {
 //        return someMockRecipe
 //    }()
     
+    #warning ("for some reason, as soon you move the view 'scroll view', the favorite recipies dissapear.")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenu()

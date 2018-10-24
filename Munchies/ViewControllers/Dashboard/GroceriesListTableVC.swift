@@ -10,7 +10,7 @@ import UIKit
 
 class GroceriesListTableVC: UITableViewController {
     
-    @IBOutlet var backgroundImg: UIView!
+@IBOutlet var backgroundImg: UIView!
     
     //var groceryItems: [String] = []
 

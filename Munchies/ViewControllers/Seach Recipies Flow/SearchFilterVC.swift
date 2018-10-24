@@ -152,7 +152,6 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func findButtonTapped(_ sender: Any) {
         UIView.animate(withDuration: 1.0, animations: {
             self.blurView.isHidden = false
-           
             self.loadingIndicator.startAnimating()
         })
          self.blurView.layer.cornerRadius = 50
@@ -187,11 +186,12 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
                 guard let detailedRecipies = detailedRecipies else {return}
                 RecipeFetchController.shared.recipiesWithDetail = detailedRecipies
                 print("✅ Finished fetching detailed recipies")
+                self.applyFiltersAndFetchImages()
                 
                 DispatchQueue.main.async {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.updateTableViewAfterTimeFilter()
-                    print("😋😋 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipies.count)")
+                    //self.updateTableViewAfterTimeFilter() - moved up
+                    print("😋😋 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipiesWithDetailAndImage.count)")
                     self.blurView.isHidden = true
                     self.loadingIndicator.stopAnimating()
                     let storyboard = UIStoryboard(name: "Search", bundle: nil)
@@ -223,7 +223,7 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     //MARK: - helper function to filter by time it takes to cook diner
-    func updateTableViewAfterTimeFilter(){
+    func applyFiltersAndFetchImages(){
         RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: timeItShoultTakeToPrepareAMeal, servingAmount: portionSize)
         print("🔥🔥 Portion size: \(portionSize), time: \(timeItShoultTakeToPrepareAMeal)")
     }

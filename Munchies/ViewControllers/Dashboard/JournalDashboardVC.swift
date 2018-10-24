@@ -30,8 +30,15 @@ class JournalDashboardVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var numberOfRows = 0
+        if JournalController.shared.journalEntries.count > 6 {
+            numberOfRows = 6
+        } else {
+            numberOfRows = JournalController.shared.journalEntries.count
+        }
+        
         self.collectionView.backgroundView = backgroundImg
-        let datasource = JournalCollectionViewDataSource(numberOfItems: 6, entries: JournalController.shared.journalEntries)
+        let datasource = JournalCollectionViewDataSource(numberOfItems: numberOfRows, entries: JournalController.shared.journalEntries)
         collectionView.dataSource = datasource
         NSLog("po %@", datasource)
         if datasource.numberOfItems >= 1 {

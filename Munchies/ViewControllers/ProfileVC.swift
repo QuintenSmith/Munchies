@@ -54,6 +54,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     var intoleranceSelected: String = ""
     var dietButtonTagNumber : Int = 7
     var saveButtonState = true
+    var user: User?
     
     
     
@@ -74,6 +75,8 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         nameTextField.delegate = self
         
         setupButtonsBasedOnPreviousSettings()
+        guard let user = user else {return}
+        nameTextField.text = user.name
     }
     
     

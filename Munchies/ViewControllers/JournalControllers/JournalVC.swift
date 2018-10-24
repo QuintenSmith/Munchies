@@ -15,21 +15,21 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
-
+    
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         sideMenu()
+        collectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if JournalController.shared.journalEntries.count == 1 {
+        if JournalController.shared.journalEntries.count >= 1 {
             self.collectionView.isHidden = false
         }
-        
         collectionView.reloadData()
     }
     
@@ -48,7 +48,6 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     //MARK: - Colection View Data source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return JournalController.shared.journalEntries.count
     }
     

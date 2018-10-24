@@ -19,6 +19,13 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
     @IBOutlet weak var clasificationCorectionTextField: UITextField!
     @IBOutlet weak var clasificationView: UIView!
     @IBOutlet weak var ClasificationViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var noButtonOutlet: RoundedShapeButton!
+    @IBOutlet weak var yesButtonOutlet: RoundedShapeButton!
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
+    
     
     
     //MARK: - Property
@@ -26,12 +33,17 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
     var keyboardHeight: CGFloat = 0
     var currentClassificationText: String = ""
 
+    
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         clasificationCorectionTextField.delegate = self
         clasificationCorectionTextField.isHidden = true
-        // Do any additional setup after loading the view.
+        blurView.isHidden = true
+        
+        #warning ("Not cutting the corners")
+        blurView.layer.cornerRadius = 50
+        ClasificationViewHeightConstraint.constant = 0
         
         //MARK: - Gets Api Key and assigns it.
         CloudSightConnection.sharedInstance().consumerKey = RecipeFetchController.shared.getApiKey(named: "cloudSightKey")
@@ -104,8 +116,11 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
     
     //MARK: - Actions
     @IBAction func noButtonPressed(_ sender: Any) {
+        noButtonOutlet.isHidden = true
+        yesButtonOutlet.isHidden = true
         clasificationCorectionTextField.isHidden = false
         clasificationLabel.text = "Please tell us what it is so we can improve your expirience."
+        clasificationLabel.font = UIFont.systemFont(ofSize: 12)
         clasificationCorectionTextField.becomeFirstResponder()
     }
     
@@ -121,8 +136,6 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
         let imageData = image.jpegData(compressionQuality: 0.8)
         cloudSightQuery = CloudSightQuery(image: imageData, atLocation: CGPoint.zero, withDelegate: self, atPlacemark: nil, withDeviceId: "device-id")
         cloudSightQuery.start()
-        
-        
         #warning ("present loading clasification indicator")
         
         
@@ -132,8 +145,11 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
     func updateViews() {
         guard let imageToBeClasified = ImageClasificationController.shared.curentImageAndClasification else {return}
         imageToBeClasifiedView.image = imageToBeClasified
+        blurView.isHidden = false
+       // self.blurView.layer.cornerRadius = 50
+        activityIndicator.startAnimating()
         #warning ("uncoment this line to run image clasification")
-    //    clasifyImage(image: imageToBeClasified)
+        clasifyImage(image: imageToBeClasified)
         
     }
     
@@ -146,9 +162,13 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
     func cloudSightQueryDidFinishIdentifying(_ query: CloudSightQuery!) {
         print("🔆 cloudSightQueryDidFinishIdentifying")
         DispatchQueue.main.async {
+            self.blurView.isHidden = true
             guard let clasificationText = query.name() else {return}
             self.currentClassificationText = clasificationText
             self.clasificationLabel.text = "Is this \(clasificationText)?"
+            UIView.animate(withDuration: 1.0, animations: {
+                self.ClasificationViewHeightConstraint.constant = 100
+            })
             
 
         }
