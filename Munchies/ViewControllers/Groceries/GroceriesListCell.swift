@@ -16,6 +16,7 @@ protocol GroceriesListCellDelegate: class{
 
 class GroceriesListCell: UITableViewCell {
     
+    
     //MARK: - Properties
     weak var delegate : GroceriesListCellDelegate?
     var grocery: GroceryItem? {

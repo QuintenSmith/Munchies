@@ -29,6 +29,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         createNewGroceryItemTextField.delegate = self
         sideMenu()
         updateViews()
+        tableView.keyboardDismissMode = .onDrag
     }
     
     func updateViews() {
@@ -50,6 +51,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             view.layoutIfNeeded()
         }
+        
     }
     
     
@@ -67,11 +69,25 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    //MARK: - Actions
-    @IBAction func backBtnTapped(_ sender: Any) {
-        self.dismiss(animated: true) {
+    //MARK: - Actions    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        if !GroceryListController.shared.groceries.isEmpty {
+            var groceriesAsText = ""
+            var groceries = [String]()
+            for grocery in GroceryListController.shared.groceries {
+                    groceries.append(grocery.name)
+            }
+            groceriesAsText = groceries.joined(separator: ",\n")
+            print(groceriesAsText)
+            let shareSheet = UIActivityViewController(activityItems: [groceriesAsText], applicationActivities: nil)
+            present(shareSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Nothing to share", message: "Please add some items to shopping list.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alert, animated: true)
         }
     }
+    
     
     @IBAction func deleteBtnTapped(_ sender: Any) {
             presntDeleteAlert()
@@ -83,6 +99,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         GroceryListController.shared.addNew(grocery: grocery)
             self.tableView.reloadData()
             createNewGroceryItemTextField.text = ""
+        createNewGroceryItemTextField.resignFirstResponder()
     }
     
     
@@ -97,7 +114,6 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //Helper Methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        createNewGroceryItemTextField.resignFirstResponder()
         guard let groceryName = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else {return true }
         let grocery = GroceryItem(name: groceryName)
         GroceryListController.shared.addNew(grocery: grocery)
