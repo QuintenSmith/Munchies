@@ -84,6 +84,7 @@
                                             <outlet property="favImageOutlet" destination="Wh1-22-Ukb" id="pPb-Pp-KuO"/>
                                             <outlet property="mealNameLabel" destination="IXF-mr-iRw" id="nbs-1w-qtV"/>
                                             <outlet property="ratingLabel" destination="TvB-JB-adz" id="d79-X5-25W"/>
+                                            <segue destination="XhP-Ak-IOK" kind="show" id="QmS-41-5RJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -113,6 +114,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ll-7M-S1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="804" y="-1250.824587706147"/>
+        </scene>
+        <!--Recipe-->
+        <scene sceneID="mcw-et-h3L">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Recipe" id="XhP-Ak-IOK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ApJ-t0-nKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725" y="-1293"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PkL-l1-EkK">

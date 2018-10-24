@@ -16,7 +16,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     
     // so basicly we need a model of type recipie, which is gone have image, dishname, and rating
     
-        var cellData: Recipe? {
+        var cellData: RecipeWithDetailAndImage? {
         didSet{
             updateViews()
         }
@@ -34,22 +34,10 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     func updateViews(){
         guard let recipe = cellData else {return}
         favImageOutlet.image = recipe.picture
-        mealNameLabel.text = recipe.recipeTitle
+        mealNameLabel.text = recipe.detailedRecipe.title
         
-        switch recipe.rating {
-        case 1:
-            ratingLabel.text = "⭑"
-        case 2:
-            ratingLabel.text = "⭑⭑"
-        case 3:
-            ratingLabel.text = "⭑⭑⭑"
-        case 4:
-            ratingLabel.text = "⭑⭑⭑⭑"
-        case 5:
-            ratingLabel.text = "⭑⭑⭑⭑⭑"
-        default:
-            ratingLabel.text = ""
-        }
+        
+
         
         
     }

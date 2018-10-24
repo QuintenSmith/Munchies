@@ -13,15 +13,22 @@ import UIKit
 class FavoritesTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     var numberOfItems: Int
-    var recipes: [Recipe] 
+    //var recipes: [Recipe]
+    var recipes: [RecipeWithDetailAndImage]
         
-    init(numberOfItems: Int, recipes: [Recipe]) {
+    init(numberOfItems: Int, recipes: [RecipeWithDetailAndImage]) {
         self.numberOfItems = numberOfItems
         self.recipes = recipes
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfItems
+        
+        if numberOfItems < RecipeFetchController.shared.favoriteRecipies.count {
+            return numberOfItems
+        } else {
+            return RecipeFetchController.shared.favoriteRecipies.count
+        }
+   
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

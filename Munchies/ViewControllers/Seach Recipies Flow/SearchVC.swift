@@ -9,6 +9,8 @@
 import UIKit
 
 class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    
     
     //MARK: - Outlets
     @IBOutlet weak var menuBtn: UIBarButtonItem!
@@ -30,6 +32,11 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         titleLabel.font = UIFont(name: "Results", size: 12)
         self.navigationItem.titleView = titleLabel
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        searchResultColectionView.reloadData()
+    }
     
     
     //MARK: - Side Menu Method
@@ -46,42 +53,37 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     //MARK: - CollectionView Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return RecipeFetchController.shared.filteredRecipies.count
+        return RecipeFetchController.shared.filteredRecipiesWithDetailAndImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as? SearchCollectionViewCell else {return UICollectionViewCell()}
-        let recipe = RecipeFetchController.shared.filteredRecipies[indexPath.row]
-        RecipeFetchController.shared.fetchImage(at: recipe.image) { (image) in
-            DispatchQueue.main.async {
-                cell.cellData = recipe
-                cell.thumbnail = image
-
-            }
-        }
+        let recipe = RecipeFetchController.shared.filteredRecipiesWithDetailAndImage[indexPath.row]
+        cell.cellData = recipe
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let recipe = RecipeFetchController.shared.filteredRecipies[indexPath.row]
-       let cell = searchResultColectionView.cellForItem(at: indexPath) as! SearchCollectionViewCell
-        let image = cell.recipeImage.image
-        
-        
-        RecipeFetchController.shared.recipeForDetailView = RecipeForDetailView.init(recipe: recipe, picture: image)
+       let recipe = RecipeFetchController.shared.filteredRecipiesWithDetailAndImage[indexPath.row]
+        //this will set the instructions in the InstructionsTableViewController
+        RecipeFetchController.shared.temporaryInstructionStorage = recipe.detailedRecipe.analyzedInstructions
+
         let storyboard = UIStoryboard(name: "Recipe", bundle: nil)
-        let recipeVC = storyboard.instantiateViewController(withIdentifier: "recipeDetailView")
+        guard let recipeVC = storyboard.instantiateViewController(withIdentifier: "recipeDetailView") as? RecipeVC else {return}
+        recipeVC.recipeToDispaly = recipe
         let navigationController = UINavigationController(rootViewController: recipeVC)
         self.present(navigationController, animated: true, completion: nil)
- 
+        
     }
+    
     
     //MARK: - Actions
-    
     @IBAction func backButtonPressed(_ sender: Any) {
+        RecipeFetchController.shared.filteredRecipies.removeAll()
+        RecipeFetchController.shared.recipiesWithDetail.removeAll()
+        RecipeFetchController.shared.recipes.removeAll()
+        RecipeFetchController.shared.filteredRecipiesWithDetailAndImage.removeAll()
         self.dismiss(animated: true)
     }
-    
-    
     
 }

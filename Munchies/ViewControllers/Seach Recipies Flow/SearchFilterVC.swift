@@ -39,7 +39,7 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     var timeToCookButtons = [UIButton]()
     var portionButtons = [UIButton]()
     var count: Int = 0
-    var curentTagButtonTime: Int = 60
+    var timeItShoultTakeToPrepareAMeal: Int = 60
     var portionSize: Int = 2
 
     
@@ -101,22 +101,22 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         
         switch sender.tag {
         case 0:
-            curentTagButtonTime = 15
+            timeItShoultTakeToPrepareAMeal = 15
             thirdyMinuteButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 1:
-            curentTagButtonTime = 30
+            timeItShoultTakeToPrepareAMeal = 30
             oneHourButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 2:
-            curentTagButtonTime = 60
+            timeItShoultTakeToPrepareAMeal = 60
             hourAndAHalfButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 3:
-            curentTagButtonTime = 90
+            timeItShoultTakeToPrepareAMeal = 90
             twoHourButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 4:
-            curentTagButtonTime = 400
+            timeItShoultTakeToPrepareAMeal = 400
             twoHourPlusButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         default:
-            curentTagButtonTime = 60
+            timeItShoultTakeToPrepareAMeal = 60
         }
     }
 
@@ -224,8 +224,8 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     
     //MARK: - helper function to filter by time it takes to cook diner
     func updateTableViewAfterTimeFilter(){
-        RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: curentTagButtonTime, servingAmount: portionSize)
-        print("🔥🔥 Portion size: \(portionSize), time: \(curentTagButtonTime)")
+        RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: timeItShoultTakeToPrepareAMeal, servingAmount: portionSize)
+        print("🔥🔥 Portion size: \(portionSize), time: \(timeItShoultTakeToPrepareAMeal)")
     }
     
     

@@ -13,8 +13,9 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     //MARK: - Outlets
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
-    
     @IBOutlet weak var menuBtn: UIBarButtonItem!
+    
+    
     
     //MARK: - Properties
     var recipies: [Recipe] = {
@@ -64,12 +65,12 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     //MARK: - Colection View Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return recipies.count
+       return RecipeFetchController.shared.favoriteRecipies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoriteCell", for: indexPath) as? FavoritesCollectionViewCell else {return UICollectionViewCell()}
-        let recipe = recipies[indexPath.row]
+        let recipe = RecipeFetchController.shared.favoriteRecipies[indexPath.row]
         cell.cellData = recipe
         return cell
     }
