@@ -56,13 +56,17 @@
                                                     <rect key="frame" x="4" y="151" width="153" height="22"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbm-B1-EZE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="31.5" height="22"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="59" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YE6-lt-KIs">
-                                                            <rect key="frame" x="103.5" y="0.0" width="49.5" height="22"/>
+                                                            <rect key="frame" x="131" y="0.0" width="22" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="22" id="BR1-mb-8hV"/>
+                                                                <constraint firstAttribute="height" constant="22" id="Cr9-vY-znr"/>
+                                                            </constraints>
                                                             <state key="normal" image="belowphotosoffood"/>
                                                         </button>
                                                     </subviews>
