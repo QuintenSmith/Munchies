@@ -101,8 +101,8 @@ class UserController {
                 print("There was an error fetching current user ID \(error) \(error.localizedDescription)")
                 completion(false); return
             }
-            guard let appleUserRecordID = appleUserRecordID else {completion(false); return}
-            let predicate = NSPredicate(format: "appleUserRef == %@", appleUserRecordID)
+            guard let appleUserRecordID = appleUserRecordID else {completion(false); print("🐳🐳🐳"); return}
+            let predicate = NSPredicate(format: "appleUserReference == %@", appleUserRecordID)
             let query = CKQuery(recordType: "User", predicate: predicate)
             
             CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil
@@ -123,4 +123,28 @@ class UserController {
         
     }
     
+    func updateUser(user: User, name: String, diet: String?, intolerances: Set<String>, shoppingList: [GroceryItem]?,
+                    favorites: [RecipeID]?, journalEntries: [Entry]?, completion: @escaping(Bool) -> Void) {
+        
+        user.name = name
+        user.diet = diet
+        user.intolerances = intolerances
+        user.shoppingList = shoppingList
+        user.favorites = favorites
+        user.journalEntries = journalEntries
+        let updatedUserRecord = CKRecord(user: user)
+        var recordsToSave: [CKRecord] = []
+        recordsToSave.append(updatedUserRecord)
+        let operation = CKModifyRecordsOperation(recordsToSave: recordsToSave, recordIDsToDelete: nil)
+        operation.savePolicy = .changedKeys
+        operation.queuePriority = .high
+        operation.qualityOfService = .userInteractive
+        operation.completionBlock = {
+            self.loggedInUser = user
+            completion(true)
+        }
+        CKContainer.default().publicCloudDatabase.add(operation) 
+    }
+    
 }
+
