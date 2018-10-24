@@ -23,6 +23,7 @@ class RecipeFetchController {
     var diet: String = ""
    // var intolerance: String = ""
     var intolerances = Set<String>()
+    //var userIntolerances = Set<intolerances>()
     
     
     //initial fetch
