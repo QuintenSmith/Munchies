@@ -19,9 +19,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoppinglist-2" translatesAutoresizingMaskIntoConstraints="NO" id="rPo-gF-SH7">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rPo-gF-SH7" secondAttribute="height" multiplier="125:201" id="cIJ-7d-HIj"/>
-                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGo-PC-MPM">
                                 <rect key="frame" x="16" y="88" width="343" height="50"/>
@@ -55,7 +52,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SZl-fR-90K">
-                                <rect key="frame" x="18" y="146" width="339" height="422"/>
+                                <rect key="frame" x="18" y="146" width="339" height="503"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -78,7 +75,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Ingredient)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4V-wy-f5O">
-                                                    <rect key="frame" x="50" y="8" width="281" height="35"/>
+                                                    <rect key="frame" x="50" y="8" width="320" height="35"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -108,51 +105,28 @@
                                     <outlet property="delegate" destination="AuA-ec-4zT" id="ma7-AR-pBy"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="QCD-v4-Ew4">
-                                <rect key="frame" x="18" y="597" width="338" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-gO-dHL" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="160" id="YH6-mA-J0t"/>
-                                            <constraint firstAttribute="height" constant="50" id="xTs-Hu-xFk"/>
-                                        </constraints>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWv-9C-R0E" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                        <rect key="frame" x="178" y="0.0" width="160" height="50"/>
-                                        <color key="backgroundColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Share">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bGo-PC-MPM" firstAttribute="top" secondItem="Qh9-CW-7Tc" secondAttribute="top" constant="24" id="1Xc-Z7-u1s"/>
                             <constraint firstItem="bGo-PC-MPM" firstAttribute="leading" secondItem="Qh9-CW-7Tc" secondAttribute="leading" constant="16" id="387-Ee-Ip8"/>
                             <constraint firstItem="SZl-fR-90K" firstAttribute="leading" secondItem="Qh9-CW-7Tc" secondAttribute="leading" constant="18" id="39S-6V-kb3"/>
-                            <constraint firstItem="Qh9-CW-7Tc" firstAttribute="bottom" secondItem="QCD-v4-Ew4" secondAttribute="bottom" constant="20" id="9Qd-Zp-aRS"/>
                             <constraint firstItem="rPo-gF-SH7" firstAttribute="leading" secondItem="Qh9-CW-7Tc" secondAttribute="leading" id="A7L-NR-aUj"/>
-                            <constraint firstItem="QCD-v4-Ew4" firstAttribute="top" secondItem="SZl-fR-90K" secondAttribute="bottom" constant="29" id="Byl-5C-jmO"/>
                             <constraint firstItem="Qh9-CW-7Tc" firstAttribute="trailing" secondItem="SZl-fR-90K" secondAttribute="trailing" constant="18" id="NE4-SM-jUD"/>
                             <constraint firstItem="SZl-fR-90K" firstAttribute="top" secondItem="bGo-PC-MPM" secondAttribute="bottom" constant="8" id="NXc-SK-ll9"/>
+                            <constraint firstItem="Qh9-CW-7Tc" firstAttribute="bottom" secondItem="SZl-fR-90K" secondAttribute="bottom" constant="18" id="beJ-8u-S3b"/>
                             <constraint firstItem="rPo-gF-SH7" firstAttribute="trailing" secondItem="Qh9-CW-7Tc" secondAttribute="trailing" id="fQ6-VG-l25"/>
                             <constraint firstItem="rPo-gF-SH7" firstAttribute="top" secondItem="Qh9-CW-7Tc" secondAttribute="top" id="gqg-S0-Ht9"/>
                             <constraint firstItem="Qh9-CW-7Tc" firstAttribute="trailing" secondItem="bGo-PC-MPM" secondAttribute="trailing" constant="16" id="hX0-ch-mY8"/>
-                            <constraint firstItem="QCD-v4-Ew4" firstAttribute="leading" secondItem="Qh9-CW-7Tc" secondAttribute="leading" constant="18" id="sgA-DA-PXz"/>
-                            <constraint firstItem="rPo-gF-SH7" firstAttribute="bottom" secondItem="Qh9-CW-7Tc" secondAttribute="bottom" id="whq-95-dcD"/>
-                            <constraint firstItem="Qh9-CW-7Tc" firstAttribute="trailing" secondItem="QCD-v4-Ew4" secondAttribute="trailing" constant="19" id="ykR-1P-ju7"/>
+                            <constraint firstItem="rPo-gF-SH7" firstAttribute="bottom" secondItem="qCu-jx-emE" secondAttribute="bottom" id="whq-95-dcD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qh9-CW-7Tc"/>
                     </view>
                     <navigationItem key="navigationItem" title="SHOPPING LIST" id="0Ci-MO-7Vr">
-                        <barButtonItem key="leftBarButtonItem" id="baE-xc-sDI"/>
+                        <leftBarButtonItems>
+                            <barButtonItem id="baE-xc-sDI"/>
+                            <barButtonItem title="Item" image="header-6" id="1np-kZ-U0g"/>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" image="header-7" id="OTV-6R-VC1">
                             <connections>
                                 <action selector="deleteBtnTapped:" destination="AuA-ec-4zT" id="MCR-K6-GBr"/>
@@ -160,10 +134,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelBtn" destination="cCl-gO-dHL" id="SWx-C1-pFi"/>
                         <outlet property="createNewGroceryItemTextField" destination="v8E-uo-q6w" id="xM5-vy-D0S"/>
                         <outlet property="menuBtn" destination="baE-xc-sDI" id="eRF-W0-JpM"/>
-                        <outlet property="shareBtn" destination="cWv-9C-R0E" id="FCT-d3-Z3d"/>
                         <outlet property="tableView" destination="SZl-fR-90K" id="z6n-Oh-bNA"/>
                     </connections>
                 </viewController>
@@ -182,7 +154,7 @@
                         <color key="backgroundColor" red="0.9519596696" green="0.32681697609999999" blue="0.32420715690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -197,6 +169,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="header-6" width="20" height="20"/>
         <image name="header-7" width="18" height="21"/>
         <image name="recipe" width="16" height="16"/>
         <image name="shoppinglist-1" width="22" height="23"/>

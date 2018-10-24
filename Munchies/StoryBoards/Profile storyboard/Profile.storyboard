@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LBJ-1E-g8S">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--PROFILE-->
         <scene sceneID="faj-tj-TkI">
             <objects>
                 <viewController id="VNO-vf-3le" customClass="ProfileVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-Fj-sD9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="736"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="712"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qp0-R0-3jk">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="765"/>
@@ -46,7 +46,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Quinten Smith" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ln-Hq-9dL">
-                                                        <rect key="frame" x="62" y="9.5" width="244" height="27"/>
+                                                        <rect key="frame" x="62" y="9.6666666666666856" width="244" height="27"/>
                                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="244" id="8OK-uX-3ln"/>
@@ -71,16 +71,16 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="DIETS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bU-09-0nT">
-                                                <rect key="frame" x="150" y="259" width="75" height="21.5"/>
+                                                <rect key="frame" x="150" y="259" width="75" height="21.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="h5Q-uf-KBP">
-                                                <rect key="frame" x="18" y="296.5" width="339" height="30"/>
+                                                <rect key="frame" x="18" y="296.66666666666669" width="339" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c8-df-gSM" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="bkK-gX-4NK"/>
@@ -94,7 +94,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knb-FN-N1V" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="117.5" y="0.0" width="104" height="30"/>
+                                                        <rect key="frame" x="117.33333333333334" y="0.0" width="104.33333333333334" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="BB1-jf-8N2"/>
@@ -108,7 +108,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsx-29-cFS" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="234.5" y="0.0" width="104.5" height="30"/>
+                                                        <rect key="frame" x="234.66666666666666" y="0.0" width="104.33333333333334" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="VeN-nx-pGu"/>
@@ -124,10 +124,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="EGb-14-BMM">
-                                                <rect key="frame" x="18" y="342.5" width="339" height="30"/>
+                                                <rect key="frame" x="18" y="342.66666666666669" width="339" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I40-F7-wlf" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.49535517331932771" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="dgM-vA-i5b"/>
@@ -141,7 +141,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xf-ym-x3f" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="117.5" y="0.0" width="104" height="30"/>
+                                                        <rect key="frame" x="117.33333333333334" y="0.0" width="104.33333333333334" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.49535517331932771" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="s6k-dW-mHF"/>
@@ -155,7 +155,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgO-Vs-MAM" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="234.5" y="0.0" width="104.5" height="30"/>
+                                                        <rect key="frame" x="234.66666666666666" y="0.0" width="104.33333333333334" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.49535517331932771" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="ScV-1A-7V1"/>
@@ -171,16 +171,16 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTOLERANCES/ALLERGIES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSV-JY-7vF">
-                                                <rect key="frame" x="0.0" y="404.5" width="375" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="404.66666666666669" width="375" height="21.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="0zr-ps-RV0">
-                                                <rect key="frame" x="18" y="442" width="339" height="30"/>
+                                                <rect key="frame" x="18" y="442.33333333333337" width="339" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhc-c2-Ih7" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="30"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="prw-1d-0Pw"/>
@@ -194,7 +194,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-c8-bYX" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="117.5" y="0.0" width="104" height="30"/>
+                                                        <rect key="frame" x="117.33333333333334" y="0.0" width="104.33333333333334" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="xWO-z0-bNP"/>
@@ -208,7 +208,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PL5-Kv-hNF" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="234.5" y="0.0" width="104.5" height="30"/>
+                                                        <rect key="frame" x="234.66666666666666" y="0.0" width="104.33333333333334" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Xmq-OA-Ba3"/>
@@ -224,10 +224,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="K26-vE-Mha">
-                                                <rect key="frame" x="18" y="488" width="339" height="30"/>
+                                                <rect key="frame" x="18" y="488.33333333333337" width="339" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="She-XZ-WGk" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="nvk-cb-os4"/>
@@ -241,7 +241,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkC-nT-1pU" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="117.5" y="0.0" width="104" height="30"/>
+                                                        <rect key="frame" x="117.33333333333334" y="0.0" width="104.33333333333334" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="5SS-fR-dsg"/>
@@ -255,7 +255,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6H-z9-ce7" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="234.5" y="0.0" width="104.5" height="30"/>
+                                                        <rect key="frame" x="234.66666666666666" y="0.0" width="104.33333333333334" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="QtV-bP-60J"/>
@@ -271,10 +271,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="fE1-Us-T6c">
-                                                <rect key="frame" x="18" y="534" width="339" height="30"/>
+                                                <rect key="frame" x="18" y="534.33333333333337" width="339" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuP-GX-zb2" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="nzL-dI-dTt"/>
@@ -288,7 +288,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHB-GD-IiE" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="117.5" y="0.0" width="104" height="30"/>
+                                                        <rect key="frame" x="117.33333333333334" y="0.0" width="104.33333333333334" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="DU4-qi-s6H"/>
@@ -302,7 +302,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahX-vD-oxU" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
-                                                        <rect key="frame" x="234.5" y="0.0" width="104.5" height="30"/>
+                                                        <rect key="frame" x="234.66666666666666" y="0.0" width="104.33333333333334" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="wsk-rS-aAC"/>
@@ -375,14 +375,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="x8e-NO-sLv" firstAttribute="bottom" secondItem="IMy-Fj-sD9" secondAttribute="bottom" id="45z-pH-HiD"/>
+                            <constraint firstAttribute="bottom" secondItem="IMy-Fj-sD9" secondAttribute="bottom" id="45z-pH-HiD"/>
                             <constraint firstItem="IMy-Fj-sD9" firstAttribute="leading" secondItem="x8e-NO-sLv" secondAttribute="leading" id="CO7-0l-W1r"/>
                             <constraint firstItem="x8e-NO-sLv" firstAttribute="trailing" secondItem="IMy-Fj-sD9" secondAttribute="trailing" id="OiV-88-VZ5"/>
                             <constraint firstItem="IMy-Fj-sD9" firstAttribute="top" secondItem="x8e-NO-sLv" secondAttribute="top" id="RFf-jW-DHe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x8e-NO-sLv"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="mUB-fj-qBF">
+                    <navigationItem key="navigationItem" title="PROFILE" largeTitleDisplayMode="always" id="mUB-fj-qBF">
                         <leftBarButtonItems>
                             <barButtonItem id="NER-91-Dlh"/>
                             <barButtonItem title="Clear all Settings" image="header-1" id="7ew-tA-1kO">
@@ -430,11 +430,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LBJ-1E-g8S" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="76l-7d-CmN">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>

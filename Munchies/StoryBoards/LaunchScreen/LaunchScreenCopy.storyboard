@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Al-Jz-Bge">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,15 +14,15 @@
             <objects>
                 <viewController id="6Al-Jz-Bge" customClass="FetchUserVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="wkc-4S-CwN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchpage" translatesAutoresizingMaskIntoConstraints="NO" id="v4S-hD-jA6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.38634121417999268" green="0.30293557047843933" blue="0.20951351523399353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo motto" translatesAutoresizingMaskIntoConstraints="NO" id="P0y-Rm-115">
-                                <rect key="frame" x="69" y="86" width="237" height="277"/>
+                                <rect key="frame" x="69" y="110" width="276" height="448"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -30,11 +30,11 @@
                             <constraint firstItem="Jzs-Ke-bMd" firstAttribute="trailing" secondItem="P0y-Rm-115" secondAttribute="trailing" constant="69" id="AO5-lH-snP"/>
                             <constraint firstItem="P0y-Rm-115" firstAttribute="leading" secondItem="Jzs-Ke-bMd" secondAttribute="leading" constant="69" id="ArP-5k-wID"/>
                             <constraint firstItem="v4S-hD-jA6" firstAttribute="leading" secondItem="Jzs-Ke-bMd" secondAttribute="leading" id="GP1-jg-9BA"/>
-                            <constraint firstItem="Jzs-Ke-bMd" firstAttribute="bottom" secondItem="v4S-hD-jA6" secondAttribute="bottom" id="R1f-j0-ARq"/>
+                            <constraint firstAttribute="bottom" secondItem="v4S-hD-jA6" secondAttribute="bottom" id="R1f-j0-ARq"/>
                             <constraint firstItem="P0y-Rm-115" firstAttribute="top" secondItem="Jzs-Ke-bMd" secondAttribute="top" constant="66" id="bHg-v3-8Tt"/>
                             <constraint firstItem="Jzs-Ke-bMd" firstAttribute="bottom" secondItem="P0y-Rm-115" secondAttribute="bottom" constant="304" id="czK-cu-dT9"/>
                             <constraint firstItem="P0y-Rm-115" firstAttribute="centerX" secondItem="wkc-4S-CwN" secondAttribute="centerX" id="nLw-6h-pQX"/>
-                            <constraint firstItem="v4S-hD-jA6" firstAttribute="top" secondItem="Jzs-Ke-bMd" secondAttribute="top" constant="-20" id="vbG-r6-4kz"/>
+                            <constraint firstItem="v4S-hD-jA6" firstAttribute="top" secondItem="wkc-4S-CwN" secondAttribute="top" id="vbG-r6-4kz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jzs-Ke-bMd"/>
                     </view>

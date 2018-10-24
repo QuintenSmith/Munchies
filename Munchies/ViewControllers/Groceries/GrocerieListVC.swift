@@ -62,13 +62,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func deleteBtnTapped(_ sender: Any) {
-        //remove groceries that have the button selected (isSelected = true) from the array of groceries, and reload tableview
-        for grocery in GroceryListController.shared.groceries {
-            if grocery.isSelected {
-                GroceryListController.shared.remove(grocery: grocery)
-            }
-        }
-        self.tableView.reloadData()
+            presntDeleteAlert()
     }
     
     @IBAction func addNewGroceryItemButtonPressed(_ sender: Any) {
@@ -98,5 +92,19 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         createNewGroceryItemTextField.text = ""
         self.tableView.reloadData()
         return true
+    }
+    
+    func presntDeleteAlert(){
+        let alert = UIAlertController(title: "Delete Grocery List", message: "Are you sure you want to delete selected items?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+            for grocery in GroceryListController.shared.groceries {
+                if grocery.isSelected {
+                    GroceryListController.shared.remove(grocery: grocery)
+                }
+            }
+            self.tableView.reloadData()
+        }))
+        self.present(alert, animated: true)
     }
 }
