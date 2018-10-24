@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Food Journal-->
+        <!--FOOD JOURNAL-->
         <scene sceneID="Jg3-Qq-Bju">
             <objects>
                 <viewController id="TKD-KD-42V" customClass="JournalVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,7 +99,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mXF-GK-egr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Food Journal" id="KhH-QA-p4z">
+                    <navigationItem key="navigationItem" title="FOOD JOURNAL" id="KhH-QA-p4z">
                         <barButtonItem key="leftBarButtonItem" id="D5e-C1-mtN"/>
                         <barButtonItem key="rightBarButtonItem" image="header-4" id="eUT-pc-FZR">
                             <connections>
@@ -142,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>

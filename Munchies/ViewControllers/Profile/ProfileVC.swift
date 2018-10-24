@@ -61,19 +61,12 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         clearButtonOutlet.isEnabled = false
-        
         dietButtons = [veganDietOutlet, paleoDietOutlet, primalDietOutlet, vagetarianDietOutlet, pescetarianDietOutlet, lactoVegetarianDietOutlet]
-        
         intoleranceButtons = [diaryFreeOutlet, peanutFreeOutlet, soyFreeOutlet, eggFreeOutlet, seafoodFreeOutlet, sulfiteFreeOutlet, glutenFreeOutlet, seasameFreeOutlet, shellfishFreeOutlet]
-        
         buttonStates = [diaryFreeButton, peanutFreeButton, soyFreeButton, eggFreeButton, seafoodFreeButton, sulfiteFreeButton, glutenFreeButton, seasameFreeButton, shellfishFreeButton]
-        
         sideMenu()
-        
         nameTextField.delegate = self
-        
         setupButtonsBasedOnPreviousSettings()
         guard let user = user else {return}
         nameTextField.text = user.name
@@ -179,10 +172,12 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             editView.isHidden = true
             clearButtonOutlet.isEnabled = true
             saveButtonState = false
+            
         } else {
             editView.isHidden = false
             clearButtonOutlet.isEnabled = false
             saveButtonState = true
+            showSuccesfullAlert()
         }
         
         
@@ -299,6 +294,12 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameTextField.resignFirstResponder()
         return true
+    }
+    
+    func showSuccesfullAlert(){
+        let alert = UIAlertController(title: "Profile Saved", message: "Great job, your profile is now updated.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Continue", style: .cancel, handler: nil))
+        present(alert, animated: true)
     }
     
     
