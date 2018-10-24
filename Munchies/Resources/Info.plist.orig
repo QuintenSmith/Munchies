@@ -18,10 +18,10 @@
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
 <<<<<<< HEAD
-	<string>771</string>
+	<string>807</string>
 =======
-	<string>743</string>
->>>>>>> 035993adaa88e3d4a9538c604d1acd8805566780
+	<string>831</string>
+>>>>>>> f94efd74ffcf80de1c55e2e25c0150f3ae33a973
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
@@ -29,7 +29,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>Filter</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>LaunchScreenCopy</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

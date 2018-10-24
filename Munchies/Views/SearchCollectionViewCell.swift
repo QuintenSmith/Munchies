@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+
+
 class SearchCollectionViewCell: UICollectionViewCell {
     
     
@@ -15,16 +18,10 @@ class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var readyInLabel: UILabel!
-    
+    @IBOutlet weak var recipeHeartButton: UIButton!
     
     //MARK: - Properties
-    var cellData: DetailedRecipe? {
-        didSet{
-            updateViews()
-        }
-    }
-    
-    var thumbnail : UIImage? {
+    var cellData: RecipeWithDetailAndImage? {
         didSet{
             updateViews()
         }
@@ -33,10 +30,33 @@ class SearchCollectionViewCell: UICollectionViewCell {
     //MARK: - Helper Method to update Views
     func updateViews() {
         guard let recipe = cellData else {return}
-        recipeImage.image = thumbnail
-        titleLabel.text = recipe.title
-        readyInLabel.text = "Ready in: \(recipe.readyInMinutes) min."
+        recipeImage.image = recipe.picture
+        titleLabel.text = recipe.detailedRecipe.title
+        readyInLabel.text = "Ready in: \(recipe.detailedRecipe.readyInMinutes) min."
+        flipTheHeart()
+        
     }
     
+    func flipTheHeart(){
+        guard let recipe = cellData else {
+            print("no Data")
+            return}
+        if let isFavorite = recipe.detailedRecipe.isFavorite {
+            if isFavorite {
+                recipeHeartButton.setBackgroundImage(#imageLiteral(resourceName: "favorites"), for: .normal)
+                return
+            }
+            recipeHeartButton.setBackgroundImage(#imageLiteral(resourceName: "belowphotosoffood"), for: .normal)
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        recipeHeartButton.setBackgroundImage(#imageLiteral(resourceName: "dashboardfavs"), for: .normal)
+    }
+    
+    
+    
+
     
 }

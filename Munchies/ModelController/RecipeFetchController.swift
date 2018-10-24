@@ -31,9 +31,27 @@ class RecipeFetchController {
     //second fetch with more details
     var recipiesWithDetail: [DetailedRecipe] = []
     //filtered locally on the device - time it takes to cook, portions
+    
+    
     var filteredRecipies: [DetailedRecipe] = []
     // container to store a recipy to be displayed in the detail view
     var recipeForDetailView : RecipeForDetailView?
+    //recipies that are marked as favorite
+    var favoriteRecipies = [RecipeWithDetailAndImage]()
+    
+    
+    //this should have the same recipies as filtered recipies, but with image now
+    var filteredRecipiesWithDetailAndImage = [RecipeWithDetailAndImage]()
+    var temporaryInstructionStorage = [Instructions]()
+    
+    
+    
+    func removefromFavorites(recipe: RecipeWithDetailAndImage){
+        guard let index = favoriteRecipies.index(of: recipe) else {return}
+        favoriteRecipies.remove(at: index)
+    }
+    
+    
     
     //random joke
     var randomJoke : String = "Remember: You can eat your way out of almost any problem."
@@ -101,9 +119,9 @@ class RecipeFetchController {
                 completion([]); return
             }
             
-            if let response = response {
-                print("➡️ Server Response: \(response)")
-            }
+//            if let response = response {
+//                print("➡️ Server Response: \(response)")
+//            }
             
             guard let data = data else {
                 print("❌ No data returned")
@@ -153,9 +171,9 @@ class RecipeFetchController {
                 completion([])
                 return
             }
-            if let response = response {
-                print("➡️ Server Response: \(response)")
-            }
+//            if let response = response {
+//                print("➡️ Server Response: \(response)")
+//            }
             guard let data = data else {
                 print("❌ Error: No Data returned from url session on detail recipie")
                 completion([])
@@ -184,9 +202,9 @@ class RecipeFetchController {
                 completion(nil)
                 return }
             
-            if let response = response {
-                print("➡️ Server Response: \(response)")
-            }
+//            if let response = response {
+//                print("➡️ Server Response: \(response)")
+//            }
             guard let data = data, let image = UIImage(data: data) else {completion(nil); return}
             completion(image)
             }.resume()
@@ -197,6 +215,17 @@ class RecipeFetchController {
         for recipe in recipiesWithDetail {
             if recipe.readyInMinutes <= timeItShouldTake && recipe.servings == servingAmount{
                 filteredRecipies.append(recipe)
+            }
+        }
+        
+        //fetch the images here?
+        #warning("what happens when someone doest press any time limits")
+        //curent time is preset to 60 if user doesnt press anything
+        
+        for recipe in filteredRecipies {
+            fetchImage(at: recipe.image) { (image) in
+                let detailedRecipe = RecipeWithDetailAndImage.init(detailedRecipe: recipe, picture: image)
+                self.filteredRecipiesWithDetailAndImage.append(detailedRecipe)
             }
         }
         
@@ -218,9 +247,9 @@ class RecipeFetchController {
                 completion(false)
                 return
             }
-            if let response = response {
-                print("➡️ Server Response: \(response)")
-            }
+//            if let response = response {
+//                print("➡️ Server Response: \(response)")
+//            }
             guard let data = data else {
                 print("❌ Error: No Data returned from url session on random joke")
                 completion(false)

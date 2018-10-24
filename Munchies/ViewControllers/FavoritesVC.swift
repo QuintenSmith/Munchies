@@ -13,24 +13,25 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     //MARK: - Outlets
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
-    
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
+    
+    
     //MARK: - Properties
-    var recipies: [Recipe] = {
-
-        let recipe1 = Recipe(picture: UIImage(named: "burger0")!, recipeTitle: "Burger", rating: 3)
-        let recipe2 = Recipe(picture: UIImage(named: "pasta6")!, recipeTitle: "Pasta", rating: 5)
-        let recipe3 = Recipe(picture: UIImage(named: "pizza1")!, recipeTitle: "Pizza", rating: 4)
-        let recipe4 = Recipe(picture: UIImage(named: "salad2")!, recipeTitle: "Salad", rating: 3)
-        let recipe5 = Recipe(picture: UIImage(named: "sandwich1")!, recipeTitle: "Sandwich", rating: 4)
-        let recipe6 = Recipe(picture: UIImage(named: "burger2")!, recipeTitle: "Burger", rating: 1)
-        let recipe7 = Recipe(picture: UIImage(named: "pizza3")!, recipeTitle: "Pizza", rating: 4)
-        let recipe8 = Recipe(picture: UIImage(named: "salad6")!, recipeTitle: "Salad", rating: 2)
-        var someMockRecipe : [Recipe] = [recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7, recipe8]
-
-        return someMockRecipe
-    }()
+//    var recipies: [Recipe] = {
+//
+//        let recipe1 = Recipe(picture: UIImage(named: "burger0")!, recipeTitle: "Burger", rating: 3)
+//        let recipe2 = Recipe(picture: UIImage(named: "pasta6")!, recipeTitle: "Pasta", rating: 5)
+//        let recipe3 = Recipe(picture: UIImage(named: "pizza1")!, recipeTitle: "Pizza", rating: 4)
+//        let recipe4 = Recipe(picture: UIImage(named: "salad2")!, recipeTitle: "Salad", rating: 3)
+//        let recipe5 = Recipe(picture: UIImage(named: "sandwich1")!, recipeTitle: "Sandwich", rating: 4)
+//        let recipe6 = Recipe(picture: UIImage(named: "burger2")!, recipeTitle: "Burger", rating: 1)
+//        let recipe7 = Recipe(picture: UIImage(named: "pizza3")!, recipeTitle: "Pizza", rating: 4)
+//        let recipe8 = Recipe(picture: UIImage(named: "salad6")!, recipeTitle: "Salad", rating: 2)
+//        var someMockRecipe : [Recipe] = [recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7, recipe8]
+//
+//        return someMockRecipe
+//    }()
     
     
     
@@ -41,13 +42,19 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         favoritesCollectionView.delegate = self
         favoritesCollectionView.dataSource = self
         
-        if recipies.count >= 1 {
+        if RecipeFetchController.shared.favoriteRecipies.count >= 1 {
           self.favoritesCollectionView.isHidden = false
         } else {
           self.favoritesCollectionView.isHidden = true
         }
         
         sideMenu()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        favoritesCollectionView.reloadData()
     }
     
     //MARK: - Side Menu Method
@@ -64,15 +71,31 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     //MARK: - Colection View Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return recipies.count
+       return RecipeFetchController.shared.favoriteRecipies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoriteCell", for: indexPath) as? FavoritesCollectionViewCell else {return UICollectionViewCell()}
-        let recipe = recipies[indexPath.row]
+        let recipe = RecipeFetchController.shared.favoriteRecipies[indexPath.row]
         cell.cellData = recipe
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let recipe = RecipeFetchController.shared.favoriteRecipies[indexPath.row]
+        //this will set the instructions in the InstructionsTableViewController
+        RecipeFetchController.shared.temporaryInstructionStorage = recipe.detailedRecipe.analyzedInstructions
+        
+        let storyboard = UIStoryboard(name: "Recipe", bundle: nil)
+        guard let recipeVC = storyboard.instantiateViewController(withIdentifier: "recipeDetailView") as? RecipeVC else {return}
+        recipeVC.recipeToDispaly = recipe
+        let navigationController = UINavigationController(rootViewController: recipeVC)
+        self.present(navigationController, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     
     
     

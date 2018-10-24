@@ -375,26 +375,14 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-xm-SoT" customClass="RoundedBottomView" customModule="Munchies" customModuleProvider="target">
                                                                     <rect key="frame" x="16" y="99" width="343" height="35"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y2z-vM-P87">
-                                                                            <rect key="frame" x="8" y="4" width="62" height="30.5"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                            <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mix Plate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEJ-bT-KXV">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="17"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes: 69" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIE-fQ-IMQ">
-                                                                                    <rect key="frame" x="0.0" y="17" width="62" height="13.5"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                            </subviews>
-                                                                        </stackView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mix Plate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEJ-bT-KXV">
+                                                                            <rect key="frame" x="20" y="9" width="62" height="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecw-ak-zQm">
-                                                                            <rect key="frame" x="311" y="5" width="30" height="26"/>
+                                                                            <rect key="frame" x="313" y="6" width="30" height="26"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <state key="normal" image="hamburger-1"/>
                                                                         </button>
@@ -402,6 +390,8 @@
                                                                     <color key="backgroundColor" white="0.0" alpha="0.38" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="35" id="1Rx-SH-rA7"/>
+                                                                        <constraint firstItem="TEJ-bT-KXV" firstAttribute="leading" secondItem="Znh-xm-SoT" secondAttribute="leading" constant="20" id="XWi-9f-IzH"/>
+                                                                        <constraint firstItem="TEJ-bT-KXV" firstAttribute="centerY" secondItem="Znh-xm-SoT" secondAttribute="centerY" id="pKH-GF-bzI"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -420,7 +410,6 @@
                                                         <connections>
                                                             <outlet property="foodImageView" destination="1sp-pv-fC4" id="Xa8-gu-mgw"/>
                                                             <outlet property="likeBtn" destination="ecw-ak-zQm" id="Zrq-n1-R48"/>
-                                                            <outlet property="likesLabel" destination="CIE-fQ-IMQ" id="KXQ-xK-a86"/>
                                                             <outlet property="nameLabel" destination="TEJ-bT-KXV" id="aK1-gP-gzI"/>
                                                         </connections>
                                                     </tableViewCell>

@@ -286,6 +286,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             RecipeFetchController.shared.intolerances.insert(intolerance)
             button.backgroundColor = AppStylingController.shared.buttonSelectedColor
         } else if buttonState == true {
+            #warning ("changed set to array - this may lead to trouble here")
             RecipeFetchController.shared.intolerances.remove(intolerance)
             button.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }

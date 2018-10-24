@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol RecipeVCDelegate: class{
+    func setRecipeAsFavorite()
+}
+
+
 class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Outlets
@@ -16,9 +21,13 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var reicpeTitleLabel: UILabel!
     @IBOutlet weak var recipeTimeToPrepareLabel: UILabel!
     @IBOutlet weak var portions: UILabel!
+    @IBOutlet weak var recipeHeartButton: UIButton!
+    
     
     //MARK: - Properties
-    let recipe = RecipeFetchController.shared.recipeForDetailView
+    var recipeToDispaly : RecipeWithDetailAndImage?
+    var recipeIndex: Int?
+    
     var count: Int = 0
     
     //MARK: - LifeCycle Methods
@@ -36,13 +45,23 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         titleLabel.textColor = UIColor.white
         titleLabel.font = UIFont(name: "Recipe", size: 12)
         self.navigationItem.titleView = titleLabel
+        
+        //set the heart lable base on its value
+//        guard let index = recipeIndex else {return}
+//        if RecipeFetchController.shared.filteredRecipiesWithDetailAndImage[index].detailedRecipe.isFavorite != nil {
+//            if RecipeFetchController.shared.filteredRecipiesWithDetailAndImage[index].detailedRecipe.isFavorite! {
+//                recipeHeartButton.setImage(#imageLiteral(resourceName: "favorites"), for: .normal)
+//            } else {
+//                recipeHeartButton.setImage(#imageLiteral(resourceName: "belowphotosoffood"), for: .normal)
+//            }
+//        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let ingredientCount = RecipeFetchController.shared.recipeForDetailView?.recipe.extendedIngredients?.count {
+        if let ingredientCount = recipeToDispaly?.detailedRecipe.extendedIngredients?.count {
         if ingredientCount >= 1 {
-
             ingredientTableView.reloadData()
             ingredientTableView.scrollToRow(at: IndexPath(row: ingredientCount - 1 , section: 0), at: .bottom, animated: true)
             }
@@ -50,20 +69,21 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    //MARK: - TableView Data Source
+    //MARK: - Ingredients TableView Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return RecipeFetchController.shared.recipeForDetailView?.recipe.extendedIngredients?.count ?? 0
+        return recipeToDispaly?.detailedRecipe.extendedIngredients?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as? IngredientTableViewCell
-        let ingredientArray = RecipeFetchController.shared.recipeForDetailView?.recipe.extendedIngredients
-        if let ingredientArray = ingredientArray {
-        let ingredient = ingredientArray[indexPath.row].name
-        cell?.ingredient = ingredient
-        } else {
-            print("‼️ No Ingredients found")
+        if let recipe = recipeToDispaly {
+            let ingredientArray = recipe.detailedRecipe.extendedIngredients
+            if let ingredientArray = ingredientArray {
+                let ingredient = ingredientArray[indexPath.row].name
+                cell?.ingredient = ingredient
+            }
         }
+        
         return cell ?? UITableViewCell()
     }
     
@@ -77,16 +97,57 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Helper method
     func updateViews() {
-        guard let recipe = recipe else {return}
-        reicpeTitleLabel.text = recipe.recipe.title
-        #warning ("Used exclamation to unwrap value")
-        portions.text = "\(recipe.recipe.servings!)"
-        recipeImageView.image = recipe.picture
-        guard let readyinMinutes = recipe.recipe.preparationMinutes else {
-            print("❕ returned from unwraping Recipe Preparation in minutes on RecipeVC")
-            return  }
-        recipeTimeToPrepareLabel.text = "\(readyinMinutes) minutes."
+        guard let recipe = recipeToDispaly else {return}
+        reicpeTitleLabel.text = recipe.detailedRecipe.title
+        recipeTimeToPrepareLabel.text = "Ready in: \(String(recipe.detailedRecipe.readyInMinutes))min."
+        if let servings = recipe.detailedRecipe.servings {
+            portions.text = "Servings: \(String(servings))"
+        }
+        if let image = recipe.picture {
+            recipeImageView.image = image
+        }
+        flipTheHeart()
     }
     
+    
+    @IBAction func heartButtonPressed(_ sender: Any) {
+        print("pressing me")
+        guard let recipe = recipeToDispaly else {return}
+        if recipe.detailedRecipe.isFavorite != nil {
+            recipe.detailedRecipe.isFavorite = !recipe.detailedRecipe.isFavorite!
+            flipTheHeart()
+            
+            
+        } else {
+            
+            //if favorite doesnt exist, assing it to true, and then flip th heart
+            recipe.detailedRecipe.isFavorite = true
+            //append it ot favorite array
+            RecipeFetchController.shared.favoriteRecipies.append(recipe)
+            print("assigned the heart property  to be true in RecipeVC ")
+            flipTheHeart()
+            
+        }
+        
+    }
+    
+    
+    func flipTheHeart(){
+        guard let recipe = recipeToDispaly else {return}
+        if recipe.detailedRecipe.isFavorite != nil {
+            if recipe.detailedRecipe.isFavorite! == true {
+                //favorite property is true
+                print("changing heart to ❤️ in recipe detail VC")
+                recipeHeartButton.setBackgroundImage(#imageLiteral(resourceName: "favorites"), for: .normal)
+            } else if recipe.detailedRecipe.isFavorite! == false{
+                //favorite property is false
+                print("changing heart to 💙 in reciep detailVC")
+                //remove it from array
+                RecipeFetchController.shared.removefromFavorites(recipe: recipe)
+                recipeHeartButton.setBackgroundImage(#imageLiteral(resourceName: "belowphotosoffood"), for: .normal)
+            }
+        }
+        
+    }
     
 }

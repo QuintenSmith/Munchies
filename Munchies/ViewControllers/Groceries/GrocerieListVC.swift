@@ -81,13 +81,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.reloadData()
     }
     
-    
-    
-    
-    
-    
     //MARK: - Custom Protocol Conformance
-    
     func updateGroceryItem(cell: GroceriesListCell) {
         guard let indexPath = tableView.indexPath(for: cell) else {return}
         let groceryItem = GroceryListController.shared.groceries[indexPath.row]
