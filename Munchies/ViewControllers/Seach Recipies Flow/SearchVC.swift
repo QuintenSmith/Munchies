@@ -9,7 +9,6 @@
 import UIKit
 
 class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
     
     
     //MARK: - Outlets
@@ -32,9 +31,9 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         titleLabel.font = UIFont(name: "Results", size: 12)
         self.navigationItem.titleView = titleLabel
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         searchResultColectionView.reloadData()
     }
     
@@ -64,10 +63,9 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       let recipe = RecipeFetchController.shared.filteredRecipiesWithDetailAndImage[indexPath.row]
+        let recipe = RecipeFetchController.shared.filteredRecipiesWithDetailAndImage[indexPath.row]
         //this will set the instructions in the InstructionsTableViewController
         RecipeFetchController.shared.temporaryInstructionStorage = recipe.detailedRecipe.analyzedInstructions
-
         let storyboard = UIStoryboard(name: "Recipe", bundle: nil)
         guard let recipeVC = storyboard.instantiateViewController(withIdentifier: "recipeDetailView") as? RecipeVC else {return}
         recipeVC.recipeToDispaly = recipe

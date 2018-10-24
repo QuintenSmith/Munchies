@@ -10,6 +10,7 @@ import UIKit
 
 
 class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+    #warning("this VC has lots of print statments in fetch method")
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: searchFilterSizedTableView!
@@ -41,15 +42,13 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     var count: Int = 0
     var timeItShoultTakeToPrepareAMeal: Int = 60
     var portionSize: Int = 2
-
+    
     
     //MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
         blurView.isHidden = true
-        #warning ("its not cutting the corners radius")
         blurView.layer.cornerRadius = 30
-        
         tableView.delegate = self
         sideMenu()
         timeToCookButtons = [thirdyMinuteButton, oneHourButton, hourAndAHalfButton, twoHourButton, twoHourPlusButton]
@@ -60,8 +59,8 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewWillAppear(animated)
         if ImageClasificationController.shared.clasifications.count >= 1 {
             
-        tableView.reloadData()
-        tableView.scrollToRow(at: IndexPath(row: ImageClasificationController.shared.clasifications.count - 1 , section: 0), at: .bottom, animated: true)
+            tableView.reloadData()
+            tableView.scrollToRow(at: IndexPath(row: ImageClasificationController.shared.clasifications.count - 1 , section: 0), at: .bottom, animated: true)
         }
     }
     
@@ -69,11 +68,9 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     //MARK: - Side Menu Method
     func sideMenu() {
         if revealViewController() != nil {
-            
             menuBtn.target = revealViewController()
             menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
             revealViewController().rearViewRevealWidth = 325
-            
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             view.layoutIfNeeded()
         }
@@ -94,9 +91,8 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     
     //MARK: - Actions
     @IBAction func timeButtonTapped(_ sender: UIButton) {
-
         timeToCookButtons.forEach{
-         $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
+            $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }
         
         switch sender.tag {
@@ -119,10 +115,10 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
             timeItShoultTakeToPrepareAMeal = 60
         }
     }
-
+    
     @IBAction func portionButtonTapped(_ sender: UIButton) {
         portionButtons.forEach{
-             $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
+            $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }
         
         switch sender.tag {
@@ -152,10 +148,9 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func findButtonTapped(_ sender: Any) {
         UIView.animate(withDuration: 1.0, animations: {
             self.blurView.isHidden = false
-           
             self.loadingIndicator.startAnimating()
         })
-         self.blurView.layer.cornerRadius = 50
+        self.blurView.layer.cornerRadius = 50
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         //display random food joke
@@ -170,7 +165,6 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         //        }
         
         print("🤩fetching recipes")
-        
         //run fetch functions
         RecipeFetchController.shared.searchRecipiesBy(ingredients: ImageClasificationController.shared.clasificationsAsString()) { (recipes) in
             print("✅ Finished fetching recipies")
@@ -187,11 +181,11 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
                 guard let detailedRecipies = detailedRecipies else {return}
                 RecipeFetchController.shared.recipiesWithDetail = detailedRecipies
                 print("✅ Finished fetching detailed recipies")
+                self.applyFiltersAndFetchImages()
                 
                 DispatchQueue.main.async {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.updateTableViewAfterTimeFilter()
-                    print("😋😋 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipies.count)")
+                    print("😋😋 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipiesWithDetailAndImage.count)")
                     self.blurView.isHidden = true
                     self.loadingIndicator.stopAnimating()
                     let storyboard = UIStoryboard(name: "Search", bundle: nil)
@@ -204,13 +198,10 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     
-    
     //MARK: - Actions
     @IBAction func resetButtonPressed(_ sender: Any) {
         ImageClasificationController.shared.clasifications.removeAll()
         tableView.reloadData()
-      
-        
     }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
@@ -219,11 +210,9 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-
-    
     
     //MARK: - helper function to filter by time it takes to cook diner
-    func updateTableViewAfterTimeFilter(){
+    func applyFiltersAndFetchImages(){
         RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: timeItShoultTakeToPrepareAMeal, servingAmount: portionSize)
         print("🔥🔥 Portion size: \(portionSize), time: \(timeItShoultTakeToPrepareAMeal)")
     }
@@ -242,14 +231,11 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
-        
         ImageClasificationController.shared.curentImageAndClasification = image
-        
         let storyboard = UIStoryboard(name: "ImageClasification", bundle: nil)
         let recipeVC = storyboard.instantiateViewController(withIdentifier: "ImageClasification")
         //let navigationController = UINavigationController(rootViewController: recipeVC)
         self.present(recipeVC, animated: true, completion: nil)
     }
-    
 }
 

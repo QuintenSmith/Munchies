@@ -217,17 +217,14 @@ class RecipeFetchController {
                 filteredRecipies.append(recipe)
             }
         }
-        
-        //fetch the images here?
-        #warning("what happens when someone doest press any time limits")
-        //curent time is preset to 60 if user doesnt press anything
-        
         for recipe in filteredRecipies {
+            //MARK: - Fetch Images Call
             fetchImage(at: recipe.image) { (image) in
                 let detailedRecipe = RecipeWithDetailAndImage.init(detailedRecipe: recipe, picture: image)
                 self.filteredRecipiesWithDetailAndImage.append(detailedRecipe)
             }
         }
+        print("finished fetching images")
         
     }
     

@@ -10,8 +10,11 @@ import UIKit
 
 class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, GroceriesListCellDelegate {
     
+<<<<<<< HEAD
  
     var user: User?
+=======
+>>>>>>> 8569dd2f14d16cff8fb012a8edffad4e6d29165f
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!

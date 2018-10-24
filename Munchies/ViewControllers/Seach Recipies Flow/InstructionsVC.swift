@@ -19,7 +19,6 @@ class InstructionsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     var instructionSteps = RecipeFetchController.shared.temporaryInstructionStorage
     
     
-    
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +34,13 @@ class InstructionsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let firstItem = instructionSteps.first?.steps.count {
-        if firstItem >= 1 {
-            instructionsTableView.reloadData()
-            instructionsTableView.scrollToRow(at: IndexPath(row: firstItem - 1 , section: 0), at: .bottom, animated: true)
+            if firstItem >= 1 {
+                instructionsTableView.reloadData()
+                instructionsTableView.scrollToRow(at: IndexPath(row: firstItem - 1 , section: 0), at: .bottom, animated: true)
+            }
         }
     }
-    }
-
+    
     
     //MARK: - TableView Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,10 +51,8 @@ class InstructionsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "instructionsCell", for: indexPath)
         if let step = instructionSteps.first?.steps[indexPath.row].step {
-        cell.textLabel?.text = "\(indexPath.row + 1). \(step)"
+            cell.textLabel?.text = "\(indexPath.row + 1). \(step)"
         }
         return cell
     }
-    
-
 }

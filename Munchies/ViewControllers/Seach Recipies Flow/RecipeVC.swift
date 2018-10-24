@@ -8,12 +8,9 @@
 
 import UIKit
 
-protocol RecipeVCDelegate: class{
-    func setRecipeAsFavorite()
-}
-
 
 class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     
     //MARK: - Outlets
     @IBOutlet weak var ingredientTableView: UITableView!
@@ -26,9 +23,7 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
     var recipeToDispaly : RecipeWithDetailAndImage?
-    var recipeIndex: Int?
     
-    var count: Int = 0
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -45,25 +40,14 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         titleLabel.textColor = UIColor.white
         titleLabel.font = UIFont(name: "Recipe", size: 12)
         self.navigationItem.titleView = titleLabel
-        
-        //set the heart lable base on its value
-//        guard let index = recipeIndex else {return}
-//        if RecipeFetchController.shared.filteredRecipiesWithDetailAndImage[index].detailedRecipe.isFavorite != nil {
-//            if RecipeFetchController.shared.filteredRecipiesWithDetailAndImage[index].detailedRecipe.isFavorite! {
-//                recipeHeartButton.setImage(#imageLiteral(resourceName: "favorites"), for: .normal)
-//            } else {
-//                recipeHeartButton.setImage(#imageLiteral(resourceName: "belowphotosoffood"), for: .normal)
-//            }
-//        }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let ingredientCount = recipeToDispaly?.detailedRecipe.extendedIngredients?.count {
-        if ingredientCount >= 1 {
-            ingredientTableView.reloadData()
-            ingredientTableView.scrollToRow(at: IndexPath(row: ingredientCount - 1 , section: 0), at: .bottom, animated: true)
+            if ingredientCount >= 1 {
+                ingredientTableView.reloadData()
+                ingredientTableView.scrollToRow(at: IndexPath(row: ingredientCount - 1 , section: 0), at: .bottom, animated: true)
             }
         }
     }
@@ -83,7 +67,6 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 cell?.ingredient = ingredient
             }
         }
-        
         return cell ?? UITableViewCell()
     }
     
@@ -91,6 +74,21 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //MARK: - Actions
     @IBAction func backBtnTapped(_ sender: Any) {
         self.dismiss(animated: true) {
+        }
+    }
+    
+    @IBAction func heartButtonPressed(_ sender: Any) {
+        print("pressing me")
+        guard let recipe = recipeToDispaly else {return}
+        if recipe.detailedRecipe.isFavorite != nil {
+            recipe.detailedRecipe.isFavorite = !recipe.detailedRecipe.isFavorite!
+            flipTheHeart()
+        } else {
+            //isFavorite is still nil - assigning it true for the first time
+            recipe.detailedRecipe.isFavorite = true
+            RecipeFetchController.shared.favoriteRecipies.append(recipe)
+            print("assigned the heart property  to be true in RecipeVC ")
+            flipTheHeart()
         }
     }
     
@@ -109,29 +107,6 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         flipTheHeart()
     }
     
-    
-    @IBAction func heartButtonPressed(_ sender: Any) {
-        print("pressing me")
-        guard let recipe = recipeToDispaly else {return}
-        if recipe.detailedRecipe.isFavorite != nil {
-            recipe.detailedRecipe.isFavorite = !recipe.detailedRecipe.isFavorite!
-            flipTheHeart()
-            
-            
-        } else {
-            
-            //if favorite doesnt exist, assing it to true, and then flip th heart
-            recipe.detailedRecipe.isFavorite = true
-            //append it ot favorite array
-            RecipeFetchController.shared.favoriteRecipies.append(recipe)
-            print("assigned the heart property  to be true in RecipeVC ")
-            flipTheHeart()
-            
-        }
-        
-    }
-    
-    
     func flipTheHeart(){
         guard let recipe = recipeToDispaly else {return}
         if recipe.detailedRecipe.isFavorite != nil {
@@ -142,12 +117,9 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             } else if recipe.detailedRecipe.isFavorite! == false{
                 //favorite property is false
                 print("changing heart to 💙 in reciep detailVC")
-                //remove it from array
                 RecipeFetchController.shared.removefromFavorites(recipe: recipe)
                 recipeHeartButton.setBackgroundImage(#imageLiteral(resourceName: "belowphotosoffood"), for: .normal)
             }
         }
-        
     }
-    
 }
