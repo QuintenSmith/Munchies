@@ -90,23 +90,25 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: - Actions    
     @IBAction func shareButtonPressed(_ sender: Any) {
-        if !GroceryListController.shared.groceries.isEmpty {
-            var groceriesAsText = ""
-            var groceries = [String]()
-            for grocery in GroceryListController.shared.groceries {
+        if let user = UserController.shared.loggedInUser,
+            let shoppingList = user.shoppingList {
+            if !shoppingList.isEmpty {
+                var groceriesAsText = ""
+                var groceries = [String]()
+                for grocery in shoppingList {
                     groceries.append(grocery.name)
+                }
+                groceriesAsText = groceries.joined(separator: ",\n")
+                print(groceriesAsText)
+                let shareSheet = UIActivityViewController(activityItems: [groceriesAsText], applicationActivities: nil)
+                present(shareSheet, animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "Nothing to share", message: "Please add some items to shopping list.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                present(alert, animated: true)
             }
-            groceriesAsText = groceries.joined(separator: ",\n")
-            print(groceriesAsText)
-            let shareSheet = UIActivityViewController(activityItems: [groceriesAsText], applicationActivities: nil)
-            present(shareSheet, animated: true, completion: nil)
-        } else {
-            let alert = UIAlertController(title: "Nothing to share", message: "Please add some items to shopping list.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            present(alert, animated: true)
         }
     }
-    
     
     @IBAction func deleteBtnTapped(_ sender: Any) {
             presntDeleteAlert()

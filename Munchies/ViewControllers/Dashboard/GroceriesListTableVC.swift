@@ -22,7 +22,6 @@ class GroceriesListTableVC: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        
         tableView.backgroundView = backgroundImg
     }
     
@@ -33,7 +32,6 @@ class GroceriesListTableVC: UITableViewController {
         if shoppingList.count == 0 {
             self.tableView.backgroundView?.isHidden = false
         }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

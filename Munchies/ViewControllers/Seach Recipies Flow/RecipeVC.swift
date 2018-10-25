@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 
 class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -89,7 +90,6 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
     @IBAction func heartButtonPressed(_ sender: Any) {
         print("pressing me")
         guard let recipe = recipeToDispaly else {return}
@@ -104,6 +104,16 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             flipTheHeart()
         }
     }
+    
+    
+    @IBAction func webViewButtonPressed(_ sender: Any) {
+        guard let recipe = recipeToDispaly,
+        let url = recipe.detailedRecipe.sourceUrl else {return}
+        guard let urle = URL(string: url) else {return}
+        let browser = SFSafariViewController(url: urle)
+        present(browser, animated: true)
+    }
+    
     
     
     //MARK: - Helper method

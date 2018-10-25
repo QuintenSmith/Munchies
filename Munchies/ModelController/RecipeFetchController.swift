@@ -43,7 +43,7 @@ class RecipeFetchController {
     //this should have the same recipies as filtered recipies, but with image now
     var filteredRecipiesWithDetailAndImage = [RecipeWithDetailAndImage]()
     var temporaryInstructionStorage = [Instructions]()
-    
+    var temporaryWebUrlForWebView : String = "https://www.yahoo.com"
     
     
     func removefromFavorites(recipe: RecipeWithDetailAndImage){
