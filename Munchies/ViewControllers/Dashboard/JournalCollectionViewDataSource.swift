@@ -11,24 +11,27 @@ import UIKit
 class JournalCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var numberOfItems: Int
-    var journalEntry: [JournalEntry]
+    var entry: [Entry]?
+    var user: User? = UserController.shared.loggedInUser
     
-    init(numberOfItems: Int, entries: [JournalEntry]){
+    init(numberOfItems: Int, entries: [Entry]){
         self.numberOfItems = numberOfItems
-        self.journalEntry = entries
+        self.entry = entries
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if JournalController.shared.journalEntries.count > 6 {
+        guard let user = user else {return 0}
+        guard let journalEntries = user.journalEntries else {return 0}
+        if journalEntries.count > 6 {
         return numberOfItems
         } else {
-            return JournalController.shared.journalEntries.count
+            return journalEntries.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JournalCell", for: indexPath) as? JournalDashboardCollectionViewCell
-        let entry = JournalController.shared.journalEntries[indexPath.row]
+        let entry = user?.journalEntries![indexPath.row]
         cell?.entry = entry
         return cell ?? UICollectionViewCell()
     }

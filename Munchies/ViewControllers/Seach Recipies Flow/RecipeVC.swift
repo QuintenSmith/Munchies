@@ -24,11 +24,12 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
     var recipeToDispaly : RecipeWithDetailAndImage?
-    
+    var user: User?
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        user = UserController.shared.loggedInUser
         self.ingredientTableView.delegate = self
         self.ingredientTableView.dataSource = self
         loadViewIfNeeded()
@@ -136,6 +137,9 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if recipe.detailedRecipe.isFavorite! == true {
                 //favorite property is true
                 print("changing heart to ❤️ in recipe detail VC")
+                guard let user = user else {return}
+                FavoriteController.shared.createFavorite(user: user, recipeID: recipe.detailedRecipe.id) { (_) in
+                }
                 recipeHeartButton.setBackgroundImage(#imageLiteral(resourceName: "favorites"), for: .normal)
             } else if recipe.detailedRecipe.isFavorite! == false{
                 //favorite property is false

@@ -25,4 +25,26 @@ class FavoriteController {
             completion(recipeID) 
         }
     }
+    
+    func fetchFavorites(user: User, completion: @escaping (Bool) -> Void) {
+        
+        let userReference = user.cloudKitRecordID
+        let predicate = NSPredicate.init(format: "UserReference == %@", userReference)
+        let recipeIDs = user.favorites?.compactMap({$0.recordID})
+        let predicate2 = NSPredicate(format: "NOT(recordID IN %@)", recipeIDs!)
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, predicate2])
+        
+        let query = CKQuery.init(recordType: "RecipeID", predicate: compoundPredicate)
+        
+        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("Error fetching recipeIDs \(error) \(error.localizedDescription)")
+                completion(false); return
+            }
+            guard let records = records else {completion(false); return}
+            let recipeID = records.compactMap{ RecipeID(record: $0) }
+            user.favorites?.append(contentsOf: recipeID)
+            completion(true)
+        }
+    }
 }
