@@ -14,14 +14,14 @@ class User {
     var name: String
     var diet: String?
     var intolerances: Set<String>?
-    var shoppingList: [GroceryItem]?
+    var shoppingList: [Item]?
     var favorites: [RecipeID]?
     var journalEntries: [Entry]?
     
     var cloudKitRecordID = CKRecord.ID(recordName: UUID().uuidString) 
     let appleUserReference: CKRecord.Reference
     
-    init(name: String, diet: String?, intolerances: Set<String>?, shoppingList: [GroceryItem]?, favorites: [RecipeID]?, journalEntries: [Entry]?, appleUserReference: CKRecord.Reference) {
+    init(name: String, diet: String?, intolerances: Set<String>?, shoppingList: [Item]?, favorites: [RecipeID]?, journalEntries: [Entry]?, appleUserReference: CKRecord.Reference) {
         self.name = name
         self.diet = diet
         self.intolerances = intolerances

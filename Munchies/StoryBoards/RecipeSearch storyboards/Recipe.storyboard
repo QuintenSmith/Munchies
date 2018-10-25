@@ -23,7 +23,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86F-8g-Yab" userLabel="ContainerView">
                                         <rect key="frame" x="0.0" y="0.0" width="1074" height="980"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza3" translatesAutoresizingMaskIntoConstraints="NO" id="4RD-Kd-mMv" customClass="RoundedShadowImageView" customModule="Munchies" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza3" translatesAutoresizingMaskIntoConstraints="NO" id="4RD-Kd-mMv" customClass="CustomCellRoundedImages" customModule="Munchies" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="8" width="1050" height="226"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -38,7 +38,7 @@
                                                     <constraint firstAttribute="width" constant="22" id="kDp-0k-Kle"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="tih-Ne-kkn"/>
                                                 </constraints>
-                                                <state key="normal" image="belowphotosoffood"/>
+                                                <state key="normal" backgroundImage="belowphotosoffood"/>
                                                 <connections>
                                                     <action selector="heartButtonPressed:" destination="Viv-09-zDG" eventType="touchUpInside" id="R9F-UN-smF"/>
                                                 </connections>
@@ -72,7 +72,7 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeK-e6-jxR" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeK-e6-jxR" customClass="RoundedShapeButtonNoShadow" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="889" y="0.0" width="149" height="36"/>
                                                         <color key="backgroundColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -80,7 +80,7 @@
                                                             <constraint firstAttribute="height" constant="36" id="uY8-I6-GJK"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                        <state key="normal" title="Add a Food Journal Entry"/>
+                                                        <state key="normal" title="Visit Recipe Website"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -125,7 +125,7 @@
                                                                             <state key="normal" title="Button" image="recipe"/>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrL-Oj-10a">
-                                                                            <rect key="frame" x="59" y="7" width="257" height="30"/>
+                                                                            <rect key="frame" x="59" y="7" width="956" height="30"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="30" id="0g2-7t-vke"/>
                                                                             </constraints>
@@ -292,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4KS-DK-8Bf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2934" y="127"/>
+            <point key="canvasLocation" x="4034" y="93"/>
         </scene>
     </scenes>
     <resources>

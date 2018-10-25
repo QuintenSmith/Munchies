@@ -34,62 +34,51 @@
                                             <rect key="frame" x="0.0" y="0.0" width="161" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wd5-3k-iMb">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wd5-3k-iMb" customClass="CustomCellRoundedImages" customModule="Munchies" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="104"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="104" id="EtA-73-ptY"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="(Recipe Title)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXR-cu-2x7">
-                                                    <rect key="frame" x="4" y="125" width="153" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Ready in minutes)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJf-sk-OGR">
-                                                    <rect key="frame" x="4" y="106" width="153" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="X1r-dj-gcL">
-                                                    <rect key="frame" x="4" y="151" width="153" height="22"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Hi1-Kb-0cx">
+                                                    <rect key="frame" x="4" y="112" width="153" height="59.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbm-B1-EZE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="59" height="22"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="(Recipe Title)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXR-cu-2x7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="33.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YE6-lt-KIs">
-                                                            <rect key="frame" x="131" y="0.0" width="22" height="22"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="22" id="BR1-mb-8hV"/>
-                                                                <constraint firstAttribute="height" constant="22" id="Cr9-vY-znr"/>
-                                                            </constraints>
-                                                            <state key="normal" image="belowphotosoffood"/>
-                                                        </button>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wUE-i9-x45">
+                                                            <rect key="frame" x="0.0" y="37.5" width="153" height="22"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Ready in minutes)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJf-sk-OGR">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="123" height="22"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YE6-lt-KIs">
+                                                                    <rect key="frame" x="131" y="0.0" width="22" height="22"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="22" id="BR1-mb-8hV"/>
+                                                                        <constraint firstAttribute="height" constant="22" id="Cr9-vY-znr"/>
+                                                                    </constraints>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="WwU-zw-hnb"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Wd5-3k-iMb" secondAttribute="trailing" id="1lq-Wf-6wm"/>
-                                            <constraint firstAttribute="trailing" secondItem="X1r-dj-gcL" secondAttribute="trailing" constant="4" id="6gu-zn-5cm"/>
-                                            <constraint firstItem="PXR-cu-2x7" firstAttribute="top" secondItem="rJf-sk-OGR" secondAttribute="bottom" constant="4.5" id="Fr6-s7-8eg"/>
                                             <constraint firstItem="Wd5-3k-iMb" firstAttribute="top" secondItem="k6P-7x-waf" secondAttribute="top" id="HGw-bv-igm"/>
                                             <constraint firstItem="Wd5-3k-iMb" firstAttribute="leading" secondItem="k6P-7x-waf" secondAttribute="leading" id="Jx9-8y-9Sg"/>
-                                            <constraint firstItem="rJf-sk-OGR" firstAttribute="top" secondItem="Wd5-3k-iMb" secondAttribute="bottom" constant="2" id="Tju-9P-hUn"/>
-                                            <constraint firstItem="rJf-sk-OGR" firstAttribute="leading" secondItem="k6P-7x-waf" secondAttribute="leading" constant="4" id="Zuy-Ak-rmR"/>
-                                            <constraint firstAttribute="bottom" secondItem="X1r-dj-gcL" secondAttribute="bottom" constant="9" id="gwU-FO-LfW"/>
-                                            <constraint firstItem="X1r-dj-gcL" firstAttribute="top" secondItem="PXR-cu-2x7" secondAttribute="bottom" constant="9" id="pug-wl-4ot"/>
-                                            <constraint firstItem="PXR-cu-2x7" firstAttribute="leading" secondItem="k6P-7x-waf" secondAttribute="leading" constant="4" id="rAe-G4-43E"/>
-                                            <constraint firstAttribute="trailing" secondItem="rJf-sk-OGR" secondAttribute="trailing" constant="4" id="s93-VX-LoD"/>
-                                            <constraint firstItem="X1r-dj-gcL" firstAttribute="leading" secondItem="k6P-7x-waf" secondAttribute="leading" constant="4" id="udm-A7-AJw"/>
-                                            <constraint firstAttribute="trailing" secondItem="PXR-cu-2x7" secondAttribute="trailing" constant="4" id="z7b-BZ-LJc"/>
+                                            <constraint firstItem="Hi1-Kb-0cx" firstAttribute="leading" secondItem="k6P-7x-waf" secondAttribute="leading" constant="4" id="Z1J-qL-679"/>
+                                            <constraint firstItem="Hi1-Kb-0cx" firstAttribute="top" secondItem="Wd5-3k-iMb" secondAttribute="bottom" constant="8" id="eet-QE-6SH"/>
+                                            <constraint firstAttribute="bottom" secondItem="Hi1-Kb-0cx" secondAttribute="bottom" constant="10.5" id="jG9-lD-XLc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hi1-Kb-0cx" secondAttribute="trailing" constant="4" id="vi3-id-K03"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="readyInLabel" destination="rJf-sk-OGR" id="kG2-mD-mpG"/>
@@ -160,7 +149,6 @@
     </scenes>
     <resources>
         <image name="Light-3" width="23" height="25"/>
-        <image name="belowphotosoffood" width="20" height="18"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

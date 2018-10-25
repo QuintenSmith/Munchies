@@ -42,6 +42,7 @@
 		1C43FBC82176C25A00ACDAA0 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43FBC72176C25A00ACDAA0 /* PreferencesVC.swift */; };
 		1C43FBCA2176CBF700ACDAA0 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43FBC92176CBF700ACDAA0 /* ProfileVC.swift */; };
 		1C43FBCC2176CF4700ACDAA0 /* SearchFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C43FBCB2176CF4700ACDAA0 /* SearchFilter.storyboard */; };
+		1C64B7EB2180F68400634B73 /* RoundedShapeButtonNoShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C64B7EA2180F68400634B73 /* RoundedShapeButtonNoShadow.swift */; };
 		1C791C892177A9E100A1AFF0 /* SearchFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C791C882177A9E100A1AFF0 /* SearchFilterVC.swift */; };
 		1C7E745E2172ED3D003462AD /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E745D2172ED3D003462AD /* SWRevealViewController.m */; };
 		1C7E74602172EFFD003462AD /* sideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E745F2172EFFD003462AD /* sideMenuVC.swift */; };
@@ -75,8 +76,6 @@
 		3BAD2B3C217BC74400D28A53 /* ImageClasification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BAD2B3B217BC74400D28A53 /* ImageClasification.storyboard */; };
 		3BAD2B3E217BC95E00D28A53 /* ImageClasificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD2B3D217BC95E00D28A53 /* ImageClasificationController.swift */; };
 		3BAD2B42217D496C00D28A53 /* AppStylingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD2B41217D496B00D28A53 /* AppStylingController.swift */; };
-		3BAD2B46217E4E5D00D28A53 /* GroceryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD2B45217E4E5D00D28A53 /* GroceryListController.swift */; };
-		3BAD2B48217E4EA200D28A53 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD2B47217E4EA200D28A53 /* GroceryItem.swift */; };
 		3BC803812170280400D3AA54 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC803802170280400D3AA54 /* JournalEntry.swift */; };
 		3BC803842170292300D3AA54 /* DateExternsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC803832170292300D3AA54 /* DateExternsion.swift */; };
 		63A0DB6C39ACB7CAA8022AE5 /* Pods_Munchies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77BB16CC9D8E22710B6DF83 /* Pods_Munchies.framework */; };
@@ -118,6 +117,7 @@
 		1C43FBC72176C25A00ACDAA0 /* PreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
 		1C43FBC92176CBF700ACDAA0 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		1C43FBCB2176CF4700ACDAA0 /* SearchFilter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchFilter.storyboard; sourceTree = "<group>"; };
+		1C64B7EA2180F68400634B73 /* RoundedShapeButtonNoShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShapeButtonNoShadow.swift; sourceTree = "<group>"; };
 		1C791C882177A9E100A1AFF0 /* SearchFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterVC.swift; sourceTree = "<group>"; };
 		1C7E745B2172ED3C003462AD /* Munchies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Munchies-Bridging-Header.h"; sourceTree = "<group>"; };
 		1C7E745C2172ED3D003462AD /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -156,8 +156,6 @@
 		3BAD2B3B217BC74400D28A53 /* ImageClasification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageClasification.storyboard; sourceTree = "<group>"; };
 		3BAD2B3D217BC95E00D28A53 /* ImageClasificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClasificationController.swift; sourceTree = "<group>"; };
 		3BAD2B41217D496B00D28A53 /* AppStylingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStylingController.swift; sourceTree = "<group>"; };
-		3BAD2B45217E4E5D00D28A53 /* GroceryListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListController.swift; sourceTree = "<group>"; };
-		3BAD2B47217E4EA200D28A53 /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroceryItem.swift; path = Munchies/ModelController/GroceryItem.swift; sourceTree = SOURCE_ROOT; };
 		3BC803802170280400D3AA54 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalEntry.swift; path = Munchies/ViewControllers/JournalEntry.swift; sourceTree = SOURCE_ROOT; };
 		3BC803832170292300D3AA54 /* DateExternsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExternsion.swift; sourceTree = "<group>"; };
 		4E773FB588C06C9E4195E527 /* Pods-Munchies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Munchies/Pods-Munchies.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,7 +267,6 @@
 				3B770A50216FE41F00FD7B7B /* Recipe.swift */,
 				3B691D70217836AC00F72828 /* RandomFoodJoke.swift */,
 				3BC803802170280400D3AA54 /* JournalEntry.swift */,
-				3BAD2B47217E4EA200D28A53 /* GroceryItem.swift */,
 				1C2BBFB5217E8636001145D1 /* User.swift */,
 				1C2BBFB9217E87D3001145D1 /* Item.swift */,
 				1C2BBFBF217EB4C5001145D1 /* Entry.swift */,
@@ -357,7 +354,6 @@
 				3B3A2045217AA77E008F586F /* JournalController.swift */,
 				3BAD2B3D217BC95E00D28A53 /* ImageClasificationController.swift */,
 				3BAD2B41217D496B00D28A53 /* AppStylingController.swift */,
-				3BAD2B45217E4E5D00D28A53 /* GroceryListController.swift */,
 				1C2BBFBD217E9EC1001145D1 /* UserController.swift */,
 				1CFC28FA21801577003303ED /* ItemController.swift */,
 			);
@@ -499,6 +495,7 @@
 				1C2BBFB1217E6B07001145D1 /* RoundedCornersVisualEffectView.swift */,
 				1C2BBFAB217E6086001145D1 /* CustomCellRoundedImages.swift */,
 				1C9E9D10217B95D2003E13AB /* bottomBorderView.swift */,
+				1C64B7EA2180F68400634B73 /* RoundedShapeButtonNoShadow.swift */,
 			);
 			path = CustomSettings;
 			sourceTree = "<group>";
@@ -690,7 +687,7 @@
 				3B770A4D216FCC4900FD7B7B /* FavoritesVC.swift in Sources */,
 				1C791C892177A9E100A1AFF0 /* SearchFilterVC.swift in Sources */,
 				1C2BBFAE217E646A001145D1 /* RoundedBottomView.swift in Sources */,
-				3BAD2B46217E4E5D00D28A53 /* GroceryListController.swift in Sources */,
+				1C64B7EB2180F68400634B73 /* RoundedShapeButtonNoShadow.swift in Sources */,
 				1C9E9D11217B95D2003E13AB /* bottomBorderView.swift in Sources */,
 				1C32EA682177CB8D005226D9 /* JournalVC.swift in Sources */,
 				1CFC28F0217FD9F9003303ED /* FetchUserVC.swift in Sources */,
@@ -713,7 +710,6 @@
 				1C0BEC6921793D02004F5485 /* JournalDashboardVC.swift in Sources */,
 				3BAD2B3A217BC1C100D28A53 /* ImageClasificationVC.swift in Sources */,
 				1C3084AD217AE1F900DF51C0 /* RoundedShapeButton.swift in Sources */,
-				3BAD2B48217E4EA200D28A53 /* GroceryItem.swift in Sources */,
 				3BAD2B3E217BC95E00D28A53 /* ImageClasificationController.swift in Sources */,
 				3BC803842170292300D3AA54 /* DateExternsion.swift in Sources */,
 				1C047A37216FC723005683AE /* RecipeVC.swift in Sources */,

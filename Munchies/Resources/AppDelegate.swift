@@ -15,9 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-  
-      //window?.rootViewController = MainTabBarController()
+        UserController.shared.fetchCurrentUser { (success) in
+            if success {
+                print("Something or bananas")
+            } else {
+                print("kamil sucks at fosball")
+            }
+        }
         return true
     }
 

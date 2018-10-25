@@ -12,6 +12,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
  
     var user: User?
+    var grocery: Item?
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -23,16 +24,35 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
+        user = UserController.shared.loggedInUser
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         createNewGroceryItemTextField.delegate = self
         sideMenu()
-        updateViews()
+        tableView.keyboardDismissMode = .onDrag
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        guard let user = UserController.shared.loggedInUser else {return}
+        ItemController.shared.fetchItemsfor(user: user) { (success) in
+            if success {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+       }
+
     }
     
     func updateViews() {
-        guard let user = user else {return}
+        print("updating views")
+        guard let user = user else {
+            print("user not found in the updateViews method in GroceriesListVC")
+            return}
+        print("updating user: \(user)")
         UserController.shared.updateUser(user: user, name: user.name, diet: user.diet, intolerances: Set<String>(), shoppingList: user.shoppingList, favorites: user.favorites, journalEntries: user.journalEntries) { (success) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -55,12 +75,12 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: - Table View Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return GroceryListController.shared.groceries.count
+        return user?.shoppingList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groceryCell", for: indexPath) as? GroceriesListCell
-        let groceryItem = GroceryListController.shared.groceries[indexPath.row]
+        let groceryItem = user?.shoppingList![indexPath.row]
         cell?.grocery = groceryItem
         cell?.delegate = self
         return cell ?? UITableViewCell()
@@ -78,19 +98,24 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func addNewGroceryItemButtonPressed(_ sender: Any) {
-        guard let groceryName = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else { return }
-        let grocery = GroceryItem(name: groceryName)
-        GroceryListController.shared.addNew(grocery: grocery)
+        guard let item = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else { return }
+        if let user = user {
+            ItemController.shared.createItem(user: user, item: item) { (_) in
+                DispatchQueue.main.async {
+                    self.createNewGroceryItemTextField.text = ""
+                    self.tableView.reloadData()
+                }
+            }
+        }
             self.tableView.reloadData()
             createNewGroceryItemTextField.text = ""
-        updateViews()
     }
     
     
     //MARK: - Custom Protocol Conformance
     func updateGroceryItem(cell: GroceriesListCell) {
         guard let indexPath = tableView.indexPath(for: cell) else {return}
-        let groceryItem = GroceryListController.shared.groceries[indexPath.row]
+        guard let groceryItem = user?.shoppingList![indexPath.row] else {return}
         groceryItem.isSelected = !groceryItem.isSelected
         tableView.reloadData()
     }
@@ -99,22 +124,28 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Helper Methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         createNewGroceryItemTextField.resignFirstResponder()
-        guard let groceryName = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else {return true }
-        let grocery = GroceryItem(name: groceryName)
-        GroceryListController.shared.addNew(grocery: grocery)
-        createNewGroceryItemTextField.text = ""
-        updateViews()
-        self.tableView.reloadData()
+        guard let item = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else {return true }
+        if let user = user {
+        ItemController.shared.createItem(user: user, item: item) { (_) in
+            DispatchQueue.main.async {
+                self.createNewGroceryItemTextField.text = ""
+                self.tableView.reloadData()
+            }
+          }
+        }
         return true
-    }
+}
     
     func presntDeleteAlert(){
         let alert = UIAlertController(title: "Delete Grocery List", message: "Are you sure you want to delete selected items?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-            for grocery in GroceryListController.shared.groceries {
-                if grocery.isSelected {
-                    GroceryListController.shared.remove(grocery: grocery)
+            for item in (self.user?.shoppingList)! {
+                if item.isSelected == true {
+                    let index = self.user?.shoppingList!.index(of: item)
+                    self.user?.shoppingList?.remove(at: index!)
+                    ItemController.shared.deleteItem(item: item, index: index!)
+                    self.tableView.reloadData()
                 }
             }
             self.tableView.reloadData()
@@ -122,3 +153,4 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.present(alert, animated: true)
     }
 }
+

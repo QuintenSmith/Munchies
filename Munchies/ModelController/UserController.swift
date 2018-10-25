@@ -12,28 +12,28 @@ import UserNotifications
 
 class UserController {
     
+    
+    //MARK: - Singelton
     static let shared = UserController()
     private init() {}
     
+    
+    //MARK: - Logged User
     var loggedInUser: User?
     
+    
+    //MARK: - Create new user
     func createUserWith(name: String, diet: String, intolerances: Set<String>, completion: @escaping (Bool) -> Void) {
-        
         CKContainer.default().fetchUserRecordID { (appleUserRecordID, error) in
-            
             if let error = error {
                 print("Error fetching user record ID \(error) \(error.localizedDescription)")
                 completion(false); return
             }
             
             guard let appleUserRecordID = appleUserRecordID else {completion(false); return}
-            
             let refToAppleUser = CKRecord.Reference(recordID: appleUserRecordID, action: .deleteSelf)
-            
             let user = User(name: name, diet: diet, intolerances: intolerances, shoppingList: nil, favorites: nil, journalEntries: nil, appleUserReference: refToAppleUser)
-            
             let record = CKRecord(user: user)
-            
             self.modifyRecords([record], perRecordCompletion: nil, completion: { (records, error) in
                 if records?.isEmpty == true {
                     self.saveUser(user: user, completion: { (success) in
@@ -65,23 +65,24 @@ class UserController {
                 completion(true)
             })
         }
-        
     }
-        func modifyRecords(_ records: [CKRecord], perRecordCompletion: ((_ record: CKRecord?, _ error: Error?) -> Void)?, completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
-            
-            let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
-            operation.savePolicy = .changedKeys
-            operation.queuePriority = .high
-            operation.qualityOfService = .userInteractive
-            
-            operation.perRecordCompletionBlock = perRecordCompletion
-            
-            operation.modifyRecordsCompletionBlock = { (records, recordID, error) -> Void in
-                (completion?(records, error))!
-            }
-            CKContainer.default().publicCloudDatabase.add(operation)
-        }
     
+    
+    //MARK: - Modify Records
+    func modifyRecords(_ records: [CKRecord], perRecordCompletion: ((_ record: CKRecord?, _ error: Error?) -> Void)?, completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
+        let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+        operation.savePolicy = .changedKeys
+        operation.queuePriority = .high
+        operation.qualityOfService = .userInteractive
+        operation.perRecordCompletionBlock = perRecordCompletion
+        operation.modifyRecordsCompletionBlock = { (records, recordID, error) -> Void in
+            (completion?(records, error))!
+        }
+        CKContainer.default().publicCloudDatabase.add(operation)
+    }
+    
+    
+    //MARK: - Save User
     func saveUser(user: User, completion: @escaping ((Bool) -> Void)) {
         let record = CKRecord(user: user)
         CKContainer.default().publicCloudDatabase.save(record) { (_, error) in
@@ -91,10 +92,11 @@ class UserController {
             } else {
                 completion(true)
             }
-            
         }
     }
     
+    
+    //MARK: - Fetch User
     func fetchCurrentUser(completion: @escaping(Bool) -> Void) {
         CKContainer.default().fetchUserRecordID { (appleUserRecordID, error) in
             if let error = error {
@@ -111,19 +113,18 @@ class UserController {
                         print("There was an problem fetching current user \(error) \(error.localizedDescription)")
                         completion(false); return
                     }
-                    
                     guard let currentUserRecord = records?.first,
-                          let user = User(ckRecord: currentUserRecord)
+                        let user = User(ckRecord: currentUserRecord)
                         else { completion(false); return }
                     self.loggedInUser = user
                     completion(true)
             })
-            
         }
-        
     }
     
-    func updateUser(user: User, name: String, diet: String?, intolerances: Set<String>, shoppingList: [GroceryItem]?,
+    
+    //MARK: - Update User
+    func updateUser(user: User, name: String, diet: String?, intolerances: Set<String>, shoppingList: [Item]?,
                     favorites: [RecipeID]?, journalEntries: [Entry]?, completion: @escaping(Bool) -> Void) {
         
         user.name = name
