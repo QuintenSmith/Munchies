@@ -9,6 +9,7 @@
 import UIKit
 
 class IngredientTableViewCell: UITableViewCell {
+    #warning("action is not working, plus print statement")
     
     //MARK: - Outlets
     @IBOutlet weak var ingredientCheckMakrButton: UIButton!

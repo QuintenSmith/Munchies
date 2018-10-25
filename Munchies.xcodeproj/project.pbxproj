@@ -370,7 +370,6 @@
 			isa = PBXGroup;
 			children = (
 				3B770A4C216FCC4900FD7B7B /* FavoritesVC.swift */,
-				1C32EA7521780FCF005226D9 /* FavoritesTableViewDataSource.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -483,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				1C32EA712177F800005226D9 /* JournalCollectionViewDataSource.swift */,
+				1C32EA7521780FCF005226D9 /* FavoritesTableViewDataSource.swift */,
 				1C0BEC6821793D02004F5485 /* JournalDashboardVC.swift */,
 				1C7E745F2172EFFD003462AD /* sideMenuVC.swift */,
 				1C0BEC622179288A004F5485 /* GroceriesListTableVC.swift */,

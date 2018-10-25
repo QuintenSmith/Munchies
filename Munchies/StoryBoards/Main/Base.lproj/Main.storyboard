@@ -352,7 +352,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bowl knock knock" translatesAutoresizingMaskIntoConstraints="NO" id="bF5-Kg-Kyd">
                                                 <rect key="frame" x="52" y="53" width="271" height="287"/>
                                             </imageView>
-                                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="144" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dYZ-Tu-Yds">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="144" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dYZ-Tu-Yds">
                                                 <rect key="frame" x="0.0" y="45" width="375" height="315"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -415,6 +415,7 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
+                                                    <outlet property="dataSource" destination="G8e-cy-WYv" id="UM3-wl-tDa"/>
                                                     <outlet property="delegate" destination="G8e-cy-WYv" id="zCN-KD-ce5"/>
                                                 </connections>
                                             </tableView>

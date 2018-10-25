@@ -9,49 +9,21 @@
 import UIKit
 
 class sideMenuVC: UIViewController, UITableViewDelegate {
+
     
+     var numberOfItems: Int = 3
    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
-//    var recipes: [Recipe] = {
-//
-//        let recipe1 = Recipe(picture: UIImage(named: "burger0")!, recipeTitle: "Burger", rating: 3)
-//        let recipe2 = Recipe(picture: UIImage(named: "pasta6")!, recipeTitle: "Pasta", rating: 5)
-//        let recipe3 = Recipe(picture: UIImage(named: "pizza1")!, recipeTitle: "Pizza", rating: 4)
-//        let recipe4 = Recipe(picture: UIImage(named: "salad2")!, recipeTitle: "Salad", rating: 3)
-//        let recipe5 = Recipe(picture: UIImage(named: "sandwich1")!, recipeTitle: "Sandwich", rating: 4)
-//        let recipe6 = Recipe(picture: UIImage(named: "burger2")!, recipeTitle: "Burger", rating: 1)
-//        let recipe7 = Recipe(picture: UIImage(named: "pizza3")!, recipeTitle: "Pizza", rating: 4)
-//        let recipe8 = Recipe(picture: UIImage(named: "salad6")!, recipeTitle: "Salad", rating: 2)
-//        var someMockRecipe : [Recipe] = [recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7, recipe8]
-//
-//        return someMockRecipe
-//    }()
-    
-    #warning ("for some reason, as soon you move the view 'scroll view', the favorite recipies dissapear.")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        self.tableView.isHidden = true
         sideMenu()
-       // let datasource = FavoritesTableViewDataSource(numberOfItems: 3, recipes: recipes)
-        var numberOfRows = 0
-        if RecipeFetchController.shared.favoriteRecipies.count > 3 {
-            numberOfRows = 3
-        } else {
-            numberOfRows = RecipeFetchController.shared.favoriteRecipies.count
-        }
-        
-        let datasource = FavoritesTableViewDataSource(numberOfItems: numberOfRows, recipes: RecipeFetchController.shared.favoriteRecipies)
-        tableView.dataSource = datasource
-        NSLog("po %@", datasource)
-        
-        if datasource.numberOfItems >= 1 {
-            self.tableView.isHidden = false
-        }
-        
-        tableView.reloadData()
+
     }
     
 
@@ -73,5 +45,9 @@ class sideMenuVC: UIViewController, UITableViewDelegate {
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        print(indexPath.row)
 //    }
+    
+    
+    
+
     
 }
