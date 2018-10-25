@@ -40,8 +40,8 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     var timeToCookButtons = [UIButton]()
     var portionButtons = [UIButton]()
     var count: Int = 0
-    var timeItShoultTakeToPrepareAMeal: Int = 60
-    var portionSize: Int = 2
+    var timeItShoultTakeToPrepareAMeal: Int?
+    var portionSize: Int?
     
     
     //MARK: - LifeCycle Method
@@ -84,7 +84,7 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as? SearchFilterIngredientTableViewCell
-        cell?.ingredientCell.text = "\(ImageClasificationController.shared.clasifications[indexPath.row])"//"O  Ingredient \(indexPath.row+1)"
+        cell?.ingredientCell.text = "\(ImageClasificationController.shared.clasifications[indexPath.row])"
         return cell ?? UITableViewCell()
     }
     
@@ -97,16 +97,16 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         
         switch sender.tag {
         case 0:
-            timeItShoultTakeToPrepareAMeal = 15
+            timeItShoultTakeToPrepareAMeal = 30
             thirdyMinuteButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 1:
-            timeItShoultTakeToPrepareAMeal = 30
+            timeItShoultTakeToPrepareAMeal = 60
             oneHourButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 2:
-            timeItShoultTakeToPrepareAMeal = 60
+            timeItShoultTakeToPrepareAMeal = 90
             hourAndAHalfButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 3:
-            timeItShoultTakeToPrepareAMeal = 90
+            timeItShoultTakeToPrepareAMeal = 120
             twoHourButton.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 4:
             timeItShoultTakeToPrepareAMeal = 400
@@ -165,8 +165,12 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         //        }
         
         print("🤩fetching recipes")
+        
+        #warning ("put this inn place holder for ingredniets")
+        //ImageClasificationController.shared.clasificationsAsString()
+        
         //run fetch functions
-        RecipeFetchController.shared.searchRecipiesBy(ingredients: ImageClasificationController.shared.clasificationsAsString()) { (recipes) in
+        RecipeFetchController.shared.searchRecipiesBy(ingredients: "steak, tomatoe, onion") { (recipes) in
             print("✅ Finished fetching recipies")
             guard let recipes = recipes else {return}
             RecipeFetchController.shared.recipes = recipes
@@ -176,7 +180,7 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
                 arrayOfRecipeIds.append(recipe.id)
             }
             
-            print("🤩 fetching detailed recipies")
+            print("🤩 fetching detailed recipies, we got \(arrayOfRecipeIds.count) recipies")
             RecipeFetchController.shared.fetchDetailedRecipies(ids: arrayOfRecipeIds, completion: { (detailedRecipies) in
                 guard let detailedRecipies = detailedRecipies else {return}
                 RecipeFetchController.shared.recipiesWithDetail = detailedRecipies
@@ -184,7 +188,6 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
                 self.applyFiltersAndFetchImages(completion: {(success) in
                     
                     if success {
-                        #warning ("got a race condition here - colection view loads faster than the images fetch")
                         DispatchQueue.main.async {
                             UIApplication.shared.isNetworkActivityIndicatorVisible = false
                             print("😋😋 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipiesWithDetailAndImage.count)")

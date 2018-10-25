@@ -21,9 +21,10 @@ class RecipeFetchController {
     
     //properties for query items from profilePage
     var diet: String = ""
-   // var intolerance: String = ""
+    // var intolerance: String = ""
     var intolerances = Set<String>()
     //var userIntolerances = Set<intolerances>()
+
     
     
     //initial fetch
@@ -43,7 +44,7 @@ class RecipeFetchController {
     //this should have the same recipies as filtered recipies, but with image now
     var filteredRecipiesWithDetailAndImage = [RecipeWithDetailAndImage]()
     var temporaryInstructionStorage = [Instructions]()
-    var temporaryWebUrlForWebView : String = "https://www.yahoo.com"
+    var temporaryWebUrlForWebView : String = ""
     
     
     func removefromFavorites(recipe: RecipeWithDetailAndImage){
@@ -89,7 +90,7 @@ class RecipeFetchController {
             querryComponents.append(dietQuery)
         }
         
-        let ingredientAmoutQuery = URLQueryItem(name: "number", value: "\(60)")
+        let ingredientAmoutQuery = URLQueryItem(name: "number", value: "\(100)")
         querryComponents.append(ingredientAmoutQuery)
         
         let instructionQuery = URLQueryItem(name: "instructionsRequired", value: "true")
@@ -119,9 +120,9 @@ class RecipeFetchController {
                 completion([]); return
             }
             
-//            if let response = response {
-//                print("➡️ Server Response: \(response)")
-//            }
+            //            if let response = response {
+            //                print("➡️ Server Response: \(response)")
+            //            }
             
             guard let data = data else {
                 print("❌ No data returned")
@@ -171,9 +172,9 @@ class RecipeFetchController {
                 completion([])
                 return
             }
-//            if let response = response {
-//                print("➡️ Server Response: \(response)")
-//            }
+            //            if let response = response {
+            //                print("➡️ Server Response: \(response)")
+            //            }
             guard let data = data else {
                 print("❌ Error: No Data returned from url session on detail recipie")
                 completion([])
@@ -202,31 +203,71 @@ class RecipeFetchController {
                 completion(nil)
                 return }
             
-//            if let response = response {
-//                print("➡️ Server Response: \(response)")
-//            }
+            //            if let response = response {
+            //                print("➡️ Server Response: \(response)")
+            //            }
             guard let data = data, let image = UIImage(data: data) else {completion(nil); return}
             completion(image)
             }.resume()
     }
     
     //MARK: - Filter Recipies by time it take to make them
-    func filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: [DetailedRecipe], timeItShouldTake: Int, servingAmount: Int, completion: @escaping (Bool)-> Void) {
-        for recipe in recipiesWithDetail {
-            if recipe.readyInMinutes <= timeItShouldTake && recipe.servings == servingAmount{
-                filteredRecipies.append(recipe)
+    func filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: [DetailedRecipe], timeItShouldTake: Int?, servingAmount: Int?, completion: @escaping (Bool)-> Void) {
+        
+        if timeItShouldTake != nil && servingAmount == nil {
+            guard let time = timeItShouldTake else {return}
+            for recipe in recipiesWithDetail {
+                if recipe.readyInMinutes <= time {
+                    filteredRecipies.append(recipe)
+                    print("Ready in min: \(recipe.readyInMinutes) \n Servings: notSpecified")
+                }
             }
-        }
+            
+        } else if servingAmount != nil && timeItShouldTake == nil {
+            guard let servings = servingAmount else {return}
+            for recipe in recipiesWithDetail {
+                if  recipe.servings == servings {
+                    filteredRecipies.append(recipe)
+                    print("Ready in min: notSpecified \n Servings: \(servings)")
+                }
+            }
+            
+        } else if servingAmount != nil && timeItShouldTake != nil {
+            guard let time = timeItShouldTake,
+                let servings = servingAmount else {return}
+            for recipe in recipiesWithDetail {
+                if recipe.readyInMinutes <= time && recipe.servings == servings{
+                    filteredRecipies.append(recipe)
+                    print("Ready in min: \(time) \n Servings: \(servings)")
+                }
+            }
+        } else {
+            for recipe in recipiesWithDetail {
+                    filteredRecipies.append(recipe)
+                    print("no time and serving specified")
+            }
+                    }
+        
+        //image fetch goes into dispatch group to eliminate condition where collection view would load before images were fetch
+        let dispatchGroup = DispatchGroup()
         for recipe in filteredRecipies {
             //MARK: - Fetch Images Call
-            fetchImage(at: recipe.image) { (image) in
-                let detailedRecipe = RecipeWithDetailAndImage.init(detailedRecipe: recipe, picture: image)
-                self.filteredRecipiesWithDetailAndImage.append(detailedRecipe)
-                print("🚀 image fetched and apended")
+            if let image = recipe.image {
+                dispatchGroup.enter()
+                fetchImage(at: image) { (image) in
+                    let detailedRecipe = RecipeWithDetailAndImage.init(detailedRecipe: recipe, picture: image)
+                    self.filteredRecipiesWithDetailAndImage.append(detailedRecipe)
+                    print("🚀 image fetched and apended")
+                    dispatchGroup.leave()
+                }
             }
             print("finished fetching images")
         }
-        completion(true)
+        //onec its done with all the fetchin in dispatch group, it calls the complepiton
+        dispatchGroup.notify(queue: .main) {
+            print("Calling Completion Now")
+            completion(true)
+        }
     }
     
     //MARK: - Fetch random food fact
@@ -245,9 +286,9 @@ class RecipeFetchController {
                 completion(false)
                 return
             }
-//            if let response = response {
-//                print("➡️ Server Response: \(response)")
-//            }
+            //            if let response = response {
+            //                print("➡️ Server Response: \(response)")
+            //            }
             guard let data = data else {
                 print("❌ Error: No Data returned from url session on random joke")
                 completion(false)

@@ -34,5 +34,22 @@ class IngredientTableViewCell: UITableViewCell {
     func updateViews() {
         ingredientLabel.text = ingredient
     }
+    
+    
+    @IBAction func addIngredientButtonPressed(_ sender: UIButton) {
+        print("About to add ingredient")
+        //need to add ingredint to shoping list here
+        guard let user = UserController.shared.loggedInUser else {
+            print("no user")
+            return}
+        guard let ingredient = ingredient else {
+            print("no ingredient")
+            return}
+        ItemController.shared.createItem(user: user, item: ingredient) {(item) in
+            print("Sucesfully added \(item) into grocery list")
+        }
+    }
+    
+    
 
 }
