@@ -10,11 +10,8 @@ import UIKit
 
 class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, GroceriesListCellDelegate {
     
-<<<<<<< HEAD
  
     var user: User?
-=======
->>>>>>> 8569dd2f14d16cff8fb012a8edffad4e6d29165f
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -32,6 +29,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         createNewGroceryItemTextField.delegate = self
         sideMenu()
         updateViews()
+        tableView.keyboardDismissMode = .onDrag
     }
     
     func updateViews() {
@@ -53,6 +51,7 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             view.layoutIfNeeded()
         }
+        
     }
     
     
@@ -70,20 +69,28 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    //MARK: - Actions
-    @IBAction func backBtnTapped(_ sender: Any) {
-        self.dismiss(animated: true) {
+    //MARK: - Actions    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        if !GroceryListController.shared.groceries.isEmpty {
+            var groceriesAsText = ""
+            var groceries = [String]()
+            for grocery in GroceryListController.shared.groceries {
+                    groceries.append(grocery.name)
+            }
+            groceriesAsText = groceries.joined(separator: ",\n")
+            print(groceriesAsText)
+            let shareSheet = UIActivityViewController(activityItems: [groceriesAsText], applicationActivities: nil)
+            present(shareSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Nothing to share", message: "Please add some items to shopping list.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alert, animated: true)
         }
     }
     
+    
     @IBAction func deleteBtnTapped(_ sender: Any) {
-        //remove groceries that have the button selected (isSelected = true) from the array of groceries, and reload tableview
-        for grocery in GroceryListController.shared.groceries {
-            if grocery.isSelected {
-                GroceryListController.shared.remove(grocery: grocery)
-            }
-        }
-        self.tableView.reloadData()
+            presntDeleteAlert()
     }
     
     @IBAction func addNewGroceryItemButtonPressed(_ sender: Any) {
@@ -92,6 +99,11 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         GroceryListController.shared.addNew(grocery: grocery)
             self.tableView.reloadData()
             createNewGroceryItemTextField.text = ""
+<<<<<<< HEAD
+        createNewGroceryItemTextField.resignFirstResponder()
+=======
+        updateViews()
+>>>>>>> ddb631435591b7b27781fa4f9a3137836c2794d5
     }
     
     
@@ -106,13 +118,26 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //Helper Methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        createNewGroceryItemTextField.resignFirstResponder()
         guard let groceryName = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else {return true }
         let grocery = GroceryItem(name: groceryName)
         GroceryListController.shared.addNew(grocery: grocery)
         createNewGroceryItemTextField.text = ""
-        self.tableView.reloadData()
         updateViews()
+        self.tableView.reloadData()
         return true
+    }
+    
+    func presntDeleteAlert(){
+        let alert = UIAlertController(title: "Delete Grocery List", message: "Are you sure you want to delete selected items?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+            for grocery in GroceryListController.shared.groceries {
+                if grocery.isSelected {
+                    GroceryListController.shared.remove(grocery: grocery)
+                }
+            }
+            self.tableView.reloadData()
+        }))
+        self.present(alert, animated: true)
     }
 }
