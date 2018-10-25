@@ -22,15 +22,31 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         sideMenu()
+//        EntryController.shared.fetchEntries { (entries) in
+//            if entries != nil {
+//                DispatchQueue.main.async {
+//                    self.collectionView.reloadData()
+//                }
+//            }
+//        }
+        
         collectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if JournalController.shared.journalEntries.count >= 1 {
+//        EntryController.shared.fetchEntries { (entries) in
+//            if entries != nil {
+//
+//            }
+//        }
+        if EntryController.shared.entries.count >= 1 {
             self.collectionView.isHidden = false
+            
+            DispatchQueue.main.async {
+                                                                                                            self.collectionView.reloadData()
+                                }
         }
-        collectionView.reloadData()
     }
     
     
@@ -48,13 +64,13 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     //MARK: - Colection View Data source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return JournalController.shared.journalEntries.count
+        return EntryController.shared.entries.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JournalCell", for: indexPath) as? JournalCollectionViewCell else {return UICollectionViewCell()}
-        let journalEntry = JournalController.shared.journalEntries[indexPath.row]
-        cell.entry = journalEntry
+        let entry = EntryController.shared.entries[indexPath.row]
+        cell.entry = entry 
         return cell
     }
     
@@ -63,7 +79,7 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToDetailView" {
             if let cell = sender as? UICollectionViewCell, let indexPath = self.collectionView.indexPath(for: cell) {
-                let entry = JournalController.shared.journalEntries[indexPath.row]
+                let entry = EntryController.shared.entries[indexPath.row]
                 print("🅿️ \(entry.title)")
                 let destinationVC = segue.destination as? JournalEntryDetailVC
                 destinationVC?.entry = entry
