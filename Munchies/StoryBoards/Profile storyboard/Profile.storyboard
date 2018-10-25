@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LBJ-1E-g8S">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -317,8 +317,8 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buG-v3-8Q2">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="765"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="buG-v3-8Q2">
+                                                <rect key="frame" x="0.0" y="-331" width="375" height="765"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
@@ -411,6 +411,7 @@
                         <outlet property="peanutFreeOutlet" destination="Fal-c8-bYX" id="5Vx-rc-b81"/>
                         <outlet property="pescetarianDietOutlet" destination="0xf-ym-x3f" id="zPL-8N-Iex"/>
                         <outlet property="primalDietOutlet" destination="nsx-29-cFS" id="Rvt-ub-nY2"/>
+                        <outlet property="saveButtonOutlet" destination="iU1-TA-p7I" id="6jE-Se-TRI"/>
                         <outlet property="seafoodFreeOutlet" destination="mkC-nT-1pU" id="Dug-Tg-ay4"/>
                         <outlet property="seasameFreeOutlet" destination="xHB-GD-IiE" id="XEc-Yp-gnd"/>
                         <outlet property="shellfishFreeOutlet" destination="ahX-vD-oxU" id="GbT-hs-Vfh"/>
@@ -430,7 +431,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LBJ-1E-g8S" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="76l-7d-CmN">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">

@@ -181,18 +181,22 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
                 guard let detailedRecipies = detailedRecipies else {return}
                 RecipeFetchController.shared.recipiesWithDetail = detailedRecipies
                 print("✅ Finished fetching detailed recipies")
-                self.applyFiltersAndFetchImages()
-                
-                DispatchQueue.main.async {
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    print("😋😋 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipiesWithDetailAndImage.count)")
-                    self.blurView.isHidden = true
-                    self.loadingIndicator.stopAnimating()
-                    let storyboard = UIStoryboard(name: "Search", bundle: nil)
-                    let searchVC = storyboard.instantiateViewController(withIdentifier: "searchStoryboardID")
-                    let navigationController = UINavigationController(rootViewController: searchVC)
-                    self.present(navigationController, animated: true, completion: nil)
-                }
+                self.applyFiltersAndFetchImages(completion: {(success) in
+                    
+                    if success {
+                        #warning ("got a race condition here - colection view loads faster than the images fetch")
+                        DispatchQueue.main.async {
+                            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                            print("😋😋 about to present SearchResultVc - searchVC, Filtered Recipies count: \(RecipeFetchController.shared.filteredRecipiesWithDetailAndImage.count)")
+                            self.blurView.isHidden = true
+                            self.loadingIndicator.stopAnimating()
+                            let storyboard = UIStoryboard(name: "Search", bundle: nil)
+                            let searchVC = storyboard.instantiateViewController(withIdentifier: "searchStoryboardID")
+                            let navigationController = UINavigationController(rootViewController: searchVC)
+                            self.present(navigationController, animated: true, completion: nil)
+                        }
+                    }
+                })
             })
         }
     }
@@ -212,8 +216,9 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     //MARK: - helper function to filter by time it takes to cook diner
-    func applyFiltersAndFetchImages(){
-        RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: timeItShoultTakeToPrepareAMeal, servingAmount: portionSize)
+    func applyFiltersAndFetchImages(completion: @escaping (Bool) -> Void){
+        RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: timeItShoultTakeToPrepareAMeal, servingAmount: portionSize, completion: (completion))
+        
         print("🔥🔥 Portion size: \(portionSize), time: \(timeItShoultTakeToPrepareAMeal)")
     }
     

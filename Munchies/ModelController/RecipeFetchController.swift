@@ -211,7 +211,7 @@ class RecipeFetchController {
     }
     
     //MARK: - Filter Recipies by time it take to make them
-    func filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: [DetailedRecipe], timeItShouldTake: Int, servingAmount: Int) {
+    func filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: [DetailedRecipe], timeItShouldTake: Int, servingAmount: Int, completion: @escaping (Bool)-> Void) {
         for recipe in recipiesWithDetail {
             if recipe.readyInMinutes <= timeItShouldTake && recipe.servings == servingAmount{
                 filteredRecipies.append(recipe)
@@ -222,10 +222,11 @@ class RecipeFetchController {
             fetchImage(at: recipe.image) { (image) in
                 let detailedRecipe = RecipeWithDetailAndImage.init(detailedRecipe: recipe, picture: image)
                 self.filteredRecipiesWithDetailAndImage.append(detailedRecipe)
+                print("🚀 image fetched and apended")
             }
+            print("finished fetching images")
         }
-        print("finished fetching images")
-        
+        completion(true)
     }
     
     //MARK: - Fetch random food fact
