@@ -52,12 +52,14 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     //MARK: - CollectionView Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("🚀\(RecipeFetchController.shared.filteredRecipiesWithDetailAndImage.count)")
         return RecipeFetchController.shared.filteredRecipiesWithDetailAndImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as? SearchCollectionViewCell else {return UICollectionViewCell()}
         let recipe = RecipeFetchController.shared.filteredRecipiesWithDetailAndImage[indexPath.row]
+        print("🚀\(recipe.detailedRecipe.title)")
         cell.cellData = recipe
         return cell
     }

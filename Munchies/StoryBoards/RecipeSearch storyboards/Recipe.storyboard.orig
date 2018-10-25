@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Viv-09-zDG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,20 +23,30 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86F-8g-Yab" userLabel="ContainerView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="980"/>
                                         <subviews>
+<<<<<<< HEAD
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza3" translatesAutoresizingMaskIntoConstraints="NO" id="4RD-Kd-mMv" customClass="CustomCellRoundedImages" customModule="Munchies" customModuleProvider="target">
+                                                <rect key="frame" x="12" y="8" width="1050" height="226"/>
+=======
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza3" translatesAutoresizingMaskIntoConstraints="NO" id="4RD-Kd-mMv" customClass="RoundedShadowImageView" customModule="Munchies" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="8" width="351" height="226"/>
+>>>>>>> af0e2a635dd57e01f88dd9d5c45d99b5917a7156
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="226" id="mai-ad-985"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4C-kA-Ahp">
-                                                <rect key="frame" x="323" y="251" width="20" height="22"/>
+                                                <rect key="frame" x="323" y="251" width="22" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="6vg-cF-gPI"/>
-                                                    <constraint firstAttribute="width" constant="20" id="kDp-0k-Kle"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="7kb-1q-Xhd"/>
+                                                    <constraint firstAttribute="width" constant="22" id="kDp-0k-Kle"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="tih-Ne-kkn"/>
                                                 </constraints>
-                                                <state key="normal" image="belowphotosoffood"/>
+                                                <state key="normal" backgroundImage="belowphotosoffood"/>
+                                                <connections>
+                                                    <action selector="heartButtonPressed:" destination="Viv-09-zDG" eventType="touchUpInside" id="R9F-UN-smF"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aut-rU-HPq">
                                                 <rect key="frame" x="18" y="274" width="339" height="29"/>
@@ -47,11 +57,11 @@
                                                 <color key="textColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="89" translatesAutoresizingMaskIntoConstraints="NO" id="jeN-Q0-y7Z">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jeN-Q0-y7Z">
                                                 <rect key="frame" x="18" y="308" width="339" height="36"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PT8-rr-O5F">
-                                                        <rect key="frame" x="0.0" y="0.0" width="101" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="36"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1 hr 30 min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TH-5F-VOK">
                                                                 <rect key="frame" x="0.0" y="0.0" width="79" height="18"/>
@@ -67,15 +77,20 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
+<<<<<<< HEAD
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeK-e6-jxR" customClass="RoundedShapeButtonNoShadow" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="889" y="0.0" width="149" height="36"/>
+=======
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeK-e6-jxR" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="190" y="0.0" width="149" height="36"/>
+>>>>>>> af0e2a635dd57e01f88dd9d5c45d99b5917a7156
                                                         <color key="backgroundColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="149" id="8sp-du-4Hv"/>
                                                             <constraint firstAttribute="height" constant="36" id="uY8-I6-GJK"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                        <state key="normal" title="Add a Food Journal Entry"/>
+                                                        <state key="normal" title="Visit Recipe Website"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -100,7 +115,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qNJ-xy-QWx">
                                                 <rect key="frame" x="18" y="398" width="339" height="80"/>
                                                 <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="339" placeholderIntrinsicHeight="80" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EaP-v6-bnI" customClass="searchFilterSizedTableView" customModule="Munchies" customModuleProvider="target">
+                                                    <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="339" placeholderIntrinsicHeight="80" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EaP-v6-bnI" customClass="searchFilterSizedTableView" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="339" height="80"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
@@ -120,7 +135,7 @@
                                                                             <state key="normal" title="Button" image="recipe"/>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrL-Oj-10a">
-                                                                            <rect key="frame" x="59" y="7" width="257" height="30"/>
+                                                                            <rect key="frame" x="59" y="7" width="956" height="30"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="30" id="0g2-7t-vke"/>
                                                                             </constraints>
@@ -220,12 +235,17 @@
                                 <action selector="backBtnTapped:" destination="Viv-09-zDG" id="4f7-U7-aE4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="header-6" id="DwC-cz-qdK"/>
+                        <barButtonItem key="rightBarButtonItem" image="header-6" id="DwC-cz-qdK">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="Viv-09-zDG" id="NKj-Ed-FeY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="ingredientTableView" destination="EaP-v6-bnI" id="Xid-6m-egN"/>
                         <outlet property="portions" destination="7j2-m8-Kbs" id="0dX-73-B1x"/>
+                        <outlet property="recipeHeartButton" destination="g4C-kA-Ahp" id="Kl0-hQ-Ux3"/>
                         <outlet property="recipeImageView" destination="4RD-Kd-mMv" id="LYW-w3-msK"/>
                         <outlet property="recipeTimeToPrepareLabel" destination="6TH-5F-VOK" id="kB7-G2-K6T"/>
                         <outlet property="reicpeTitleLabel" destination="aut-rU-HPq" id="0eK-1V-gtX"/>
@@ -243,11 +263,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="339" height="445"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="339" placeholderIntrinsicHeight="116" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ny-ze-V6s" customClass="searchFilterSizedTableView" customModule="Munchies" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="339" placeholderIntrinsicHeight="116" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ny-ze-V6s" customClass="searchFilterSizedTableView" customModule="Munchies" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="339" height="445"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="instructionsCell" textLabel="ipp-ZY-1Er" style="IBUITableViewCellStyleDefault" id="qC8-Eu-TTg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="instructionsCell" textLabel="ipp-ZY-1Er" style="IBUITableViewCellStyleDefault" id="qC8-Eu-TTg">
                                         <rect key="frame" x="0.0" y="28" width="339" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qC8-Eu-TTg" id="7lD-he-IOQ">
@@ -278,20 +298,15 @@
                             <constraint firstAttribute="bottom" secondItem="7ny-ze-V6s" secondAttribute="bottom" id="u3V-YL-fgV"/>
                             <constraint firstItem="7ny-ze-V6s" firstAttribute="top" secondItem="ihR-62-OT5" secondAttribute="top" id="x9A-YE-YFd"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="jxc-Ik-JeV"/>
                     </view>
                     <connections>
                         <outlet property="instructionsTableView" destination="7ny-ze-V6s" id="9Fm-Xv-oPk"/>
                     </connections>
                 </viewController>
-<<<<<<< HEAD
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4KS-DK-8Bf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2216.8000000000002" y="91.754122938530742"/>
-=======
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vpy-1i-wD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2929" y="179"/>
->>>>>>> 9afe5aca10056a6d1c5e4052839afd6d36fc7c84
+            <point key="canvasLocation" x="4034" y="93"/>
         </scene>
     </scenes>
     <resources>

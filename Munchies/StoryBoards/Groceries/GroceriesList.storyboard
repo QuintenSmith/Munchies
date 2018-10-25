@@ -27,13 +27,17 @@
                                         <rect key="frame" x="8" y="12" width="327" height="26"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add item to shopping list..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8E-uo-q6w">
-                                                <rect key="frame" x="0.0" y="0.0" width="303" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="26"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JG-2U-2kQ">
-                                                <rect key="frame" x="311" y="0.0" width="16" height="26"/>
+                                                <rect key="frame" x="301" y="0.0" width="26" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="26" id="IGW-VK-iVZ"/>
+                                                    <constraint firstAttribute="height" constant="26" id="UqR-0K-V7C"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" image="recipe"/>
                                                 <connections>
@@ -75,7 +79,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Ingredient)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4V-wy-f5O">
-                                                    <rect key="frame" x="50" y="8" width="320" height="35"/>
+                                                    <rect key="frame" x="50" y="8" width="281" height="35"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -125,7 +129,11 @@
                     <navigationItem key="navigationItem" title="SHOPPING LIST" id="0Ci-MO-7Vr">
                         <leftBarButtonItems>
                             <barButtonItem id="baE-xc-sDI"/>
-                            <barButtonItem title="Item" image="header-6" id="1np-kZ-U0g"/>
+                            <barButtonItem title="Item" image="header-6" id="1np-kZ-U0g">
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="AuA-ec-4zT" id="UPB-ag-I2M"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" image="header-7" id="OTV-6R-VC1">
                             <connections>

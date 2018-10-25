@@ -77,6 +77,19 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        guard let recie = recipeToDispaly else {return}
+        if let link = recie.detailedRecipe.sourceUrl {
+            let shareSheet = UIActivityViewController(activityItems: [link], applicationActivities: nil)
+            present(shareSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Were sorry", message: "This Recipe doesnt have a link", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alert, animated: true)
+        }
+    }
+    
+    
     @IBAction func heartButtonPressed(_ sender: Any) {
         print("pressing me")
         guard let recipe = recipeToDispaly else {return}

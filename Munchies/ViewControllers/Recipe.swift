@@ -108,6 +108,7 @@ class DetailedRecipe: Decodable, Equatable {
     let servings: Int?
     let preparationMinutes: Int?
     let extendedIngredients: [extendedIngredients]?
+    let sourceUrl: String?
     
     //those properties are neede for detail view and to assign recipe as favorite - they are not part of the api
     var isFavorite: Bool?
@@ -115,7 +116,7 @@ class DetailedRecipe: Decodable, Equatable {
     //var photo: UIImage?
     
     
-    init(id: Int, title: String, readyInMinutes: Int, image: String, analyzedInstructions: [Instructions], servings: Int?, preparationMinutes: Int?, extendedIngredients: [extendedIngredients]?){
+    init(id: Int, title: String, readyInMinutes: Int, image: String, analyzedInstructions: [Instructions], servings: Int?, preparationMinutes: Int?, extendedIngredients: [extendedIngredients]?, sourceUrl: String?){
         self.id = id
         self.title = title
         self.readyInMinutes = readyInMinutes
@@ -124,6 +125,7 @@ class DetailedRecipe: Decodable, Equatable {
         self.servings = servings
         self.preparationMinutes = preparationMinutes
         self.extendedIngredients = extendedIngredients
+        self.sourceUrl = sourceUrl
     }
     
     

@@ -12,10 +12,11 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
 
     //MARK: - Outlets
     @IBOutlet weak var menuBtn: UIBarButtonItem!
-    @IBOutlet weak var profileImageView: UIImageView!
+    //@IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var editView: UIView!
     @IBOutlet weak var clearButtonOutlet: UIBarButtonItem!
+    @IBOutlet weak var saveButtonOutlet: UIBarButtonItem!
     
     //MARK: - Diets Button Outlets
     @IBOutlet weak var veganDietOutlet: RoundedShapeButton!
@@ -172,11 +173,12 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             editView.isHidden = true
             clearButtonOutlet.isEnabled = true
             saveButtonState = false
-            
+            saveButtonOutlet.image = #imageLiteral(resourceName: "header-5")
         } else {
             editView.isHidden = false
             clearButtonOutlet.isEnabled = false
             saveButtonState = true
+             saveButtonOutlet.image = #imageLiteral(resourceName: "header-2")
             showSuccesfullAlert()
         }
         
