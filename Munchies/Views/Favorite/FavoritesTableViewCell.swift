@@ -12,7 +12,6 @@ class FavoritesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var foodImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
     
     var recipe: RecipeWithDetailAndImage? {
@@ -25,6 +24,6 @@ class FavoritesTableViewCell: UITableViewCell {
         guard let recipe = recipe else {return}
         foodImageView.image = recipe.picture
         nameLabel.text = recipe.detailedRecipe.title
-       // likesLabel.text = "\(recipe.detailedRecipe.)"
+
     }
 }

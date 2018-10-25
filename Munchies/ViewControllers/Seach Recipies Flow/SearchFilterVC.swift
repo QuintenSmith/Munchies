@@ -169,7 +169,7 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         //ImageClasificationController.shared.clasificationsAsString()
         
         //run fetch functions
-        RecipeFetchController.shared.searchRecipiesBy(ingredients: "steak, tomatoe, onion") { (recipes) in
+        RecipeFetchController.shared.searchRecipiesBy(ingredients: "groud beef, tomatoe, onion") { (recipes) in
             print("✅ Finished fetching recipies")
             guard let recipes = recipes else {return}
             RecipeFetchController.shared.recipes = recipes

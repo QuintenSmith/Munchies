@@ -16,12 +16,18 @@ class sideMenuVC: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> c441dae05c574bf5e07faf094976d2f622a65e67
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         self.tableView.isHidden = true
         sideMenu()
 
+<<<<<<< HEAD
         var numberOfRows = 0
         if RecipeFetchController.shared.favoriteRecipies.count > 3 {
             numberOfRows = 3
@@ -38,6 +44,8 @@ class sideMenuVC: UIViewController, UITableViewDelegate {
         }
         
         tableView.reloadData()
+=======
+>>>>>>> c441dae05c574bf5e07faf094976d2f622a65e67
     }
     
 
