@@ -157,15 +157,17 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         let alert = UIAlertController(title: "Delete Grocery List", message: "Are you sure you want to delete selected items?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+            DispatchQueue.main.async {
             for item in (self.user?.shoppingList)! {
                 if item.isSelected == true {
-                    let index = self.user?.shoppingList!.index(of: item)
-                    self.user?.shoppingList?.remove(at: index!)
-                    ItemController.shared.deleteItem(item: item, index: index!)
-                    self.tableView.reloadData()
+                        let index = self.user?.shoppingList!.index(of: item)
+                        self.user?.shoppingList?.remove(at: index!)
+                        ItemController.shared.deleteItem(item: item, index: index!)
+                        self.updateViews()
+                        self.tableView.reloadData()
+                    }
                 }
             }
-            self.tableView.reloadData()
         }))
         self.present(alert, animated: true)
     }

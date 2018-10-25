@@ -18,6 +18,7 @@ class JournalEntryDetailVC: UIViewController {
     
     
     //MARK: - Properties
+    var user: User?
     var entry: Entry? {
         didSet{
             loadViewIfNeeded()
@@ -28,6 +29,7 @@ class JournalEntryDetailVC: UIViewController {
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
+        user = UserController.shared.loggedInUser
         super.viewDidLoad()
         loadViewIfNeeded()
         updateViews()
@@ -37,14 +39,20 @@ class JournalEntryDetailVC: UIViewController {
     
     //MARK: - Actions
     @IBAction func deleteButtonPressed(_ sender: Any) {
-//        let alert = UIAlertController(title: "Delete Entry?", message: "Are you sure you want to delete this food journal entry?", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+        let alert = UIAlertController(title: "Delete Entry?", message: "Are you sure you want to delete this food journal entry?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
 //            guard let entry = self.entry else {return}
 //            JournalController.shared.delete(entry: entry)
 //            self.navigationController?.popViewController(animated: true)
-//        }))
-//        present(alert, animated: true)
+            guard let entry = self.entry else {return}
+            
+            EntryController.shared.deleteItem(item: entry)
+            DispatchQueue.main.async {
+              self.navigationController?.popViewController(animated: true)
+            }
+        }))
+        present(alert, animated: true)
     }
     
     

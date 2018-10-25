@@ -10,7 +10,6 @@ import UIKit
 
 
 class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
-    #warning("this VC has lots of print statments in fetch method")
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: searchFilterSizedTableView!
@@ -39,9 +38,9 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     //MARK: - Properties
     var timeToCookButtons = [UIButton]()
     var portionButtons = [UIButton]()
-    var count: Int = 0
-    var timeItShoultTakeToPrepareAMeal: Int = 60
-    var portionSize: Int = 2
+    var count: Int = 2
+    var timeItShoultTakeToPrepareAMeal: Int = 0 
+    var portionSize: Int = 30
     
     
     //MARK: - LifeCycle Method

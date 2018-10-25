@@ -9,7 +9,11 @@
 import UIKit
 import CloudKit
 
-class Entry {
+class Entry: Equatable {
+    static func == (lhs: Entry, rhs: Entry) -> Bool {
+        return lhs.title == rhs.title && lhs.timestamp == rhs.timestamp
+    }
+    
     
     var recordID = CKRecord.ID(recordName: UUID().uuidString)
     var photoData: Data?

@@ -41,11 +41,10 @@ class CreateJournalEntryVC: UIViewController, UIImagePickerControllerDelegate, U
         guard let title = enterTitleTextField.text, title != "" else { return}
         guard let image = entryImageView.image else {return}
         EntryController.shared.createEntryWith(user: user!, image: image, title: title, description: notesTextView.text) { (entry) in
-    
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
-        self.dismiss(animated: true, completion: nil)
-        //  navigationController?.popViewController(animated: true)
-        
     }
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
