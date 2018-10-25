@@ -124,43 +124,33 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     @IBAction func intolerancesAndAlergiesButtonPressed(_ sender: UIButton) {
         switch sender.tag {
         case 0:
-           // RecipeFetchController.shared.intolerance = "dairy"
             adjustSettingsAndFlip(button: diaryFreeOutlet, intolerance: "dairy", buttonState: diaryFreeButton)
             diaryFreeButton = !diaryFreeButton
         case 1:
-           // RecipeFetchController.shared.intolerance = "peanut"
             adjustSettingsAndFlip(button: peanutFreeOutlet, intolerance: "peanut", buttonState: peanutFreeButton)
             peanutFreeButton = !peanutFreeButton
         case 2:
-           // RecipeFetchController.shared.intolerance = "soy"
             adjustSettingsAndFlip(button: soyFreeOutlet, intolerance: "soy", buttonState: soyFreeButton)
             soyFreeButton = !soyFreeButton
         case 3:
-           // RecipeFetchController.shared.intolerance = "egg"
             adjustSettingsAndFlip(button: eggFreeOutlet, intolerance: "egg", buttonState: eggFreeButton)
             eggFreeButton = !eggFreeButton
         case 4:
-           // RecipeFetchController.shared.intolerance = "seafood"
             adjustSettingsAndFlip(button: seafoodFreeOutlet, intolerance: "seafood", buttonState: seafoodFreeButton)
             seafoodFreeButton = !seafoodFreeButton
         case 5:
-           // RecipeFetchController.shared.intolerance = "sulfite"
             adjustSettingsAndFlip(button: sulfiteFreeOutlet, intolerance: "sulfite", buttonState: sulfiteFreeButton)
             sulfiteFreeButton = !sulfiteFreeButton
         case 6:
-           // RecipeFetchController.shared.intolerance = "gluten"
             adjustSettingsAndFlip(button: glutenFreeOutlet, intolerance: "gluten", buttonState: glutenFreeButton)
             glutenFreeButton = !glutenFreeButton
         case 7:
-           // RecipeFetchController.shared.intolerance = "sesame"
             adjustSettingsAndFlip(button: seasameFreeOutlet, intolerance: "sesame", buttonState: seasameFreeButton)
             seasameFreeButton = !seasameFreeButton
         case 8:
-          //  RecipeFetchController.shared.intolerance = "shellfish"
             adjustSettingsAndFlip(button: shellfishFreeOutlet, intolerance: "shellfish", buttonState: shellfishFreeButton)
             shellfishFreeButton = !shellfishFreeButton
         default:
-           // RecipeFetchController.shared.intolerance = ""
             print("🔔🔔\(RecipeFetchController.shared.intolerances)")
         }
         print("🔔🔔\(RecipeFetchController.shared.intolerances)")

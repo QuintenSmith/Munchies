@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if success {
                 print("Something or bananas")
             } else {
-                print("kamil sucks at fosball")
+                print("QUINTEN SUCKS AT FUZBALL!!!!!!")
             }
         }
         return true

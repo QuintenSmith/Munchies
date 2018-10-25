@@ -103,7 +103,7 @@ class DetailedRecipe: Decodable, Equatable {
     let id: Int
     let title: String
     let readyInMinutes: Int
-    let image: String
+    let image: String?
     let analyzedInstructions : [Instructions]
     let servings: Int?
     let preparationMinutes: Int?
@@ -116,7 +116,7 @@ class DetailedRecipe: Decodable, Equatable {
     //var photo: UIImage?
     
     
-    init(id: Int, title: String, readyInMinutes: Int, image: String, analyzedInstructions: [Instructions], servings: Int?, preparationMinutes: Int?, extendedIngredients: [extendedIngredients]?, sourceUrl: String?){
+    init(id: Int, title: String, readyInMinutes: Int, image: String?, analyzedInstructions: [Instructions], servings: Int?, preparationMinutes: Int?, extendedIngredients: [extendedIngredients]?, sourceUrl: String?){
         self.id = id
         self.title = title
         self.readyInMinutes = readyInMinutes
