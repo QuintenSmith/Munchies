@@ -30,7 +30,6 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.dataSource = self
         createNewGroceryItemTextField.delegate = self
         sideMenu()
-<<<<<<< HEAD
         tableView.keyboardDismissMode = .onDrag
         
     }
@@ -46,10 +45,6 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
        }
 
-=======
-        updateViews()
-        tableView.keyboardDismissMode = .onDrag
->>>>>>> af0e2a635dd57e01f88dd9d5c45d99b5917a7156
     }
     
     func updateViews() {
@@ -94,24 +89,47 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     //MARK: - Actions    
+<<<<<<< HEAD
     @IBAction func shareButtonPressed(_ sender: Any) {
-        if !GroceryListController.shared.groceries.isEmpty {
-            var groceriesAsText = ""
-            var groceries = [String]()
-            for grocery in GroceryListController.shared.groceries {
+        if let user = UserController.shared.loggedInUser,
+            let shoppingList = user.shoppingList {
+            if !shoppingList.isEmpty {
+                var groceriesAsText = ""
+                var groceries = [String]()
+                for grocery in shoppingList {
                     groceries.append(grocery.name)
+                }
+                groceriesAsText = groceries.joined(separator: ",\n")
+                print(groceriesAsText)
+                let shareSheet = UIActivityViewController(activityItems: [groceriesAsText], applicationActivities: nil)
+                present(shareSheet, animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "Nothing to share", message: "Please add some items to shopping list.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                present(alert, animated: true)
             }
-            groceriesAsText = groceries.joined(separator: ",\n")
-            print(groceriesAsText)
-            let shareSheet = UIActivityViewController(activityItems: [groceriesAsText], applicationActivities: nil)
-            present(shareSheet, animated: true, completion: nil)
-        } else {
-            let alert = UIAlertController(title: "Nothing to share", message: "Please add some items to shopping list.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            present(alert, animated: true)
         }
     }
-    
+=======
+//    @IBAction func shareButtonPressed(_ sender: Any) {
+//        if !GroceryListController.shared.groceries.isEmpty {
+//            var groceriesAsText = ""
+//            var groceries = [String]()
+//            for grocery in GroceryListController.shared.groceries {
+//                    groceries.append(grocery.name)
+//            }
+//            groceriesAsText = groceries.joined(separator: ",\n")
+//            print(groceriesAsText)
+//            let shareSheet = UIActivityViewController(activityItems: [groceriesAsText], applicationActivities: nil)
+//            present(shareSheet, animated: true, completion: nil)
+//        } else {
+//            let alert = UIAlertController(title: "Nothing to share", message: "Please add some items to shopping list.", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//            present(alert, animated: true)
+//        }
+//    }
+//    
+>>>>>>> b832eb3780b1cab379e74bc57f90df9805f653cb
     
     @IBAction func deleteBtnTapped(_ sender: Any) {
             presntDeleteAlert()
@@ -129,11 +147,6 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
             self.tableView.reloadData()
             createNewGroceryItemTextField.text = ""
-<<<<<<< HEAD
-=======
-        createNewGroceryItemTextField.resignFirstResponder()
-        updateViews()
->>>>>>> af0e2a635dd57e01f88dd9d5c45d99b5917a7156
     }
     
     
@@ -148,7 +161,6 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //Helper Methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-<<<<<<< HEAD
         createNewGroceryItemTextField.resignFirstResponder()
         guard let item = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else {return true }
         if let user = user {
@@ -159,14 +171,6 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
           }
         }
-=======
-        guard let groceryName = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else {return true }
-        let grocery = GroceryItem(name: groceryName)
-        GroceryListController.shared.addNew(grocery: grocery)
-        createNewGroceryItemTextField.text = ""
-        updateViews()
-        self.tableView.reloadData()
->>>>>>> af0e2a635dd57e01f88dd9d5c45d99b5917a7156
         return true
 }
     

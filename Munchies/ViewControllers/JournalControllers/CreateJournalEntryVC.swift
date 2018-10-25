@@ -16,11 +16,12 @@ class CreateJournalEntryVC: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var cameraButton: UIButton!
     
+    var user: User?
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        user = UserController.shared.loggedInUser
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -39,9 +40,9 @@ class CreateJournalEntryVC: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let title = enterTitleTextField.text, title != "" else { return}
         guard let image = entryImageView.image else {return}
-        let entry = JournalEntry(picture: image, title: title, description: notesTextView.text)
-        
-        JournalController.shared.save(entry: entry)
+        EntryController.shared.createEntryWith(user: user!, image: image, title: title, description: notesTextView.text) { (entry) in
+    
+        }
         self.dismiss(animated: true, completion: nil)
         //  navigationController?.popViewController(animated: true)
         

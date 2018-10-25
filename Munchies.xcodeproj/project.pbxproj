@@ -43,6 +43,7 @@
 		1C43FBCA2176CBF700ACDAA0 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43FBC92176CBF700ACDAA0 /* ProfileVC.swift */; };
 		1C43FBCC2176CF4700ACDAA0 /* SearchFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C43FBCB2176CF4700ACDAA0 /* SearchFilter.storyboard */; };
 		1C64B7EB2180F68400634B73 /* RoundedShapeButtonNoShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C64B7EA2180F68400634B73 /* RoundedShapeButtonNoShadow.swift */; };
+		1C64B7ED21817F8100634B73 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C64B7EC21817F8100634B73 /* EntryController.swift */; };
 		1C791C892177A9E100A1AFF0 /* SearchFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C791C882177A9E100A1AFF0 /* SearchFilterVC.swift */; };
 		1C7E745E2172ED3D003462AD /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E745D2172ED3D003462AD /* SWRevealViewController.m */; };
 		1C7E74602172EFFD003462AD /* sideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E745F2172EFFD003462AD /* sideMenuVC.swift */; };
@@ -118,6 +119,7 @@
 		1C43FBC92176CBF700ACDAA0 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		1C43FBCB2176CF4700ACDAA0 /* SearchFilter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchFilter.storyboard; sourceTree = "<group>"; };
 		1C64B7EA2180F68400634B73 /* RoundedShapeButtonNoShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShapeButtonNoShadow.swift; sourceTree = "<group>"; };
+		1C64B7EC21817F8100634B73 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		1C791C882177A9E100A1AFF0 /* SearchFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterVC.swift; sourceTree = "<group>"; };
 		1C7E745B2172ED3C003462AD /* Munchies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Munchies-Bridging-Header.h"; sourceTree = "<group>"; };
 		1C7E745C2172ED3D003462AD /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				3BAD2B41217D496B00D28A53 /* AppStylingController.swift */,
 				1C2BBFBD217E9EC1001145D1 /* UserController.swift */,
 				1CFC28FA21801577003303ED /* ItemController.swift */,
+				1C64B7EC21817F8100634B73 /* EntryController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				1C3084A7217A792C00DF51C0 /* searchFilterSizedTableView.swift in Sources */,
 				3B7E603E2180D3800020FF58 /* JournalCollectionViewCell.swift in Sources */,
 				3B770A51216FE41F00FD7B7B /* Recipe.swift in Sources */,
+				1C64B7ED21817F8100634B73 /* EntryController.swift in Sources */,
 				1C0BEC6921793D02004F5485 /* JournalDashboardVC.swift in Sources */,
 				3BAD2B3A217BC1C100D28A53 /* ImageClasificationVC.swift in Sources */,
 				1C3084AD217AE1F900DF51C0 /* RoundedShapeButton.swift in Sources */,

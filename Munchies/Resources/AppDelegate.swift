@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("kamil sucks at fosball")
             }
         }
+        EntryController.shared.fetchEntries { (entries) in
+            print("Kamil sucks at fuzball")
+        }
         return true
     }
 

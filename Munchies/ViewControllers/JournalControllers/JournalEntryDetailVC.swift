@@ -18,7 +18,7 @@ class JournalEntryDetailVC: UIViewController {
     
     
     //MARK: - Properties
-    var entry: JournalEntry? {
+    var entry: Entry? {
         didSet{
             loadViewIfNeeded()
             updateViews()
@@ -37,22 +37,22 @@ class JournalEntryDetailVC: UIViewController {
     
     //MARK: - Actions
     @IBAction func deleteButtonPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Delete Entry?", message: "Are you sure you want to delete this food journal entry?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-            guard let entry = self.entry else {return}
-            JournalController.shared.delete(entry: entry)
-            self.navigationController?.popViewController(animated: true)
-        }))
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: "Delete Entry?", message: "Are you sure you want to delete this food journal entry?", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+//            guard let entry = self.entry else {return}
+//            JournalController.shared.delete(entry: entry)
+//            self.navigationController?.popViewController(animated: true)
+//        }))
+//        present(alert, animated: true)
     }
     
     
     //MARK: - Helper Methods
     func updateViews(){
         guard let entry = entry else {return}
-        entryImageView.image = entry.picture
-        entryDateLabel.text = entry.date.dateAsString()
+        entryImageView.image = entry.photo
+        entryDateLabel.text = entry.timestamp.dateAsString()
         entryTitleLabel.text = entry.title
         entrydescriptionTextView.text = entry.description
     }
