@@ -10,16 +10,21 @@ import UIKit
 
 class GroceriesListTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
+    //MARK: - Properties
     var recipe: Recipe? {
         didSet {
             updateViews()
         }
     }
     
+    //MARK: - UpdateViews
     func updateViews() {
         guard let recipe = recipe else {return}
         nameLabel.text = recipe.recipeTitle
     }
+    
+    
+    //MARK: - Action
+    @IBOutlet weak var nameLabel: UILabel!
+    
 }

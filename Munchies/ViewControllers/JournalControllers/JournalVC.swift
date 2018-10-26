@@ -10,11 +10,12 @@ import UIKit
 
 class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
+    
+    //MARK: - Properties
     var user: User?
     
     //MARK: - LifeCycle Methods
@@ -45,7 +46,6 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             self.collectionView.reloadData()
             
         }
-        
     }
     
     //MARK: - Side Menu Method
@@ -83,6 +83,4 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             }
         }
     }
-    
-    
 }

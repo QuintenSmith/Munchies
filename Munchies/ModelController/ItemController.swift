@@ -30,9 +30,9 @@ class ItemController {
         }
     }
     
+    
     //MARK: - Fetch grocery items
     func fetchItemsfor(user: User, completion: @escaping (Bool) -> Void) {
-        
         let userReference = user.cloudKitRecordID
         let predicate = NSPredicate.init(format: "UserReference == %@", userReference)
         let itemIDs = user.shoppingList?.compactMap({$0.recordID})

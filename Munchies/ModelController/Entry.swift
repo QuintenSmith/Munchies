@@ -68,9 +68,9 @@ class Entry: Equatable {
     
     init?(ckRecord: CKRecord) {
         guard let title = ckRecord[EntryKeys.titleKey] as? String,
-              let timestamp = ckRecord.creationDate,
-              let imageAsset = ckRecord[EntryKeys.photoDataKey] as? CKAsset,
-              let description = ckRecord[EntryKeys.descriptionKey] as? String else {return nil}
+            let timestamp = ckRecord.creationDate,
+            let imageAsset = ckRecord[EntryKeys.photoDataKey] as? CKAsset,
+            let description = ckRecord[EntryKeys.descriptionKey] as? String else {return nil}
         guard let photoData = try? Data(contentsOf: imageAsset.fileURL) else {return nil}
         
         self.title = title

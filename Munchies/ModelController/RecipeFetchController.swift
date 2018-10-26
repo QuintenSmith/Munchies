@@ -18,44 +18,31 @@ class RecipeFetchController {
     
     
     //MARK: - Properties
-    
     //properties for query items from profilePage
     var diet: String = ""
-    // var intolerance: String = ""
     var intolerances = Set<String>()
-    //var userIntolerances = Set<intolerances>()
-
-    
-    
     //initial fetch
     var recipes: [fetchedRecipe] = []
     //second fetch with more details
     var recipiesWithDetail: [DetailedRecipe] = []
     //filtered locally on the device - time it takes to cook, portions
-    
-    
     var filteredRecipies: [DetailedRecipe] = []
     // container to store a recipy to be displayed in the detail view
     var recipeForDetailView : RecipeForDetailView?
     //recipies that are marked as favorite
     var favoriteRecipies = [RecipeWithDetailAndImage]()
-    
-    
     //this should have the same recipies as filtered recipies, but with image now
     var filteredRecipiesWithDetailAndImage = [RecipeWithDetailAndImage]()
     var temporaryInstructionStorage = [Instructions]()
     var temporaryWebUrlForWebView : String = ""
+    //random joke
+    var randomJoke : String = "Remember: You can eat your way out of almost any problem."
     
     
     func removefromFavorites(recipe: RecipeWithDetailAndImage){
         guard let index = favoriteRecipies.index(of: recipe) else {return}
         favoriteRecipies.remove(at: index)
     }
-    
-    
-    
-    //random joke
-    var randomJoke : String = "Remember: You can eat your way out of almost any problem."
     
     //MARK: - Base URLs
     //url for fetching recipies
@@ -66,20 +53,15 @@ class RecipeFetchController {
     private let baseURLStringForRandomJoke = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random"
     
     
-    
     //MARK: - Fetch recipies by ingredients
     func searchRecipiesBy(ingredients: String, completion: @escaping ([fetchedRecipe]?) -> Void) {
-        
         guard let baseUrl = URL(string: baseURLString) else {
             fatalError("❌ Bad base URL for first recipe search")
         }
-        
         var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
-        
         var querryComponents: [URLQueryItem] = []
         
         //MARK: - Query Items:
-        
         if !intolerances.isEmpty {
             let intoleranceQuery = URLQueryItem(name: "intolerances", value: intolerancesAsString())
             querryComponents.append(intoleranceQuery)
@@ -98,10 +80,6 @@ class RecipeFetchController {
         
         let ingredientQuery = URLQueryItem(name: "includeIngredients", value: ingredients)
         querryComponents.append(ingredientQuery)
-        
-        //to add this we need to add button on the "SearchFilterVC" and set those values there
-        //let typeQuery = URLQueryItem(name: "type", value: "side dish")
-        //let cuisine = URLQueryItem(name: "cuisine", value: "american")
         
         //Add Queries to components
         components?.queryItems = querryComponents
@@ -146,15 +124,11 @@ class RecipeFetchController {
         guard let baseURL = URL(string: baseURLStringFroDetiledRecipe) else {
             fatalError("❌ bad base url for detailed Recipe")
         }
-        
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        
         //converts int array to string, and joins them together
         let idsAsString = ids.compactMap({String($0)}).joined(separator: ",")
         let idQueries = URLQueryItem(name: "ids", value: idsAsString)
-        
         components?.queryItems = [idQueries]
-        
         guard let url = components?.url else {
             print("❌ error putting url together with components")
             completion([])
@@ -211,6 +185,7 @@ class RecipeFetchController {
             }.resume()
     }
     
+    
     //MARK: - Filter Recipies by time it take to make them
     func filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: [DetailedRecipe], timeItShouldTake: Int?, servingAmount: Int?, completion: @escaping (Bool)-> Void) {
         
@@ -222,7 +197,6 @@ class RecipeFetchController {
                     print("Ready in min: \(recipe.readyInMinutes) \n Servings: notSpecified")
                 }
             }
-            
         } else if servingAmount != nil && timeItShouldTake == nil {
             guard let servings = servingAmount else {return}
             for recipe in recipiesWithDetail {
@@ -231,7 +205,6 @@ class RecipeFetchController {
                     print("Ready in min: notSpecified \n Servings: \(servings)")
                 }
             }
-            
         } else if servingAmount != nil && timeItShouldTake != nil {
             guard let time = timeItShouldTake,
                 let servings = servingAmount else {return}
@@ -243,10 +216,10 @@ class RecipeFetchController {
             }
         } else {
             for recipe in recipiesWithDetail {
-                    filteredRecipies.append(recipe)
-                    print("no time and serving specified")
+                filteredRecipies.append(recipe)
+                print("no time and serving specified")
             }
-                    }
+        }
         
         //image fetch goes into dispatch group to eliminate condition where collection view would load before images were fetch
         let dispatchGroup = DispatchGroup()
@@ -270,13 +243,13 @@ class RecipeFetchController {
         }
     }
     
+    
     //MARK: - Fetch random food fact
     func fetchRandomJoke(completion: @escaping(Bool) -> Void) {
         guard let baseURL = URL(string: baseURLStringForRandomJoke) else {
             fatalError("❌ bad base url for detailed Recipe")
         }
         var request = URLRequest(url: baseURL)
-        
         request.addValue(getApiKey(named: "X-Mashape-Key"), forHTTPHeaderField: "X-Mashape-Key")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -317,11 +290,11 @@ class RecipeFetchController {
         return value
     }
     
+    
     //MARK: - Turns Intolerances Set to Stirng
     func intolerancesAsString() -> String{
         return intolerances.joined(separator: ", ")
     }
-    
 }
 
 

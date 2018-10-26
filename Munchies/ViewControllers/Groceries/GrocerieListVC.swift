@@ -10,9 +10,11 @@ import UIKit
 
 class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, GroceriesListCellDelegate {
     
- 
+    
+    //MARK: - Properties
     var user: User?
     var grocery: Item?
+    
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -31,7 +33,6 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         createNewGroceryItemTextField.delegate = self
         sideMenu()
         tableView.keyboardDismissMode = .onDrag
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,9 +44,9 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                     self.tableView.reloadData()
                 }
             }
-       }
-
+        }
     }
+    
     
     func updateViews() {
         print("updating views")
@@ -70,7 +71,6 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             view.layoutIfNeeded()
         }
-        
     }
     
     
@@ -110,8 +110,10 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    
+    //MARK: - Actions
     @IBAction func deleteBtnTapped(_ sender: Any) {
-            presntDeleteAlert()
+        presntDeleteAlert()
     }
     
     @IBAction func addNewGroceryItemButtonPressed(_ sender: Any) {
@@ -124,8 +126,8 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
         }
-            self.tableView.reloadData()
-            createNewGroceryItemTextField.text = ""
+        self.tableView.reloadData()
+        createNewGroceryItemTextField.text = ""
     }
     
     
@@ -143,23 +145,25 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         createNewGroceryItemTextField.resignFirstResponder()
         guard let item = createNewGroceryItemTextField.text, createNewGroceryItemTextField.text != "" else {return true }
         if let user = user {
-        ItemController.shared.createItem(user: user, item: item) { (_) in
-            DispatchQueue.main.async {
-                self.createNewGroceryItemTextField.text = ""
-                self.tableView.reloadData()
+            ItemController.shared.createItem(user: user, item: item) { (_) in
+                DispatchQueue.main.async {
+                    self.createNewGroceryItemTextField.text = ""
+                    self.tableView.reloadData()
+                }
             }
-          }
         }
         return true
-}
+    }
     
+    
+    //MARK: - Delete Alert
     func presntDeleteAlert(){
         let alert = UIAlertController(title: "Delete Grocery List", message: "Are you sure you want to delete selected items?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
             DispatchQueue.main.async {
-            for item in (self.user?.shoppingList)! {
-                if item.isSelected == true {
+                for item in (self.user?.shoppingList)! {
+                    if item.isSelected == true {
                         let index = self.user?.shoppingList!.index(of: item)
                         self.user?.shoppingList?.remove(at: index!)
                         ItemController.shared.deleteItem(item: item, index: index!)

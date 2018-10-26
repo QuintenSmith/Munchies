@@ -10,20 +10,25 @@ import UIKit
 
 class FavoritesTableViewCell: UITableViewCell {
 
+    
+    //MARK: - Outlets
     @IBOutlet weak var foodImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
     
+    
+    //MARK: - Properties
     var recipe: RecipeWithDetailAndImage? {
         didSet {
             updateViews()
         }
     }
     
+    
+    //MARK: - UpdateViews
     func updateViews() {
         guard let recipe = recipe else {return}
         foodImageView.image = recipe.picture
         nameLabel.text = recipe.detailedRecipe.title
-
     }
 }

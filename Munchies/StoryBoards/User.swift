@@ -33,8 +33,8 @@ class User {
     
     init?(ckRecord: CKRecord) {
         guard let name = ckRecord[Constants.nameKey] as? String,
-              let diet = ckRecord[Constants.dietKey] as? String,
-              let appleUserReference = ckRecord[Constants.appleUserReferenceKey] as? CKRecord.Reference else {return nil}
+            let diet = ckRecord[Constants.dietKey] as? String,
+            let appleUserReference = ckRecord[Constants.appleUserReferenceKey] as? CKRecord.Reference else {return nil}
         
         var intolerances: Set<String>?
         if let intoleranceStringsArray = ckRecord[Constants.intolerancesKey] as? [String]{
@@ -55,7 +55,7 @@ class User {
     }
 }
 
-   extension CKRecord {
+extension CKRecord {
     convenience init(user: User) {
         let recordID = user.cloudKitRecordID 
         self.init(recordType: Constants.UserRecordType, recordID: recordID)
@@ -76,14 +76,14 @@ class User {
     }
 }
 
-    struct Constants {
-        static let UserRecordType = "User"
-        static let nameKey = "name"
-        static let dietKey = "diet"
-        static let intolerancesKey = "intolerances"
-        static let shoppingListKey = "shoppingList"
-        static let favoritesKey = "favorites"
-        static let journalEntriesKey = "journalEntries"
-        static let appleUserReferenceKey = "appleUserReference"
-    }
+struct Constants {
+    static let UserRecordType = "User"
+    static let nameKey = "name"
+    static let dietKey = "diet"
+    static let intolerancesKey = "intolerances"
+    static let shoppingListKey = "shoppingList"
+    static let favoritesKey = "favorites"
+    static let journalEntriesKey = "journalEntries"
+    static let appleUserReferenceKey = "appleUserReference"
+}
 

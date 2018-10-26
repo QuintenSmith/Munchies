@@ -10,20 +10,26 @@ import UIKit
 
 class JournalCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    
+    //MARK: - Properties
     var numberOfItems: Int
     var entry: [Entry]?
     var user: User? = UserController.shared.loggedInUser
     
+    
+    //MARK: - Initializer
     init(numberOfItems: Int, entries: [Entry]){
         self.numberOfItems = numberOfItems
         self.entry = entries
     }
     
+    
+    //MARK: - ColectionView DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let user = user else {return 0}
         guard let journalEntries = user.journalEntries else {return 0}
         if journalEntries.count > 6 {
-        return numberOfItems
+            return numberOfItems
         } else {
             return journalEntries.count
         }

@@ -10,7 +10,6 @@ import UIKit
 
 class JournalEntry: Equatable {
     
-    
     var picture : UIImage
     var date : Date
     var title: String
@@ -30,5 +29,4 @@ class JournalEntry: Equatable {
         if lhs.date != rhs.date {return false}
         return true
     }
-    
 }

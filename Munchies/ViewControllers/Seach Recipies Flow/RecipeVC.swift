@@ -26,6 +26,7 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var recipeToDispaly : RecipeWithDetailAndImage?
     var user: User?
     
+    
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +110,7 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func webViewButtonPressed(_ sender: Any) {
         guard let recipe = recipeToDispaly,
-        let url = recipe.detailedRecipe.sourceUrl else {return}
+            let url = recipe.detailedRecipe.sourceUrl else {return}
         guard let urle = URL(string: url) else {return}
         let browser = SFSafariViewController(url: urle)
         present(browser, animated: true)
@@ -144,6 +145,7 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             } else if recipe.detailedRecipe.isFavorite! == false{
                 //favorite property is false
                 print("changing heart to 💙 in reciep detailVC")
+                #warning ("recipe should be removed from user here")
                 RecipeFetchController.shared.removefromFavorites(recipe: recipe)
                 recipeHeartButton.setImage(#imageLiteral(resourceName: "belowphotosoffood"), for: .normal)
             }

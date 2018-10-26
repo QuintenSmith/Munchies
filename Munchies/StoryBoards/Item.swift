@@ -30,7 +30,7 @@ class Item : Equatable{
     
     convenience required init?(record: CKRecord) {
         guard let name = record[ItemKeys.nameKey] as? String,
-              let isSelected = record[ItemKeys.isSelectedKey] as? Bool else {return nil}
+            let isSelected = record[ItemKeys.isSelectedKey] as? Bool else {return nil}
         self.init(name: name, isSelected: isSelected, user: nil)
         self.recordID = record.recordID
     }

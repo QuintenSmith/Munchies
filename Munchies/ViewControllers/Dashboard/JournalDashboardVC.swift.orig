@@ -32,7 +32,11 @@ class JournalDashboardVC: UIViewController {
         } else {
             numberOfRows = journalEntries.count
         }
+<<<<<<< HEAD
 
+=======
+        self.collectionView.backgroundView = backgroundImg
+>>>>>>> 41b32beb01108146362c29fe0344c28ff21f80f2
         let datasource = JournalCollectionViewDataSource(numberOfItems: numberOfRows, entries: journalEntries)
         collectionView.dataSource = datasource
         NSLog("po %@", datasource)
