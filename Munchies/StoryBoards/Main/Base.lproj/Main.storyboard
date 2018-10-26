@@ -415,7 +415,6 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
-                                                    <outlet property="dataSource" destination="G8e-cy-WYv" id="UM3-wl-tDa"/>
                                                     <outlet property="delegate" destination="G8e-cy-WYv" id="zCN-KD-ce5"/>
                                                 </connections>
                                             </tableView>

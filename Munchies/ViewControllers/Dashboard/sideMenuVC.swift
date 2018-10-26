@@ -22,6 +22,17 @@ class sideMenuVC: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         tableView.delegate = self
         self.tableView.isHidden = true
+        
+        let datasource = FavoritesTableViewDataSource(numberOfItems: numberOfItems, recipes: RecipeFetchController.shared.favoriteRecipies)
+        tableView.dataSource = datasource
+        
+        
+        if RecipeFetchController.shared.favoriteRecipies.count >= 1 {
+            tableView.isHidden = false
+        }
+        
+        
+        
         sideMenu()
 
     }
