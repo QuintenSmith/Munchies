@@ -10,9 +10,6 @@ import UIKit
 
 class sideMenuVC: UIViewController, UITableViewDelegate {
 
-    
-     var numberOfItems: Int = 3
-   
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
@@ -21,19 +18,12 @@ class sideMenuVC: UIViewController, UITableViewDelegate {
         tableView.delegate = self
         self.tableView.isHidden = true
         sideMenu()
-
-        var numberOfRows = 0
-        if RecipeFetchController.shared.favoriteRecipies.count > 3 {
-            numberOfRows = 3
-        } else {
-            numberOfRows = RecipeFetchController.shared.favoriteRecipies.count
-        }
         
-        let datasource = FavoritesTableViewDataSource(numberOfItems: numberOfRows, recipes: RecipeFetchController.shared.favoriteRecipies)
+        let datasource = FavoritesTableViewDataSource(numberOfItems: 2, recipes: RecipeFetchController.shared.favoriteRecipies)
         tableView.dataSource = datasource
         NSLog("po %@", datasource)
         
-        if datasource.numberOfItems >= 1 {
+        if RecipeFetchController.shared.favoriteRecipies.count >= 1 {
             self.tableView.isHidden = false
         }
         

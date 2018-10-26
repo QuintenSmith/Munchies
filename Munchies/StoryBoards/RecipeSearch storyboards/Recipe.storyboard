@@ -34,9 +34,10 @@
                                                 <rect key="frame" x="323" y="251" width="22" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="6vg-cF-gPI"/>
+                                                    <constraint firstAttribute="width" secondItem="g4C-kA-Ahp" secondAttribute="height" multiplier="1:1" id="9fb-Lt-025"/>
                                                     <constraint firstAttribute="width" constant="22" id="kDp-0k-Kle"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="belowphotosoffood"/>
+                                                <state key="normal" image="belowphotosoffood"/>
                                                 <connections>
                                                     <action selector="heartButtonPressed:" destination="Viv-09-zDG" eventType="touchUpInside" id="R9F-UN-smF"/>
                                                 </connections>
