@@ -23,6 +23,7 @@ class JournalDashboardVC: UIViewController {
     //MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.backgroundView = backgroundImg
         user = UserController.shared.loggedInUser
         var numberOfRows = 0
         guard let journalEntries = user?.journalEntries else {return}
@@ -32,10 +33,10 @@ class JournalDashboardVC: UIViewController {
             numberOfRows = journalEntries.count
         }
 <<<<<<< HEAD
-=======
 
->>>>>>> a6b27cf89a47d31cf494a6fb10ea993d31ccc7e0
+=======
         self.collectionView.backgroundView = backgroundImg
+>>>>>>> 41b32beb01108146362c29fe0344c28ff21f80f2
         let datasource = JournalCollectionViewDataSource(numberOfItems: numberOfRows, entries: journalEntries)
         collectionView.dataSource = datasource
         NSLog("po %@", datasource)
@@ -46,8 +47,6 @@ class JournalDashboardVC: UIViewController {
         }
         collectionView.reloadData()
     }
-<<<<<<< HEAD
-=======
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -73,5 +72,4 @@ class JournalDashboardVC: UIViewController {
 //        }
     }
     
->>>>>>> a6b27cf89a47d31cf494a6fb10ea993d31ccc7e0
 }

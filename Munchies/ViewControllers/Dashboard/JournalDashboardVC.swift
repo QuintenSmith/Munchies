@@ -23,6 +23,7 @@ class JournalDashboardVC: UIViewController {
     //MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.backgroundView = backgroundImg
         user = UserController.shared.loggedInUser
         var numberOfRows = 0
         guard let journalEntries = user?.journalEntries else {return}
@@ -31,7 +32,7 @@ class JournalDashboardVC: UIViewController {
         } else {
             numberOfRows = journalEntries.count
         }
-        self.collectionView.backgroundView = backgroundImg
+
         let datasource = JournalCollectionViewDataSource(numberOfItems: numberOfRows, entries: journalEntries)
         collectionView.dataSource = datasource
         NSLog("po %@", datasource)
