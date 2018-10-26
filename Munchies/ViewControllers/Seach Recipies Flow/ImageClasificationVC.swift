@@ -154,8 +154,10 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
     
     func cloudSightQueryDidFail(_ query: CloudSightQuery!, withError error: Error!) {
         print("CloudSight Failure: \(error.localizedDescription)")
-        let alert = UIAlertController(title: "Clasification Unsucesfull", message: "Pleast try again", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: "Clasification Unsuccessfull", message: "Pleast try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            self.navigationController?.popViewController(animated: true)
+        }))
         self.present(alert, animated: true)
     }
     
