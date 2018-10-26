@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dqh-T8-jKP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SEARCH-->
+        <scene sceneID="Aco-pK-Qod">
+            <objects>
+                <viewController storyboardIdentifier="SearchFilter" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6hY-PJ-Q0W" customClass="SearchFilterVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yM1-iY-UfI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJp-e6-DhR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="636"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffE-XT-Pcc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="639"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INGREDIENTS ON-HAND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K3-fW-dcb">
+                                                <rect key="frame" x="71" y="26" width="233" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHf-Ab-0RI">
+                                                <rect key="frame" x="153" y="66" width="69" height="64"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="SHf-Ab-0RI" secondAttribute="height" multiplier="69:64" id="GVJ-en-q0x"/>
+                                                    <constraint firstAttribute="width" constant="69" id="Gq9-lg-m2O"/>
+                                                    <constraint firstAttribute="height" constant="64" id="c4G-Oo-rpT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <state key="normal" image="search-2"/>
+                                                <connections>
+                                                    <action selector="cameraButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="kg5-Jo-nfj"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD INGREDIENTS BY TAKING A PHOTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A88-fc-Hxg">
+                                                <rect key="frame" x="54.5" y="146" width="266" height="14.5"/>
+                                                <color key="backgroundColor" red="0.1633149683" green="0.29437282679999999" blue="0.3995600641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PVY-pa-mhJ">
+                                                <rect key="frame" x="67.5" y="166.5" width="240" height="50"/>
+                                                <subviews>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="50" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="B2c-mB-pVM" customClass="searchFilterSizedTableView" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                                        <color key="backgroundColor" red="0.1633149683" green="0.29437282679999999" blue="0.3995600641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <prototypes>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IngredientCell" id="g6e-zT-nzr" customClass="SearchFilterIngredientTableViewCell" customModule="Munchies" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="1" width="240" height="44"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g6e-zT-nzr" id="yjI-zQ-nep">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dA-Nv-YxI">
+                                                                            <rect key="frame" x="21" y="11.5" width="196" height="21.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="8dA-Nv-YxI" secondAttribute="bottom" constant="11" id="0bV-Rx-mG0"/>
+                                                                        <constraint firstAttribute="trailingMargin" secondItem="8dA-Nv-YxI" secondAttribute="trailing" constant="8" id="fuA-5d-MQ7"/>
+                                                                        <constraint firstItem="8dA-Nv-YxI" firstAttribute="top" secondItem="yjI-zQ-nep" secondAttribute="top" constant="11.5" id="pQi-WR-xyP"/>
+                                                                        <constraint firstItem="8dA-Nv-YxI" firstAttribute="leading" secondItem="yjI-zQ-nep" secondAttribute="leading" constant="21" id="vGC-14-oEn"/>
+                                                                    </constraints>
+                                                                </tableViewCellContentView>
+                                                                <color key="backgroundColor" red="0.1633149683" green="0.29437282679999999" blue="0.3995600641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <connections>
+                                                                    <outlet property="ingredientCell" destination="8dA-Nv-YxI" id="5tr-e7-wg3"/>
+                                                                </connections>
+                                                            </tableViewCell>
+                                                        </prototypes>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="6hY-PJ-Q0W" id="D48-F0-AKC"/>
+                                                            <outlet property="delegate" destination="6hY-PJ-Q0W" id="Eyg-Ka-SOt"/>
+                                                        </connections>
+                                                    </tableView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME TO COOK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzF-Ap-9P0">
+                                                <rect key="frame" x="118" y="226.5" width="139" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IHF-I0-hDq">
+                                                <rect key="frame" x="52" y="266.5" width="271" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb6-J5-6Jt" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <state key="normal" title="1/2 hr">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="MJH-Lt-HMD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8N-r2-okm" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="95.5" y="0.0" width="80" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <state key="normal" title="1 hr">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="p3r-tf-5BZ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-51-96b" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="191.5" y="0.0" width="79.5" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <state key="normal" title="1.5 hr">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="k79-9A-tYW"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2g-2n-wmc">
+                                                <rect key="frame" x="52" y="312.5" width="271" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNc-AX-yDS" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="30"/>
+                                                        <color key="backgroundColor" red="0.98431372549019602" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.49698004201680668" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="2 hr">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="b9F-re-DeR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-1d-IT3" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="96" y="0.0" width="79" height="30"/>
+                                                        <color key="backgroundColor" red="0.98431372549019602" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.49698004201680668" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="2 hr +">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timeButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="arH-dF-6ce"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMf-bK-zxe">
+                                                        <rect key="frame" x="192" y="0.0" width="79" height="30"/>
+                                                        <color key="backgroundColor" red="0.1633149683" green="0.29437282679999999" blue="0.3995600641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PORTION SIZES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQi-5J-z3C">
+                                                <rect key="frame" x="114.5" y="394.5" width="146" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yF8-Jf-44g">
+                                                <rect key="frame" x="52" y="434.5" width="271" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wo-MX-aMW" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="xC8-4b-QAI"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        <state key="normal" title="1 Portion">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="MdF-nQ-c05"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaX-5t-fuW" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="95.5" y="0.0" width="80" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="DVU-J9-3A7"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        <state key="normal" title="2 Portions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="6BE-lB-GAO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LP-9a-hZJ" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="191.5" y="0.0" width="79.5" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Oe2-1J-zBU"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        <state key="normal" title="4 Portions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="hvf-HB-F6k"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cEC-W2-Zcq">
+                                                <rect key="frame" x="52" y="480.5" width="271" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pac-ez-2dw" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.4973575367647059" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Y6J-XJ-59L"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        <state key="normal" title="6 Portions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="ZKm-Ti-0jC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQH-Du-tej" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="95.5" y="0.0" width="80" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.4973575367647059" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="5mT-iF-pb0"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        <state key="normal" title="8 Portions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="QFo-t4-rR6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8K-eX-3ng" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="191.5" y="0.0" width="79.5" height="30"/>
+                                                        <color key="backgroundColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="0.4973575367647059" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Yul-pO-eIu"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        <state key="normal" title="10 Portions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="portionButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="UCc-wa-NSo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxB-hF-sPZ" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                <rect key="frame" x="136" y="534.5" width="103" height="35"/>
+                                                <color key="backgroundColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="ERv-Ak-gbR"/>
+                                                    <constraint firstAttribute="width" constant="103" id="YcH-g0-PBE"/>
+                                                </constraints>
+                                                <state key="normal" title="Find">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="findButtonTapped:" destination="6hY-PJ-Q0W" eventType="touchUpInside" id="21d-Wc-esg"/>
+                                                </connections>
+                                            </button>
+                                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfh-cj-OEY" customClass="RoundedCornersVisualEffectView" customModule="Munchies" customModuleProvider="target">
+                                                <rect key="frame" x="87.5" y="219.5" width="200" height="200"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qdk-hC-ARF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XLV-5Y-bZT">
+                                                            <rect key="frame" x="90" y="70" width="20" height="20"/>
+                                                        </activityIndicatorView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Recipes..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZX-bw-xpp">
+                                                            <rect key="frame" x="30" y="100" width="140" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="bZX-bw-xpp" firstAttribute="centerX" secondItem="qdk-hC-ARF" secondAttribute="centerX" id="2xT-9u-V0X"/>
+                                                        <constraint firstItem="bZX-bw-xpp" firstAttribute="top" secondItem="XLV-5Y-bZT" secondAttribute="bottom" constant="10" id="C71-U4-IFb"/>
+                                                        <constraint firstItem="XLV-5Y-bZT" firstAttribute="centerY" secondItem="qdk-hC-ARF" secondAttribute="centerY" constant="-20" id="aZP-qL-yNe"/>
+                                                        <constraint firstItem="XLV-5Y-bZT" firstAttribute="centerX" secondItem="qdk-hC-ARF" secondAttribute="centerX" id="lsx-1a-Luj"/>
+                                                    </constraints>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="RZP-1B-FAR"/>
+                                                    <constraint firstAttribute="width" constant="200" id="yHH-Tr-E1G"/>
+                                                </constraints>
+                                                <blurEffect style="light"/>
+                                            </visualEffectView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1633149683" green="0.29437282679999999" blue="0.3995600641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="yF8-Jf-44g" secondAttribute="trailing" constant="52" id="2js-6p-k36"/>
+                                            <constraint firstItem="uzF-Ap-9P0" firstAttribute="top" secondItem="PVY-pa-mhJ" secondAttribute="bottom" constant="10" id="4hA-Hf-9gE"/>
+                                            <constraint firstItem="uzF-Ap-9P0" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="118" id="7LY-5c-hsd"/>
+                                            <constraint firstItem="PVY-pa-mhJ" firstAttribute="top" secondItem="A88-fc-Hxg" secondAttribute="bottom" constant="6" id="7jj-Uc-OBJ"/>
+                                            <constraint firstItem="PVY-pa-mhJ" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="67.5" id="9Th-ZT-j2k"/>
+                                            <constraint firstAttribute="trailing" secondItem="0K3-fW-dcb" secondAttribute="trailing" constant="71" id="BVh-bu-8Bg"/>
+                                            <constraint firstItem="jQi-5J-z3C" firstAttribute="top" secondItem="f2g-2n-wmc" secondAttribute="bottom" constant="52" id="BqN-IQ-LJ1"/>
+                                            <constraint firstItem="A88-fc-Hxg" firstAttribute="centerX" secondItem="ffE-XT-Pcc" secondAttribute="centerX" id="DkI-MO-mmu"/>
+                                            <constraint firstItem="wxB-hF-sPZ" firstAttribute="top" secondItem="cEC-W2-Zcq" secondAttribute="bottom" constant="24" id="J0B-qP-L7X"/>
+                                            <constraint firstItem="f2g-2n-wmc" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="52" id="K4B-JW-1kJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="SHf-Ab-0RI" secondAttribute="trailing" constant="153" id="LUe-kt-Bs1"/>
+                                            <constraint firstItem="wxB-hF-sPZ" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="136" id="OER-yB-gTh"/>
+                                            <constraint firstItem="cEC-W2-Zcq" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="52" id="RgQ-9G-FKf"/>
+                                            <constraint firstItem="f2g-2n-wmc" firstAttribute="top" secondItem="IHF-I0-hDq" secondAttribute="bottom" constant="16" id="SnY-Kj-wvF"/>
+                                            <constraint firstAttribute="bottom" secondItem="wxB-hF-sPZ" secondAttribute="bottom" constant="69.5" id="Tki-ip-RWy"/>
+                                            <constraint firstItem="yF8-Jf-44g" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="52" id="VC3-5B-HBr"/>
+                                            <constraint firstAttribute="trailing" secondItem="IHF-I0-hDq" secondAttribute="trailing" constant="52" id="VsL-u4-kNg"/>
+                                            <constraint firstAttribute="trailing" secondItem="A88-fc-Hxg" secondAttribute="trailing" constant="54.5" id="WZJ-IZ-lyu"/>
+                                            <constraint firstItem="0K3-fW-dcb" firstAttribute="centerX" secondItem="ffE-XT-Pcc" secondAttribute="centerX" id="aGH-qa-QNM"/>
+                                            <constraint firstItem="IHF-I0-hDq" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="52" id="bsU-nn-XeG"/>
+                                            <constraint firstItem="uzF-Ap-9P0" firstAttribute="centerX" secondItem="ffE-XT-Pcc" secondAttribute="centerX" id="bv3-BD-Mgl"/>
+                                            <constraint firstAttribute="trailing" secondItem="uzF-Ap-9P0" secondAttribute="trailing" constant="118" id="cKF-kb-rAr"/>
+                                            <constraint firstItem="SHf-Ab-0RI" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="153" id="cMa-wr-eb6"/>
+                                            <constraint firstItem="0K3-fW-dcb" firstAttribute="top" secondItem="ffE-XT-Pcc" secondAttribute="top" constant="26" id="eNq-vg-r45"/>
+                                            <constraint firstItem="IHF-I0-hDq" firstAttribute="top" secondItem="uzF-Ap-9P0" secondAttribute="bottom" constant="16" id="f8s-m8-o1X"/>
+                                            <constraint firstItem="A88-fc-Hxg" firstAttribute="top" secondItem="SHf-Ab-0RI" secondAttribute="bottom" constant="16" id="hEz-oR-Dkg"/>
+                                            <constraint firstItem="A88-fc-Hxg" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="54.5" id="iX9-g2-Rqs"/>
+                                            <constraint firstAttribute="trailing" secondItem="wxB-hF-sPZ" secondAttribute="trailing" constant="136" id="iae-ZS-vaM"/>
+                                            <constraint firstItem="SHf-Ab-0RI" firstAttribute="top" secondItem="0K3-fW-dcb" secondAttribute="bottom" constant="16" id="k9b-Fk-hBV"/>
+                                            <constraint firstAttribute="trailing" secondItem="cEC-W2-Zcq" secondAttribute="trailing" constant="52" id="mmW-kP-yUP"/>
+                                            <constraint firstItem="jQi-5J-z3C" firstAttribute="centerX" secondItem="ffE-XT-Pcc" secondAttribute="centerX" id="oQG-27-cyo"/>
+                                            <constraint firstAttribute="trailing" secondItem="jQi-5J-z3C" secondAttribute="trailing" constant="114.5" id="oW1-RX-BHH"/>
+                                            <constraint firstAttribute="trailing" secondItem="PVY-pa-mhJ" secondAttribute="trailing" constant="67.5" id="p7X-zi-XyG"/>
+                                            <constraint firstItem="bfh-cj-OEY" firstAttribute="centerY" secondItem="ffE-XT-Pcc" secondAttribute="centerY" id="pe0-g7-HUz"/>
+                                            <constraint firstItem="0K3-fW-dcb" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="71" id="rSt-BK-wSX"/>
+                                            <constraint firstItem="jQi-5J-z3C" firstAttribute="leading" secondItem="ffE-XT-Pcc" secondAttribute="leading" constant="114.5" id="shN-zf-Jc5"/>
+                                            <constraint firstItem="yF8-Jf-44g" firstAttribute="top" secondItem="jQi-5J-z3C" secondAttribute="bottom" constant="16" id="ugb-yE-eeR"/>
+                                            <constraint firstItem="bfh-cj-OEY" firstAttribute="centerX" secondItem="ffE-XT-Pcc" secondAttribute="centerX" id="uz7-Kt-mld"/>
+                                            <constraint firstAttribute="trailing" secondItem="f2g-2n-wmc" secondAttribute="trailing" constant="52" id="wvu-kx-Yub"/>
+                                            <constraint firstItem="cEC-W2-Zcq" firstAttribute="top" secondItem="yF8-Jf-44g" secondAttribute="bottom" constant="16" id="yWv-J0-PlW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ffE-XT-Pcc" firstAttribute="top" secondItem="NJp-e6-DhR" secondAttribute="top" id="5Pu-g1-JFX"/>
+                                    <constraint firstAttribute="bottom" secondItem="ffE-XT-Pcc" secondAttribute="bottom" id="95c-8f-Osz"/>
+                                    <constraint firstAttribute="trailing" secondItem="ffE-XT-Pcc" secondAttribute="trailing" id="BFk-xs-Xv1"/>
+                                    <constraint firstItem="ffE-XT-Pcc" firstAttribute="leading" secondItem="NJp-e6-DhR" secondAttribute="leading" id="LUz-iM-SP0"/>
+                                    <constraint firstItem="ffE-XT-Pcc" firstAttribute="height" secondItem="NJp-e6-DhR" secondAttribute="height" priority="250" id="WJ4-yM-a9H"/>
+                                    <constraint firstItem="ffE-XT-Pcc" firstAttribute="width" secondItem="NJp-e6-DhR" secondAttribute="width" id="aPJ-Ns-Uqq"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1633149683" green="0.29437282679999999" blue="0.3995600641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NJp-e6-DhR" firstAttribute="top" secondItem="J6R-lg-gl6" secondAttribute="top" id="BZj-xb-vyL"/>
+                            <constraint firstItem="NJp-e6-DhR" firstAttribute="leading" secondItem="J6R-lg-gl6" secondAttribute="leading" id="PEo-St-pIe"/>
+                            <constraint firstItem="J6R-lg-gl6" firstAttribute="bottom" secondItem="NJp-e6-DhR" secondAttribute="bottom" id="So4-7s-qXI"/>
+                            <constraint firstItem="J6R-lg-gl6" firstAttribute="trailing" secondItem="NJp-e6-DhR" secondAttribute="trailing" id="c2q-dt-QqR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J6R-lg-gl6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="SEARCH" id="97G-k3-NZF">
+                        <barButtonItem key="leftBarButtonItem" id="IWk-ZE-6Hi"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="header-1" id="wJE-Is-6AK">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="resetButtonPressed:" destination="6hY-PJ-Q0W" id="g0R-e2-qxb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="700"/>
+                    <connections>
+                        <outlet property="blurView" destination="bfh-cj-OEY" id="bVT-sU-muz"/>
+                        <outlet property="hourAndAHalfButton" destination="dPp-51-96b" id="lDb-7h-BJP"/>
+                        <outlet property="imageToBeClasified" destination="9m7-JP-TJU" id="I8v-DH-F3i"/>
+                        <outlet property="loadingIndicator" destination="XLV-5Y-bZT" id="50q-fl-taW"/>
+                        <outlet property="menuBtn" destination="IWk-ZE-6Hi" id="S98-sB-Q3W"/>
+                        <outlet property="oneHourButton" destination="B8N-r2-okm" id="HKR-24-h15"/>
+                        <outlet property="portionEightButton" destination="GQH-Du-tej" id="n9M-F7-sTg"/>
+                        <outlet property="portionFourButton" destination="8LP-9a-hZJ" id="vxD-3W-H1g"/>
+                        <outlet property="portionOneButton" destination="1wo-MX-aMW" id="PbW-8v-llW"/>
+                        <outlet property="portionSixButton" destination="pac-ez-2dw" id="zKt-2z-xiw"/>
+                        <outlet property="portionTenButton" destination="O8K-eX-3ng" id="oAN-Md-8im"/>
+                        <outlet property="portionTwoButton" destination="BaX-5t-fuW" id="BIO-ed-82u"/>
+                        <outlet property="tableView" destination="B2c-mB-pVM" id="tEZ-EB-sf6"/>
+                        <outlet property="thirdyMinuteButton" destination="Vb6-J5-6Jt" id="Irk-5E-dGv"/>
+                        <outlet property="twoHourButton" destination="kNc-AX-yDS" id="hRo-nL-0RY"/>
+                        <outlet property="twoHourPlusButton" destination="Z1b-1d-IT3" id="QIv-9r-1BX"/>
+                        <segue destination="6g8-SA-vJG" kind="show" id="SNp-Xd-bEt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y5C-hZ-PQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="7.1964017991004505"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="Kik-YU-AkW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="6g8-SA-vJG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9h-Xy-zpH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9m7-JP-TJU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </objects>
+            <point key="canvasLocation" x="1826" y="7"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J0w-Xe-0xu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dqh-T8-jKP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TfO-2i-vuV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.9519596696" green="0.32681697609999999" blue="0.32420715690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <color key="textColor" red="0.98271197079999995" green="0.98345524070000001" blue="0.98282712699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6hY-PJ-Q0W" kind="relationship" relationship="rootViewController" id="lZb-Mu-JYQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VFv-nH-ZIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160.80000000000001" y="6.746626686656672"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="header-1" width="20" height="20"/>
+        <image name="search-2" width="91" height="86"/>
+    </resources>
+</document>

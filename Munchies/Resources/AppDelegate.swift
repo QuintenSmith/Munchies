@@ -15,9 +15,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-      
-      //window?.rootViewController = MainTabBarController()
+        UserController.shared.fetchCurrentUser { (success) in
+            if success {
+                print("Something or bananas")
+            } else {
+                print("bananas")
+            }
+        }
+        guard let user = UserController.shared.loggedInUser else {return false}
+        EntryController.shared.fetchEntries(user: user) { (success) in
+            if success {
+                print("Kamil sucks at Fuzball")
+            } else {
+                print("He still sucks at Fuzball")
+            }
+        }
+        ItemController.shared.fetchItemsfor(user: user) { (success) in
+            if success {
+                print("Successfully fetched Items")
+            } else {
+                print("Kamil sucks at fuzball still")
+            }
+        }
         return true
     }
 

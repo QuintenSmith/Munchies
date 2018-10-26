@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LBJ-1E-g8S">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PROFILE-->
+        <scene sceneID="faj-tj-TkI">
+            <objects>
+                <viewController id="VNO-vf-3le" customClass="ProfileVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z1s-dt-Tb6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-Fj-sD9">
+                                <rect key="frame" x="0.0" y="88" width="375" height="712"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qp0-R0-3jk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="712"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile&amp;editpreferencespages" translatesAutoresizingMaskIntoConstraints="NO" id="mGB-5h-gaj">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="736"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit Profile" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-FM-WxZ">
+                                                <rect key="frame" x="127" y="48" width="121" height="110"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="110" id="FGK-al-C6k"/>
+                                                    <constraint firstAttribute="width" constant="121" id="k05-CV-Fba"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoi-8D-lWn" customClass="bottomBorderView" customModule="Munchies" customModuleProvider="target">
+                                                <rect key="frame" x="31" y="193" width="314" height="45"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburgermenu" translatesAutoresizingMaskIntoConstraints="NO" id="2D8-hE-ol5">
+                                                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="cce-1P-46U"/>
+                                                            <constraint firstAttribute="height" constant="30" id="i0B-Su-1aw"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="nNY-yP-1Kz"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="rP7-sc-1mg"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ln-Hq-9dL">
+                                                        <rect key="frame" x="62" y="9.6666666666666856" width="244" height="27"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="244" id="8OK-uX-3ln"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="4Ln-Hq-9dL" secondAttribute="bottom" constant="8.5" id="1sO-fP-1G2"/>
+                                                    <constraint firstItem="4Ln-Hq-9dL" firstAttribute="leading" secondItem="2D8-hE-ol5" secondAttribute="trailing" constant="24" id="5jd-UT-daC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2D8-hE-ol5" secondAttribute="bottom" constant="7" id="CJJ-k9-iR7"/>
+                                                    <constraint firstItem="4Ln-Hq-9dL" firstAttribute="top" secondItem="eoi-8D-lWn" secondAttribute="top" constant="9.5" id="EXF-MM-Gpu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4Ln-Hq-9dL" secondAttribute="trailing" constant="8" id="SZg-cI-rMP"/>
+                                                    <constraint firstAttribute="height" constant="45" id="X3n-Wi-MdL"/>
+                                                    <constraint firstItem="2D8-hE-ol5" firstAttribute="top" secondItem="eoi-8D-lWn" secondAttribute="top" constant="8" id="fry-Qx-u8U"/>
+                                                    <constraint firstItem="4Ln-Hq-9dL" firstAttribute="centerY" secondItem="2D8-hE-ol5" secondAttribute="centerY" id="neJ-Ng-Nix"/>
+                                                    <constraint firstItem="2D8-hE-ol5" firstAttribute="leading" secondItem="eoi-8D-lWn" secondAttribute="leading" constant="8" id="qFj-8r-IFU"/>
+                                                    <constraint firstAttribute="width" constant="314" id="tsl-KS-96r"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="DIETS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bU-09-0nT">
+                                                <rect key="frame" x="150" y="259" width="75" height="21.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="h5Q-uf-KBP">
+                                                <rect key="frame" x="18" y="296.66666666666669" width="339" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c8-df-gSM" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="bkK-gX-4NK"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Vegan">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="DietsButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="fGz-hc-ehU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knb-FN-N1V" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="117.33333333333334" y="0.0" width="104.33333333333334" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="BB1-jf-8N2"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Paleo">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="DietsButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="6DQ-VS-SLd"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsx-29-cFS" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="234.66666666666666" y="0.0" width="104.33333333333334" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="VeN-nx-pGu"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Primal">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="DietsButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="24A-Rd-0DQ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="EGb-14-BMM">
+                                                <rect key="frame" x="18" y="342.66666666666669" width="339" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I40-F7-wlf" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.49535517331932771" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="dgM-vA-i5b"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Vegetarian">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="DietsButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="yM7-Ni-H6p"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xf-ym-x3f" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="117.33333333333334" y="0.0" width="104.33333333333334" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.49535517331932771" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="s6k-dW-mHF"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Pescetarian">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="DietsButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="8Wu-2E-hu2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgO-Vs-MAM" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="234.66666666666666" y="0.0" width="104.33333333333334" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.49535517331932771" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="ScV-1A-7V1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Lacto Vegetarian">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="DietsButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="4lE-Rp-t3M"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTOLERANCES/ALLERGIES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSV-JY-7vF">
+                                                <rect key="frame" x="0.0" y="404.66666666666669" width="375" height="21.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="0zr-ps-RV0">
+                                                <rect key="frame" x="18" y="442.33333333333337" width="339" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhc-c2-Ih7" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="prw-1d-0Pw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Dairy Free">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="0gS-wn-ggu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-c8-bYX" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="117.33333333333334" y="0.0" width="104.33333333333334" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="xWO-z0-bNP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Peanut Free">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="OAz-M9-PFC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PL5-Kv-hNF" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="234.66666666666666" y="0.0" width="104.33333333333334" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Xmq-OA-Ba3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Soy Free">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="I4n-a8-h6O"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="K26-vE-Mha">
+                                                <rect key="frame" x="18" y="488.33333333333337" width="339" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="She-XZ-WGk" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="nvk-cb-os4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Egg Free">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="Cez-sn-jbn"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkC-nT-1pU" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="117.33333333333334" y="0.0" width="104.33333333333334" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="5SS-fR-dsg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Seafood Free">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="WIm-EA-kkL"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6H-z9-ce7" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="234.66666666666666" y="0.0" width="104.33333333333334" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="QtV-bP-60J"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Sulfite Free">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="X1I-Nn-9nA"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="fE1-Us-T6c">
+                                                <rect key="frame" x="18" y="534.33333333333337" width="339" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuP-GX-zb2" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="nzL-dI-dTt"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Gluten Free">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="oDo-en-tfo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHB-GD-IiE" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="117.33333333333334" y="0.0" width="104.33333333333334" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="DU4-qi-s6H"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Sesame Free">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="qWx-ka-cHv"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahX-vD-oxU" customClass="RoundedShapeButton" customModule="Munchies" customModuleProvider="target">
+                                                        <rect key="frame" x="234.66666666666666" y="0.0" width="104.33333333333334" height="30"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="wsk-rS-aAC"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="12"/>
+                                                        <state key="normal" title="Shellfish Free">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="intolerancesAndAlergiesButtonPressed:" destination="VNO-vf-3le" eventType="touchUpInside" id="GlU-bF-oEH"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="buG-v3-8Q2">
+                                                <rect key="frame" x="0.0" y="-331" width="375" height="765"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="mGB-5h-gaj" firstAttribute="top" secondItem="Qp0-R0-3jk" secondAttribute="top" id="2Du-cO-eeP"/>
+                                            <constraint firstItem="mGB-5h-gaj" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" id="4hf-fc-W9R"/>
+                                            <constraint firstItem="EGb-14-BMM" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="18" id="9UR-ao-Eqr"/>
+                                            <constraint firstItem="K26-vE-Mha" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="18" id="BqM-2x-U9x"/>
+                                            <constraint firstItem="QSV-JY-7vF" firstAttribute="top" secondItem="EGb-14-BMM" secondAttribute="bottom" constant="32" id="Cp1-qW-Fqq"/>
+                                            <constraint firstItem="fE1-Us-T6c" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="18" id="Fbq-Je-8lK"/>
+                                            <constraint firstItem="h5Q-uf-KBP" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="18" id="GDs-q9-JIv"/>
+                                            <constraint firstItem="K26-vE-Mha" firstAttribute="top" secondItem="0zr-ps-RV0" secondAttribute="bottom" constant="16" id="GQk-52-2aU"/>
+                                            <constraint firstItem="eoi-8D-lWn" firstAttribute="top" secondItem="hSh-FM-WxZ" secondAttribute="bottom" constant="35" id="I82-fR-R2R"/>
+                                            <constraint firstAttribute="bottom" secondItem="buG-v3-8Q2" secondAttribute="bottom" id="Jgt-Pd-env"/>
+                                            <constraint firstAttribute="trailing" secondItem="6bU-09-0nT" secondAttribute="trailing" constant="150" id="PRJ-he-2ah"/>
+                                            <constraint firstItem="hSh-FM-WxZ" firstAttribute="centerX" secondItem="Qp0-R0-3jk" secondAttribute="centerX" id="Q8l-ID-BH6"/>
+                                            <constraint firstAttribute="trailing" secondItem="eoi-8D-lWn" secondAttribute="trailing" constant="30" id="QWS-lx-e9t"/>
+                                            <constraint firstItem="hSh-FM-WxZ" firstAttribute="top" secondItem="Qp0-R0-3jk" secondAttribute="top" constant="48" id="SBI-3Y-OXg"/>
+                                            <constraint firstItem="6bU-09-0nT" firstAttribute="top" secondItem="eoi-8D-lWn" secondAttribute="bottom" constant="21" id="UJS-Ll-cMs"/>
+                                            <constraint firstAttribute="trailing" secondItem="mGB-5h-gaj" secondAttribute="trailing" id="UUC-NT-4AB"/>
+                                            <constraint firstItem="eoi-8D-lWn" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="31" id="Urr-uL-DnM"/>
+                                            <constraint firstItem="h5Q-uf-KBP" firstAttribute="top" secondItem="6bU-09-0nT" secondAttribute="bottom" constant="16" id="VGL-TH-tDR"/>
+                                            <constraint firstAttribute="trailing" secondItem="hSh-FM-WxZ" secondAttribute="trailing" constant="127" id="VTx-hw-Xk9"/>
+                                            <constraint firstItem="buG-v3-8Q2" firstAttribute="top" secondItem="Qp0-R0-3jk" secondAttribute="top" id="ZOP-6f-8eW"/>
+                                            <constraint firstAttribute="trailing" secondItem="QSV-JY-7vF" secondAttribute="trailing" id="afq-YK-fPf"/>
+                                            <constraint firstItem="0zr-ps-RV0" firstAttribute="top" secondItem="QSV-JY-7vF" secondAttribute="bottom" constant="16" id="ajK-AL-Phd"/>
+                                            <constraint firstAttribute="trailing" secondItem="fE1-Us-T6c" secondAttribute="trailing" constant="18" id="bvm-su-fj9"/>
+                                            <constraint firstItem="6bU-09-0nT" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="150" id="ePi-1x-DQI"/>
+                                            <constraint firstItem="0zr-ps-RV0" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="18" id="g93-Q8-LG3"/>
+                                            <constraint firstAttribute="trailing" secondItem="K26-vE-Mha" secondAttribute="trailing" constant="18" id="i6l-pN-IkS"/>
+                                            <constraint firstAttribute="trailing" secondItem="0zr-ps-RV0" secondAttribute="trailing" constant="18" id="kKE-NN-gxb"/>
+                                            <constraint firstItem="buG-v3-8Q2" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" id="lEp-JU-u0J"/>
+                                            <constraint firstAttribute="bottom" secondItem="mGB-5h-gaj" secondAttribute="bottom" id="n5B-mK-0q3"/>
+                                            <constraint firstAttribute="trailing" secondItem="h5Q-uf-KBP" secondAttribute="trailing" constant="18" id="o6H-CN-xWS"/>
+                                            <constraint firstItem="EGb-14-BMM" firstAttribute="top" secondItem="h5Q-uf-KBP" secondAttribute="bottom" constant="16" id="pX1-MB-EqF"/>
+                                            <constraint firstAttribute="trailing" secondItem="buG-v3-8Q2" secondAttribute="trailing" id="pcf-59-rib"/>
+                                            <constraint firstItem="hSh-FM-WxZ" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" constant="127" id="qNz-lw-jUQ"/>
+                                            <constraint firstItem="fE1-Us-T6c" firstAttribute="top" secondItem="K26-vE-Mha" secondAttribute="bottom" constant="16" id="s4f-6y-04v"/>
+                                            <constraint firstItem="QSV-JY-7vF" firstAttribute="leading" secondItem="Qp0-R0-3jk" secondAttribute="leading" id="t51-HJ-g16"/>
+                                            <constraint firstAttribute="trailing" secondItem="EGb-14-BMM" secondAttribute="trailing" constant="18" id="yDq-zO-3dd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Qp0-R0-3jk" secondAttribute="trailing" id="SRF-K2-5Ka"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qp0-R0-3jk" secondAttribute="bottom" constant="-53" id="ena-9i-Zhi"/>
+                                    <constraint firstItem="Qp0-R0-3jk" firstAttribute="width" secondItem="IMy-Fj-sD9" secondAttribute="width" id="f24-wA-c4w"/>
+                                    <constraint firstItem="Qp0-R0-3jk" firstAttribute="top" secondItem="IMy-Fj-sD9" secondAttribute="top" id="fme-i2-dfO"/>
+                                    <constraint firstItem="Qp0-R0-3jk" firstAttribute="leading" secondItem="IMy-Fj-sD9" secondAttribute="leading" id="nOu-bR-auX"/>
+                                    <constraint firstItem="Qp0-R0-3jk" firstAttribute="height" secondItem="IMy-Fj-sD9" secondAttribute="height" id="p62-cX-rFP"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="IMy-Fj-sD9" secondAttribute="bottom" id="45z-pH-HiD"/>
+                            <constraint firstItem="IMy-Fj-sD9" firstAttribute="leading" secondItem="x8e-NO-sLv" secondAttribute="leading" id="CO7-0l-W1r"/>
+                            <constraint firstItem="x8e-NO-sLv" firstAttribute="trailing" secondItem="IMy-Fj-sD9" secondAttribute="trailing" id="OiV-88-VZ5"/>
+                            <constraint firstItem="IMy-Fj-sD9" firstAttribute="top" secondItem="x8e-NO-sLv" secondAttribute="top" id="RFf-jW-DHe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="x8e-NO-sLv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="PROFILE" largeTitleDisplayMode="always" id="mUB-fj-qBF">
+                        <leftBarButtonItems>
+                            <barButtonItem id="NER-91-Dlh"/>
+                            <barButtonItem title="Clear all Settings" image="header-1" id="7ew-tA-1kO">
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="VNO-vf-3le" id="v5b-xH-iF5"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="header-2" id="iU1-TA-p7I">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="VNO-vf-3le" id="yhr-aw-0ZD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="800"/>
+                    <connections>
+                        <outlet property="clearButtonOutlet" destination="7ew-tA-1kO" id="2ox-ob-ZMi"/>
+                        <outlet property="diaryFreeOutlet" destination="Zhc-c2-Ih7" id="MTF-ZA-NCq"/>
+                        <outlet property="editView" destination="buG-v3-8Q2" id="tm9-6n-CCx"/>
+                        <outlet property="eggFreeOutlet" destination="She-XZ-WGk" id="FYV-Cr-vgn"/>
+                        <outlet property="glutenFreeOutlet" destination="KuP-GX-zb2" id="rc6-M3-ZmS"/>
+                        <outlet property="lactoVegetarianDietOutlet" destination="fgO-Vs-MAM" id="rUV-cT-B3G"/>
+                        <outlet property="menuBtn" destination="NER-91-Dlh" id="pH3-5K-wIw"/>
+                        <outlet property="nameTextField" destination="4Ln-Hq-9dL" id="98O-L2-pmj"/>
+                        <outlet property="paleoDietOutlet" destination="Knb-FN-N1V" id="klj-WB-ccP"/>
+                        <outlet property="peanutFreeOutlet" destination="Fal-c8-bYX" id="5Vx-rc-b81"/>
+                        <outlet property="pescetarianDietOutlet" destination="0xf-ym-x3f" id="zPL-8N-Iex"/>
+                        <outlet property="primalDietOutlet" destination="nsx-29-cFS" id="Rvt-ub-nY2"/>
+                        <outlet property="saveButtonOutlet" destination="iU1-TA-p7I" id="6jE-Se-TRI"/>
+                        <outlet property="seafoodFreeOutlet" destination="mkC-nT-1pU" id="Dug-Tg-ay4"/>
+                        <outlet property="seasameFreeOutlet" destination="xHB-GD-IiE" id="XEc-Yp-gnd"/>
+                        <outlet property="shellfishFreeOutlet" destination="ahX-vD-oxU" id="GbT-hs-Vfh"/>
+                        <outlet property="soyFreeOutlet" destination="PL5-Kv-hNF" id="v8K-zs-qOA"/>
+                        <outlet property="sulfiteFreeOutlet" destination="O6H-z9-ce7" id="5St-kG-Vy7"/>
+                        <outlet property="vagetarianDietOutlet" destination="I40-F7-wlf" id="Ytz-d5-TFD"/>
+                        <outlet property="veganDietOutlet" destination="0c8-df-gSM" id="XSn-cl-HJO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DK2-S6-fMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="914.39999999999998" y="150.22488755622189"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MCi-sg-Hw8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LBJ-1E-g8S" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="76l-7d-CmN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VNO-vf-3le" kind="relationship" relationship="rootViewController" id="GjM-h3-dlB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncC-ra-9Pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="151.57421289355324"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="edit Profile" width="121" height="124"/>
+        <image name="hamburgermenu" width="28" height="30"/>
+        <image name="header-1" width="20" height="20"/>
+        <image name="header-2" width="20" height="18"/>
+        <image name="profile&amp;editpreferencespages" width="375" height="765"/>
+    </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</document>

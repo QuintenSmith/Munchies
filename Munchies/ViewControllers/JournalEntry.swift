@@ -8,31 +8,25 @@
 
 import UIKit
 
-class JournalEntry {
+class JournalEntry: Equatable {
     
     var picture : UIImage
     var date : Date
     var title: String
-    var review: Int
     var description: String?
     
-    init(picture: UIImage, title: String, description: String?,review: Int, date: Date = Date()) {
+    init(picture: UIImage, title: String, description: String?, date: Date = Date()) {
         self.picture = picture
         self.title = title
         self.description = description
-        self.review = review
         self.date = date
     }
     
-    
-    //need properties for journal entries -
-    
-    //unless we put them separate under journal model
-    
-    //image - taken by user
-    //date - recorder during creating entry
-    //review - writen by the user
-    //title - given by the user
-    
-    //FIXME: needed for creating journal entries, and for editing them
+    static func == (lhs: JournalEntry, rhs: JournalEntry) -> Bool {
+        if lhs.title != rhs.title {return false}
+        if lhs.picture != rhs.picture {return false}
+        if lhs.description != rhs.description {return false}
+        if lhs.date != rhs.date {return false}
+        return true
+    }
 }

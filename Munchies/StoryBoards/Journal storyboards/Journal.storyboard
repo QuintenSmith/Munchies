@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MC1-iY-lP1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FOOD JOURNAL-->
+        <scene sceneID="Jg3-Qq-Bju">
+            <objects>
+                <viewController id="TKD-KD-42V" customClass="JournalVC" customModule="Munchies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NRA-b7-IlH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pot foodjournal" translatesAutoresizingMaskIntoConstraints="NO" id="R7R-oB-Ptt">
+                                <rect key="frame" x="0.0" y="104" width="375" height="287"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R7R-oB-Ptt" secondAttribute="height" multiplier="375:362" id="nf0-Ok-nBk"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uzd-BM-MKh">
+                                <rect key="frame" x="16" y="80" width="343" height="511"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NdL-V1-zuP">
+                                    <size key="itemSize" width="162" height="178"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="JournalCell" id="b67-i2-qBn" customClass="JournalCollectionViewCell" customModule="Munchies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="178"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="178"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Lr-6E-Ssl" customClass="RoundedShadowImageView" customModule="Munchies" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="104"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="104" id="A10-gZ-C7p"/>
+                                                        <constraint firstAttribute="width" constant="162" id="bgk-dS-dBR"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N74-Av-Gn4">
+                                                    <rect key="frame" x="8" y="119" width="144" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/27/2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYB-VM-CTE">
+                                                    <rect key="frame" x="8" y="146.5" width="73" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="8Lr-6E-Ssl" firstAttribute="leading" secondItem="b67-i2-qBn" secondAttribute="leading" id="7uy-db-xpM"/>
+                                            <constraint firstItem="hYB-VM-CTE" firstAttribute="leading" secondItem="b67-i2-qBn" secondAttribute="leadingMargin" id="DMk-Pc-BCe"/>
+                                            <constraint firstItem="8Lr-6E-Ssl" firstAttribute="top" secondItem="b67-i2-qBn" secondAttribute="top" id="YSd-v6-fug"/>
+                                            <constraint firstItem="N74-Av-Gn4" firstAttribute="top" secondItem="8Lr-6E-Ssl" secondAttribute="bottom" constant="15" id="YcA-bI-gOz"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="N74-Av-Gn4" secondAttribute="trailing" constant="2" id="eFc-ZO-OgV"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Lr-6E-Ssl" secondAttribute="trailing" id="hw3-zO-fRm"/>
+                                            <constraint firstItem="N74-Av-Gn4" firstAttribute="leading" secondItem="b67-i2-qBn" secondAttribute="leadingMargin" id="kO7-o9-0dj"/>
+                                            <constraint firstItem="hYB-VM-CTE" firstAttribute="top" secondItem="N74-Av-Gn4" secondAttribute="bottom" constant="8" id="rxV-qX-pz5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="hYB-VM-CTE" id="Yep-k4-hS7"/>
+                                            <outlet property="dishNameLabel" destination="N74-Av-Gn4" id="PCP-A3-ggv"/>
+                                            <outlet property="pictureView" destination="8Lr-6E-Ssl" id="zbP-yH-ZS7"/>
+                                            <segue destination="hBz-sh-g80" kind="show" identifier="ToDetailView" id="iEu-9e-BHd"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="TKD-KD-42V" id="M80-kM-gYH"/>
+                                    <outlet property="delegate" destination="TKD-KD-42V" id="3gb-NB-o71"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Uzd-BM-MKh" firstAttribute="bottom" secondItem="mXF-GK-egr" secondAttribute="bottom" id="EdG-e3-EwD"/>
+                            <constraint firstItem="R7R-oB-Ptt" firstAttribute="leading" secondItem="mXF-GK-egr" secondAttribute="leading" id="EfB-cY-i27"/>
+                            <constraint firstItem="R7R-oB-Ptt" firstAttribute="trailing" secondItem="mXF-GK-egr" secondAttribute="trailing" id="fG9-P8-WCF"/>
+                            <constraint firstItem="R7R-oB-Ptt" firstAttribute="top" secondItem="mXF-GK-egr" secondAttribute="top" constant="40" id="giY-bb-3pW"/>
+                            <constraint firstItem="Uzd-BM-MKh" firstAttribute="top" secondItem="mXF-GK-egr" secondAttribute="top" constant="16" id="jue-ZX-ibX"/>
+                            <constraint firstItem="Uzd-BM-MKh" firstAttribute="centerX" secondItem="NRA-b7-IlH" secondAttribute="centerX" id="rrO-3H-tF9"/>
+                            <constraint firstItem="Uzd-BM-MKh" firstAttribute="leading" secondItem="mXF-GK-egr" secondAttribute="leading" constant="16" id="spb-Ct-mJV"/>
+                            <constraint firstItem="mXF-GK-egr" firstAttribute="bottom" secondItem="R7R-oB-Ptt" secondAttribute="bottom" constant="200" id="vbn-XU-HgZ"/>
+                            <constraint firstItem="mXF-GK-egr" firstAttribute="trailing" secondItem="Uzd-BM-MKh" secondAttribute="trailing" constant="16" id="xfx-kc-k20"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mXF-GK-egr"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="FOOD JOURNAL" id="KhH-QA-p4z">
+                        <barButtonItem key="leftBarButtonItem" id="D5e-C1-mtN"/>
+                        <barButtonItem key="rightBarButtonItem" image="header-4" id="eUT-pc-FZR">
+                            <connections>
+                                <segue destination="uKh-Pz-SMx" kind="show" id="V5p-L4-c8x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="Uzd-BM-MKh" id="Inj-nE-az5"/>
+                        <outlet property="menuBtn" destination="D5e-C1-mtN" id="MKy-Ub-fEp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5QI-Mz-kYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1144.8" y="191.1544227886057"/>
+        </scene>
+        <!--CreateJournalEntry-->
+        <scene sceneID="zkK-Ju-RpI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateJournalEntry" id="uKh-Pz-SMx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3yA-p1-1qi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="-74"/>
+        </scene>
+        <!--JournalEntry-->
+        <scene sceneID="pmE-KG-m79">
+            <objects>
+                <viewControllerPlaceholder storyboardName="JournalEntry" id="hBz-sh-g80" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1V-ea-MhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848" y="213"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vLL-0e-cKn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MC1-iY-lP1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R6u-wv-zYF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92111498120000002" green="0.43342554570000003" blue="0.39101666210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TKD-KD-42V" kind="relationship" relationship="rootViewController" id="3e8-d5-pBw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VuX-Pj-pdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.59999999999999" y="191.1544227886057"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="header-4" width="18" height="18"/>
+        <image name="pot foodjournal" width="191" height="287"/>
+    </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</document>
