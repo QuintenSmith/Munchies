@@ -208,6 +208,14 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func resetButtonPressed(_ sender: Any) {
         ImageClasificationController.shared.clasifications.removeAll()
         tableView.reloadData()
+        timeToCookButtons.forEach{
+            $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
+        }
+        portionButtons.forEach{
+            $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
+        }
+        timeItShoultTakeToPrepareAMeal = nil
+        portionSize = nil
     }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
