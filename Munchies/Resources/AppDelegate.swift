@@ -22,6 +22,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("bananas")
             }
         }
+        guard let user = UserController.shared.loggedInUser else {return false}
+        EntryController.shared.fetchEntries(user: user) { (success) in
+            if success {
+                print("Kamil sucks at Fuzball")
+            } else {
+                print("He still sucks at Fuzball")
+            }
+        }
+        ItemController.shared.fetchItemsfor(user: user) { (success) in
+            if success {
+                print("Successfully fetched Items")
+            } else {
+                print("Kamil sucks at fuzball still")
+            }
+        }
         return true
     }
 

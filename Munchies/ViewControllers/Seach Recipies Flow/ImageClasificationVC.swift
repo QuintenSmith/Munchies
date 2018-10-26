@@ -120,10 +120,10 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
         imageToBeClasifiedView.image = imageToBeClasified
         activityIndicator.startAnimating()
         #warning ("uncoment this two lines to run image clasification")
-        // blurView.isHidden = false
-        // clasifyImage(image: imageToBeClasified)
+         blurView.isHidden = false
+         clasifyImage(image: imageToBeClasified)
         //coment this out or delete:
-        self.ClasificationViewHeightConstraint.constant = 100
+       // self.ClasificationViewHeightConstraint.constant = 100
     }
     
     func clasifyImage(image: UIImage){
