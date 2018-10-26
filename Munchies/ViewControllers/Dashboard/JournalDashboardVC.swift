@@ -17,6 +17,7 @@ class JournalDashboardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.backgroundView = backgroundImg
         user = UserController.shared.loggedInUser
         var numberOfRows = 0
         guard let journalEntries = user?.journalEntries else {return}
@@ -26,7 +27,6 @@ class JournalDashboardVC: UIViewController {
             numberOfRows = journalEntries.count
         }
 
-        self.collectionView.backgroundView = backgroundImg
         let datasource = JournalCollectionViewDataSource(numberOfItems: numberOfRows, entries: journalEntries)
         collectionView.dataSource = datasource
         NSLog("po %@", datasource)
