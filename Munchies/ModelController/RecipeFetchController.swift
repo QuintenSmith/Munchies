@@ -72,7 +72,7 @@ class RecipeFetchController {
             querryComponents.append(dietQuery)
         }
         
-        let ingredientAmoutQuery = URLQueryItem(name: "number", value: "\(100)")
+        let ingredientAmoutQuery = URLQueryItem(name: "number", value: "\(80)")
         querryComponents.append(ingredientAmoutQuery)
         
         let instructionQuery = URLQueryItem(name: "instructionsRequired", value: "true")
@@ -98,9 +98,9 @@ class RecipeFetchController {
                 completion([]); return
             }
             
-            //            if let response = response {
-            //                print("➡️ Server Response: \(response)")
-            //            }
+                        if let response = response {
+                            print("➡️ Server Response: \(response)")
+                        }
             
             guard let data = data else {
                 print("❌ No data returned")
@@ -146,9 +146,9 @@ class RecipeFetchController {
                 completion([])
                 return
             }
-            //            if let response = response {
-            //                print("➡️ Server Response: \(response)")
-            //            }
+                        if let response = response {
+                            print("➡️ Server Response: \(response)")
+                        }
             guard let data = data else {
                 print("❌ Error: No Data returned from url session on detail recipie")
                 completion([])
@@ -176,10 +176,9 @@ class RecipeFetchController {
                 print("❌ There was an error fetching Images from datasource \(#function) \(error) \(error.localizedDescription)")
                 completion(nil)
                 return }
-            
-            //            if let response = response {
-            //                print("➡️ Server Response: \(response)")
-            //            }
+                        if let response = response {
+                            print("➡️ Server Response: \(response)")
+                        }
             guard let data = data, let image = UIImage(data: data) else {completion(nil); return}
             completion(image)
             }.resume()
@@ -259,9 +258,9 @@ class RecipeFetchController {
                 completion(false)
                 return
             }
-            //            if let response = response {
-            //                print("➡️ Server Response: \(response)")
-            //            }
+                        if let response = response {
+                            print("➡️ Server Response: \(response)")
+                        }
             guard let data = data else {
                 print("❌ Error: No Data returned from url session on random joke")
                 completion(false)

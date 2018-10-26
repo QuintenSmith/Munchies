@@ -17,21 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wej-Ot-ghy">
-                                <rect key="frame" x="0.0" y="52" width="375" height="176"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wej-Ot-ghy" customClass="CustomCellRoundedImages" customModule="Munchies" customModuleProvider="target">
+                                <rect key="frame" x="16" y="36" width="343" height="250"/>
                                 <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="176" id="FJs-U7-EuK"/>
+                                    <constraint firstAttribute="height" constant="250" id="FJs-U7-EuK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fishy fun!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrH-nZ-dRN">
-                                <rect key="frame" x="19" y="241" width="348" height="17"/>
+                                <rect key="frame" x="19" y="299" width="348" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/28/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEq-l3-0BP">
-                                <rect key="frame" x="19" y="266" width="336" height="17"/>
+                                <rect key="frame" x="19" y="324" width="336" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,17 +39,17 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeC-8b-Bsa">
                                 <rect key="frame" x="164.5" y="606" width="46" height="30"/>
                                 <state key="normal" title="Delete">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="deleteButtonPressed:" destination="G20-X7-NMX" eventType="touchUpInside" id="e1R-l1-uBK"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZzF-Zi-zRU">
-                                <rect key="frame" x="16" y="307" width="343" height="187"/>
+                                <rect key="frame" x="16" y="365" width="343" height="129"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,15 +57,15 @@
                             <constraint firstItem="b7L-5n-ZG7" firstAttribute="trailing" secondItem="mrH-nZ-dRN" secondAttribute="trailing" constant="8" id="6N0-uU-oGv"/>
                             <constraint firstItem="pEq-l3-0BP" firstAttribute="leading" secondItem="b7L-5n-ZG7" secondAttribute="leading" constant="19" id="9bs-DE-23X"/>
                             <constraint firstItem="pEq-l3-0BP" firstAttribute="top" secondItem="mrH-nZ-dRN" secondAttribute="bottom" constant="8" id="GW0-59-NA7"/>
-                            <constraint firstItem="wej-Ot-ghy" firstAttribute="top" secondItem="b7L-5n-ZG7" secondAttribute="top" constant="32" id="Gux-ZC-nO2"/>
+                            <constraint firstItem="wej-Ot-ghy" firstAttribute="top" secondItem="b7L-5n-ZG7" secondAttribute="top" constant="16" id="Gux-ZC-nO2"/>
                             <constraint firstItem="b7L-5n-ZG7" firstAttribute="trailing" secondItem="ZzF-Zi-zRU" secondAttribute="trailing" constant="16" id="KA0-s1-bj0"/>
                             <constraint firstItem="ZzF-Zi-zRU" firstAttribute="leading" secondItem="b7L-5n-ZG7" secondAttribute="leading" constant="16" id="LKf-ZF-VsE"/>
-                            <constraint firstItem="wej-Ot-ghy" firstAttribute="trailing" secondItem="b7L-5n-ZG7" secondAttribute="trailing" id="QFI-O0-bvl"/>
+                            <constraint firstItem="wej-Ot-ghy" firstAttribute="trailing" secondItem="b7L-5n-ZG7" secondAttribute="trailing" constant="-16" id="QFI-O0-bvl"/>
                             <constraint firstItem="b7L-5n-ZG7" firstAttribute="trailing" secondItem="pEq-l3-0BP" secondAttribute="trailing" constant="20" id="Tx4-LX-4bD"/>
                             <constraint firstItem="mrH-nZ-dRN" firstAttribute="top" secondItem="wej-Ot-ghy" secondAttribute="bottom" constant="13" id="Uc8-4G-kHC"/>
                             <constraint firstItem="ZzF-Zi-zRU" firstAttribute="top" secondItem="pEq-l3-0BP" secondAttribute="bottom" constant="24" id="bfT-pJ-8ee"/>
                             <constraint firstItem="DeC-8b-Bsa" firstAttribute="top" secondItem="ZzF-Zi-zRU" secondAttribute="bottom" constant="112" id="co7-jl-lXY"/>
-                            <constraint firstItem="wej-Ot-ghy" firstAttribute="leading" secondItem="b7L-5n-ZG7" secondAttribute="leading" id="j8X-kJ-Hzx"/>
+                            <constraint firstItem="wej-Ot-ghy" firstAttribute="leading" secondItem="b7L-5n-ZG7" secondAttribute="leading" constant="16" id="j8X-kJ-Hzx"/>
                             <constraint firstItem="mrH-nZ-dRN" firstAttribute="leading" secondItem="b7L-5n-ZG7" secondAttribute="leading" constant="19" id="jqq-hS-92W"/>
                             <constraint firstItem="b7L-5n-ZG7" firstAttribute="trailing" secondItem="DeC-8b-Bsa" secondAttribute="trailing" constant="164.5" id="nAH-wk-IEd"/>
                             <constraint firstItem="DeC-8b-Bsa" firstAttribute="leading" secondItem="b7L-5n-ZG7" secondAttribute="leading" constant="164.5" id="oTg-eE-AA7"/>
