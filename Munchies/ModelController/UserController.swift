@@ -29,7 +29,6 @@ class UserController {
                 print("Error fetching user record ID \(error) \(error.localizedDescription)")
                 completion(false); return
             }
-            
             guard let appleUserRecordID = appleUserRecordID else {completion(false); return}
             let refToAppleUser = CKRecord.Reference(recordID: appleUserRecordID, action: .deleteSelf)
             let user = User(name: name, diet: diet, intolerances: intolerances, shoppingList: nil, favorites: nil, journalEntries: nil, appleUserReference: refToAppleUser)
@@ -146,6 +145,5 @@ class UserController {
         }
         CKContainer.default().publicCloudDatabase.add(operation) 
     }
-    
 }
 

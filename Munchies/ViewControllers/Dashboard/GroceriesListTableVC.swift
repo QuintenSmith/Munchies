@@ -12,8 +12,12 @@ class GroceriesListTableVC: UITableViewController {
     
 @IBOutlet var backgroundImg: UIView!
     
+    
+    //MARK: - Properties
     var user: User?
 
+    
+    //MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
         user = UserController.shared.loggedInUser
@@ -45,8 +49,8 @@ class GroceriesListTableVC: UITableViewController {
         tableView.reloadData()
     }
 
+    
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return user?.shoppingList?.count ?? 0
     }

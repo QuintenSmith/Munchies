@@ -9,14 +9,14 @@
 import UIKit
 
 class ProfileVC: UIViewController, UITextFieldDelegate {
-
+    
     //MARK: - Outlets
     @IBOutlet weak var menuBtn: UIBarButtonItem!
-    //@IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var editView: UIView!
     @IBOutlet weak var clearButtonOutlet: UIBarButtonItem!
     @IBOutlet weak var saveButtonOutlet: UIBarButtonItem!
+    
     
     //MARK: - Diets Button Outlets
     @IBOutlet weak var veganDietOutlet: RoundedShapeButton!
@@ -25,6 +25,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var vagetarianDietOutlet: RoundedShapeButton!
     @IBOutlet weak var pescetarianDietOutlet: RoundedShapeButton!
     @IBOutlet weak var lactoVegetarianDietOutlet: RoundedShapeButton!
+    
     
     //MARK: - Intolerances Outlets
     @IBOutlet weak var diaryFreeOutlet: RoundedShapeButton!
@@ -37,6 +38,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var seasameFreeOutlet: RoundedShapeButton!
     @IBOutlet weak var shellfishFreeOutlet: RoundedShapeButton!
     
+    
     //MARK: - Buttons State
     var diaryFreeButton : Bool = false
     var peanutFreeButton : Bool = false
@@ -48,6 +50,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     var seasameFreeButton : Bool = false
     var shellfishFreeButton : Bool = false
     
+    
     //MARK: - Properties
     var dietButtons = [UIButton]()
     var intoleranceButtons = [UIButton]()
@@ -56,7 +59,6 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     var dietButtonTagNumber : Int = 7
     var saveButtonState = true
     var user: User?
-    
     
     
     //MARK: - LifeCycle Methods
@@ -89,11 +91,9 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     
     //MARK: - Actions
     @IBAction func DietsButtonPressed(_ sender: UIButton) {
-        
         dietButtons.forEach{
             $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }
-        
         switch sender.tag {
         case 0:
             RecipeFetchController.shared.diet = "vegan"
@@ -115,7 +115,6 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             lactoVegetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         default:
             RecipeFetchController.shared.diet = ""
-            
         }
         print(RecipeFetchController.shared.diet)
     }
@@ -168,26 +167,19 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             editView.isHidden = false
             clearButtonOutlet.isEnabled = false
             saveButtonState = true
-             saveButtonOutlet.image = #imageLiteral(resourceName: "header-2")
+            saveButtonOutlet.image = #imageLiteral(resourceName: "header-2")
             showSuccesfullAlert()
         }
-        
-        
-        //save changes - prety much just the name
-        // the diets and intolerances save on their own i think
-        
     }
     
     //clear all settings
     @IBAction func clearButtonPressed(_ sender: Any) {
-        
         //change the buttons to unselected state
         dietButtons.forEach{
             $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }
         //remove diets from query items
         RecipeFetchController.shared.diet = ""
-        
         //change intolerance buttons to unselected state
         diaryFreeButton = false
         peanutFreeButton = false
@@ -198,17 +190,13 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         glutenFreeButton = false
         seasameFreeButton = false
         shellfishFreeButton = false
-        
         intoleranceButtons.forEach{$0.backgroundColor = AppStylingController.shared.buttonUnselectedColor}
-        
         //remove intolerances form (set) and therefore from query items
         RecipeFetchController.shared.intolerances.removeAll()
-        
     }
     
     
     //MARK: - Helper Methods
-    
     //Sets up the buttons based on users save settings on viewDidLoad
     func setupButtonsBasedOnPreviousSettings(){
         switch RecipeFetchController.shared.diet {
@@ -219,7 +207,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         case "primal":
             primalDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case "vegetarian":
-           vagetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            vagetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case "pescetarian":
             pescetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case "lacto vegetarian":
@@ -266,7 +254,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             shellfishFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
             shellfishFreeButton = true
         }
-   
+        
     }
     
     
@@ -293,6 +281,4 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         alert.addAction(UIAlertAction(title: "Continue", style: .cancel, handler: nil))
         present(alert, animated: true)
     }
-    
-    
 }

@@ -8,9 +8,6 @@
 
 import UIKit
 
-
-
-
 class SearchCollectionViewCell: UICollectionViewCell {
     
     
@@ -20,12 +17,14 @@ class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var readyInLabel: UILabel!
     @IBOutlet weak var recipeHeartButton: UIButton!
     
+    
     //MARK: - Properties
     var cellData: RecipeWithDetailAndImage? {
         didSet{
             updateViews()
         }
     }
+    
     
     //MARK: - Helper Method to update Views
     func updateViews() {
@@ -34,7 +33,6 @@ class SearchCollectionViewCell: UICollectionViewCell {
         titleLabel.text = recipe.detailedRecipe.title
         readyInLabel.text = "Ready in: \(recipe.detailedRecipe.readyInMinutes) min."
         flipTheHeart()
-        
     }
     
     func flipTheHeart(){
@@ -54,9 +52,4 @@ class SearchCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         recipeHeartButton.setBackgroundImage(#imageLiteral(resourceName: "dashboardfavs"), for: .normal)
     }
-    
-    
-    
-
-    
 }

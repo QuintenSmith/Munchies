@@ -220,8 +220,7 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     //MARK: - helper function to filter by time it takes to cook diner
     func applyFiltersAndFetchImages(completion: @escaping (Bool) -> Void){
         RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: timeItShoultTakeToPrepareAMeal, servingAmount: portionSize, completion: (completion))
-        
-        print("🔥🔥 Portion size: \(portionSize), time: \(timeItShoultTakeToPrepareAMeal)")
+        print("🔥🔥 Portion size: \(portionSize ?? 0), time: \(timeItShoultTakeToPrepareAMeal)")
     }
     
     

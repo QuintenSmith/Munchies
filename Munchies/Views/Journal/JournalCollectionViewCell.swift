@@ -10,10 +10,12 @@ import UIKit
 
 class JournalCollectionViewCell: UICollectionViewCell {
     
+    
     //MARK: - Outlets
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var dishNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
     
     //MARK: - Properties
     var entry: Entry? {
@@ -23,17 +25,11 @@ class JournalCollectionViewCell: UICollectionViewCell {
     }
     
     
-    
     //MARK: - Helper Methods
     func updateViews(){
         guard let entry = entry else {return}
         pictureView.image = entry.photo
         dishNameLabel.text = entry.title
         dateLabel.text = entry.timestamp.dateAsString()
-        
     }
-    
-    
-    
-    
 }

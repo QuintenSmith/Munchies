@@ -10,16 +10,22 @@ import UIKit
 
 class JournalDashboardCollectionViewCell: UICollectionViewCell {
     
+    
+    //MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    
+    //MARK: - Properties
     var entry: Entry? {
         didSet {
             updateViews()
         }
     }
     
+    
+    //MARK: - UpdateViews
     func updateViews() {
         guard  let entry = entry else {return}
         imageView.image = entry.photo

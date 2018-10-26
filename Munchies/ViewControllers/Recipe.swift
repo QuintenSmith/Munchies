@@ -8,8 +8,6 @@
 
 import UIKit
 
-//i think this isnt neede anymore
-//this is still used in favorites controller
 class Recipe {
     
     let picture: UIImage
@@ -30,8 +28,7 @@ class Recipe {
 }
 
 
-
-//MARK: = Recipe model for fetching
+//MARK: - Recipe model for fetching
 class JSONDictionary: Decodable {
     let results: [fetchedRecipe]
     
@@ -109,11 +106,8 @@ class DetailedRecipe: Decodable, Equatable {
     let preparationMinutes: Int?
     let extendedIngredients: [extendedIngredients]?
     let sourceUrl: String?
-    
     //those properties are neede for detail view and to assign recipe as favorite - they are not part of the api
     var isFavorite: Bool?
-    //add a computed property for image - UIImage doesnt conform to decodable
-    //var photo: UIImage?
     
     
     init(id: Int, title: String, readyInMinutes: Int, image: String?, analyzedInstructions: [Instructions], servings: Int?, preparationMinutes: Int?, extendedIngredients: [extendedIngredients]?, sourceUrl: String?){
@@ -142,8 +136,6 @@ class RecipeForDetailView {
 }
 
 
-//new structure to replace data source for colectionView in SearcVC, and detail view
-//may not work
 class RecipeWithDetailAndImage : Equatable{
     
     var detailedRecipe: DetailedRecipe

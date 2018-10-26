@@ -10,11 +10,17 @@ import UIKit
 
 class JournalDashboardVC: UIViewController {
     
+
+    //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var backgroundImg: UIView!
     
+    
+    //MARK: - Properties
     var user: User?
     
+    
+    //MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
         user = UserController.shared.loggedInUser
@@ -25,7 +31,6 @@ class JournalDashboardVC: UIViewController {
         } else {
             numberOfRows = journalEntries.count
         }
-        
         self.collectionView.backgroundView = backgroundImg
         let datasource = JournalCollectionViewDataSource(numberOfItems: numberOfRows, entries: journalEntries)
         collectionView.dataSource = datasource
@@ -35,9 +40,6 @@ class JournalDashboardVC: UIViewController {
         } else {
             self.collectionView.backgroundView?.isHidden = false 
         }
-        
         collectionView.reloadData()
-        
     }
-    
 }

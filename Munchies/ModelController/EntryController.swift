@@ -10,10 +10,13 @@ import UIKit
 import CloudKit
 
 class EntryController {
-    static let shared = EntryController()
     
+    //MARK: - Singelton
+    static let shared = EntryController()
     private init() {}
     
+    
+    //MARK: - Create New Journal Entry
     func createEntryWith(user: User, image: UIImage, title: String, description: String, completion: @escaping (Entry?) -> Void) {
         let entry = Entry(user: user, photo: image, title: title, description: description)
         user.journalEntries?.append(entry)
@@ -26,14 +29,14 @@ class EntryController {
         }
     }
     
+    
+    //MARK: - Fetch Journal Entries
     func fetchEntries(user: User, completion: @escaping (Bool) -> Void) {
-        
         let userReference = user.cloudKitRecordID
         let predicate = NSPredicate.init(format: "UserReference == %@", userReference)
         let entryIDs = user.journalEntries?.compactMap({$0.recordID})
         let predicate2 = NSPredicate(format: "NOT(recordID IN %@)", entryIDs!)
         let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, predicate2])
-        
         let query = CKQuery.init(recordType: "Entry", predicate: compoundPredicate)
         
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
@@ -48,6 +51,8 @@ class EntryController {
         }
     }
     
+    
+    //MARK: - Delete Journal Entry
     func deleteItem(item: Entry) {
         let recordID = item.recordID
         let modifyRecordOp = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [recordID])

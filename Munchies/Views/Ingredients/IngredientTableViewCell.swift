@@ -15,12 +15,14 @@ class IngredientTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientCheckMakrButton: UIButton!
     @IBOutlet weak var ingredientLabel: UILabel!
     
+    //MARK: - Properties
     var ingredient: String? {
         didSet{
             updateViews()
         }
     }
     
+    //MARK: - LifeCycle Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,16 +30,19 @@ class IngredientTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
+    
     
     func updateViews() {
         ingredientLabel.text = ingredient
     }
     
     
+    //MARK: - Actions
     @IBAction func addIngredientButtonPressed(_ sender: UIButton) {
+        
+        //dont let them add the same itme twice
         print("About to add ingredient")
         //need to add ingredint to shoping list here
         guard let user = UserController.shared.loggedInUser else {
@@ -50,7 +55,4 @@ class IngredientTableViewCell: UITableViewCell {
             print("Sucesfully added \(item) into grocery list")
         }
     }
-    
-    
-
 }

@@ -15,8 +15,12 @@ class CreateJournalEntryVC: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var enterTitleTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var saveButtonOutlet: UIBarButtonItem!
     
+    
+    //MARK: - Properties
     var user: User?
+    
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -40,8 +44,10 @@ class CreateJournalEntryVC: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let title = enterTitleTextField.text, title != "" else { return}
         guard let image = entryImageView.image else {return}
+        saveButtonOutlet.isEnabled = false
         EntryController.shared.createEntryWith(user: user!, image: image, title: title, description: notesTextView.text) { (entry) in
             DispatchQueue.main.async {
+                self.saveButtonOutlet.isEnabled = true
                 self.dismiss(animated: true, completion: nil)
             }
         }
@@ -66,6 +72,8 @@ class CreateJournalEntryVC: UIViewController, UIImagePickerControllerDelegate, U
         present(photoSourcePicker, animated: true, completion: nil)
     }
     
+    
+    //MARK: - Camera Methods
     func presentPhotoPicker(sourceType: UIImagePickerController.SourceType){
         let picker = UIImagePickerController()
         picker.delegate = self

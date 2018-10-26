@@ -33,7 +33,6 @@ class JournalEntryDetailVC: UIViewController {
         super.viewDidLoad()
         loadViewIfNeeded()
         updateViews()
-        
     }
     
     
@@ -42,14 +41,10 @@ class JournalEntryDetailVC: UIViewController {
         let alert = UIAlertController(title: "Delete Entry?", message: "Are you sure you want to delete this food journal entry?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-//            guard let entry = self.entry else {return}
-//            JournalController.shared.delete(entry: entry)
-//            self.navigationController?.popViewController(animated: true)
             guard let entry = self.entry else {return}
-            
             EntryController.shared.deleteItem(item: entry)
             DispatchQueue.main.async {
-              self.navigationController?.popViewController(animated: true)
+                self.navigationController?.popViewController(animated: true)
             }
         }))
         present(alert, animated: true)
@@ -64,5 +59,4 @@ class JournalEntryDetailVC: UIViewController {
         entryTitleLabel.text = entry.title
         entrydescriptionTextView.text = entry.description
     }
-    
 }

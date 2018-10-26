@@ -14,6 +14,5 @@ class CustomCellRoundedImages: UIImageView {
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
     }
-    
 }
 
