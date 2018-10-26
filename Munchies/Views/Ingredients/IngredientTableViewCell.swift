@@ -9,7 +9,7 @@
 import UIKit
 
 class IngredientTableViewCell: UITableViewCell {
-    #warning("action is not working, plus print statement")
+
     
     //MARK: - Outlets
     @IBOutlet weak var ingredientCheckMakrButton: UIButton!
@@ -27,7 +27,7 @@ class IngredientTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
@@ -41,18 +41,21 @@ class IngredientTableViewCell: UITableViewCell {
     
     //MARK: - Actions
     @IBAction func addIngredientButtonPressed(_ sender: UIButton) {
-        
-        //dont let them add the same itme twice
-        print("About to add ingredient")
-        //need to add ingredint to shoping list here
         guard let user = UserController.shared.loggedInUser else {
-            print("no user")
             return}
         guard let ingredient = ingredient else {
-            print("no ingredient")
             return}
-        ItemController.shared.createItem(user: user, item: ingredient) {(item) in
-            print("Sucesfully added \(item) into grocery list")
+        
+        let item = Item(name: ingredient, user: user)
+        if let shoppingList = user.shoppingList {
+            if shoppingList.contains(item) {
+            } else {
+                ItemController.shared.createItem(user: user, item: ingredient) {(item) in
+                }
+            }
+        } else {
+            ItemController.shared.createItem(user: user, item: ingredient) {(item) in
+            }
         }
     }
 }
