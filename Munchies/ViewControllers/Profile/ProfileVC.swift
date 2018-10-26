@@ -57,8 +57,6 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     var saveButtonState = true
     var user: User?
     
-    
-    
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,8 +67,9 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         sideMenu()
         nameTextField.delegate = self
         setupButtonsBasedOnPreviousSettings()
-        guard let user = user else {return}
+        guard let user = UserController.shared.loggedInUser else {return}
         nameTextField.text = user.name
+         setupButtonsBasedOnPreviousSettings()
     }
     
     
@@ -89,35 +88,36 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     
     //MARK: - Actions
     @IBAction func DietsButtonPressed(_ sender: UIButton) {
-        
+        guard let user = UserController.shared.loggedInUser else {return}
+        guard var diet = user.diet else {return}
         dietButtons.forEach{
             $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }
         
         switch sender.tag {
         case 0:
-            RecipeFetchController.shared.diet = "vegan"
+            diet = "vegan"
             veganDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 1:
-            RecipeFetchController.shared.diet = "paleo"
+            diet = "paleo"
             paleoDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 2:
-            RecipeFetchController.shared.diet = "primal"
+            diet = "primal"
             primalDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 3:
-            RecipeFetchController.shared.diet = "vegetarian"
+            diet = "vegetarian"
             vagetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 4:
-            RecipeFetchController.shared.diet = "pescetarian"
+            diet = "pescetarian"
             pescetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case 5:
-            RecipeFetchController.shared.diet = "lacto vegetarian"
+            diet = "lacto vegetarian"
             lactoVegetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         default:
-            RecipeFetchController.shared.diet = ""
+            diet = ""
             
         }
-        print(RecipeFetchController.shared.diet)
+        print(diet)
     }
     
     
@@ -151,9 +151,9 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             adjustSettingsAndFlip(button: shellfishFreeOutlet, intolerance: "shellfish", buttonState: shellfishFreeButton)
             shellfishFreeButton = !shellfishFreeButton
         default:
-            print("🔔🔔\(RecipeFetchController.shared.intolerances)")
+            print("\(user?.intolerances)")
         }
-        print("🔔🔔\(RecipeFetchController.shared.intolerances)")
+
         
     }
     
@@ -171,6 +171,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
              saveButtonOutlet.image = #imageLiteral(resourceName: "header-2")
             showSuccesfullAlert()
         }
+        
         
         
         //save changes - prety much just the name
@@ -211,7 +212,8 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     
     //Sets up the buttons based on users save settings on viewDidLoad
     func setupButtonsBasedOnPreviousSettings(){
-        switch RecipeFetchController.shared.diet {
+        guard let user = UserController.shared.loggedInUser else {return}
+        switch user.diet {
         case "vegan":
             veganDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case "paleo":
@@ -225,44 +227,45 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         case "lacto vegetarian":
             lactoVegetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         default :
-            break
+            print("no diet")
         }
-        
-        print(RecipeFetchController.shared.intolerances)
-        
-        if RecipeFetchController.shared.intolerances.contains("dairy"){
+        guard let intolerances = user.intolerances else {
+            print("no intolerances")
+            return}
+        print("\(intolerances)")
+        if intolerances.contains("dairy"){
             diaryFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
             diaryFreeButton = true
         }
-        if RecipeFetchController.shared.intolerances.contains("peanut"){
+        if intolerances.contains("peanut"){
             peanutFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
             peanutFreeButton = true
         }
-        if RecipeFetchController.shared.intolerances.contains("soy"){
+        if intolerances.contains("soy"){
             soyFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
             soyFreeButton = true
         }
-        if RecipeFetchController.shared.intolerances.contains("egg"){
+        if intolerances.contains("egg"){
             eggFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
             eggFreeButton = true
         }
-        if RecipeFetchController.shared.intolerances.contains("seafood"){
+        if intolerances.contains("seafood"){
             seafoodFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
             seafoodFreeButton = true
         }
-        if RecipeFetchController.shared.intolerances.contains("sulfite"){
+        if intolerances.contains("sulfite"){
             sulfiteFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
             sulfiteFreeButton = true
         }
-        if RecipeFetchController.shared.intolerances.contains("gluten"){
+        if intolerances.contains("gluten"){
             glutenFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
             glutenFreeButton = true
         }
-        if RecipeFetchController.shared.intolerances.contains("sesame"){
+        if intolerances.contains("sesame"){
             seasameFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
             seasameFreeButton = true
         }
-        if RecipeFetchController.shared.intolerances.contains("shellfish"){
+        if intolerances.contains("shellfish"){
             shellfishFreeOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
             shellfishFreeButton = true
         }
@@ -272,12 +275,13 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     
     //Flips the state of the button - and adjust coresponding settings
     func adjustSettingsAndFlip(button: UIButton, intolerance: String, buttonState: Bool){
+        guard let user = UserController.shared.loggedInUser else {return}
+        guard var intolerances = user.intolerances else {return}
         if buttonState == false {
-            RecipeFetchController.shared.intolerances.insert(intolerance)
+            intolerances.insert(intolerance)
             button.backgroundColor = AppStylingController.shared.buttonSelectedColor
         } else if buttonState == true {
-            #warning ("changed set to array - this may lead to trouble here")
-            RecipeFetchController.shared.intolerances.remove(intolerance)
+            intolerances.remove(intolerance)
             button.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }
     }

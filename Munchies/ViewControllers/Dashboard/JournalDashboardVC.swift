@@ -25,7 +25,7 @@ class JournalDashboardVC: UIViewController {
         } else {
             numberOfRows = journalEntries.count
         }
-        
+
         self.collectionView.backgroundView = backgroundImg
         let datasource = JournalCollectionViewDataSource(numberOfItems: numberOfRows, entries: journalEntries)
         collectionView.dataSource = datasource
@@ -33,11 +33,35 @@ class JournalDashboardVC: UIViewController {
         if datasource.numberOfItems >= 1 {
             self.collectionView.backgroundView?.isHidden = true
         } else {
-            self.collectionView.backgroundView?.isHidden = false 
+            self.collectionView.backgroundView?.isHidden = false
         }
         
         collectionView.reloadData()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        collectionView.reloadData()
+        
+//         self.collectionView.backgroundView = backgroundImg
+//        user = UserController.shared.loggedInUser
+//        var numberOfRows = 0
+//        guard let journalEntries = user?.journalEntries else {return}
+//        if journalEntries.count > 6 {
+//            numberOfRows = 6
+//        } else {
+//            numberOfRows = journalEntries.count
+//        }
+//
+//        let datasource = JournalCollectionViewDataSource(numberOfItems: numberOfRows, entries: journalEntries)
+//        collectionView.dataSource = datasource
+//        NSLog("po %@", datasource)
+//        if datasource.numberOfItems >= 1 {
+//            self.collectionView.backgroundView?.isHidden = true
+//        } else {
+//            self.collectionView.backgroundView?.isHidden = false
+//        }
     }
     
 }

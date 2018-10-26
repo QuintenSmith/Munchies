@@ -10,43 +10,51 @@ import UIKit
 
 class GroceriesListTableVC: UITableViewController {
     
-@IBOutlet var backgroundImg: UIView!
+    @IBOutlet var backgroundImg: UIView!
     
-    var user: User?
-
+    var user = UserController.shared.loggedInUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        user = UserController.shared.loggedInUser
-        ItemController.shared.fetchItemsfor(user: user!) { (success) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-        tableView.backgroundView = backgroundImg
+//        self.tableView.backgroundView = self.backgroundImg
+//        guard let user = user else {return}
+//        ItemController.shared.fetchItemsfor(user: user) { (success) in
+//            if success {
+//                DispatchQueue.main.async {
+//                    guard let shoppingList = user.shoppingList else {return}
+//                    if shoppingList.count >= 1 {
+//                        self.tableView.backgroundView?.isHidden = true
+//                    } else {
+//                        self.tableView.backgroundView?.isHidden = false
+//                    }
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        guard let shoppingList = user?.shoppingList else {return}
-        if shoppingList.count == 0 {
-            self.tableView.backgroundView?.isHidden = false
+        self.tableView.backgroundView = self.backgroundImg
+        guard let user = user else {return}
+        ItemController.shared.fetchItemsfor(user: user) { (success) in
+            if success {
+                DispatchQueue.main.async {
+                    guard let shoppingList = user.shoppingList else {return}
+                    if shoppingList.count >= 1 {
+                        self.tableView.backgroundView?.isHidden = true
+                    } else {
+                        self.tableView.backgroundView?.isHidden = false
+                    }
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        guard let shoppingList = user?.shoppingList else {return}
-        if shoppingList.count >= 1 {
-            self.tableView.backgroundView?.isHidden = true
-        } else {
-            self.tableView.backgroundView?.isHidden = false
-        }
-        tableView.reloadData()
-    }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return user?.shoppingList?.count ?? 0
     }

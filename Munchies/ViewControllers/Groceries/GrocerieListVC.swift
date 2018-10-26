@@ -163,7 +163,6 @@ class GrocerieListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                         let index = self.user?.shoppingList!.index(of: item)
                         self.user?.shoppingList?.remove(at: index!)
                         ItemController.shared.deleteItem(item: item, index: index!)
-                        self.updateViews()
                         self.tableView.reloadData()
                     }
                 }
