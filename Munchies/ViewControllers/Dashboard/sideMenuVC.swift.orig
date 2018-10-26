@@ -10,35 +10,42 @@ import UIKit
 
 class sideMenuVC: UIViewController, UITableViewDelegate {
 
+    
+     var numberOfItems: Int = 3
+   
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> c441dae05c574bf5e07faf094976d2f622a65e67
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         self.tableView.isHidden = true
-        
-        let datasource = FavoritesTableViewDataSource(numberOfItems: numberOfItems, recipes: RecipeFetchController.shared.favoriteRecipies)
-        tableView.dataSource = datasource
-        
-        
-        if RecipeFetchController.shared.favoriteRecipies.count >= 1 {
-            tableView.isHidden = false
+        sideMenu()
+
+<<<<<<< HEAD
+        var numberOfRows = 0
+        if RecipeFetchController.shared.favoriteRecipies.count > 3 {
+            numberOfRows = 3
+        } else {
+            numberOfRows = RecipeFetchController.shared.favoriteRecipies.count
         }
         
-        
-        
-        sideMenu()
-        
-        let datasource = FavoritesTableViewDataSource(numberOfItems: 2, recipes: RecipeFetchController.shared.favoriteRecipies)
+        let datasource = FavoritesTableViewDataSource(numberOfItems: numberOfRows, recipes: RecipeFetchController.shared.favoriteRecipies)
         tableView.dataSource = datasource
         NSLog("po %@", datasource)
         
-        if RecipeFetchController.shared.favoriteRecipies.count >= 1 {
+        if datasource.numberOfItems >= 1 {
             self.tableView.isHidden = false
         }
         
         tableView.reloadData()
+=======
+>>>>>>> c441dae05c574bf5e07faf094976d2f622a65e67
     }
     
 

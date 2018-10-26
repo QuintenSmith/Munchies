@@ -18,10 +18,10 @@
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
 <<<<<<< HEAD
-	<string>1100</string>
+	<string>1115</string>
 =======
-	<string>1091</string>
->>>>>>> e8f47ac9d2c38302164343761bf9ea6dab881e00
+	<string>1142</string>
+>>>>>>> 4bbdd050587635bb94c61017e9f749f600ea1aa9
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>

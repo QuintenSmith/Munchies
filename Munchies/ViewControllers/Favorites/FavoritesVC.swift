@@ -15,12 +15,51 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     
+    //var user: User?
+    var recIds : [Int] = []
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         favoritesCollectionView.delegate = self
         favoritesCollectionView.dataSource = self
+        
+        guard let user = UserController.shared.loggedInUser else {return}
+        guard let favorites = user.favorites else {return}
+        
+        for recipeid in favorites {
+            recIds.append(recipeid.recipeID)
+        }
+        
+        FavoriteController.shared.fetchFavorites(user: user) { (success) in
+            if success {
+                RecipeFetchController.shared.fetchDetailedRecipies(ids: self.recIds, completion: { (detailedRecipes) in
+                    guard let detailedRecipes = detailedRecipes else {return}
+                    let dispatchGroup = DispatchGroup()
+                    for recipe in detailedRecipes {
+                        //MARK: - Fetch Images Call
+                        if let image = recipe.image {
+                            dispatchGroup.enter()
+                            RecipeFetchController.shared.fetchImage(at: image) { (image) in
+                                let detailedRecipe = RecipeWithDetailAndImage.init(detailedRecipe: recipe, picture: image)
+                                if !RecipeFetchController.shared.favoriteRecipies.contains(detailedRecipe){
+                                    RecipeFetchController.shared.favoriteRecipies.append(detailedRecipe)
+                                }
+                                print("🚀 image fetched and apended")
+                                dispatchGroup.leave()
+                            }
+                        }
+                        print("finished fetching images")
+                    }
+                    //onec its done with all the fetchin in dispatch group, it calls the complepiton
+                    dispatchGroup.notify(queue: .main) {
+                        print("Calling Completion Now")
+                        //                        completion(true)
+                    }
+                })
+            }
+        }
+        
         if RecipeFetchController.shared.favoriteRecipies.count >= 1 {
           self.favoritesCollectionView.isHidden = false
         } else {
@@ -30,8 +69,43 @@ class FavoritesVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        guard let user = UserController.shared.loggedInUser else {return}
+//        guard let favorites = user.favorites else {return}
+//        for recipeid in favorites {
+//            recIds.append(recipeid.recipeID)
+//        }
+//
+
         super.viewWillAppear(animated)
+        
+//        FavoriteController.shared.fetchFavorites(user: user) { (success) in
+//            if success {
+//                RecipeFetchController.shared.fetchDetailedRecipies(ids: self.recIds, completion: { (detailedRecipes) in
+//                    guard let detailedRecipes = detailedRecipes else {return}
+//                    let dispatchGroup = DispatchGroup()
+//                    for recipe in detailedRecipes {
+//                        //MARK: - Fetch Images Call
+//                        if let image = recipe.image {
+//                            dispatchGroup.enter()
+//                            RecipeFetchController.shared.fetchImage(at: image) { (image) in
+//                                let detailedRecipe = RecipeWithDetailAndImage.init(detailedRecipe: recipe, picture: image)
+//                               RecipeFetchController.shared.favoriteRecipies.append(detailedRecipe)
+//                                print("🚀 image fetched and apended")
+//                                dispatchGroup.leave()
+//                            }
+//                        }
+//                        print("finished fetching images")
+//                    }
+//                    //onec its done with all the fetchin in dispatch group, it calls the complepiton
+//                    dispatchGroup.notify(queue: .main) {
+//                        print("Calling Completion Now")
+////                        completion(true)
+//                    }
+//                })
+//            }
+//        }
         favoritesCollectionView.reloadData()
+        
     }
     
     

@@ -12,13 +12,19 @@ import UIKit
 
 class FavoritesTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
+<<<<<<< HEAD
+    var numberOfItems: Int
+=======
     var numberOfItems: Int = 0
+>>>>>>> 4bbdd050587635bb94c61017e9f749f600ea1aa9
     var recipes: [RecipeWithDetailAndImage]
         
     init(numberOfItems: Int, recipes: [RecipeWithDetailAndImage]) {
         self.numberOfItems = numberOfItems
         self.recipes = recipes
     }
+    
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

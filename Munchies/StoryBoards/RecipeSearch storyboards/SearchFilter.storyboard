@@ -32,6 +32,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHf-Ab-0RI">
                                                 <rect key="frame" x="153" y="66" width="69" height="64"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" secondItem="SHf-Ab-0RI" secondAttribute="height" multiplier="69:64" id="GVJ-en-q0x"/>
                                                     <constraint firstAttribute="width" constant="69" id="Gq9-lg-m2O"/>
                                                     <constraint firstAttribute="height" constant="64" id="c4G-Oo-rpT"/>
                                                 </constraints>

@@ -14,7 +14,7 @@ class JournalDashboardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-    var entry: JournalEntry? {
+    var entry: Entry? {
         didSet {
             updateViews()
         }
@@ -22,8 +22,8 @@ class JournalDashboardCollectionViewCell: UICollectionViewCell {
     
     func updateViews() {
         guard  let entry = entry else {return}
-        imageView.image = entry.picture
+        imageView.image = entry.photo
         nameLabel.text = entry.title
-        timeLabel.text = entry.date.dateAsString()
+        timeLabel.text = entry.timestamp.dateAsString()
     }
 }
