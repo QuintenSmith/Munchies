@@ -21,23 +21,16 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         user = UserController.shared.loggedInUser
         EntryController.shared.fetchEntries(user: user!) { (success) in
             if success {
                 DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+                  self.collectionView.reloadData()
                 }
             }
         }
-        guard let shoppingList = user?.shoppingList else {return}
-        if shoppingList.count >= 1 {
-            self.collectionView.isHidden = false
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
         sideMenu()
         collectionView.reloadData()
     }
@@ -45,10 +38,15 @@ class JournalVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         DispatchQueue.main.async {
+            guard let journalEntries = self.user!.journalEntries else {return}
+            if journalEntries.count >= 1 {
+                self.collectionView.isHidden = false
+                self.collectionView.reloadData()
+            }
             self.collectionView.reloadData()
+            
         }
     }
-    
     
     //MARK: - Side Menu Method
     func sideMenu() {

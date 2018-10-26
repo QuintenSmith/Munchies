@@ -60,7 +60,10 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     var saveButtonState = true
     var user: User?
     
+<<<<<<< HEAD
     
+=======
+>>>>>>> a6b27cf89a47d31cf494a6fb10ea993d31ccc7e0
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,8 +95,11 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     
     //MARK: - Actions
     @IBAction func DietsButtonPressed(_ sender: UIButton) {
+<<<<<<< HEAD
+=======
         guard let user = UserController.shared.loggedInUser else {return}
         guard var diet = user.diet else {return}
+>>>>>>> a6b27cf89a47d31cf494a6fb10ea993d31ccc7e0
         dietButtons.forEach{
             $0.backgroundColor = AppStylingController.shared.buttonUnselectedColor
         }
@@ -117,8 +123,12 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             diet = "lacto vegetarian"
             lactoVegetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         default:
+<<<<<<< HEAD
+            RecipeFetchController.shared.diet = ""
+=======
             diet = ""
             
+>>>>>>> a6b27cf89a47d31cf494a6fb10ea993d31ccc7e0
         }
         print(diet)
     }
@@ -174,6 +184,15 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             saveButtonOutlet.image = #imageLiteral(resourceName: "header-2")
             showSuccesfullAlert()
         }
+<<<<<<< HEAD
+=======
+        
+        
+        
+        //save changes - prety much just the name
+        // the diets and intolerances save on their own i think
+        
+>>>>>>> a6b27cf89a47d31cf494a6fb10ea993d31ccc7e0
     }
     
     //clear all settings
@@ -212,7 +231,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         case "primal":
             primalDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case "vegetarian":
-           vagetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
+            vagetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case "pescetarian":
             pescetarianDietOutlet.backgroundColor = AppStylingController.shared.buttonSelectedColor
         case "lacto vegetarian":

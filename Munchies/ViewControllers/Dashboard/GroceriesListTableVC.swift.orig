@@ -10,14 +10,19 @@ import UIKit
 
 class GroceriesListTableVC: UITableViewController {
     
-@IBOutlet var backgroundImg: UIView!
+    @IBOutlet var backgroundImg: UIView!
     
+    var user = UserController.shared.loggedInUser
+    
+<<<<<<< HEAD
     
     //MARK: - Properties
     var user: User?
 
     
     //MARK: - LifeCycle Method
+=======
+>>>>>>> a6b27cf89a47d31cf494a6fb10ea993d31ccc7e0
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.tableView.backgroundView = self.backgroundImg
@@ -56,8 +61,25 @@ class GroceriesListTableVC: UITableViewController {
         }
     }
     
+<<<<<<< HEAD
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        guard let shoppingList = user?.shoppingList else {return}
+        if shoppingList.count >= 1 {
+            self.tableView.backgroundView?.isHidden = true
+        } else {
+            self.tableView.backgroundView?.isHidden = false
+        }
+        tableView.reloadData()
+    }
+
     
     // MARK: - Table view data source
+=======
+    
+    // MARK: - Table view data source
+    
+>>>>>>> a6b27cf89a47d31cf494a6fb10ea993d31ccc7e0
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return user?.shoppingList?.count ?? 0
     }

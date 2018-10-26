@@ -31,6 +31,10 @@ class JournalDashboardVC: UIViewController {
         } else {
             numberOfRows = journalEntries.count
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> a6b27cf89a47d31cf494a6fb10ea993d31ccc7e0
         self.collectionView.backgroundView = backgroundImg
         let datasource = JournalCollectionViewDataSource(numberOfItems: numberOfRows, entries: journalEntries)
         collectionView.dataSource = datasource
@@ -42,6 +46,8 @@ class JournalDashboardVC: UIViewController {
         }
         collectionView.reloadData()
     }
+<<<<<<< HEAD
+=======
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -67,4 +73,5 @@ class JournalDashboardVC: UIViewController {
 //        }
     }
     
+>>>>>>> a6b27cf89a47d31cf494a6fb10ea993d31ccc7e0
 }
