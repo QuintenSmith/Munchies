@@ -11,36 +11,16 @@ import UIKit
 class GroceriesListTableVC: UITableViewController {
     
 @IBOutlet var backgroundImg: UIView!
-    
-    
-    //MARK: - Properties
-    var user: User?
-
-    
+        
     //MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tableView.backgroundView = self.backgroundImg
-//        guard let user = user else {return}
-//        ItemController.shared.fetchItemsfor(user: user) { (success) in
-//            if success {
-//                DispatchQueue.main.async {
-//                    guard let shoppingList = user.shoppingList else {return}
-//                    if shoppingList.count >= 1 {
-//                        self.tableView.backgroundView?.isHidden = true
-//                    } else {
-//                        self.tableView.backgroundView?.isHidden = false
-//                    }
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.backgroundView = self.backgroundImg
-        guard let user = user else {return}
+        guard let user = UserController.shared.loggedInUser else {return}
         ItemController.shared.fetchItemsfor(user: user) { (success) in
             if success {
                 DispatchQueue.main.async {
@@ -59,13 +39,16 @@ class GroceriesListTableVC: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return user?.shoppingList?.count ?? 0
+        guard let user = UserController.shared.loggedInUser else {return 0}
+        guard let shoppingList = user.shoppingList else {return 0}
+        return shoppingList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let user = UserController.shared.loggedInUser else {return UITableViewCell()}
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroceriesListCell", for: indexPath)
-        let groceryItem = user?.shoppingList![indexPath.row]
-        cell.textLabel?.text = groceryItem?.name
+        let groceryItem = user.shoppingList![indexPath.row]
+        cell.textLabel?.text = groceryItem.name
         return cell
     }
 }

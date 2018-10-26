@@ -598,33 +598,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroceriesListCell" rowHeight="47" id="XTP-pL-XoN" customClass="GroceriesListTableViewCell" customModule="Munchies" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GroceriesListCell" rowHeight="47" id="XTP-pL-XoN" customClass="GroceriesListTableViewCell" customModule="Munchies" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="343" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XTP-pL-XoN" id="nzn-vY-Z13">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBx-ZG-Y40">
-                                            <rect key="frame" x="16" y="0.0" width="319" height="47"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="SBx-ZG-Y40" secondAttribute="bottom" id="98Q-uK-5hO"/>
-                                        <constraint firstItem="SBx-ZG-Y40" firstAttribute="leading" secondItem="nzn-vY-Z13" secondAttribute="leading" constant="16" id="iYt-DE-l6a"/>
-                                        <constraint firstAttribute="trailing" secondItem="SBx-ZG-Y40" secondAttribute="trailing" constant="8" id="uSM-ob-Prs"/>
-                                        <constraint firstItem="SBx-ZG-Y40" firstAttribute="top" secondItem="nzn-vY-Z13" secondAttribute="top" id="xVG-LM-Abo"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="nameLabel" destination="SBx-ZG-Y40" id="mbP-vF-xzq"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -655,7 +637,7 @@
                     <viewLayoutGuide key="safeArea" id="5uW-jl-81v"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1780" y="323.38830584707648"/>
+            <point key="canvasLocation" x="1780" y="347"/>
         </scene>
         <!--Journal-->
         <scene sceneID="Uy4-fi-LjA">
