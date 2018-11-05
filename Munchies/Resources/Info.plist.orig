@@ -18,16 +18,16 @@
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
 <<<<<<< HEAD
-	<string>1292</string>
+	<string>1306</string>
 =======
-	<string>1276</string>
->>>>>>> 7ee20732556da79fc5e5fcfd9be66a2d7ae932dd
+	<string>1303</string>
+>>>>>>> d1c29292f058ec7c9442db1a6b69348a4a8e5e7a
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Your Camera will be used for recognizing your products, and Food Journal Entries</string>
 	<key>UILaunchStoryboardName</key>
-	<string>Filter</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreenCopy</string>
 	<key>UIRequiredDeviceCapabilities</key>

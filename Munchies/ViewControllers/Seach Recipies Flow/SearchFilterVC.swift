@@ -227,6 +227,23 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: timeItShoultTakeToPrepareAMeal, servingAmount: portionSize, completion: (completion))
     }
     
+    @IBAction func addManualIngredientsButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Add ingredients Manually", message: nil, preferredStyle: .alert)
+        alert.addTextField { (ingredientTextField) in
+            ingredientTextField.placeholder = "ingredient..."
+            ingredientTextField.keyboardAppearance = .dark
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_) in
+            if let textfield = alert.textFields?.first {
+                guard let ingredient = textfield.text, ingredient != "" else {return}
+                 ImageClasificationController.shared.clasifications.append(ingredient)
+                self.tableView.reloadData()
+            }
+        }))
+        present(alert, animated: true)
+        
+    }
     
     
     //MARK: - Present Camera Method
