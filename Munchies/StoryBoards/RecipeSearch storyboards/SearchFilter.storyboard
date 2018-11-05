@@ -372,7 +372,15 @@
                         <viewLayoutGuide key="safeArea" id="J6R-lg-gl6"/>
                     </view>
                     <navigationItem key="navigationItem" title="SEARCH" id="97G-k3-NZF">
-                        <barButtonItem key="leftBarButtonItem" id="IWk-ZE-6Hi"/>
+                        <leftBarButtonItems>
+                            <barButtonItem id="IWk-ZE-6Hi"/>
+                            <barButtonItem title="Item" image="header" id="Wc9-4d-E05">
+                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="addManualIngredientsButtonPressed:" destination="6hY-PJ-Q0W" id="J1V-Eg-VEg"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="header-1" id="wJE-Is-6AK">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -443,6 +451,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="header" width="18" height="18"/>
         <image name="header-1" width="20" height="20"/>
         <image name="search-2" width="91" height="86"/>
     </resources>

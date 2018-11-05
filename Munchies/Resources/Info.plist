@@ -17,13 +17,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1297</string>
+	<string>1306</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Your Camera will be used for recognizing your products, and Food Journal Entries</string>
 	<key>UILaunchStoryboardName</key>
-	<string>Filter</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreenCopy</string>
 	<key>UIRequiredDeviceCapabilities</key>

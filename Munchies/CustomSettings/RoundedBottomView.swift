@@ -15,8 +15,4 @@ class RoundedBottomView: UIView {
         self.layer.cornerRadius = 6
         self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
-    
-//    yourView.clipsToBounds = true
-//    yourView.layer.cornerRadius = 10
-//    yourView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
 }

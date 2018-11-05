@@ -154,7 +154,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             adjustSettingsAndFlip(button: shellfishFreeOutlet, intolerance: "shellfish", buttonState: shellfishFreeButton)
             shellfishFreeButton = !shellfishFreeButton
         default:
-            print("\(user?.intolerances)")
+            print("unknown alergy")
         }
 
         
