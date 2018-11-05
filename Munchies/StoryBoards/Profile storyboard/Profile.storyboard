@@ -440,10 +440,10 @@
                                 <color key="textColor" red="0.92156862750000001" green="0.43529411759999997" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AJ3-q7-tZQ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJ3-q7-tZQ">
                                 <rect key="frame" x="10" y="125.33333333333331" width="394" height="636.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Chefin does not own any of the recipe content that your see on the app. We use the: https://spoonacular.com/food-api/.                     From there we use the information provided to allow users to save the recipes that they enjoy!                               For our image recognition, We use CloudSight service:                                  https://cloudsight.ai. Which allows our user to take a photo of an ingredient and get feedback on what it may be for better user experience! </string>
+                                <string key="text">Chefin does not own any of the recipe content that your see on the app. We use the: https:/spoonacular.com/food-api/.                     From there we use the information provided to allow users to save the recipes that they enjoy! For our image recognition, We use CloudSight service: https://cloudsight.ai. Which allows our user to take a photo of an ingredient and get feedback on what it may be for better user experience! </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
