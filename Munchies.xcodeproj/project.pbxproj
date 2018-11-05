@@ -65,6 +65,7 @@
 		1CFC28FB21801577003303ED /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC28FA21801577003303ED /* ItemController.swift */; };
 		3B086D41217A4EAD000A353D /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D40217A4EAD000A353D /* InstructionsVC.swift */; };
 		3B086D43217A8B54000A353D /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */; };
+		3B2653292190EE830004CFE1 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2653282190EE830004CFE1 /* InfoVC.swift */; };
 		3B3A2046217AA77E008F586F /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A2045217AA77E008F586F /* JournalController.swift */; };
 		3B414594218007E800407971 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B414593218007E800407971 /* CloudKit.framework */; };
 		3B691D6F2178091000F72828 /* RecipeFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B691D6E2178091000F72828 /* RecipeFetchController.swift */; };
@@ -147,6 +148,7 @@
 		1CFC28FA21801577003303ED /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		3B086D40217A4EAD000A353D /* InstructionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
 		3B086D42217A8B54000A353D /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		3B2653282190EE830004CFE1 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		3B3A2045217AA77E008F586F /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
 		3B414593218007E800407971 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3B691D6E2178091000F72828 /* RecipeFetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFetchController.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				1C43FBC92176CBF700ACDAA0 /* ProfileVC.swift */,
+				3B2653282190EE830004CFE1 /* InfoVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				1C43FBC82176C25A00ACDAA0 /* PreferencesVC.swift in Sources */,
 				1C7E74602172EFFD003462AD /* sideMenuVC.swift in Sources */,
 				3B3A2046217AA77E008F586F /* JournalController.swift in Sources */,
+				3B2653292190EE830004CFE1 /* InfoVC.swift in Sources */,
 				1C3084A9217A800400DF51C0 /* SearchFilterIngredientTableViewCell.swift in Sources */,
 				1C32EA6E2177D54D005226D9 /* CreateJournalEntryVC.swift in Sources */,
 				1C3084AB217ADC3E00DF51C0 /* GroceriesListCell.swift in Sources */,
