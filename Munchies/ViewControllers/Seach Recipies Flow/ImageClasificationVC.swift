@@ -100,7 +100,7 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
         noButtonOutlet.isHidden = true
         yesButtonOutlet.isHidden = true
         clasificationCorectionTextField.isHidden = false
-        clasificationLabel.text = "Please tell us what it is so we can improve your expirience."
+        clasificationLabel.text = "Please tell us what it is so we can improve your experience."
         clasificationLabel.font = UIFont.systemFont(ofSize: 12)
         clasificationCorectionTextField.becomeFirstResponder()
     }
@@ -119,11 +119,8 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
         guard let imageToBeClasified = ImageClasificationController.shared.curentImageAndClasification else {return}
         imageToBeClasifiedView.image = imageToBeClasified
         activityIndicator.startAnimating()
-        #warning ("uncoment this two lines to run image clasification")
          blurView.isHidden = false
          clasifyImage(image: imageToBeClasified)
-        //coment this out or delete:
-       // self.ClasificationViewHeightConstraint.constant = 100
     }
     
     func clasifyImage(image: UIImage){
@@ -154,9 +151,9 @@ class ImageClasificationVC: UIViewController, CloudSightQueryDelegate, UITextFie
     
     func cloudSightQueryDidFail(_ query: CloudSightQuery!, withError error: Error!) {
         print("CloudSight Failure: \(error.localizedDescription)")
-        let alert = UIAlertController(title: "Clasification Unsuccessfull", message: "Pleast try again", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Classification Unsuccessful", message: "Please try again", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true)
     }

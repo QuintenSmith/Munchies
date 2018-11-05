@@ -80,7 +80,7 @@ NSString *const kTPImageResponseURL = @"https://api.cloudsightapi.com/image_resp
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:responseUrlWithParameters];
     NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (cancelled)
+        if (self->cancelled)
             return;
 
         if (error || data == nil) {
@@ -104,26 +104,26 @@ NSString *const kTPImageResponseURL = @"https://api.cloudsightapi.com/image_resp
             if ([taggedImageString isKindOfClass:[NSNull class]])
                 taggedImageString = @"";
             
-            [query setSkipReason:taggedImageString];
+            [self->query setSkipReason:taggedImageString];
 
             if ([[self delegate] respondsToSelector:@selector(cloudSightQueryDidFinishIdentifying:)]) {
-                [[self delegate] cloudSightQueryDidFinishIdentifying:query];
+                [[self delegate] cloudSightQueryDidFinishIdentifying:self->query];
             }
         } else if ([taggedImageStatus isEqualToString:@"in progress"] || [taggedImageStatus isEqualToString:@"completed"]) {
             NSString *taggedImageString = [dict objectForKey:@"name"];
             if ([taggedImageString isKindOfClass:[NSNull class]])
                 taggedImageString = @"";
             
-            [query setTitle:taggedImageString];
+            [self->query setTitle:taggedImageString];
             
             if ([taggedImageStatus isEqualToString:@"in progress"]) {
                 [self restart];
                 if ([self.delegate respondsToSelector:@selector(cloudSightQueryDidUpdateTag:)]) {
-                    [[self delegate] cloudSightQueryDidUpdateTag:query];
+                    [[self delegate] cloudSightQueryDidUpdateTag:self->query];
                 }
             } else {
                 if ([[self delegate] respondsToSelector:@selector(cloudSightQueryDidFinishIdentifying:)]) {
-                    [[self delegate] cloudSightQueryDidFinishIdentifying:query];
+                    [[self delegate] cloudSightQueryDidFinishIdentifying:self->query];
                 }
             }
         } else if ([taggedImageStatus isEqualToString:@"timeout"]) {

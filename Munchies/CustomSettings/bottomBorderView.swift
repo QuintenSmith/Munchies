@@ -26,11 +26,4 @@ class bottomBorderView: UIView {
         borderView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         borderView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
-    
-    
-    
-//    override func awakeFromNib() {
-//        self.layer.borderWidth = 1.0
-//        self.layer.borderColor = UIColor.white.cgColor
-//    }
 }

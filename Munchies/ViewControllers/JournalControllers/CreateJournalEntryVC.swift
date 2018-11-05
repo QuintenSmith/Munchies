@@ -32,7 +32,6 @@ class CreateJournalEntryVC: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidDisappear(animated)
         enterTitleTextField.text = ""
         notesTextView.text = "notes..."
-        #warning ("set the image to a default")
     }
     
     

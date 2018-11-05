@@ -137,15 +137,12 @@ class RecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if recipe.detailedRecipe.isFavorite != nil {
             if recipe.detailedRecipe.isFavorite! == true {
                 //favorite property is true
-                print("changing heart to ❤️ in recipe detail VC")
                 guard let user = user else {return}
                 FavoriteController.shared.createFavorite(user: user, recipeID: recipe.detailedRecipe.id) { (_) in
                 }
                 recipeHeartButton.setImage(#imageLiteral(resourceName: "favorites"), for: .normal)
             } else if recipe.detailedRecipe.isFavorite! == false{
                 //favorite property is false
-                print("changing heart to 💙 in reciep detailVC")
-                #warning ("recipe should be removed from user here")
                 RecipeFetchController.shared.removefromFavorites(recipe: recipe)
                 recipeHeartButton.setImage(#imageLiteral(resourceName: "belowphotosoffood"), for: .normal)
             }

@@ -16,5 +16,4 @@ class RoundedShapeButton: UIButton {
         self.layer.shadowOpacity = 0.75
         self.layer.cornerRadius = 6
     }
-    
 }

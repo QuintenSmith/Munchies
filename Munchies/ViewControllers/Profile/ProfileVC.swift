@@ -154,7 +154,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             adjustSettingsAndFlip(button: shellfishFreeOutlet, intolerance: "shellfish", buttonState: shellfishFreeButton)
             shellfishFreeButton = !shellfishFreeButton
         default:
-            print("\(user?.intolerances)")
+            print("unknown alergy")
         }
 
         
@@ -162,18 +162,22 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        if saveButtonState == true {
-            editView.isHidden = true
-            clearButtonOutlet.isEnabled = true
-            saveButtonState = false
-            saveButtonOutlet.image = #imageLiteral(resourceName: "header-5")
-        } else {
-            editView.isHidden = false
-            clearButtonOutlet.isEnabled = false
-            saveButtonState = true
-            saveButtonOutlet.image = #imageLiteral(resourceName: "header-2")
-            showSuccesfullAlert()
-        }
+        
+        
+        
+        //commented out - need to fix the personal settings - so thay can update the personal settings
+//        if saveButtonState == true {
+//            editView.isHidden = true
+//            clearButtonOutlet.isEnabled = true
+//            saveButtonState = false
+//            saveButtonOutlet.image = #imageLiteral(resourceName: "header-5")
+//        } else {
+//            editView.isHidden = false
+//            clearButtonOutlet.isEnabled = false
+//            saveButtonState = true
+//            saveButtonOutlet.image = #imageLiteral(resourceName: "header-2")
+//            showSuccesfullAlert()
+//        }
     }
     
     //clear all settings

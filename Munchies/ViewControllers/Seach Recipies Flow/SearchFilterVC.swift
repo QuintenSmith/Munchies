@@ -165,11 +165,8 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
         
         print("🤩fetching recipes")
         
-        #warning ("put this inn place holder for ingredniets")
-        //ImageClasificationController.shared.clasificationsAsString()
-        
         //run fetch functions
-        RecipeFetchController.shared.searchRecipiesBy(ingredients: "groud beef, tomatoe, onion") { (recipes) in
+        RecipeFetchController.shared.searchRecipiesBy(ingredients: ImageClasificationController.shared.clasificationsAsString()) { (recipes) in
             print("✅ Finished fetching recipies")
             guard let recipes = recipes else {return}
             RecipeFetchController.shared.recipes = recipes
@@ -228,9 +225,25 @@ class SearchFilterVC: UIViewController, UINavigationControllerDelegate, UIImageP
     //MARK: - helper function to filter by time it takes to cook diner
     func applyFiltersAndFetchImages(completion: @escaping (Bool) -> Void){
         RecipeFetchController.shared.filterRecipiesByTimeItTakesToMakeIt(arrayOfRecipies: RecipeFetchController.shared.recipiesWithDetail, timeItShouldTake: timeItShoultTakeToPrepareAMeal, servingAmount: portionSize, completion: (completion))
-        print("🔥🔥 Portion size: \(portionSize ?? 0), time: \(timeItShoultTakeToPrepareAMeal)")
     }
     
+    @IBAction func addManualIngredientsButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Add ingredients Manually", message: nil, preferredStyle: .alert)
+        alert.addTextField { (ingredientTextField) in
+            ingredientTextField.placeholder = "ingredient..."
+            ingredientTextField.keyboardAppearance = .dark
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_) in
+            if let textfield = alert.textFields?.first {
+                guard let ingredient = textfield.text, ingredient != "" else {return}
+                 ImageClasificationController.shared.clasifications.append(ingredient)
+                self.tableView.reloadData()
+            }
+        }))
+        present(alert, animated: true)
+        
+    }
     
     
     //MARK: - Present Camera Method
