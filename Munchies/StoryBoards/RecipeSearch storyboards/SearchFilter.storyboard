@@ -52,7 +52,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PVY-pa-mhJ">
                                                 <rect key="frame" x="67.5" y="166.5" width="240" height="50"/>
                                                 <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="50" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="B2c-mB-pVM" customClass="searchFilterSizedTableView" customModule="Munchies" customModuleProvider="target">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="50" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="B2c-mB-pVM" customClass="searchFilterSizedTableView" customModule="Munchies" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
                                                         <color key="backgroundColor" red="0.1633149683" green="0.29437282679999999" blue="0.3995600641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <prototypes>
